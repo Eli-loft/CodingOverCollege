@@ -1,6 +1,4 @@
-/* ============ Github wont update my css file ============== */
-
-/* ================== RESET & BASIC STYLES ================== */
+/* ============ RESET & BASIC STYLES ============== */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +11,7 @@ body {
   color: #333;
 }
 
-/* ================== HEADER & TOP NAV ================== */
+/* ============ HEADER & TOP NAV ============== */
 header {
   background-color: #333;
   color: #fff;
@@ -28,8 +26,16 @@ header h1 {
 .top-nav ul {
   list-style: none;
   display: flex;
+  /* Enable wrapping in case the screen is too narrow */
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 0.5rem;
+  padding-left: 0;  /* remove default padding if needed */
+}
+
+.top-nav li {
+  /* For small screens, it's sometimes helpful to remove default margins
+     and let the gap or media query handle spacing */
 }
 
 .top-nav a {
@@ -41,14 +47,13 @@ header h1 {
 .top-nav a:hover {
   text-decoration: underline;
 }
-/* ================== Container holding M ================== */
+
+/* ============ MAIN LAYOUT WITH SIDEBAR ============== */
 .container {
   display: flex;        /* Places children side by side */
   margin: 1rem;         /* Optional spacing around the container */
 }
 
-
-/* ================== MAIN LAYOUT WITH SIDEBAR ================== */
 main {
   display: flex; /* Places aside (sidebar) and the main content side-by-side */
   margin: 1rem;
@@ -103,4 +108,24 @@ main section h2 {
 
 main section p {
   margin-bottom: 1rem;
+}
+
+/* ============ RESPONSIVE MEDIA QUERIES ============== */
+@media (max-width: 768px) {
+  /* Stack the sidebar on top of the main content on smaller screens */
+  main {
+    flex-direction: column;
+  }
+
+  .chapter-sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  /* Change the nav layout for better fit on small screens */
+  .top-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
