@@ -13,14 +13,14 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #706F7D;
+  background-color: #4C4B63;
 }
 
 
 /* ============ HEADER & TOP NAV ============== */
 header {
-  background-color: #4C4B63;
-  color: #C3C3C3;
+  background-color: #280137;
+  color: #f2f2f2;
   padding: 1rem;
   margin: 0;
   text-align: center;
@@ -50,7 +50,7 @@ header h1 {
 }
 
 .top-nav a {
-  color: #C3C3C3;
+  color: #f2f2f2;
   text-decoration: none;
   font-weight: bold;
 }
@@ -65,7 +65,7 @@ header h1 {
   display: flex;        /* Places children side by side */
   flex-grow: 1;
   margin: 1rem;      
-  background-color: #706F7D;   /* Optional spacing around the container */
+  background-color: #4C4B63;   /* Optional spacing around the container */
   min-height: 100vh;  /* ✅ Ensures full height */
   width: 100%;
 }
@@ -84,15 +84,15 @@ main {
   min-height: 200px; /* ✅ Prevents collapsing */
   margin-right: 2rem;
   padding: 1rem;
-  background-color: #4C4B63;
+  background-color: #280137;
   border-radius: 4px;
   flex-shrink: 0;
-  border:2px solid #C3C3C3
+  border:2px solid #f2f2f2
 }
 
 .chapter-sidebar h3 {
   margin-bottom: 0.5rem;
-  color: #C3C3C3;
+  color: #f2f2f2;
 }
 
 .chapter-sidebar ul {
@@ -105,7 +105,7 @@ main {
 }
 
 .chapter-sidebar a {
-  color: #C3C3C3;
+  color: #f2f2f2;
   text-decoration: none;
   font-size: 12px;
 }
@@ -121,38 +121,39 @@ main {
 
 /* ================== MAIN CONTENT AREA ================== */
 main section {
-  background-color: #706F7D;
+  background-color: #4C4B63;
   flex: 1; /* Takes up remaining width */
 }
 
 main section h2 {
-  margin-bottom: 1rem;
+ 
   font-size: 1.5rem;
-  color: #C3C3C3;
+  color: #f2f2f2;
 }
 
 main section p {
   margin-bottom: 1rem;
 }
 .section-title {
-  color: #C3C3C3;; /* Change text color */
+  color: #f2f2f2;; /* Change text color */
   font-size: 24px; /* Adjust size */
   font-weight: bold; /* Make it bold */
   text-align: center; /* Center align */
-  margin-top: 20px; /* Add space above */
+  
   border-top: 2px solid;
   padding-top: 5px;
-  border: 2px solid #C3C3C3; /* Lighter blue */
+  border: 2px solid #f2f2f2; /* Lighter blue */
   padding-bottom: 5px; /* Space below the text */
   border-radius: 5px;
-  box-shadow: 0 0 10px #4C4B63; 
-  background-color: #4C4B63;
+  box-shadow: 0 0 10px #453765; 
+  background-color: #453765;
+  width:
 
   
 }
 .mainbody {
   text-align: center; /* Centers the text of all child elements, including <p> */
-  background-color: #706F7D;
+  background-color: #4C4B63;
   width:100%;
   padding:1rem;
 }
@@ -173,14 +174,14 @@ main section p {
   /* Stack the sidebar on top of the main content on smaller screens */
   main {
     flex-direction: column;
-    background-color: #706F7D;
+    background-color: #4C4B63;
   }
   html, body {
-    background-color: #706F7D !important;
+    background-color: #4C4B63 !important;
   }
   .chapter-sidebar {
       width: 90%;  /* ✅ Makes sure the sidebar doesn't take full screen width */
-      max-width: 300px; /* ✅ Prevents it from becoming too large */
+      max-width: 100px; /* ✅ Prevents it from becoming too large */
       margin: 0 auto 1rem; /* ✅ Centers it and adds spacing below */
       min-width: 150px;
       min-height: 200px;
@@ -188,7 +189,7 @@ main section p {
    }
 
    .container {
-    background-color: #706F7D;
+    background-color: #4C4B63;
   }
   
   /* Change the nav layout for better fit on small screens */
@@ -208,18 +209,18 @@ main section p {
 .subchapterBody h3 {
   text-decoration: underline;
   text-align: center;
-  color: #C3C3C3; /* Text color */
+  color: #f2f2f2; /* Text color */
   font-weight: bold; /* Make text bold */
-  margin-top: 10px; /* Reduced space above */
+
   margin-bottom: 5px; /* Reduced space below */
   padding: 5px 10px; /* Add a bit of space inside the box */
-  border: 2px solid #C3C3C3; /* Border color */
-  background-color: #4C4B63;
-  width: fit-content; /* Ensure box width fits the text */
+  border: 2px solid #f2f2f2; /* Border color */
+  background-color: #5B3F8B;
+
   margin-left: auto;
   margin-right: auto; /* Center the box */
   border-radius: 5px;
-  box-shadow: 0 0 10px #4C4B63; 
+  box-shadow: 0 0 10px #5B3F8B; 
   
 }
 
@@ -228,27 +229,37 @@ main section p {
 
 margin-bottom: 10px;
 text-decoration: underline;
-color: #C3C3C3;
+color: #f2f2f2;
+margin-left: 10px;
+
 }
 
 
 .subchapterBody li,ul,p{
   text-align: left;
-  color: #C3C3C3;
-  margin-left: 10px; /* Indent bullet points */
+  color: #f2f2f2;
+  margin-left: 20px; /* Indent bullet points */
   margin-bottom: 10px;
+}
+.subchapterBody section{
+  width:95%;
+  border: 2px solid #C3C3C3;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #7661A8;
+  margin-bottom: 40px;
 }
 /* Terminal-style CSS for <pre> */
 .subchapterBody pre {
   text-align: left;
   background-color: #2F2E3E; /* Dark background color */
-  color: #C3C3C3; /* Green text color */
+  color: #f2f2f2; /* Green text color */
   font-family: 'Courier New', monospace; /* Monospace font for terminal look */
   padding: 15px;
   border-radius: 5px;
-  border: 2px solid #C3C3C3;
+  border: 2px solid #f2f2f2;
   
-  box-shadow: 0 0 10px #4C4B63; 
+  box-shadow: 0 0 10px #5B3F8B; 
   font-size: 16px; /* Font size */
   white-space: pre-wrap; /* Allow text to wrap */
   overflow-x: auto; /* Allow horizontal scrolling */
@@ -261,7 +272,7 @@ color: #C3C3C3;
 /* Section Title Styling */
 #comparison .section-title {
   font-size: 24px; /* Size of the section title */
-  color: #C3C3C3; /* Color for the title */
+  color: #f2f2f2; /* Color for the title */
   margin-bottom: 20px; /* Space below the title */
   text-align: center; /* Center the title */
 }
@@ -270,7 +281,7 @@ color: #C3C3C3;
 #comparison table {
   width: 100%;
   border-collapse: collapse;
-  border: 2px solid #C3C3C3; /* Blue border around the table */
+  border: 2px solid #f2f2f2; /* Blue border around the table */
   margin-top: 20px; /* Space above the table */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the table */
@@ -278,14 +289,14 @@ color: #C3C3C3;
 
 /* Styling for table headers (th) */
 #comparison th {
-  background-color: #4C4B63; /* Dark background for the header */
-  color: #C3C3C3; /* White text color */
+  background-color: #5B3F8B; /* Dark background for the header */
+  color: #f2f2f2; /* White text color */
   font-weight: bold; /* Make header text bold */
   padding: 12px 15px; /* Padding for spacing */
   text-align: center; /* Center the header text */
 }
 #comparison h3{
-  color:#C3C3C3
+  color:#f2f2f2
 }
 
 
@@ -294,12 +305,12 @@ color: #C3C3C3;
   padding: 12px 15px; /* Padding for each cell */
   border: 1px solid #ddd; /* Light border for each cell */
   text-align: left; /* Align text to the left */
-  color: #4C4B63;
+  color: #5B3F8B;
 }
 
 /* Alternating row colors for readability */
 #comparison tbody tr {
-  background-color: #C3C3C3; /* Light gray background for even rows */
+  background-color: #f2f2f2; /* Light gray background for even rows */
 }
 
 
@@ -316,9 +327,9 @@ color: #C3C3C3;
 }
 
 .preview-card {
-  border: solid 2px #C3C3C3 ;
+  border: solid 2px #f2f2f2 ;
   margin: 10px;
-  background-color: #4C4B63;
+  background-color: #5B3F8B;
 }
 /* For the preview card image */
 .preview-card img {
@@ -333,7 +344,7 @@ color: #C3C3C3;
 /* For the h3 element inside preview card */
 .preview-card h3, h4{
   text-align: center; /* Center-aligns the heading */
-  color: #C3C3C3;     /* Text color */
+  color: #f2f2f2;     /* Text color */
   margin-top: 0;      /* Removes any top margin */
   margin-bottom: 1rem; /* Adds space below the heading */
   font-size: 1.25rem;  /* Adjust font size if needed */
