@@ -151,7 +151,7 @@ main section p {
   border-radius: 5px;
   box-shadow: 0 0 10px #453765; 
   background-color: #453765;
-  
+  margin-bottom: 0px;
 
   
 }
@@ -215,6 +215,7 @@ main section p {
   text-align: center;
   color: #f2f2f2; /* Text color */
   font-weight: bold; /* Make text bold */
+  margin-top:0%;
 
   margin-bottom: 5px; /* Reduced space below */
   padding: 5px 10px; /* Add a bit of space inside the box */

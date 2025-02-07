@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DNS Protocols</title>
+  <!-- Link to your shared CSS file (adjust path as needed) -->
+  <link rel="stylesheet" href="../../../style.css" />
+</head>
+<body>
+  <header>
+    <h1>Coding Over College</h1>
+    <!-- Top-level navigation -->
+    <nav class="top-nav">
+      <ul>
+        <li><a href="../../../index.html">Home</a></li>
+        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
+        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
+        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
+        <li><a href="../../DNS/DNS.html">DNS</a></li>
+        <li><a href="../../References/References.html">References</a></li>
+        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar specific to DNS Topics (or Networking Topics) -->
+    <aside class="chapter-sidebar">
+      <h3>DNS Topics</h3>
+      <ul>
+        <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
+        <li><a href="../SubChapters/Caching.html">Caching</a></li>
+        <li><a href="../SubChapters/ZoneFiles.html">Zone Files</a></li>
+        <li><a href="../SubChapters/IPAddress.html">IP Addresses</a></li>
+        <li><a href="../SubChapters/Proticals.html">Proticals</a></li>
+        <li><a href="../SubChapters/Ports.html">Ports</a></li>
+        <li><a href="../SubChapters/PublicDNS.html">Public DNS</a></li>
+        <li><a href="../SubChapters/PrivateDNS.html">Private DNS</a></li>
+        <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
+        <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
+        <li><a href="../SubChapters/nslookup.html">nslookup</a></li>
+        <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
+        <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
+        <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
+        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
+        <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
+        <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
+        <li><a href="../SubChapters/ResolvingDomainFailures.html">Resolving Domain Failures</a></li>
+        <li><a href="../SubChapters/CheckingDNSPropagation.html">Checking DNS Propagation</a></li>
+      </ul>
+    </aside>
+
+    <main class="mainbody">
+      <div class="subchapterBody">
+
+        <!-- Introduction Section -->
+        <section id="introduction">
+          <h2 class="section-title">DNS Protocols</h2>
+          <p>
+            DNS queries and responses rely on lower-level network protocols to get from point A to point B. These protocols define how data is formatted, transmitted, and validated. Understanding them is essential for configuring DNS effectively, troubleshooting network issues, and securing against common attacks. In DNS, the two main transport protocols are <strong>UDP</strong> and <strong>TCP</strong>, but modern deployments often use <strong>encrypted protocols</strong> like DNS over TLS (DoT) or DNS over HTTPS (DoH).
+          </p>
+        </section>
+
+        <!-- UDP Section -->
+        <section id="udp">
+          <h2 class="section-title">UDP (User Datagram Protocol)</h2>
+
+          <h3>What is UDP?</h3>
+          <p>
+            UDP is a connectionless transport protocol. It sends data packets—called “datagrams”—without establishing or tearing down a connection. This minimal overhead makes UDP:
+          </p>
+          <ul>
+            <li>Faster than TCP in many cases.</li>
+            <li>Less reliable (no retransmissions or acknowledgments).</li>
+            <li>Ideal for small, quick messages where speed is more critical than guaranteed delivery.</li>
+          </ul>
+
+          <h3>Key Characteristics</h3>
+          <ul>
+            <li>
+              <strong>Connectionless:</strong> No handshake is required, so data is pushed immediately onto the network.
+            </li>
+            <li>
+              <strong>No Acknowledgments:</strong> If packets are lost, UDP does not re-send them automatically.
+            </li>
+            <li>
+              <strong>Lightweight Headers:</strong> Less overhead compared to TCP, often just 8 bytes of header information.
+            </li>
+            <li>
+              <strong>DNS Usage:</strong> Most DNS queries (and responses) typically use UDP on port <strong>53</strong> to achieve speed and minimal latency.
+            </li>
+          </ul>
+
+          <h3>How Does DNS Use UDP?</h3>
+          <ol>
+            <li>
+              <strong>Client Sends Query:</strong> A client (e.g., your laptop) sends a DNS query to a resolver using UDP. This query contains the domain name, question type (A, AAAA, MX, etc.), and a transaction ID.
+            </li>
+            <li>
+              <strong>Resolver Responds:</strong> The resolver replies with a UDP datagram containing the DNS answer, authoritative information, and any additional records.
+            </li>
+            <li>
+              <strong>Packet Size Considerations:</strong> Historically, DNS over UDP was limited to 512 bytes. Today, <em>EDNS0</em> extensions can allow UDP packets up to 4096 bytes or more.
+            </li>
+            <li>
+              <strong>Fallback to TCP:</strong> If the response is too large to fit in a single UDP datagram, or if reliability is needed (e.g., zone transfers), DNS switches to TCP. 
+            </li>
+          </ol>
+
+          <h3>Example of a UDP Query</h3>
+          <p>
+            When you type <code>example.com</code> in your browser, your system typically sends a UDP DNS query like this (simplified):
+          </p>
+          <pre>
+;; HEADER:
+;; ID = 1234
+;; QR = 0 (query), Opcode = 0 (standard), RD = 1
+;; QDCOUNT = 1, ANCOUNT = 0, NSCOUNT = 0, ARCOUNT = 1
+
+;; QUESTION SECTION:
+;example.com. IN A
+
+;; ADDITIONAL SECTION (EDNS0):
+; UDP payload size = 4096
+          </pre>
+          <p>
+            The resolver then responds with an answer (still over UDP) unless it exceeds the size limit.
+          </p>
+
+          <h3>Advantages & Disadvantages</h3>
+          <ul>
+            <li><strong>Pros:</strong> Faster setup (no handshake), low overhead.</li>
+            <li><strong>Cons:</strong> No built-in reliability or congestion control, susceptible to spoofing/amplification attacks.</li>
+          </ul>
+        </section>
+
+        <!-- TCP Section -->
+        <section id="tcp">
+          <h2 class="section-title">TCP (Transmission Control Protocol)</h2>
+
+          <h3>What is TCP?</h3>
+          <p>
+            TCP is a connection-oriented transport protocol. It establishes a reliable, ordered, and error-checked connection between two endpoints (client and server). This means:
+          </p>
+          <ul>
+            <li>A three-way handshake (SYN, SYN-ACK, ACK) is required before data transfer.</li>
+            <li>All packets are acknowledged; lost packets are retransmitted.</li>
+            <li>Data arrives in order or not at all (no duplication or reordering). </li>
+          </ul>
+
+          <h3>Key Characteristics</h3>
+          <ul>
+            <li>
+              <strong>Reliability:</strong> Packet integrity and correct ordering are ensured. 
+            </li>
+            <li>
+              <strong>Flow Control & Congestion Control:</strong> TCP adjusts sending rates based on network conditions.
+            </li>
+            <li>
+              <strong>Heavier Overhead:</strong> TCP headers are larger, and the handshake/retransmissions add latency.
+            </li>
+            <li>
+              <strong>DNS Usage:</strong> DNS uses TCP (port <strong>53</strong>) when responses exceed UDP size limits (like zone transfers or large DNSSEC records).
+            </li>
+          </ul>
+
+          <h3>How Does DNS Use TCP?</h3>
+          <ol>
+            <li>
+              <strong>Large Responses:</strong> If a DNS response does not fit in a UDP datagram, the server sets a “truncation” flag, signaling the client to retry over TCP.
+            </li>
+            <li>
+              <strong>Zone Transfers:</strong> Authoritative name servers often share entire zone databases with secondary servers via TCP—this ensures reliable, complete data transfer.
+            </li>
+            <li>
+              <strong>DNSSEC & TLS:</strong> Larger cryptographic records sometimes push DNS messages over 512 or 4096 bytes, necessitating TCP.
+            </li>
+          </ol>
+
+          <h3>Example of a TCP-based Zone Transfer</h3>
+          <pre>
+dig AXFR example.com @ns1.example.com
+
+;; TCP handshake with ns1.example.com
+;; DNS AXFR data stream follows:
+example.com.  3600 IN SOA  ns1.example.com. admin.example.com. 2025010101 ...
+example.com.  86400 IN NS  ns1.example.com.
+example.com.  86400 IN NS  ns2.example.com.
+...
+;; AXFR ends with:
+;;  XFR size: 42 records (messages 1 - 42)
+          </pre>
+          <p>
+            In this scenario, <strong>all zone data</strong> is transferred over a reliable TCP connection to ensure no records are lost.
+          </p>
+
+          <h3>Advantages & Disadvantages</h3>
+          <ul>
+            <li><strong>Pros:</strong> Reliable data delivery, guaranteed ordering, more secure (harder to spoof).</li>
+            <li><strong>Cons:</strong> Slower setup due to handshake, greater overhead, more resource-intensive.</li>
+          </ul>
+        </section>
+
+        <!-- Encrypted DNS Section -->
+        <section id="encrypted-dns">
+          <h2 class="section-title">Encrypted DNS Protocols</h2>
+
+          <h3>DNS over TLS (DoT)</h3>
+          <ul>
+            <li>
+              <strong>Transport:</strong> Typically uses TCP port 853, wrapping DNS messages in TLS for encryption and integrity.
+            </li>
+            <li>
+              <strong>Privacy & Security:</strong> Prevents snooping or injection, but can be blocked by firewalls if they disallow unknown ports.
+            </li>
+            <li>
+              <strong>Adoption:</strong> Growing among ISPs and public DNS providers (e.g., Cloudflare, Quad9).
+            </li>
+          </ul>
+
+          <h3>DNS over HTTPS (DoH)</h3>
+          <ul>
+            <li>
+              <strong>Transport:</strong> Encapsulates DNS queries in HTTPS (port 443), making DNS traffic indistinguishable from normal TLS web traffic.
+            </li>
+            <li>
+              <strong>Privacy & Censorship Resistance:</strong> Harder for ISPs or governments to filter DNS requests, but may complicate enterprise network policies.
+            </li>
+            <li>
+              <strong>Browser Support:</strong> Major browsers (Firefox, Chrome, Edge) have built-in DoH options.
+            </li>
+          </ul>
+
+          <h3>DNS over QUIC (DoQ)</h3>
+          <ul>
+            <li>
+              <strong>Transport:</strong> QUIC is a UDP-based, encrypted, multiplexed transport. DoQ encrypts DNS similar to DoT/DoH.
+            </li>
+            <li>
+              <strong>Performance:</strong> QUIC aims to reduce latency compared to TCP + TLS handshakes.
+            </li>
+            <li>
+              <strong>Experimental:</strong> Still emerging, with limited but growing support.
+            </li>
+          </ul>
+
+          <h3>When to Use Encrypted DNS?</h3>
+          <p>
+            Encrypted DNS is crucial when privacy is a priority (e.g., preventing an ISP from tracking your queries) or when operating in hostile network environments. However, it can introduce complexities—like blocking or shaping by certain firewalls.
+          </p>
+        </section>
+
+        <!-- Security & Attack Vectors -->
+        <section id="security">
+          <h2 class="section-title">Security & Attack Vectors</h2>
+
+          <h3>DNS Amplification (UDP-based)</h3>
+          <p>
+            Attackers send spoofed UDP queries from a forged IP address to DNS servers, prompting large DNS responses. The unwitting DNS server effectively “amplifies” traffic to the victim’s IP. 
+          </p>
+          <ul>
+            <li><strong>Mitigation:</strong> Rate-limiting, DNS response size checking, and BCP38 (ingress/egress filtering) help reduce spoofing.</li>
+          </ul>
+
+          <h3>Man-in-the-Middle Attacks</h3>
+          <p>
+            Unencrypted DNS (UDP/TCP on port 53) is vulnerable to interception. Attackers can inject fake DNS answers or eavesdrop on queries.
+          </p>
+          <ul>
+            <li><strong>Mitigation:</strong> Encrypted DNS (DoT/DoH) and DNSSEC protect the integrity of DNS data.</li>
+          </ul>
+
+          <h3>Zone Transfer Leakage</h3>
+          <p>
+            A misconfigured server allowing TCP-based <strong>AXFR</strong> to anyone can leak your entire DNS zone records.
+          </p>
+          <ul>
+            <li><strong>Mitigation:</strong> Restrict zone transfers to authorized IP addresses or use TSIG (Transaction SIGnatures) for authentication.</li>
+          </ul>
+        </section>
+
+        <!-- Performance Optimizations -->
+        <section id="performance">
+          <h2 class="section-title">Performance Optimizations</h2>
+          <ul>
+            <li>
+              <strong>EDNS0:</strong> Extends UDP packet size to reduce TCP fallback for larger DNS responses.
+            </li>
+            <li>
+              <strong>Anycast DNS:</strong> Distribute DNS servers globally, routing users to the nearest node for lower latency.
+            </li>
+            <li>
+              <strong>Connection Reuse:</strong> With TCP or DoT, servers may reuse connections for multiple queries to reduce overhead.
+            </li>
+            <li>
+              <strong>DNS Cache:</strong> Both clients and resolvers store answers for the TTL duration, minimizing repetitive queries.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Comparison Table: UDP vs. TCP vs. Encrypted DNS -->
+        <section id="comparison">
+          <h2 class="section-title">Protocol Comparison</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>UDP (53)</th>
+                <th>TCP (53)</th>
+                <th>DoT (853) / DoH (443)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Connection</td>
+                <td>Connectionless</td>
+                <td>Connection-Oriented (3-way handshake)</td>
+                <td>Encrypted TLS session</td>
+              </tr>
+              <tr>
+                <td>Reliability</td>
+                <td>Unreliable, no retransmission</td>
+                <td>Reliable, reorders/retransmits</td>
+                <td>Reliable (TLS over TCP or QUIC)</td>
+              </tr>
+              <tr>
+                <td>Overhead</td>
+                <td>Minimal</td>
+                <td>Higher (headers, ACKs)</td>
+                <td>Even higher (encryption, handshakes)</td>
+              </tr>
+              <tr>
+                <td>Security (by default)</td>
+                <td>None</td>
+                <td>None</td>
+                <td>Encrypted & authenticated</td>
+              </tr>
+              <tr>
+                <td>Common DNS Use</td>
+                <td>Most queries/responses</td>
+                <td>Zone transfers, large answers</td>
+                <td>Privacy-focused providers</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- TL;DR Summary -->
+        <section id="summary">
+          <h2 class="section-title">TL;DR</h2>
+          <p>
+            DNS commonly uses <strong>UDP</strong> for fast, lightweight queries and <strong>TCP</strong> for larger or more reliable transfers (like zone transfers). Modern concerns around privacy and interception have spurred the rise of <strong>encrypted DNS</strong> (DoT, DoH, DoQ). Each protocol has unique pros and cons:
+          </p>
+          <ul>
+            <li><strong>UDP:</strong> Minimal overhead, perfect for quick lookups, but no built-in security.</li>
+            <li><strong>TCP:</strong> Adds reliability and supports large DNS messages, but more overhead.</li>
+            <li><strong>Encrypted DNS:</strong> Secures your queries from eavesdroppers, at the cost of extra complexity and potential firewall conflicts.</li>
+          </ul>
+          <p>
+            In practice, DNS resolvers support all of these, choosing the right protocol for each situation. Understanding how these protocols work—and their vulnerabilities—allows you to optimize performance and security in a DNS environment.
+          </p>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Structures</title>
-  <!-- Link to your consolidated CSS -->
-  <link rel="stylesheet" href="../../style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DNS - Complete Guide</title>
+  <!-- Make sure the path below is correct relative to your HTML file -->
+  <link rel="stylesheet" href="../../../style.css" />
 </head>
 <body>
   <header>
@@ -13,38 +13,316 @@
     <!-- Top-level navigation -->
     <nav class="top-nav">
       <ul>
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../DNS/DNS.html">DNS</a></li>
-        <li><a href="../References/References.html">References</a></li>
-        <li><a href="../Keywords/Keywords.html">Google Keywords Library</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
+        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
+        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
+        <li><a href="../../DNS/DNS.html">DNS</a></li>
+        <li><a href="../../References/References.html">References</a></li>
+        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class = "container">
-    <!-- Sidebar specific to DataStructures -->
+  <div class="container">
+    <!-- Sidebar specific to DNS Topics -->
     <aside class="chapter-sidebar">
       <h3>DNS Topics</h3>
       <ul>
-        <li><a href="SubChapters/Resolvers.html"> Resolvers</a></li>
+        <li><a href="SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="SubChapters/Caching.html">Caching</a></li>
         <li><a href="SubChapters/ZoneFiles.html">Zone Files</a></li>
-        <!-- Add more as needed -->
+        <li><a href="SubChapters/IPAddress.html">IP Addresses</a></li>
+        <li><a href="SubChapters/Proticals.html">Proticals</a></li>
+        <li><a href="SubChapters/Ports.html">Ports</a></li>
+        <li><a href="SubChapters/PublicDNS.html">Public DNS</a></li>
+        <li><a href="SubChapters/PrivateDNS.html">Private DNS</a></li>
+        <li><a href="SubChapters/DomainRegistration.html">Domain Registration</a></li>
+        <li><a href="SubChapters/HostingProvider.html">Hosting Providers</a></li>
+        <li><a href="SubChapters/nslookup.html">nslookup</a></li>
+        <li><a href="SubChapters/ServerSetup.html">Server Setup</a></li>
+        <li><a href="SubChapters/DNSSEC.html">DNSSEC</a></li>
+        <li><a href="SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
+        <li><a href="SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="SubChapters/DoH.html">DNS over HTTPS</a></li>
+        <li><a href="SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
+        <li><a href="SubChapters/Advancenslookup.html">Advance nslookup</a></li>
+        <li><a href="SubChapters/Wireshark.html">Wireshark</a></li>
+        <li><a href="SubChapters/ResolvingDomainFailures.html">Resolving Domain Failures</a></li>
+        <li><a href="SubChapters/CheckingDNSPropagation.html">Checking DNS Propagation</a></li>
       </ul>
     </aside>
 
-    <main>
-      <section>
-        <h2>DNS</h2>
-        <p>
-          Overview of all the DNS you'll learn in this chapter...
-        </p>
-        <!-- More content goes here -->
-      </section>
+    <main class="mainbody">
+      <div class="subchapterBody">
+        
+        <!-- Chapter 1 -->
+        <section id="chapter1">
+          <h2 class="section-title">Chapter 1: Introduction to DNS</h2>
+
+          <h3>What is DNS?</h3>
+          <p>
+            Provides a clear definition of DNS and how it fits into the broader
+            networking ecosystem. Explains the fundamental role DNS plays,
+            comparing it to a “phone book” that maps human-readable domain names
+            to IP addresses.
+          </p>
+
+          <h3>Basic Terminology</h3>
+          <ul>
+            <li><strong>Domain names:</strong> How we label websites and services (e.g., google.com).</li>
+            <li><strong>IP addresses:</strong> The “addresses” computers use to reach each other (both IPv4 and IPv6).</li>
+            <li><strong>DNS records:</strong> Various types of records (A, AAAA, CNAME, MX, etc.) that hold domain info.</li>
+          </ul>
+
+          <p>
+            By the end of this chapter, readers will understand why DNS is important,
+            how it arose out of the need to make the internet more user-friendly, and
+            the basic terms essential for further study.
+          </p>
+        </section>
+
+        <!-- Chapter 2 -->
+        <section id="chapter2">
+          <h2 class="section-title">Chapter 2: How DNS Works</h2>
+
+          <h3>DNS Resolvers</h3>
+          <p>
+            Differentiates between recursive and iterative resolvers. Demonstrates
+            how a typical DNS query flows from a user’s computer to the DNS
+            infrastructure, possibly going through multiple steps.
+          </p>
+
+          <h3>DNS Caching</h3>
+          <p>
+            Explores how caching improves performance by storing recent DNS lookups.
+            Covers the importance of TTL (Time to Live) and how caching can both speed
+            up and occasionally complicate DNS resolution.
+          </p>
+
+          <h3>Zone Files</h3>
+          <p>
+            Looks at how domain information is stored in zone files. Showcases common
+            DNS record types in practice (A, AAAA, CNAME, MX, etc.).
+          </p>
+
+          <p>
+            This chapter connects the definitions from Chapter 1 to the actual
+            mechanics of DNS queries. Readers will see what happens behind the scenes
+            when they type a website address into a browser or ping a domain from the
+            command line.
+          </p>
+        </section>
+
+        <!-- Chapter 3 -->
+        <section id="chapter3">
+          <h2 class="section-title">Chapter 3: Basic Networking Fundamentals</h2>
+          <p>
+            While DNS is a critical piece of the internet puzzle, it doesn’t exist in isolation.
+            This chapter covers broader networking basics:
+          </p>
+
+          <h3>IP Addresses</h3>
+          <p>
+            Covers both IPv4 and IPv6 formats. Explains why IPv6 is increasingly important
+            and how DNS integrates with it.
+          </p>
+
+          <h3>Protocols</h3>
+          <p>
+            Delves into UDP vs. TCP, explaining why DNS primarily uses UDP for queries
+            and in which cases it might use TCP.
+          </p>
+
+          <h3>Ports</h3>
+          <p>
+            Highlights the well-known port numbers used by DNS (e.g., port 53 for both
+            TCP and UDP), plus how firewalls/routers handle DNS traffic.
+          </p>
+
+          <p>
+            This foundational knowledge helps readers understand why DNS works the way
+            it does and how it fits into the broader internet architecture.
+          </p>
+        </section>
+
+        <!-- Chapter 4 -->
+        <section id="chapter4">
+          <h2 class="section-title">Chapter 4: Public vs. Private DNS</h2>
+
+          <h3>Public DNS</h3>
+          <p>
+            Illustrates how public DNS providers (like Google’s 8.8.8.8 or Cloudflare’s 1.1.1.1) operate.
+            Examines advantages such as performance, reliability, and additional security features.
+          </p>
+
+          <h3>Private/Local DNS</h3>
+          <p>
+            Shows how to set up and maintain a local DNS server (beneficial for businesses or home labs).
+            Discusses pros/cons: improved control, potentially faster lookups for internal services, etc.
+          </p>
+
+          <p>
+            By contrasting public and private DNS, readers can make informed decisions about
+            how best to configure DNS for personal or enterprise scenarios.
+          </p>
+        </section>
+
+        <!-- Chapter 5 -->
+        <section id="chapter5">
+          <h2 class="section-title">Chapter 5: Domain Registration & Hosting Integration</h2>
+
+          <h3>Domain Registration Process</h3>
+          <p>
+            Explains how domain names are purchased and managed through registrars. Offers tips
+            on choosing a domain name and outlines the steps for registration.
+          </p>
+
+          <h3>Integrating with Hosting Providers</h3>
+          <p>
+            Shows how to point a domain’s DNS records to a specific hosting provider.
+            Covers common pitfalls like propagation delays and incorrect record entries.
+          </p>
+
+          <p>
+            This chapter bridges DNS theory with real-world tasks (e.g., launching a personal site
+            or managing corporate domains).
+          </p>
+        </section>
+
+        <!-- Chapter 6 -->
+        <section id="chapter6">
+          <h2 class="section-title">Chapter 6: Windows-Specific Usage</h2>
+
+          <h3>Using nslookup on Windows</h3>
+          <p>
+            Step-by-step on the nslookup command-line tool. Demonstrates troubleshooting DNS
+            issues or verifying configurations in Windows.
+          </p>
+
+          <h3>Windows DNS Server Setup</h3>
+          <p>
+            How-to guide on installing/configuring DNS on Windows Server.
+            Discusses best practices for stability and security in a Windows-based DNS deployment.
+          </p>
+
+          <p>
+            Ideal for readers in Windows-heavy environments who need Windows-specific DNS guidance.
+          </p>
+        </section>
+
+        <!-- Chapter 7 -->
+        <section id="chapter7">
+          <h2 class="section-title">Chapter 7: Security in DNS</h2>
+
+          <h3>DNSSEC (DNS Security Extensions)</h3>
+          <p>
+            Introduces DNSSEC and how it adds authenticity to DNS lookups.
+            Provides a high-level view of the cryptographic mechanisms used to protect
+            users from forged DNS data.
+          </p>
+
+          <h3>Common Threats & Mitigations</h3>
+          <p>
+            Explains DNS cache poisoning, spoofing, and how attackers exploit DNS.
+            Covers mitigations like DNSSEC, updated software, and strong security policies.
+          </p>
+
+          <h3>Best Practices for Secure DNS</h3>
+          <p>
+            Recommends regular updates, minimal exposure of zone information, and strong
+            internal security policies to protect DNS infrastructure.
+          </p>
+        </section>
+
+        <!-- Chapter 8 -->
+        <section id="chapter8">
+          <h2 class="section-title">Chapter 8: Advanced Topics in DNS Security</h2>
+
+          <h3>DNS over HTTPS (DoH)</h3>
+          <p>
+            Shows how DNS queries can be encrypted and sent over HTTPS. Discusses privacy
+            and security improvements, plus network management implications.
+          </p>
+
+          <h3>DNS over TLS (DoT)</h3>
+          <p>
+            Similar to DoH but uses TLS for secure queries. Explains how to implement
+            DoT and the pros/cons vs. DoH.
+          </p>
+
+          <p>
+            Both DoH and DoT reflect growing privacy concerns, playing significant roles
+            in modern DNS security and privacy.
+          </p>
+        </section>
+
+        <!-- Chapter 9 -->
+        <section id="chapter9">
+          <h2 class="section-title">Chapter 9: Hands-On Troubleshooting & Tools</h2>
+
+          <h3>Using dig for Troubleshooting</h3>
+          <p>
+            Introduces the <code>dig</code> tool on Unix/Linux and Windows (via third-party).
+            Demonstrates commands to look up DNS records, test servers, and debug issues.
+          </p>
+
+          <h3>Advanced nslookup Usage</h3>
+          <p>
+            Offers deeper insights into <code>nslookup</code> commands and options for real-world scenarios.
+          </p>
+
+          <h3>Wireshark for DNS Analysis</h3>
+          <p>
+            Teaches how to capture and analyze DNS traffic. Shows how DNS requests/responses
+            appear in packet captures to diagnose network issues.
+          </p>
+
+          <p>
+            These tools provide practical methods for diagnosing and fixing DNS problems.
+          </p>
+        </section>
+
+        <!-- Chapter 10 -->
+        <section id="chapter10">
+          <h2 class="section-title">Chapter 10: Real-World Scenarios & Labs</h2>
+
+          <h3>Resolving Domain Failures</h3>
+          <p>
+            Step-by-step guide to diagnosing domain resolution failures. Helps identify
+            if issues stem from local DNS configurations, registrar settings, or hosting records.
+          </p>
+
+          <h3>Checking DNS Propagation</h3>
+          <p>
+            Explains why DNS changes can take time to propagate. Introduces tools and
+            best practices for monitoring DNS record updates worldwide.
+          </p>
+
+          <p>
+            These labs let readers apply everything learned—reinforcing key DNS concepts
+            and troubleshooting techniques.
+          </p>
+        </section>
+
+        <!-- Teaching Approach & Final Thoughts -->
+        <section id="final-thoughts">
+          <h2 class="section-title">Teaching Approach & Final Thoughts</h2>
+          <p>
+            This DNS guide progresses from fundamental definitions to practical setups
+            and advanced security measures. Each chapter builds on the last, mixing
+            conceptual explanations with hands-on examples and labs.
+          </p>
+          <p>
+            By the end, readers should have the confidence to configure DNS for new
+            domains, troubleshoot common issues, and implement both basic and advanced
+            security measures—skills invaluable in IT or web development.
+          </p>
+        </section>
+
+      </div><!-- .subchapterBody -->
     </main>
-  </div>
+  </div><!-- .container -->
 </body>
 </html>

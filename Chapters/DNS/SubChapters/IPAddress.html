@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DNS Zone Files</title>
+  <!-- Link to the same CSS file you’ve provided -->
+  <link rel="stylesheet" href="../../../style.css" />
+</head>
+<body>
+  <header>
+    <h1>Coding Over College</h1>
+    <!-- Top-level navigation -->
+    <nav class="top-nav">
+      <ul>
+        <li><a href="../../../index.html">Home</a></li>
+        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
+        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
+        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
+        <li><a href="../../DNS/DNS.html">DNS</a></li>
+        <li><a href="../../References/References.html">References</a></li>
+        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar specific to DNS Topics -->
+    <aside class="chapter-sidebar">
+      <h3>DNS Topics</h3>
+      <ul>
+        <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
+        <li><a href="../SubChapters/Caching.html">Caching</a></li>
+        <li><a href="../SubChapters/ZoneFiles.html">Zone Files</a></li>
+        <li><a href="../SubChapters/IPAddress.html">IP Addresses</a></li>
+        <li><a href="../SubChapters/Proticals.html">Proticals</a></li>
+        <li><a href="../SubChapters/Ports.html">Ports</a></li>
+        <li><a href="../SubChapters/PublicDNS.html">Public DNS</a></li>
+        <li><a href="../SubChapters/PrivateDNS.html">Private DNS</a></li>
+        <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
+        <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
+        <li><a href="../SubChapters/nslookup.html">nslookup</a></li>
+        <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
+        <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
+        <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
+        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
+        <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
+        <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
+        <li><a href="../SubChapters/ResolvingDomainFailures.html">Resolving Domain Failures</a></li>
+        <li><a href="../SubChapters/CheckingDNSPropagation.html">Checking DNS Propagation</a></li>
+      </ul>
+    </aside>
+
+    <main class="mainbody">
+      <div class="subchapterBody">
+
+        <!-- Introduction Section -->
+        <section id="introduction">
+          <h2 class="section-title">IP Addresses</h2>
+          <p>
+            An IP (Internet Protocol) address is a unique numeric identifier assigned to every device on a network. These addresses allow devices to send and receive data across local networks and the internet. Understanding IP addresses is fundamental to DNS because DNS translates domain names into these IP addresses.
+          </p>
+        </section>
+
+        <!-- IPv4 Section -->
+        <section id="ipv4">
+          <h3>IPv4</h3>
+          <p>
+            IPv4 (Internet Protocol version 4) uses 32-bit addresses, typically written in dotted-decimal notation, like <code>192.168.0.1</code>. 
+            <strong>Example range:</strong> <code>0.0.0.0</code> to <code>255.255.255.255</code>.
+          </p>
+          <ul>
+            <li>
+              <strong>Address Space:</strong> Approximately 4.3 billion addresses, which is nearly exhausted due to global internet growth.
+            </li>
+            <li>
+              <strong>Notation:</strong> Four octets (e.g., <code>A.B.C.D</code>), each ranging from 0 to 255.
+            </li>
+            <li>
+              <strong>Subnetting:</strong> Uses CIDR (Classless Inter-Domain Routing) to divide address blocks into smaller networks (e.g., <code>192.168.1.0/24</code>).
+            </li>
+            <li>
+              <strong>Private Ranges:</strong> RFC 1918 defines addresses not routable on the public internet (e.g., <code>10.0.0.0/8</code>, <code>192.168.0.0/16</code>).
+            </li>
+          </ul>
+
+          <h4>Subnetting (Overview)</h4>
+          <p>
+            Subnetting is the practice of dividing a larger IP network into smaller segments (subnets) to improve organization, security, or performance. 
+          </p>
+          <pre>
+# Example: Splitting 192.168.0.0/24 into two subnets
+# 192.168.0.0/25  -> Hosts: 192.168.0.1 - 192.168.0.126
+# 192.168.0.128/25 -> Hosts: 192.168.0.129 - 192.168.0.254
+          </pre>
+
+          <p>
+            DNS must know which IP addresses belong to which domain or subdomain. With IPv4 running low, many networks rely on NAT (Network Address Translation) and private IP ranges.
+          </p>
+        </section>
+
+        <!-- IPv6 Section -->
+        <section id="ipv6">
+          <h3>IPv6</h3>
+          <p>
+            IPv6 (Internet Protocol version 6) is the successor to IPv4, using 128-bit addresses to vastly expand the available address space. A typical IPv6 address looks like 
+            <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>.
+          </p>
+          <ul>
+            <li>
+              <strong>Address Space:</strong> Supports <em>340 undecillion</em> addresses (a virtually inexhaustible supply).
+            </li>
+            <li>
+              <strong>Shortened Notation:</strong> Leading zeros can be omitted, and consecutive groups of zeros can be replaced with "::" (e.g., <code>2001:db8:85a3::8a2e:370:7334</code>).
+            </li>
+            <li>
+              <strong>Auto-configuration:</strong> IPv6 includes features like SLAAC (Stateless Address AutoConfiguration), making it easier to assign addresses without DHCP.
+            </li>
+            <li>
+              <strong>DNS Records:</strong> IPv6 addresses are stored in DNS as AAAA records (sometimes called “quad-A” records).
+            </li>
+          </ul>
+
+          <h4>IPv6 Subnetting</h4>
+          <p>
+            Despite having a huge address pool, IPv6 also uses CIDR-like notations (e.g., <code>2001:db8:abcd:0012::/64</code>). Subnetting in IPv6 is typically standardized around /64 blocks for most LAN segments.
+          </p>
+        </section>
+
+        <!-- Differences and Transition -->
+        <section id="comparison">
+          <h3>Key Differences Between IPv4 and IPv6</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>IPv4</th>
+                <th>IPv6</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Address Size</td>
+                <td>32-bit</td>
+                <td>128-bit</td>
+              </tr>
+              <tr>
+                <td>Notation</td>
+                <td>Dotted decimal (e.g., 192.168.0.1)</td>
+                <td>Hexadecimal (e.g., 2001:db8::1)</td>
+              </tr>
+              <tr>
+                <td>Configuration</td>
+                <td>Manual (DHCP, static), NAT often used</td>
+                <td>Stateless auto-configuration, no NAT by design</td>
+              </tr>
+              <tr>
+                <td>DNS Records</td>
+                <td>A records</td>
+                <td>AAAA records</td>
+              </tr>
+              <tr>
+                <td>Exhaustion</td>
+                <td>Nearly depleted</td>
+                <td>Vast address pool</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Many networks operate on a “dual-stack” basis, supporting both IPv4 and IPv6 simultaneously. DNS must resolve domain names to whichever protocol is in use.
+          </p>
+        </section>
+
+        <!-- Real-World DNS Usage -->
+        <section id="dns-relevance">
+          <h3>Why IP Addresses Matter for DNS</h3>
+          <ul>
+            <li>
+              <strong>Domain Name to IP Mapping:</strong> DNS is fundamentally about translating friendly names (like <code>example.com</code>) to numeric addresses (<code>93.184.216.34</code> for IPv4 or <code>2606:2800:220:1:248:1893:25c8:1946</code> for IPv6).
+            </li>
+            <li>
+              <strong>Multiple IPs per Domain:</strong> Larger sites often use multiple IP addresses (for load balancing, redundancy).
+            </li>
+            <li>
+              <strong>Reverse DNS (PTR Records):</strong> IP addresses can map back to domain names via PTR records, useful for logging and security checks.
+            </li>
+            <li>
+              <strong>DNS & NAT:</strong> In IPv4, NAT can complicate DNS queries if internal addresses differ from external addresses.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Security and Best Practices -->
+        <section id="security-bestpractices">
+          <h3>Security & Best Practices</h3>
+          <ul>
+            <li>
+              <strong>IPv4 NAT vs. IPv6 Security:</strong> IPv4 NAT is not a security feature per se, but it hides internal structures. IPv6 expects firewall-based filtering to protect devices.
+            </li>
+            <li>
+              <strong>IP Spoofing:</strong> Attackers may forge source IP addresses. Proper filtering (e.g., BCP38) helps mitigate this.
+            </li>
+            <li>
+              <strong>DNS Whitelisting/Blacklisting:</strong> Some security tools rely on specific IP-based rules. Ensure you manage changes to IP addresses carefully (especially with IPv6).
+            </li>
+          </ul>
+        </section>
+
+        <!-- Summary / TL;DR -->
+        <section id="summary">
+          <h3 class="section-title">TL;DR</h3>
+          <p>
+            IP addresses are the fundamental building blocks of network communication. 
+            <strong>IPv4</strong> is older, widely deployed, but nearly exhausted. 
+            <strong>IPv6</strong> provides a massive pool of addresses and modern features. 
+            DNS supports both through <em>A</em> and <em>AAAA</em> records. 
+            Understanding IP address structure, subnetting, and differences between IPv4 and IPv6 is crucial for any network or DNS configuration.
+          </p>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
