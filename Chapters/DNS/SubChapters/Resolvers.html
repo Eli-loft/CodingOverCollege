@@ -1,81 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNS</title>
-  <!-- Make sure the path below is correct relative to your HTML file -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resolvers - DNS Subchapter</title>
+  <!-- Google Fonts: Montserrat (headings), Inter (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Link to main stylesheet (adjust relative path as needed) -->
+  <link rel="stylesheet" href="../../../style.css">
+  <!-- Custom styles for Resolvers subchapter -->
+  <style>
+    /* Terminal style for Real-World Example: Root DNS Servers */
+    .terminal {
+      background-color: #121212;
+      color: #33ff33;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: inset 0 0 10px rgba(51, 255, 51, 0.3);
+      white-space: pre-wrap;
+      margin: 1rem 0;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
         <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../../DNS/DNS.html">DNS</a></li>
-        <li><a href="../../References/References.html">References</a></li>
-        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
-        
       </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Login</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
-      <ul>
-        <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
-        <li><a href="../SubChapters/Caching.html">Caching</a></li>
-        <li><a href="../SubChapters/ZoneFiles.html">Zone Files</a></li>
-        <li><a href="../SubChapters/IPAddress.html">IP Addresses</a></li>
-        <li><a href="../SubChapters/Proticals.html">Proticals</a></li>
-        <li><a href="../SubChapters/Ports.html">Ports</a></li>
-        <li><a href="../SubChapters/PublicDNS.html">Public DNS</a></li>
-        <li><a href="../SubChapters/PrivateDNS.html">Private DNS</a></li>
-        <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
-        <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
-        <li><a href="../SubChapters/nslookup.html">nslookup</a></li>
-        <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
-        <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
-        <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
-        <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
-        <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
-        <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
-        <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
-        <li><a href="../SubChapters/ResolvingDomainFailures.html">Resolving Domain Failures</a></li>
-        <li><a href="../SubChapters/CheckingDNSPropagation.html">Checking DNS Propagation</a></li>
-      </ul>
-    </aside>
+  <!-- HERO SECTION -->
+  <section class="chapter-hero">
+    <div class="chapter-hero-content">
+      <h1 class="fade-in">Resolvers: The Heart of DNS Lookup</h1>
+      <p class="chapter-subtext fade-in">
+        Dive deep into how DNS resolvers work—unraveling the mystery behind domain name translation and exploring recursive versus iterative queries.
+      </p>
+    </div>
+  </section>
 
-    <main class="mainbody">
-      
-      <div class="subchapterBody">
-      <section id="introduction">
-        <h2 class="section-title">DNS Resolvers</h2>
+  <!-- MAIN CONTENT -->
+  <main class="chapter-content">
+    <div class="subchapterBody">
+      <!-- DNS Resolvers Overview -->
+      <h2 class="section-title">DNS Resolvers</h2>
+      <section id="dns-resolvers-intro" class="fade-in">
         <p>
-          DNS resolvers are servers on the internet that translate domain names into IP addresses. Their purpose is to let people use the internet using readable names instead of long strings of numbers. There are two main types:
-          <strong>Recursive Resolvers</strong> and <strong>Iterative Resolvers</strong>.
+          DNS resolvers are servers on the internet that translate domain names into IP addresses. Their purpose is to let people use the internet using readable names instead of long strings of numbers. There are two main types: <strong>Recursive Resolvers</strong> and <strong>Iterative Resolvers</strong>.
         </p>
       </section>
-
-      <section id="recursive-resolvers">
-        
-        <h2 class="section-title">Recursive Resolvers</h2>
-
+      
+      <!-- Recursive Resolvers -->
+      <h2 class="section-title">Recursive Resolvers</h2>
+      <section id="recursive-resolver-intro" class="fade-in">
         <h3>What is a Recursive Resolver?</h3>
         <p>
           A recursive resolver (also called a DNS resolver) is a server that receives DNS queries from clients (such as web browsers) and recursively queries other DNS servers until it finds the correct answer.
         </p>
-      
-      
+      </section>
+
+      <section id="recursive-characteristics" class="fade-in">
         <h3>Key Characteristics</h3>
         <ul>
           <li>Performs all the work to resolve a domain name.</li>
@@ -83,7 +111,9 @@
           <li>Communicates with multiple types of DNS servers (root, TLD, authoritative).</li>
           <li>Can be provided by ISPs, cloud services (Google, Cloudflare), or private networks.</li>
         </ul>
+      </section>
 
+      <section id="recursive-workflow" class="fade-in">
         <h3>How Does It Work?</h3>
         <ol>
           <li>
@@ -124,7 +154,9 @@
             </ul>
           </li>
         </ol>
+      </section>
 
+      <section id="recursive-example" class="fade-in">
         <h3>Example Process</h3>
         <p>For example, when a user enters <code>example.com</code> in a browser:</p>
         <ul>
@@ -132,10 +164,12 @@
           <li>If no cached record exists, it queries a root server, then a .com TLD server, and finally the authoritative server which returns an IP (e.g., <code>93.184.216.34</code>).</li>
           <li>The IP is sent back to the browser, allowing the website to load.</li>
         </ul>
+      </section>
 
+      <section id="recursive-location" class="fade-in">
         <h3>Where Do Recursive Resolvers Exist?</h3>
         <ul>
-          <li>Internet Service Providers (ISPs) such as Comcast, AT&T, or Vodafone.</li>
+          <li>Internet Service Providers (ISPs) such as Comcast, AT&amp;T, or Vodafone.</li>
           <li>Public DNS Providers:
             <ul>
               <li>Google Public DNS (8.8.8.8, 8.8.4.4)</li>
@@ -146,23 +180,27 @@
           <li>Private Networks (organizations running their own DNS infrastructure).</li>
           <li>Self-hosted resolvers using software like Unbound, BIND, or Pi-hole.</li>
         </ul>
+      </section>
 
+      <section id="recursive-security" class="fade-in">
         <h3>Security Risks &amp; Protections</h3>
         <ul>
           <li>
-            <strong>DNS Cache Poisoning:</strong> Attackers may inject false DNS records into a resolver’s cache. 
-            <br /><em>Protection:</em> Use DNSSEC (DNS Security Extensions) to validate responses.
+            <strong>DNS Cache Poisoning:</strong> Attackers may inject false DNS records into a resolver’s cache.
+            <br><em>Protection:</em> Use DNSSEC (DNS Security Extensions) to validate responses.
           </li>
           <li>
             <strong>DDoS Attacks (Amplification &amp; Reflection):</strong> Spoofed DNS queries can cause a resolver to flood a target with traffic.
-            <br /><em>Protection:</em> Implement rate limiting and proper query filtering.
+            <br><em>Protection:</em> Implement rate limiting and proper query filtering.
           </li>
           <li>
             <strong>Data Privacy Concerns:</strong> Logging by ISPs can compromise privacy.
-            <br /><em>Protection:</em> Use privacy-focused resolvers (e.g., Cloudflare 1.1.1.1, Quad9) or encrypted DNS protocols such as DNS over HTTPS (DoH) or DNS over TLS (DoT).
+            <br><em>Protection:</em> Use privacy-focused resolvers (e.g., Cloudflare 1.1.1.1, Quad9) or encrypted DNS protocols such as DNS over HTTPS (DoH) or DNS over TLS (DoT).
           </li>
         </ul>
+      </section>
 
+      <section id="recursive-performance" class="fade-in">
         <h3>Performance Optimizations</h3>
         <ul>
           <li>Caching recent lookups to avoid redundant queries.</li>
@@ -171,7 +209,9 @@
           <li>Anycast Routing to direct queries to the nearest server, reducing latency.</li>
           <li>Negative Caching to store information about failed lookups.</li>
         </ul>
+      </section>
 
+      <section id="recursive-realworld" class="fade-in">
         <h3>Real-World Example: Google Public DNS (8.8.8.8)</h3>
         <ul>
           <li>Fast performance with a global network of servers.</li>
@@ -179,12 +219,28 @@
           <li>Privacy improvements with minimal logging and support for encrypted DNS (DoH, DoT).</li>
         </ul>
       </section>
+      
+      <!-- Iterative Resolvers -->
+      <h2 class="section-title">Iterative Resolvers</h2>
+      <section id="iterative-intro" class="fade-in">
+        <h3>What is an Iterative Resolver?</h3>
+        <p>
+          An iterative resolver provides referrals rather than recursively querying other DNS servers. Instead of performing the entire lookup itself, it returns partial answers and directs the client to continue the resolution process.
+        </p>
+      </section>
 
-      <!-- Iterative Resolvers Section -->
-      <section id="iterative-resolvers">
-        <h2 class="section-title">Iterative Resolvers</h2>
-
-        <h3>How Does an Iterative Resolver Work?</h3>
+      <section id="iterative-characteristics" class="fade-in">
+        <h3>Key Characteristics</h3>
+        <ul>
+          <li>Returns referrals instead of fully resolving domain names.</li>
+          <li>Does not cache responses (this is typically done by recursive resolvers).</li>
+          <li>Communicates only with the necessary DNS servers (root, TLD, and authoritative servers).</li>
+          <li>Commonly used in authoritative DNS server configurations.</li>
+        </ul>
+      </section>
+      
+      <section id="iterative-workflow" class="fade-in">
+        <h3>How Does It Work?</h3>
         <ol>
           <li>
             <strong>Client Query:</strong>
@@ -217,31 +273,27 @@
             </ul>
           </li>
         </ol>
-
-        <h3>Example of Iterative Query Resolution</h3>
-        <ul>
-          <li>User enters <code>example.com</code> in a browser.</li>
-          <li>The client’s local resolver contacts a root server, receiving a referral to a TLD server.</li>
-          <li>The client then queries the TLD server, and finally the authoritative server, which returns <code>93.184.216.34</code>.</li>
-          <li>The browser connects to the website using the provided IP address.</li>
-        </ul>
-
+      </section>
+      
+      <section id="iterative-security" class="fade-in">
         <h3>Security Risks &amp; Protections</h3>
         <ul>
           <li>
             <strong>DNS Spoofing &amp; Cache Poisoning:</strong> Attackers may inject false records.
-            <br /><em>Protection:</em> Use DNSSEC to validate responses.
+            <br><em>Protection:</em> Use DNSSEC to validate responses.
           </li>
           <li>
             <strong>DDoS Attacks on Root &amp; TLD Servers:</strong> High query volumes can overwhelm servers.
-            <br /><em>Protection:</em> Rate limiting and Anycast routing help mitigate these attacks.
+            <br><em>Protection:</em> Rate limiting and Anycast routing help mitigate these attacks.
           </li>
           <li>
             <strong>Interception &amp; Surveillance:</strong> Unencrypted DNS queries can be intercepted.
-            <br /><em>Protection:</em> Encrypted DNS protocols like DoH and DoT offer improved security.
+            <br><em>Protection:</em> Encrypted DNS protocols like DoH and DoT offer improved security.
           </li>
         </ul>
+      </section>
 
+      <section id="iterative-performance" class="fade-in">
         <h3>Performance Optimizations</h3>
         <ul>
           <li>Anycast Routing to reduce latency by directing queries to the nearest available server.</li>
@@ -249,23 +301,22 @@
           <li>Distributed Root Servers that lower response times globally.</li>
           <li>Efficient query processing at TLD and root servers.</li>
         </ul>
+      </section>
 
+      <section id="iterative-realworld" class="fade-in">
         <h3>Real-World Example: Root DNS Servers</h3>
         <p>
           When a recursive resolver queries a root DNS server for <code>example.com</code>, the root server responds with a referral rather than a final IP address. For example:
         </p>
-        <pre>
-dig example.com @198.41.0.4
+        <pre class="terminal">dig example.com @198.41.0.4
 
 Response:
-example.com. 172800 IN NS a.iana-servers.net.
-        </pre>
+example.com. 172800 IN NS a.iana-servers.net.</pre>
       </section>
 
-      <!-- Comparison Table -->
-      <section id="comparison">
-        <h3 class="section-title">Comparison: Recursive vs. Iterative Resolvers</h2>
-        <table>
+      <section id="summary" class="fade-in">
+        <h3 class="section-title">Comparison: Recursive vs. Iterative Resolvers</h3>
+        <table class="comparison-table">
           <thead>
             <tr>
               <th>Feature</th>
@@ -275,34 +326,52 @@ example.com. 172800 IN NS a.iana-servers.net.
           </thead>
           <tbody>
             <tr>
-              <td>Handles Full Query Process?</td>
-              <td>Yes, it contacts multiple servers</td>
-              <td>No, it directs the client to contact servers</td>
-            </tr>
-            <tr>
-              <td>Used by Clients?</td>
-              <td>Yes (Browsers, OS)</td>
-              <td>No</td>
-            </tr>
-            <tr>
-              <td>Caches DNS Responses?</td>
+              <td>Handles Full Query?</td>
               <td>Yes</td>
               <td>No</td>
+            </tr>
+            <tr>
+              <td>Performance</td>
+              <td>Slower</td>
+              <td>Faster</td>
+            </tr>
+            <tr>
+              <td>Network Load</td>
+              <td>Higher</td>
+              <td>Lower</td>
             </tr>
           </tbody>
         </table>
       </section>
-
-      <!-- TL;DR Summary -->
-      <section id="summary">
-        <h3 class="section-title">TL;DR</h2>
-        <p>
-          The main difference between recursive and iterative resolvers is that recursive resolvers handle the entire DNS query process on behalf of the client, while iterative resolvers provide referrals at each step, leaving the client to make the subsequent queries.
-        </p>
       
+      <!-- TL;DR Summary -->
+      <section id="summary" class="fade-in">
+        <h3 class="section-title">TL;DR</h3>
+        <p>
+          The main difference between recursive and iterative resolvers is that recursive resolvers handle the entire DNS query process on behalf of the client, while iterative resolvers provide referrals at each step.
+        </p>
       </section>
     </div>
-    </main>
-  </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script defer src="../../../script.js"></script>
 </body>
 </html>

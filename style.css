@@ -1,367 +1,911 @@
-css
-/* ============ RESET & BASIC STYLES ============== */
+/* ===================
+   GLOBAL STYLES
+=================== */
+:root {
+  --color-bg: #1e1e1e;           /* Dark base background */
+  --color-card-bg: #2d2d2d;      /* Slightly lighter for cards */
+  --color-accent: #3ce3ce;       /* Aqua accent */
+  --color-secondary: #b082f7;    /* Secondary accent (purple) */
+  --color-text: #f7f7f7;         /* Light text */
+  --color-subtext: #cccccc;      /* Subtle text color */
+  --color-heading: #ffffff;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #2a2a2a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--color-text);
+  text-transform: uppercase;
+  transition: color 0.3s;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  display: block;
+  height: 100%;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s;
+  line-height: normal;
+  padding: 0; 
+  font-size: 16px;
+}
+
+
+/* On hover, match the same hover effect as the nav links */
+.dropbtn:focus,
+.dropbtn:active {
+  outline: none; 
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #393939;
+  padding: 0.5rem 0;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+
+.dropdown-content a {
+  display: block;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  color: var(--color-text);
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--color-accent);
+  color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* User Profile / Auth link */
+.user-profile {
+  margin-left: 1rem;
+}
+
+.btn-login {
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-login:hover {
+  background-color: var(--color-accent);
+  color: #000;
+}
+
+/* Mobile Navigation (hidden on desktop by default) */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.mobile-menu-btn .bar {
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+}
+
+.mobile-nav-links {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: #2a2a2a;
+  padding: 1rem 2rem;
+}
+
+.mobile-nav-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-nav-links a {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Mobile dropdown (just toggling for demonstration) */
+.mobile-dropbtn {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mobile-dropdown-content {
+  display: none;
+  background-color: #393939;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+/* =======================
+   HERO SECTION
+======================= */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+}
+
+.subtext {
+  font-size: 1rem;
+  color: var(--color-subtext);
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  background-color: var(--color-accent);
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: var(--color-secondary);
+}
+
+.hero-graphic {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 0.15; /* Subtle overlay effect */
+}
+
+.animated-bg {
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(var(--color-accent), var(--color-bg));
+  animation: rotateGradient 10s linear infinite;
+}
+
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* =======================
+   CHAPTERS SECTION
+======================= */
+.chapters-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  
+  text-align: center;
+  color: var(--color-heading);
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 5px 10px;
+  border-bottom: 3px wavy var(--color-accent); /* Wavy underline effect */
+  background-color: var(--color-bg);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--color-secondary);
+
+  
   
 }
 
-html, body {
-  display: flex; /* ✅ Ensures container fills the entire page */
-  flex-direction: column;
-  min-height: 100vh;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #4C4B63;
-  width: 100%;
+.chapter-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+
 }
 
-
-/* ============ HEADER & TOP NAV ============== */
-header {
-  width: 100%;
-  background-color: #280137;
-  color: #f2f2f2;
-  padding: 1rem;
-  margin: 0;
+.chapter-card {
+  background-color: var(--color-card-bg);
+  padding: 2rem;
+  border-radius: 8px;
   text-align: center;
-  border:2px solid #f2f2f2;
+  transition: transform 0.3s;
 }
 
-header h1 {
-  margin: 0;
-  text-align: center;
+.chapter-card:hover {
+  transform: translateY(-4px);
 }
 
-/* Top navigation bar */
-.top-nav ul {
-  justify-content: center;
-  list-style: none;
-  display: flex;
-  /* Enable wrapping in case the screen is too narrow */
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
-  padding-left: 0;  /* remove default padding if needed */
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.top-nav li {
-  text-align: center;
-  /* For small screens, it's sometimes helpful to remove default margins
-     and let the gap or media query handle spacing */
+.chapter-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
 }
 
-.top-nav a {
-  color: #f2f2f2;
-  text-decoration: none;
-  font-weight: bold;
+.chapter-card p {
+  color: var(--color-subtext);
+  margin-bottom: 1.5rem;
 }
 
-.top-nav a:hover {
-  text-decoration: underline;
-}
-
-
-/* ============ MAIN LAYOUT WITH SIDEBAR ============== */
-.container {
-  display: flex;        /* Places children side by side */
-  flex-grow: 1;
-  margin: 1rem;      
-  background-color: #4C4B63;   /* Optional spacing around the container */
-  min-height: 100vh;  /* ✅ Ensures full height */
-  width: 100%;
-}
-
-main {
-  display: flex;
-  flex-grow: 1;  /* ✅ Ensures main takes up remaining space */
-  margin: 1rem;
-}
-
-
-/* Sidebar styling */
-.chapter-sidebar {
-  width: 150px;
-  min-width: 150px; /* ✅ Prevent shrinking */
-  min-height: 200px; /* ✅ Prevents collapsing */
-  margin-right: 2rem;
-  padding: 1rem;
-  background-color: #280137;
+.chapter-btn {
+  display: inline-block;
+  white-space: normal;
+  word-wrap: break-word;
+  background-color: var(--color-accent);
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
   border-radius: 4px;
-  flex-shrink: 0;
-  border:2px solid #f2f2f2
+  cursor: pointer;
 }
 
-.chapter-sidebar h3 {
-  margin-bottom: 0.5rem;
-  color: #f2f2f2;
+.chapter-btn:hover {
+  background-color: var(--color-secondary);
 }
 
-.chapter-sidebar ul {
-  list-style: none;
-  padding-left: 0;
+/* ================================
+   COMPARISON SECTION & TABLE STYLES
+================================ */
+#comparison {
+  text-align: center;
+  background-color: var(--color-card-bg);
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem; /* Extra spacing below section */
 }
 
-.chapter-sidebar li {
+/* Main Title in #comparison */
+#comparison .section-title {
+  /* You can adjust size & spacing as needed */
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-heading);
+  margin-bottom: 20px;
+  text-align: center;
+  border: 2px solid var(--color-heading);
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--color-secondary);
+  background-color: var(--color-secondary);
+}
+
+/* Subtitle Headings (e.g., for each table) */
+.comparison-heading {
+  text-decoration: underline;
+  text-align: center;
+  color: var(--color-heading);
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 5px 10px;
+  border: 2px solid var(--color-heading);
+  background-color: var(--color-bg);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--color-secondary);
+}
+
+/* Table Base Styles */
+.comparison-table {
+  width: 95%;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* Table Head */
+.comparison-table thead {
+  background-color: #393939; /* Slightly darker background for the header */
+}
+
+.comparison-table th {
+  color: var(--color-heading);
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border: 1px solid #444;
+  text-align: left;
+}
+
+/* Table Body */
+.comparison-table td {
+  color: var(--color-text);
+  padding: 0.75rem 1rem;
+  border: 1px solid #444;
+  text-align: left;
+}
+
+/* Alternate Row Coloring */
+.comparison-table tbody tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+/* Hover Effect */
+.comparison-table tbody tr:hover {
+  background-color: #2d2d2d;
+}
+
+/* =======================
+   SAMPLE LESSON SECTION
+======================= */
+.lesson-section {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lesson-content {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.toggle-code-btn {
+  background-color: var(--color-secondary);
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.toggle-code-btn:hover {
+  background-color: var(--color-accent);
+}
+
+.code-snippet {
+  background-color: #1b1b1b;
+  color: #f7f7f7;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+/* =======================
+   FOOTER
+======================= */
+.footer {
+  background-color: #2a2a2a;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content p,
+.footer-content a {
+  color: var(--color-subtext);
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
   margin: 0.5rem 0;
 }
 
-.chapter-sidebar a {
-  color: #f2f2f2;
-  text-decoration: none;
-  font-size: 12px;
+.footer-links a {
+  color: var(--color-text);
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
-.chapter-sidebar a.active {
-  font-weight: bold;
+.footer-links a:hover {
+  color: var(--color-accent);
+}
+
+.footer-content a {
+  color: var(--color-accent);
   text-decoration: underline;
+  margin: 0 0.25rem;
+}
+/* ====================================
+   CHAPTER-SPECIFIC & SIDEBAR STYLES
+==================================== */
+
+/* Chapter Hero Section */
+.chapter-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(60, 227, 206, 0.15),
+    rgba(176, 130, 247, 0.15)
+  );
 }
 
-.chapter-sidebar a:hover {
-  text-decoration: underline;
+.chapter-hero-content {
+  max-width: 800px;
 }
 
-/* ================== MAIN CONTENT AREA ================== */
-main section {
-  background-color: #4C4B63;
-  flex: 1; /* Takes up remaining width */
+.chapter-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-heading);
 }
 
-main section h2 {
- 
-  font-size: 1.5rem;
-  color: #f2f2f2;
+.chapter-subtext {
+  color: var(--color-subtext);
+  font-size: 1rem;
 }
 
-main section p {
+/* Main Container for Chapter Page */
+.chapter-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+/* Subchapter Sidebar */
+.subchapter-sidebar {
+  flex: 0 0 250px;
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.subchapter-sidebar h2 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
-.section-title {
-  color: #f2f2f2;; /* Change text color */
-  font-size: 24px; /* Adjust size */
-  font-weight: bold; /* Make it bold */
-  text-align: center; /* Center align */
-  margin-top: 0;
-  border-top: 2px solid;
-  padding-top: 5px;
-  border: 2px solid #f2f2f2; /* Lighter blue */
-  padding-bottom: 5px; /* Space below the text */
-  border-radius: 5px;
-  box-shadow: 0 0 10px #453765; 
-  background-color: #453765;
-  margin-bottom: 0px;
+
+.subchapter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.subchapter-list li {
+  margin-bottom: 0.5rem;
+}
+
+.subchapter-list a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.subchapter-list a:hover {
+  color: var(--color-accent);
+}
+
+/* Chapter Content Area */
+.chapter-content {
+  flex: 1;
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.chapter-content h2 {
+    text-align: center;
+    color: var(--color-heading);
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    padding: 5px 10px;
+    border-bottom: 3px wavy var(--color-accent); /* Wavy underline effect */
+    background-color: var(--color-bg);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--color-secondary);
 
   
 }
-.mainbody {
-  text-align: center; /* Centers the text of all child elements, including <p> */
-  background-color: #4C4B63;
-  width:100%;
-  padding:1rem;
+
+.chapter-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
 }
 
-.mainbody p {
-  margin-bottom: 20px; /* Adds space between paragraphs */
-  font-size: 16px;
-  line-height: 1.5;
+.chapter-content ul {
+  list-style: disc;
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+.chapter-content li {
+  margin-bottom: 0.5rem;
+}
+
+.chapter-example {
+  margin-top: 2rem;
+}
+
+.chapter-example h4 {
+  margin-bottom: 0.5rem;
+  color: var(--color-secondary);
+}
+
+.chapter-example .code-snippet {
+  background-color: #1b1b1b;
+  color: #f7f7f7;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
 }
 
 
-
-
-
-/* ============ RESPONSIVE MEDIA QUERIES ============== */
-@media (max-width: 768px) {
-  
-  /* Stack the sidebar on top of the main content on smaller screens */
-  main {
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .chapter-container {
     flex-direction: column;
-    background-color: #4C4B63;
   }
-  html, body {
-    background-color: #4C4B63 !important;
+  .subchapter-sidebar {
+    flex: none;
+    margin-bottom: 2rem;
+    width: 100%;
   }
-  .chapter-sidebar {
-      width: 90%;  /* ✅ Makes sure the sidebar doesn't take full screen width */
-      max-width: 100px; /* ✅ Prevents it from becoming too large */
-      margin: 0 auto 1rem; /* ✅ Centers it and adds spacing below */
-      min-width: 150px;
-      min-height: 200px;
-      flex-shrink: 0;
-   }
-
-   .container {
-    background-color: #4C4B63;
+  .chapter-content {
+    width: 100%;
   }
-  
-  /* Change the nav layout for better fit on small screens */
-  .top-nav ul {
-    display: flex;
-    justify-content: center; /* ✅ Ensures centering */
-    flex-wrap: wrap;
-    gap: 1rem;
-    list-style: none;
-    margin-top: 0.5rem;
-    padding: 0;
-  }
-  
 }
 
-/*======================= SubChapter =====================*/
-.subchapterBody h3 {
-  text-decoration: underline;
+.toggle-arrow {
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+
+/****************************************
+  REFERENCE PAGE SPECIFIC STYLES
+*****************************************/
+
+/* Container for reference cards */
+.reference-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Individual reference card */
+.reference-card {
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  padding: 1rem;
   text-align: center;
-  color: #f2f2f2; /* Text color */
-  font-weight: bold; /* Make text bold */
-  margin-top:0%;
-
-  margin-bottom: 5px; /* Reduced space below */
-  padding: 5px 10px; /* Add a bit of space inside the box */
-  border: 2px solid #f2f2f2; /* Border color */
-  background-color: #5B3F8B;
-
-  margin-left: auto;
-  margin-right: auto; /* Center the box */
-  border-radius: 5px;
-  box-shadow: 0 0 10px #5B3F8B; 
-  
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-
-.subchapterBody strong{
-
-margin-bottom: 10px;
-text-decoration: underline;
-color: #f2f2f2;
-margin-left: 10px;
-
+.reference-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.3);
 }
 
-
-.subchapterBody li,ul,p{
-  text-align: left;
-  color: #f2f2f2;
-  margin-left: 20px; /* Indent bullet points */
-  margin-bottom: 10px;
-}
-.subchapterBody section{
-  width:95%;
-  border: 2px solid #C3C3C3;
-  margin-top: 20px;
-  border-radius: 5px;
-  background-color: #7661A8;
-  margin-bottom: 40px;
-}
-/* Terminal-style CSS for <pre> */
-.subchapterBody pre {
-  text-align: left;
-  background-color: #2F2E3E; /* Dark background color */
-  color: #f2f2f2; /* Green text color */
-  font-family: 'Courier New', monospace; /* Monospace font for terminal look */
-  padding: 15px;
-  border-radius: 5px;
-  border: 2px solid #f2f2f2;
-  margin-bottom: 0%;
-  
-  box-shadow: 0 0 10px #5B3F8B; 
-  font-size: 16px; /* Font size */
-  white-space: pre-wrap; /* Allow text to wrap */
-  overflow-x: auto; /* Allow horizontal scrolling */
-  max-width: 100%; /* Ensure it doesn't overflow out of the container */
-  line-height: 1.5; /* Increase line height for better readability */
+.reference-card h3 {
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
 }
 
-
-
-/* Section Title Styling */
-#comparison .section-title {
-  font-size: 24px; /* Size of the section title */
-  color: #f2f2f2; /* Color for the title */
-  margin-bottom: 20px; /* Space below the title */
-  text-align: center; /* Center the title */
+.reference-card p {
+  color: var(--color-text);
+  margin-bottom: 1rem;
 }
 
-/* Table Styling inside #comparison section */
-#comparison table {
+/* Buttons in the card */
+.reference-card .embed-btn,
+.reference-card .visit-btn {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background 0.3s;
+  text-decoration: none; /* for anchor-based button */
+}
+
+.reference-card .embed-btn:hover,
+.reference-card .visit-btn:hover {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+/* For the References page, maintain a fixed or minimum size when open */
+.references-subchapters.open {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  min-height: 300px;  /* Adjust as needed */
+}
+.references-subchapters.closed {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-collapse: collapse;
-  border: 2px solid #f2f2f2; /* Blue border around the table */
-  margin-top: 20px; /* Space above the table */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the table */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: color 0.3s;
+}
+.close-btn:hover {
+  color: var(--color-accent);
+}
+#iframeContainer, #embedFrame {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+.fallback-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
+  margin-top: 0; 
+  padding-top: 0;
+}
+.fallback-message img {
+  width: 100%;
+  object-fit: contain;
+  object-position: top; /* Ensure the image starts at the top */
 }
 
-/* Styling for table headers (th) */
-#comparison th {
-  background-color: #5B3F8B; /* Dark background for the header */
-  color: #f2f2f2; /* White text color */
-  font-weight: bold; /* Make header text bold */
-  padding: 12px 15px; /* Padding for spacing */
-  text-align: center; /* Center the header text */
+.fallback-message.hidden {
+  display: none;
 }
-#comparison h3{
-  color:#f2f2f2
-}
-
-
-/* Styling for table rows (td) */
-#comparison td {
-  padding: 12px 15px; /* Padding for each cell */
-  border: 1px solid #ddd; /* Light border for each cell */
-  text-align: left; /* Align text to the left */
-  color: #5B3F8B;
+/* Only affect cards in the References page */
+.references-subchapters .chapter-card {
+  position: relative;
+  color: var(--color-text);
+  background-color: var(--color-card-bg); /* Fallback background */
+  padding: 1rem;
+  z-index: 1;
+  overflow: hidden;
+  padding-right: 2rem;
+  padding-right: 2rem;
 }
 
-/* Alternating row colors for readability */
-#comparison tbody tr {
-  background-color: #f2f2f2; /* Light gray background for even rows */
+/* Dark overlay for better text contrast */
+.references-subchapters .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 0;
 }
 
-
-
-/* Hover effect on table rows */
-#comparison tbody tr:hover {
-  background-color: #e0e0e0; /* Light gray on hover */
+/* Ensure inner content appears above the overlay */
+.references-subchapters .chapter-card > *:not(.card-overlay) {
+  position: relative;
+  z-index: 1;
+}
+/* =======================
+   FADE-IN ANIMATION
+======================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Centering text in the second and third columns */
-#comparison th:nth-child(2), #comparison td:nth-child(2),
-#comparison th:nth-child(3), #comparison td:nth-child(3) {
-  text-align: center; /* Center-align text in the second and third columns */
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.preview-card {
-  border: solid 2px #f2f2f2 ;
-  margin: 10px;
-  background-color: #5B3F8B;
+/* (Optional) Extra spacing for resolvers sections */
+.subchapterBody section {
+  margin-bottom: 2rem;
 }
-/* For the preview card image */
-.preview-card img {
-  display: block; /* Ensures that the image behaves like a block element */
-  width: 100%;    /* Makes image responsive */
-  max-width: 300px; /* Optional: restricts max size */
-  height: auto;   /* Maintains aspect ratio */
-  object-fit: cover; /* Optional: ensures the image fills the space */
-  margin: 0 auto; /* Centers the image horizontally */
+/* Terminal style for Real-World Example: Root DNS Servers */
+.terminal {
+  background-color: #121212;
+  color: #33ff33;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: inset 0 0 10px rgba(51, 255, 51, 0.3);
+  white-space: pre-wrap;
+  margin: 1rem 0;
 }
-
-/* For the h3 element inside preview card */
-.preview-card h3, h4{
-  text-align: center; /* Center-aligns the heading */
-  color: #f2f2f2;     /* Text color */
-  margin-top: 0;      /* Removes any top margin */
-  margin-bottom: 1rem; /* Adds space below the heading */
-  font-size: 1.25rem;  /* Adjust font size if needed */
-}
-
-
-.preview-card-link {
-  text-decoration: none; /* Removes the underline */
-  color: inherit;        /* Inherit text color from the card */
+/* Improved Section Separation for Resolvers Subchapter */
+.subchapterBody section {
+  background: rgba(255, 255, 255, 0.05); /* Slight contrast from the main background */
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.container a {
-  color: #e0e0e0;
+/* Styling for section subheadings to further separate content */
+.subchapterBody section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 0.5rem;
+}
+
+/* Increase spacing for main section titles */
+.subchapterBody h2.section-title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }

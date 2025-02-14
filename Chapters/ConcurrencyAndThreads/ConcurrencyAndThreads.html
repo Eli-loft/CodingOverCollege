@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Concurrency & Threads - Coding Over College</title>
+  <!-- Google Fonts: Montserrat (headings), Inter (body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../style.css" />
+  <!-- JavaScript -->
+  <script defer src="../../script.js"></script>
+</head>
+<body>
+  <!-- =======================
+       STICKY NAVIGATION BAR
+  ======================= -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="ConcurrencyAndThreads.html" class="active">Concurrency &amp; Threads</a>
+            <a href="../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="ConcurrencyAndThreads.html" class="active">Concurrency &amp; Threads</a>
+            <a href="../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Login</a>
+    </div>
+  </header>
+
+  <!-- =======================
+       CHAPTER HERO
+  ======================= -->
+  <section class="chapter-hero">
+    <div class="chapter-hero-content">
+      <h1>Concurrency &amp; Threads</h1>
+      <p class="chapter-subtext">
+        Dive deep into concurrent programming—explore multithreading, multiprocessing, asynchronous operations, and synchronization techniques to build efficient and scalable systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- =======================
+       SUBCHAPTERS SECTION
+  ======================= -->
+  <section class="subchapters-section">
+    <h2 class="section-title toggle-heading" id="subchaptersToggle">
+      Subchapters <span class="toggle-arrow">▼</span>
+    </h2>
+    
+    <div class="chapter-cards" id="subchaptersContent">
+      <!-- Card 1: Multithreading -->
+      <article class="chapter-card">
+        <div class="card-icon">🧵</div>
+        <h3>Multithreading</h3>
+        <p>Learn how multiple threads can run concurrently within a process.</p>
+        <a class="chapter-btn" href="subChapters/Multithreading.html">Learn More</a>
+      </article>
+      <!-- Card 2: Multiprocessing -->
+      <article class="chapter-card">
+        <div class="card-icon">⚙️</div>
+        <h3>Multiprocessing</h3>
+        <p>Understand how separate processes execute in parallel to enhance performance.</p>
+        <a class="chapter-btn" href="subChapters/Multiprocessing.html">Learn More</a>
+      </article>
+      <!-- Card 3: Asynchronous Programming -->
+      <article class="chapter-card">
+        <div class="card-icon">⏱️</div>
+        <h3>Asynchronous Programming</h3>
+        <p>Discover non-blocking techniques using async/await for improved responsiveness.</p>
+        <a class="chapter-btn" href="subChapters/AsynchronousProgramming.html">Learn More</a>
+      </article>
+      <!-- Card 4: Synchronization & Locks -->
+      <article class="chapter-card">
+        <div class="card-icon">🔒</div>
+        <h3>Synchronization &amp; Locks</h3>
+        <p>Explore methods to prevent race conditions with mutexes, semaphores, and locks.</p>
+        <a class="chapter-btn" href="subChapters/SynchronizationLocks.html">Learn More</a>
+      </article>
+      <!-- Card 5: Concurrency Patterns -->
+      <article class="chapter-card">
+        <div class="card-icon">🔄</div>
+        <h3>Concurrency Patterns</h3>
+        <p>Examine common design patterns for managing concurrent operations.</p>
+        <a class="chapter-btn" href="subChapters/ConcurrencyPatterns.html">Learn More</a>
+      </article>
+      <!-- Card 6: Parallelism & Scaling -->
+      <article class="chapter-card">
+        <div class="card-icon">⚡</div>
+        <h3>Parallelism &amp; Scaling</h3>
+        <p>Learn strategies for distributing workloads across multiple cores.</p>
+        <a class="chapter-btn" href="subChapters/ParallelismScaling.html">Learn More</a>
+      </article>
+    </div>
+  </section>
+  
+  </section>
+
+  <!-- =======================
+       MAIN CONTENT AREA
+  ======================= -->
+  <main class="chapter-content">
+    <section id="introduction">
+      <h2>Introduction to Concurrency</h2>
+      <p>
+        Concurrency enables a system to handle multiple tasks simultaneously, increasing throughput and responsiveness. This chapter explores how threading, processing, and asynchronous models work together to create efficient systems. We’ll discuss concepts such as context switching, thread safety, and performance bottlenecks.
+      </p>
+    </section>
+
+    <section id="multithreading">
+      <h2>Multithreading</h2>
+      <p>
+        Multithreading allows multiple threads to execute within a single process, sharing memory and resources. Understand the benefits and pitfalls, including race conditions, deadlocks, and the importance of thread synchronization.
+      </p>
+      <pre class="code-snippet">
+<code>
+// Example in JavaScript using Web Workers for parallelism:
+const worker = new Worker('worker.js');
+worker.postMessage({data: 'Start processing'});
+worker.onmessage = function(e) {
+  console.log('Worker replied:', e.data);
+};
+</code>
+      </pre>
+    </section>
+
+    <section id="multiprocessing">
+      <h2>Multiprocessing</h2>
+      <p>
+        When threads are limited by factors such as the Global Interpreter Lock (GIL) in Python, multiprocessing offers a way to run code in separate processes, each with its own memory space. This model is ideal for CPU-bound tasks.
+      </p>
+      <p>
+        Explore how inter-process communication (IPC) and process pools help balance workload and optimize performance.
+      </p>
+    </section>
+
+    <section id="async-programming">
+      <h2>Asynchronous Programming</h2>
+      <p>
+        Asynchronous programming uses non-blocking calls to improve application responsiveness. Languages like JavaScript (with async/await) and Python (with asyncio) allow you to write code that waits for tasks like network requests without halting the entire program.
+      </p>
+      <pre class="code-snippet">
+<code>
+// Example in JavaScript using async/await:
+async function fetchData(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+}
+fetchData('https://api.example.com/data');
+</code>
+      </pre>
+    </section>
+
+    <section id="synchronization">
+      <h2>Synchronization &amp; Locks</h2>
+      <p>
+        Proper synchronization ensures that multiple threads or processes do not interfere with each other. Techniques include using mutexes, semaphores, condition variables, and lock-free data structures. Understanding these techniques is crucial for avoiding deadlocks and race conditions.
+      </p>
+    </section>
+
+    <section id="patterns">
+      <h2>Concurrency Patterns</h2>
+      <p>
+        Concurrency patterns provide reusable solutions to common problems in parallel programming. Examples include:
+      </p>
+      <ul>
+        <li><strong>Producer-Consumer:</strong> Balances workload between generating and processing tasks.</li>
+        <li><strong>Thread Pool:</strong> Reuses a fixed number of threads to execute many tasks.</li>
+        <li><strong>Future/Promise:</strong> Represents a value that may be available later, allowing for asynchronous processing.</li>
+      </ul>
+    </section>
+
+    <section id="real-world">
+      <h2>Real-World Applications</h2>
+      <p>
+        Many high-performance systems, from web servers to scientific simulations, leverage concurrency. Real-world examples include:
+      </p>
+      <ul>
+        <li><strong>Web Servers:</strong> Handling thousands of simultaneous connections.</li>
+        <li><strong>Data Processing Pipelines:</strong> Parallelizing tasks in big data frameworks.</li>
+        <li><strong>Interactive Applications:</strong> Maintaining responsiveness in user interfaces.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- =======================
+       FOOTER
+  ======================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>, 
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &amp; 
+        <a href="https://www.youtube.com/c/juxtopposed" target="_blank">Juxtopposed</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

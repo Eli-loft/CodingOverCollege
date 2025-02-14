@@ -2,58 +2,465 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Structures</title>
-  <!-- Link to your consolidated CSS -->
+  <title>Data Structures - Coding Over College</title>
+  <!-- Google Fonts: Montserrat (headings), Inter (body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Styles -->
   <link rel="stylesheet" href="../../style.css" />
+  <!-- JavaScript -->
+  <script defer src="../../script.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- =======================
+       STICKY NAVIGATION BAR
+  ======================= -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters </button>
+          <div class="dropdown-content">
+            <!-- Point these links correctly based on your folder structure -->
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
         <li><a href="../../index.html">Home</a></li>
-        <li><a href="../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../DNS/DNS.html">DNS</a></li>
-        <li><a href="../References/References.html">References</a></li>
-        <li><a href="../Keywords/Keywords.html">Google Keywords Library</a></li>
       </ul>
     </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <!-- Simple hamburger icon -->
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Mobile Navigation (Hidden by default) -->
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
+      </ul>
+    </nav>
+
+    <!-- User Profile / Auth -->
+    <div class="user-profile">
+      <a href="#" class="btn-login">Login</a>
+    </div>
   </header>
 
-  <div class = "container">
-    <!-- Sidebar specific to DataStructures -->
-    <aside class="chapter-sidebar">
-      <h3>Data Structures</h3>
-      <ul>
-        <li><a href="subChapters/Arrays.html">Arrays</a></li>
-        <li><a href="subChapters/Hashing.html">Hashing</a></li>
-        <li><a href="subChapters/Stacks.html">Stacks</a></li>
-        <li><a href="subChapters/SlidingWindows.html">Sliding Windows</a></li>
-        <li><a href="subChapters/LinkedList.html">Linked List</a></li>
-        <li><a href="subChapters/BinarySearch.html">BinarySearch</a></li>
-        <li><a href="subChapters/Trees.html">Trees</a></li>
-        <li><a href="subChapters/Tries.html">Tries</a></li>
-        <li><a href="subChapters/Heaps.html">Heaps</a></li>
-        <li><a href="subChapters/PriorityQueue.html">Priority Queue</a></li>
-        <li><a href="subChapters/BackTracking.html">Backtracking</a></li>
+  <!-- =======================
+       CHAPTER HERO
+  ======================= -->
+  <section class="chapter-hero">
+    <div class="chapter-hero-content">
+      <h1>Data Structures</h1>
+      <p class="chapter-subtext">
+        Learn about various data structures and how they optimize data storage and retrieval in your applications.
+      </p>
+    </div>
+  </section>
 
-        <!-- Add more as needed -->
-      </ul>
-    </aside>
-
-    <main>
-      <section>
-        <h2>Data Structures</h2>
+  <!-- =======================
+       MAIN CONTENT
+  ======================= -->
+  <section class="subchapters-section">
+    <h2 class="section-title toggle-heading" id="subchaptersToggle">
+      Subchapters <span class="toggle-arrow">▼</span>
+    </h2>
+    
+    <div class="chapter-cards" id="subchaptersContent">
+      <!-- Card 1: Arrays -->
+      <article class="chapter-card">
+        <div class="card-icon">🔢</div>
+        <h3>Arrays</h3>
         <p>
-          Overview of all the Data Structures you'll learn in this chapter...
+          Learn how arrays store data contiguously and support fast indexed access.
         </p>
-        <!-- More content goes here -->
-      </section>
+        <a class="chapter-btn" href="subChapters/Arrays.html">Learn More</a>
+      </article>
+      <!-- Card 2: Hashing -->
+      <article class="chapter-card">
+        <div class="card-icon">🔑</div>
+        <h3>Hashing</h3>
+        <p>
+          Discover how hash functions map keys to values for quick lookups.
+        </p>
+        <a class="chapter-btn" href="subChapters/Hashing.html">Learn More</a>
+      </article>
+      <!-- Card 3: Stacks -->
+      <article class="chapter-card">
+        <div class="card-icon">📚</div>
+        <h3>Stacks</h3>
+        <p>
+          Understand the last-in, first-out data structure and its real-world applications.
+        </p>
+        <a class="chapter-btn" href="subChapters/Stacks.html">Learn More</a>
+      </article>
+      <!-- Card 4: Sliding Windows -->
+      <article class="chapter-card">
+        <div class="card-icon">🪟</div>
+        <h3>Sliding Windows</h3>
+        <p>
+          Master techniques to efficiently process subarrays or substrings.
+        </p>
+        <a class="chapter-btn" href="subChapters/SlidingWindows.html">Learn More</a>
+      </article>
+      <!-- Card 5: Linked List -->
+      <article class="chapter-card">
+        <div class="card-icon">🔗</div>
+        <h3>Linked List</h3>
+        <p>
+          Explore dynamic data structures where elements are linked using pointers.
+        </p>
+        <a class="chapter-btn" href="subChapters/LinkedList.html">Learn More</a>
+      </article>
+      <!-- Card 6: Binary Search -->
+      <article class="chapter-card">
+        <div class="card-icon">🔍</div>
+        <h3>Binary Search</h3>
+        <p>
+          Implement efficient search algorithms on sorted data sets.
+        </p>
+        <a class="chapter-btn" href="subChapters/BinarySearch.html">Learn More</a>
+      </article>
+      <!-- Card 7: Trees -->
+      <article class="chapter-card">
+        <div class="card-icon">🌳</div>
+        <h3>Trees</h3>
+        <p>
+          Study hierarchical structures and explore various tree traversal techniques.
+        </p>
+        <a class="chapter-btn" href="subChapters/Trees.html">Learn More</a>
+      </article>
+      <!-- Card 8: Tries -->
+      <article class="chapter-card">
+        <div class="card-icon">🌿</div>
+        <h3>Tries</h3>
+        <p>
+          Learn about prefix trees that allow for efficient retrieval of strings.
+        </p>
+        <a class="chapter-btn" href="subChapters/Tries.html">Learn More</a>
+      </article>
+      <!-- Card 9: Heaps -->
+      <article class="chapter-card">
+        <div class="card-icon">⛰️</div>
+        <h3>Heaps</h3>
+        <p>
+          Dive into heap structures used for priority operations and efficient sorting.
+        </p>
+        <a class="chapter-btn" href="subChapters/Heaps.html">Learn More</a>
+      </article>
+      <!-- Card 10: Priority Queue -->
+      <article class="chapter-card">
+        <div class="card-icon">⭐</div>
+        <h3>Priority Queue</h3>
+        <p>
+          Understand how elements are processed based on their priority.
+        </p>
+        <a class="chapter-btn" href="subChapters/PriorityQueue.html">Learn More</a>
+      </article>
+      <!-- Card 11: Backtracking -->
+      <article class="chapter-card">
+        <div class="card-icon">🔙</div>
+        <h3>Backtracking</h3>
+        <p>
+          Solve complex problems using recursive trial and error approaches.
+        </p>
+        <a class="chapter-btn" href="subChapters/BackTracking.html">Learn More</a>
+      </article>
+    </div>
+  </section>
+
+    <!-- ===== CHAPTER CONTENT AREA ===== -->
+    <main class="chapter-content">
+      <!-- Updated Data Structures Overview -->
+      <h2>Introduction to Data Structures</h2>
+      <p>
+        Data structures lie at the core of efficient software design and development. They determine how information is stored, accessed, and manipulated. 
+        Well-structured data can drastically boost performance and reduce application complexity.
+      </p>
+    
+      <p>
+        This chapter provides an updated overview of fundamental data structures and how they fit into modern programming practices. Each concept 
+        is further elaborated in our subchapters—covering <em>Arrays</em>, <em>Hashing</em>, <em>Stacks</em>, <em>Sliding Windows</em>, <em>Linked Lists</em>, <em>Binary Search</em>, 
+        <em>Trees</em>, <em>Tries</em>, <em>Heaps</em>, <em>Priority Queues</em>, and <em>Backtracking</em>. 
+        Whether you’re building small scripts or large-scale systems, understanding these structures is crucial.
+      </p>
+    
+      <!-- Why Data Structures Matter -->
+      <h3 class="comparison-heading">Why Data Structures Matter</h3>
+      <ul>
+        <li><strong>Efficiency:</strong> The right data structure can drastically speed up lookups, insertions, and deletions.</li>
+        <li><strong>Memory Management:</strong> Structures like arrays or tries can optimize storage, ensuring minimal overhead.</li>
+        <li><strong>Scalability:</strong> A well-chosen data structure can handle large datasets while maintaining performance.</li>
+        <li><strong>Real-World Use Cases:</strong> Most enterprise systems—from databases (using B-Trees) to compilers (using stacks)—rely on robust data structures.</li>
+      </ul>
+    
+      <!-- Classification of Data Structures -->
+      <h3 class="comparison-heading">Classification of Data Structures</h3>
+      <p>
+        Data structures can be classified in several ways. Here’s a quick refresher:
+      </p>
+      <ul>
+        <li>
+          <strong>Linear vs. Non-Linear:</strong> 
+          <em>Linear</em> structures (Arrays, Linked Lists, Stacks, Queues) store data sequentially. 
+          <em>Non-linear</em> structures (Trees, Graphs, Heaps, Tries) have hierarchical or interconnected layouts.
+        </li>
+        <li>
+          <strong>Static vs. Dynamic:</strong> 
+          <em>Static</em> structures (Arrays) have a fixed size, 
+          while <em>Dynamic</em> structures (Linked Lists, certain trees) can grow or shrink at runtime.
+        </li>
+        <li>
+          <strong>Homogeneous vs. Heterogeneous:</strong> 
+          Some structures hold elements of the same data type (classic arrays), 
+          others can store different data types (like Python’s built-in lists).
+        </li>
+      </ul>
+    
+      <!-- Subchapter Highlights Table (Optional Enhancement) -->
+      <div class="chapter-example">
+        <h3 class="comparison-heading">Key Subchapters &amp; Focus Areas</h3>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Subchapter</th>
+                <th>Focus</th>
+                <th>Typical Use Cases</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Arrays</td>
+                <td>Sequential Storage</td>
+                <td>Access by Index, Fixed Size</td>
+              </tr>
+              <tr>
+                <td>Hashing</td>
+                <td>Key-Value Lookups</td>
+                <td>Caches, Dictionaries, Sets</td>
+              </tr>
+              <tr>
+                <td>Stacks</td>
+                <td>LIFO Operations</td>
+                <td>Undo Features, Parsing Expressions</td>
+              </tr>
+              <tr>
+                <td>Sliding Windows</td>
+                <td>Subarray/Subsequence Focus</td>
+                <td>Streaming Data, Windowed Analytics</td>
+              </tr>
+              <tr>
+                <td>Linked List</td>
+                <td>Node-Based Sequential Links</td>
+                <td>Dynamic Memory Usage, Insertion at Head</td>
+              </tr>
+              <tr>
+                <td>Binary Search</td>
+                <td>Fast Searching in Sorted Data</td>
+                <td>Large Sorted Lists, Logs, Searching Arrays</td>
+              </tr>
+              <tr>
+                <td>Trees</td>
+                <td>Hierarchical Data Structures</td>
+                <td>Filesystems, Organizational Charts, Parsers</td>
+              </tr>
+              <tr>
+                <td>Tries</td>
+                <td>Prefix-Based Searching</td>
+                <td>Auto-Complete, IP Routing Tables</td>
+              </tr>
+              <tr>
+                <td>Heaps</td>
+                <td>Priority-Based Structure</td>
+                <td>Priority Queues, Scheduling</td>
+              </tr>
+              <tr>
+                <td>Priority Queue</td>
+                <td>Extraction by Priority</td>
+                <td>Task Scheduling, Dijkstra's Algorithm</td>
+              </tr>
+              <tr>
+                <td>Backtracking</td>
+                <td>Recursive Problem Solving</td>
+                <td>Maze-Solving, Combinatorial Tasks</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-subtext);">
+          This table serves as a quick cheat-sheet for which data structure might be best suited to your current problem.
+        </p>
+      </div>
+    
+      <!-- Performance Considerations -->
+      <h3 class="comparison-heading">Performance Considerations</h3>
+      <p>
+        Knowing each data structure’s <em>Big O</em> complexities is key to writing efficient code. The table below summarizes 
+        common operations for a few popular structures:
+      </p>
+    
+      <div class="chapter-example">
+    
+      <!-- Big O Quick Reference (Table) -->
+      <div class="chapter-example">
+        <h3 class="comparison-heading">Big O Complexity Overview</h3>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Structure</th>
+              <th>Insertion</th>
+              <th>Deletion</th>
+              <th>Search</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Array</td>
+              <td>O(1)*</td>
+              <td>O(1)*</td>
+              <td>O(n)</td>
+            </tr>
+            <tr>
+              <td>Linked List</td>
+              <td>O(1)**</td>
+              <td>O(1)**</td>
+              <td>O(n)</td>
+            </tr>
+            <tr>
+              <td>Hash Table</td>
+              <td>O(1)</td>
+              <td>O(1)</td>
+              <td>O(1)</td>
+            </tr>
+            <tr>
+              <td>Binary Tree</td>
+              <td>O(log n)</td>
+              <td>O(log n)</td>
+              <td>O(log n)</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-subtext);">
+          * Inserting or deleting at the <em>end</em> of a dynamic array is typically O(1). Inserting in the middle can be O(n).  
+          ** Assumes insertion/deletion at the head of the linked list.
+        </p>
+      </div>
+    
+      <!-- Practical Example: Building a Simple Linked List in JavaScript -->
+      <h3>Practical Example: Building a Simple Linked List in JavaScript</h3>
+      <p>
+        Let’s revisit how a singly linked list might be implemented. Note how each node references the next node, 
+        and insertion at the head is O(1):
+      </p>
+    
+      <div class="chapter-example">
+        <h4>Linked List Construction</h4>
+        <pre class="code-snippet">
+    <code>
+    class Node {
+      constructor(value) {
+        this.value = value;
+        this.next = null;
+      }
+    }
+    
+    class LinkedList {
+      constructor() {
+        this.head = null;
+      }
+    
+      // Insert new node at the head
+      insert(value) {
+        const newNode = new Node(value);
+        newNode.next = this.head;
+        this.head = newNode;
+      }
+    
+      printList() {
+        let current = this.head;
+        let result = [];
+        while (current) {
+          result.push(current.value);
+          current = current.next;
+        }
+        console.log(result.join(" -> "));
+      }
+    }
+    
+    // Usage
+    let list = new LinkedList();
+    list.insert(10);
+    list.insert(20);
+    list.insert(30);
+    list.printList(); // 30 -> 20 -> 10
+    </code>
+        </pre>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-subtext);">
+          Inserting in the middle or searching for a specific value typically requires O(n) time, since linked lists 
+          must be traversed node by node.
+        </p>
+      </div>
+    
+      <!-- Additional Insights -->
+      <h3>Additional Insights</h3>
+      <ul>
+        <li><strong>Memory Layout:</strong> Arrays store elements contiguously, ensuring constant-time indexed access but costly insertions in the middle.</li>
+        <li><strong>Flexibility vs. Efficiency:</strong> Linked structures (like Linked Lists, Trees) provide flexible node insertion but can be slower for random access.</li>
+        <li><strong>Language Features:</strong> Many modern languages offer built-in data structures (like Python lists or Java’s ArrayList), but understanding 
+          underlying complexities remains essential.</li>
+        <li><strong>Real-World Impact:</strong> Hash tables enable fast lookups in dictionaries and caches, tries power auto-completion, and trees often back 
+          filesystem hierarchies.</li>
+      </ul>
+    
+      <p>
+        Continue exploring our <strong>subchapters</strong> for in-depth explorations of each data structure. You’ll find real-world examples, 
+        best practices, and performance tips to help you pick the perfect structure for your project.
+      </p>
     </main>
-  </div>
+  <!-- =======================
+       FOOTER
+  ======================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>, <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &amp; <a href="https://www.youtube.com/c/juxtopposed" target="_blank">Juxtopposed</a>.</p>
+    </div>
+  </footer>
 </body>
 </html>

@@ -2,89 +2,302 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Named Algorithms</title>
-  <!-- Link to your consolidated CSS -->
+  <title>Python Libraries - Coding Over College</title>
+  <!-- Google Fonts: Montserrat (headings), Inter (body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Styles -->
   <link rel="stylesheet" href="../../style.css" />
+  <!-- JavaScript -->
+  <script defer src="../../script.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- =======================
+       STICKY NAVIGATION BAR
+  ======================= -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-links">
       <ul>
-        <li><a href ="../../index.html">Home</a></li>
-        <li><a href="../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../DNS/DNS.html">DNS</a></li>
-        <li><a href="../References/References.html">References</a></li>
-        <li><a href="../Keywords/Keywords.html">Google Keywords Library</a></li>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters ▼</button>
+          <div class="dropdown-content">
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
       </ul>
     </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters ▼</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
+      </ul>
+    </nav>
+
+    <!-- User Profile / Auth -->
+    <div class="user-profile">
+      <a href="#" class="btn-login">Login</a>
+    </div>
   </header>
 
-  <div class = "container">
-    <!-- Sidebar specific to DataStructures -->
-    <aside class="chapter-sidebar">
-      <h3>Python Libraries</h3>
-      <ul>
-        <!-- 1. Data Science & Machine Learning -->
-        <li><a href="subChapters/DataScienceML.html">Data Science & Machine Learning</a></li>
+  <!-- =======================
+       CHAPTER HERO
+  ======================= -->
+  <section class="chapter-hero">
+    <div class="chapter-hero-content">
+      <h1>Python Libraries</h1>
+      <p class="chapter-subtext">
+        Expand your Python skills by exploring essential libraries and frameworks, from data science and AI to web development and beyond.
+      </p>
+    </div>
+  </section>
 
-        <!-- 2. Web Scraping & Automation -->
-        <li><a href="subChapters/WebScrapingAutomation.html">Web Scraping & Automation</a></li>
-
-        <!-- 3. Visualization -->
-        <li><a href="subChapters/Visualization.html">Visualization</a></li>
-
-        <!-- 4. AI & NLP (Natural Language Processing) -->
-        <li><a href="subChapters/AI_NLP.html">AI & NLP</a></li>
-
-        <!-- 5. Game Development -->
-        <li><a href="subChapters/GameDevelopment.html">Game Development</a></li>
-
-        <!-- 6. DevOps & Networking -->
-        <li><a href="subChapters/DevOpsNetworking.html">DevOps & Networking</a></li>
-
-        <!-- 7. Data Engineering -->
-        <li><a href="subChapters/DataEngineering.html">Data Engineering</a></li>
-
-        <!-- 8. Software Testing -->
-        <li><a href="subChapters/SoftwareTesting.html">Software Testing</a></li>
-
-        <!-- 9. Web Development -->
-        <li><a href="subChapters/WebDevelopment.html">Web Development</a></li>
-
-        <!-- 10. Computer Vision -->
-        <li><a href="subChapters/ComputerVision.html">Computer Vision</a></li>
-
-        <!-- 11. Database & ORM -->
-        <li><a href="subChapters/DatabaseORM.html">Database & ORM</a></li>
-
-        <!-- 12. Optimization -->
-        <li><a href="subChapters/Optimization.html">Optimization</a></li>
-
-        <!-- 13. Quantum Computing -->
-        <li><a href="subChapters/QuantumComputing.html">Quantum Computing</a></li>
-
-        <!-- 14. Miscellaneous -->
-        <li><a href="subChapters/Miscellaneous.html">Miscellaneous</a></li>
-
-
-        <!-- Add more as needed -->
-      </ul>
-    </aside>
-
-    <main>
-      <section>
-        <h2>Python Libraries</h2>
+  <!-- =======================
+       MAIN CONTENT
+  ======================= -->
+  <section class="subchapters-section">
+    <h2 class="section-title toggle-heading" id="subchaptersToggle">
+      Subchapters <span class="toggle-arrow">▼</span>
+    </h2>
+    
+    <div class="chapter-cards" id="subchaptersContent">
+      <!-- Card 1: Data Science & Machine Learning -->
+      <article class="chapter-card">
+        <div class="card-icon">📊</div>
+        <h3>Data Science &amp; Machine Learning</h3>
         <p>
-          Overview of all Python Libraries you'll learn in this chapter...
+          Explore libraries that power data analysis, modeling, and machine learning workflows.
         </p>
-        <!-- More content goes here -->
-      </section>
+        <a class="chapter-btn" href="subChapters/DataScienceML.html">Learn More</a>
+      </article>
+      <!-- Card 2: Web Scraping & Automation -->
+      <article class="chapter-card">
+        <div class="card-icon">🕷️</div>
+        <h3>Web Scraping &amp; Automation</h3>
+        <p>
+          Utilize tools and libraries to extract data from websites and automate tasks.
+        </p>
+        <a class="chapter-btn" href="subChapters/WebScrapingAutomation.html">Learn More</a>
+      </article>
+      <!-- Card 3: Visualization -->
+      <article class="chapter-card">
+        <div class="card-icon">📈</div>
+        <h3>Visualization</h3>
+        <p>
+          Create stunning visual representations of data using popular visualization libraries.
+        </p>
+        <a class="chapter-btn" href="subChapters/Visualization.html">Learn More</a>
+      </article>
+      <!-- Card 4: AI & NLP -->
+      <article class="chapter-card">
+        <div class="card-icon">🧠</div>
+        <h3>AI &amp; NLP</h3>
+        <p>
+          Discover frameworks and libraries that drive artificial intelligence and natural language processing.
+        </p>
+        <a class="chapter-btn" href="subChapters/AI_NLP.html">Learn More</a>
+      </article>
+      <!-- Card 5: Game Development -->
+      <article class="chapter-card">
+        <div class="card-icon">🎮</div>
+        <h3>Game Development</h3>
+        <p>
+          Learn about libraries that support game development and interactive media.
+        </p>
+        <a class="chapter-btn" href="subChapters/GameDevelopment.html">Learn More</a>
+      </article>
+      <!-- Card 6: DevOps & Networking -->
+      <article class="chapter-card">
+        <div class="card-icon">🔧</div>
+        <h3>DevOps &amp; Networking</h3>
+        <p>
+          Streamline development and network operations with powerful automation and monitoring tools.
+        </p>
+        <a class="chapter-btn" href="subChapters/DevOpsNetworking.html">Learn More</a>
+      </article>
+      <!-- Card 7: Data Engineering -->
+      <article class="chapter-card">
+        <div class="card-icon">🛠️</div>
+        <h3>Data Engineering</h3>
+        <p>
+          Handle data pipelines, ETL processes, and big data challenges using specialized libraries.
+        </p>
+        <a class="chapter-btn" href="subChapters/DataEngineering.html">Learn More</a>
+      </article>
+      <!-- Card 8: Software Testing -->
+      <article class="chapter-card">
+        <div class="card-icon">✅</div>
+        <h3>Software Testing</h3>
+        <p>
+          Ensure robust software with tools designed for automated testing and quality assurance.
+        </p>
+        <a class="chapter-btn" href="subChapters/SoftwareTesting.html">Learn More</a>
+      </article>
+      <!-- Card 9: Web Development -->
+      <article class="chapter-card">
+        <div class="card-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>
+          Build dynamic web applications with libraries that simplify front-end and back-end development.
+        </p>
+        <a class="chapter-btn" href="subChapters/WebDevelopment.html">Learn More</a>
+      </article>
+      <!-- Card 10: Computer Vision -->
+      <article class="chapter-card">
+        <div class="card-icon">👁️</div>
+        <h3>Computer Vision</h3>
+        <p>
+          Implement image processing and computer vision solutions with cutting-edge libraries.
+        </p>
+        <a class="chapter-btn" href="subChapters/ComputerVision.html">Learn More</a>
+      </article>
+      <!-- Card 11: Database & ORM -->
+      <article class="chapter-card">
+        <div class="card-icon">💾</div>
+        <h3>Database &amp; ORM</h3>
+        <p>
+          Interact with databases seamlessly using libraries that provide object-relational mapping.
+        </p>
+        <a class="chapter-btn" href="subChapters/DatabaseORM.html">Learn More</a>
+      </article>
+      <!-- Card 12: Optimization -->
+      <article class="chapter-card">
+        <div class="card-icon">⚙️</div>
+        <h3>Optimization</h3>
+        <p>
+          Optimize code performance and resource utilization with specialized libraries.
+        </p>
+        <a class="chapter-btn" href="subChapters/Optimization.html">Learn More</a>
+      </article>
+      <!-- Card 13: Quantum Computing -->
+      <article class="chapter-card">
+        <div class="card-icon">⚛️</div>
+        <h3>Quantum Computing</h3>
+        <p>
+          Explore emerging quantum computing libraries and tools for next-gen applications.
+        </p>
+        <a class="chapter-btn" href="subChapters/QuantumComputing.html">Learn More</a>
+      </article>
+      <!-- Card 14: Miscellaneous -->
+      <article class="chapter-card">
+        <div class="card-icon">❓</div>
+        <h3>Miscellaneous</h3>
+        <p>
+          Access a variety of libraries for diverse and niche development needs.
+        </p>
+        <a class="chapter-btn" href="subChapters/Miscellaneous.html">Learn More</a>
+      </article>
+    </div>
+  </section>
+  
+
+    <!-- ===== CHAPTER CONTENT AREA ===== -->
+    <main class="chapter-content">
+      <h2>Introduction to Python Libraries</h2>
+      <p>
+        Python’s vibrant ecosystem of libraries and frameworks is a major reason why it continues to dominate fields like data science, 
+        machine learning, web development, and automation. Whether you need to spin up a quick web server, crunch large datasets, or even 
+        build AI-powered applications, there's a Python library to help you do it faster and more efficiently.
+      </p>
+
+      <h3>Why Focus on Python Libraries?</h3>
+      <ul>
+        <li><strong>Productivity:</strong> Libraries reduce boilerplate code, letting you focus on the problem rather than low-level details.</li>
+        <li><strong>Community & Support:</strong> Python libraries often have vast communities, thorough documentation, and frequent updates.</li>
+        <li><strong>Cross-Disciplinary Applications:</strong> From web dev to IoT to advanced mathematics, Python’s scope is enormous.</li>
+      </ul>
+
+      <h3>Common Use Cases</h3>
+      <ol>
+        <li><strong>Data Science &amp; Machine Learning:</strong> Libraries like NumPy, Pandas, and Scikit-learn handle data manipulation, statistical analysis, and model building.</li>
+        <li><strong>Web Scraping &amp; Automation:</strong> Tools like Requests, BeautifulSoup, or Selenium can automate repetitive tasks or gather online data.</li>
+        <li><strong>AI &amp; NLP:</strong> TensorFlow, PyTorch, and spaCy provide advanced functionalities for deep learning and natural language processing.</li>
+        <li><strong>DevOps &amp; Networking:</strong> Tools like Paramiko for SSH automation or libraries that interact with cloud APIs.</li>
+        <li><strong>Visualization:</strong> Matplotlib, Seaborn, and Plotly transform raw data into clear and interactive charts.</li>
+      </ol>
+
+      <div class="chapter-example">
+        <h4>Sample: Creating a Simple Plot with Matplotlib</h4>
+        <pre class="code-snippet">
+<code>
+import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 5, 7, 11]
+
+plt.plot(x, y, marker='o')
+plt.title("Simple Line Plot")
+plt.xlabel("X-Axis")
+plt.ylabel("Y-Axis")
+plt.show()
+</code>
+        </pre>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-subtext);">
+          This snippet quickly visualizes data. By adding labels, a title, or 
+          customizing markers, you can transform raw numbers into actionable insights.
+        </p>
+      </div>
+
+      <p>
+        Ready to dive deeper? Check the subchapters for specialized areas like 
+        <em>Data Science &amp; ML</em> or <em>Web Scraping &amp; Automation</em> to discover 
+        specific libraries, code patterns, and best practices.
+      </p>
     </main>
   </div>
+
+  <!-- =======================
+       FOOTER
+  ======================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by 
+        <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>, 
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &amp; 
+        <a href="https://www.youtube.com/c/juxtopposed" target="_blank">Juxtopposed</a>.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>

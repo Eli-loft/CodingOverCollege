@@ -57,16 +57,16 @@
     <main class="mainbody">
       
       <div class="subchapterBody">
-      <section id="introduction">
-        <h2 class="section-title">What is DNS Caching?</h2>
+        <h2 class="section-title hidden">What is DNS Caching?</h2>
+        <section id="introduction" class="hidden">
         <p>
           DNS caching stores recently visited IP addresses for your computer to load websites much faster.
           It’s like saving answers so you have them if the question gets re-asked.
         </p>
       </section>
-
-      <section id="how-dns-caching-works">
-        <h2 class="section-title">How Does DNS Caching Work?</h2>
+      
+      <h2 class="section-title hidden">How Does DNS Caching Work?</h2>
+      <section id="how-dns-caching-works" class="hidden">
         <p>
           When you visit a website for the first time, your computer goes through the full DNS lookup process. 
           But instead of forgetting the result, it stores it in cache for future use.
@@ -76,8 +76,8 @@
         </p>
       </section>
 
-      <section id="dns-caching-locations">
-        <h2 class="section-title">Where Does DNS Caching Happen?</h2>
+      <h2 class="section-title hidden">Where Does DNS Caching Happen?</h2>
+      <section id="dns-caching-locations" class="hidden">
         <p>DNS caching happens in multiple places, like layers of memory storage:</p>
         <ol>
           <li><strong>Your Computer (Local Cache)</strong>
@@ -107,8 +107,8 @@
         </ol>
       </section>
 
-      <section id="ttl">
-        <h2 class="section-title">How Long Does DNS Caching Last? (TTL – Time To Live)</h2>
+      <h2 class="section-title hidden">How Long Does DNS Caching Last? (TTL – Time To Live)</h2>
+      <section id="ttl" class="hidden">
         <p>DNS cache doesn’t last forever. Each record has a TTL (Time-To-Live) value, which tells how long it should be stored before expiring.</p>
         <ul>
           <li>Short TTL (5 min – 1 hour) = More up-to-date, but slower performance.</li>
@@ -116,8 +116,8 @@
         </ul>
       </section>
 
-      <section id="expired-records">
-        <h2 class="section-title">What Happens When a Cached DNS Record Expires?</h2>
+      <h2 class="section-title hidden">What Happens When a Cached DNS Record Expires?</h2>
+      <section id="expired-records" class="hidden">
         <p>Once a DNS record reaches its TTL limit, your device forgets it and asks the DNS resolver for an updated record.</p>
         <ul>
           <li>If the IP is the same: It just re-caches it for another TTL period.</li>
@@ -125,20 +125,21 @@
         </ul>
       </section>
 
-      <section id="changing-ip">
-        <h2 class="section-title">What If a Website Changes Its IP Address?</h2>
+      <h2 class="section-title hidden">What If a Website Changes Its IP Address?</h2>
+      <section id="changing-ip" class="hidden">
         <p>If a website moves to a new server, but your computer still has the old cached IP, you might get errors or connect to the wrong server.</p>
         <p><strong>Solution:</strong> You can clear your DNS cache to force a fresh lookup.</p>
         <p>For Windows, you can do this using the command:</p>
         <pre>‘ipconfig /flushdns’</pre>
       </section>
 
-      <section id="caching-speed">
-        <h2 class="section-title">How DNS Caching Speeds Up Connections</h2>
+      <h2 class="section-title hidden">How DNS Caching Speeds Up Connections</h2>
+      <section id="caching-speed" class="hidden">
         <p>Caching can speed up connection times on reoccurring websites by 150x.</p>
       </section>
     </div>
     </main>
   </div>
+  <script src="../../../script.js" defer></script>  
 </body>
 </html>

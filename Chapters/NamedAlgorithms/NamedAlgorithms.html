@@ -2,89 +2,363 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Named Algorithms</title>
-  <!-- Link to your consolidated CSS -->
+  <title>Named Algorithms - Coding Over College</title>
+  <!-- Google Fonts: Montserrat (headings), Inter (body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Styles -->
   <link rel="stylesheet" href="../../style.css" />
+  <!-- JavaScript -->
+  <script defer src="../../script.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- =======================
+       STICKY NAVIGATION BAR
+  ======================= -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-links">
       <ul>
-        <li><a href ="../../index.html">Home</a></li>
-        <li><a href="../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../DNS/DNS.html">DNS</a></li>
-        <li><a href="../References/References.html">References</a></li>
-        <li><a href="../Keywords/Keywords.html">Google Keywords Library</a></li>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters ▼</button>
+          <div class="dropdown-content">
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
       </ul>
     </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters ▼</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
+      </ul>
+    </nav>
+
+    <!-- User Profile / Auth -->
+    <div class="user-profile">
+      <a href="#" class="btn-login">Login</a>
+    </div>
   </header>
 
-  <div class = "container">
-    <!-- Sidebar specific to DataStructures -->
-    <aside class="chapter-sidebar">
-      <h3>Named Algorithms</h3>
-      <ul>
-        <!-- 1. General Computer Science -->
-        <li><a href="subChapters/GeneralCompSci.html">General Computer Science</a></li>
+  <!-- =======================
+       CHAPTER HERO
+  ======================= -->
+  <section class="chapter-hero">
+    <div class="chapter-hero-content">
+      <h1>Named Algorithms</h1>
+      <p class="chapter-subtext">
+        Explore famous algorithms that have shaped entire fields, from general computer science to specialized domains like AI, cryptography, and beyond.
+      </p>
+    </div>
+  </section>
 
-        <!-- 2. Data Science and Machine Learning -->
-        <li><a href="subChapters/DataScienceML.html">Data Science and Machine Learning</a></li>
-
-        <!-- 3. Graph Theory -->
-        <li><a href="subChapters/GraphTheory.html">Graph Theory</a></li>
-
-        <!-- 4. Cryptography and Cybersecurity -->
-        <li><a href="subChapters/CryptographyCybersecurity.html">Cryptography and Cybersecurity</a></li>
-
-        <!-- 5. Computational Geometry -->
-        <li><a href="subChapters/ComputationalGeometry.html">Computational Geometry</a></li>
-
-        <!-- 6. Artificial Intelligence and Robotics -->
-        <li><a href="subChapters/AIRobotics.html">Artificial Intelligence and Robotics</a></li>
-
-        <!-- 7. Bioinformatics -->
-        <li><a href="subChapters/Bioinformatics.html">Bioinformatics</a></li>
-
-        <!-- 8. Signal Processing and Compression -->
-        <li><a href="subChapters/SignalProcessingCompression.html">Signal Processing and Compression</a></li>
-
-        <!-- 9. Optimization -->
-        <li><a href="subChapters/Optimization.html">Optimization</a></li>
-
-        <!-- 10. Database and Search -->
-        <li><a href="subChapters/DatabaseSearch.html">Database and Search</a></li>
-
-        <!-- 11. Operating Systems -->
-        <li><a href="subChapters/OperatingSystems.html">Operating Systems</a></li>
-
-        <!-- 12. Number Theory -->
-        <li><a href="subChapters/NumberTheory.html">Number Theory</a></li>
-
-        <!-- 13. Quantum Computing -->
-        <li><a href="subChapters/QuantumComputing.html">Quantum Computing</a></li>
-
-        <!-- 14. Miscellaneous -->
-        <li><a href="subChapters/Miscellaneous.html">Miscellaneous</a></li>
-
-
-        <!-- Add more as needed -->
-      </ul>
-    </aside>
-
-    <main>
-      <section>
-        <h2>Named Algorithms</h2>
+  <!-- =======================
+       MAIN CONTENT
+  ======================= -->
+  <section class="subchapters-section">
+    <h2 class="section-title toggle-heading" id="subchaptersToggle">
+      Subchapters <span class="toggle-arrow">▼</span>
+    </h2>
+    
+    <div class="chapter-cards" id="subchaptersContent">
+      <!-- Card 1: General Computer Science -->
+      <article class="chapter-card">
+        <div class="card-icon">💻</div>
+        <h3>General Computer Science</h3>
         <p>
-          Overview of all the Named Algorithms you'll learn in this chapter...
+          Explore foundational concepts and theories that underpin computing.
         </p>
-        <!-- More content goes here -->
-      </section>
+        <a class="chapter-btn" href="subChapters/GeneralCompSci.html">Learn More</a>
+      </article>
+      <!-- Card 2: Data Science and Machine Learning -->
+      <article class="chapter-card">
+        <div class="card-icon">📊</div>
+        <h3>Data Science and Machine Learning</h3>
+        <p>
+          Delve into techniques and algorithms that drive data-driven insights.
+        </p>
+        <a class="chapter-btn" href="subChapters/DataScienceML.html">Learn More</a>
+      </article>
+      <!-- Card 3: Graph Theory -->
+      <article class="chapter-card">
+        <div class="card-icon">🔗</div>
+        <h3>Graph Theory</h3>
+        <p>
+          Analyze networks, relationships, and algorithms for traversing graphs.
+        </p>
+        <a class="chapter-btn" href="subChapters/GraphTheory.html">Learn More</a>
+      </article>
+      <!-- Card 4: Cryptography and Cybersecurity -->
+      <article class="chapter-card">
+        <div class="card-icon">🔒</div>
+        <h3>Cryptography and Cybersecurity</h3>
+        <p>
+          Learn about encryption, security protocols, and protecting data.
+        </p>
+        <a class="chapter-btn" href="subChapters/CryptographyCybersecurity.html">Learn More</a>
+      </article>
+      <!-- Card 5: Computational Geometry -->
+      <article class="chapter-card">
+        <div class="card-icon">📐</div>
+        <h3>Computational Geometry</h3>
+        <p>
+          Study algorithms related to geometric problems and spatial data.
+        </p>
+        <a class="chapter-btn" href="subChapters/ComputationalGeometry.html">Learn More</a>
+      </article>
+      <!-- Card 6: Artificial Intelligence and Robotics -->
+      <article class="chapter-card">
+        <div class="card-icon">🤖</div>
+        <h3>Artificial Intelligence and Robotics</h3>
+        <p>
+          Discover algorithms powering smart systems and robotic applications.
+        </p>
+        <a class="chapter-btn" href="subChapters/AIRobotics.html">Learn More</a>
+      </article>
+      <!-- Card 7: Bioinformatics -->
+      <article class="chapter-card">
+        <div class="card-icon">🧬</div>
+        <h3>Bioinformatics</h3>
+        <p>
+          Integrate biological data analysis with algorithmic techniques.
+        </p>
+        <a class="chapter-btn" href="subChapters/Bioinformatics.html">Learn More</a>
+      </article>
+      <!-- Card 8: Signal Processing and Compression -->
+      <article class="chapter-card">
+        <div class="card-icon">📡</div>
+        <h3>Signal Processing and Compression</h3>
+        <p>
+          Examine methods to analyze and compress digital signals.
+        </p>
+        <a class="chapter-btn" href="subChapters/SignalProcessingCompression.html">Learn More</a>
+      </article>
+      <!-- Card 9: Optimization -->
+      <article class="chapter-card">
+        <div class="card-icon">⚙️</div>
+        <h3>Optimization</h3>
+        <p>
+          Master techniques for finding the best solutions in complex systems.
+        </p>
+        <a class="chapter-btn" href="subChapters/Optimization.html">Learn More</a>
+      </article>
+      <!-- Card 10: Database and Search -->
+      <article class="chapter-card">
+        <div class="card-icon">🗄️</div>
+        <h3>Database and Search</h3>
+        <p>
+          Understand algorithms that manage and retrieve vast amounts of data.
+        </p>
+        <a class="chapter-btn" href="subChapters/DatabaseSearch.html">Learn More</a>
+      </article>
+      <!-- Card 11: Operating Systems -->
+      <article class="chapter-card">
+        <div class="card-icon">🖥️</div>
+        <h3>Operating Systems</h3>
+        <p>
+          Explore how algorithms manage hardware resources and system processes.
+        </p>
+        <a class="chapter-btn" href="subChapters/OperatingSystems.html">Learn More</a>
+      </article>
+      <!-- Card 12: Number Theory -->
+      <article class="chapter-card">
+        <div class="card-icon">🔢</div>
+        <h3>Number Theory</h3>
+        <p>
+          Investigate algorithms rooted in mathematical theory and number properties.
+        </p>
+        <a class="chapter-btn" href="subChapters/NumberTheory.html">Learn More</a>
+      </article>
+      <!-- Card 13: Quantum Computing -->
+      <article class="chapter-card">
+        <div class="card-icon">⚛️</div>
+        <h3>Quantum Computing</h3>
+        <p>
+          Dive into algorithms designed for quantum systems and computing paradigms.
+        </p>
+        <a class="chapter-btn" href="subChapters/QuantumComputing.html">Learn More</a>
+      </article>
+      <!-- Card 14: Miscellaneous -->
+      <article class="chapter-card">
+        <div class="card-icon">❓</div>
+        <h3>Miscellaneous</h3>
+        <p>
+          Discover various algorithms that don't fit into conventional categories.
+        </p>
+        <a class="chapter-btn" href="subChapters/Miscellaneous.html">Learn More</a>
+      </article>
+    </div>
+  </section>
+  
+
+    <!-- ===== CHAPTER CONTENT AREA ===== -->
+    <main class="chapter-content">
+      <h2>Introduction to Named Algorithms</h2>
+      <p>
+        Named algorithms have shaped the landscape of computing, forming the backbone of many modern technologies. From 
+        <em>Dijkstra’s Algorithm</em> for shortest path calculation to <em>Rabin-Karp</em> for efficient string matching, these algorithms are celebrated for their ingenuity and enduring impact.
+      </p>
+      <p>
+        This chapter provides an overview of these classic algorithms and their applications in various domains, including <strong>graph theory</strong>, <strong>numerical optimization</strong>, <strong>data science</strong>, and <strong>cryptography</strong>. Mastering these techniques equips you with the insights to tackle complex computational challenges.
+      </p>
+      
+      <!-- Additional Background Section -->
+      <h3 class="comparison-heading">Historical Context & Evolution</h3>
+      <p>
+        Over the decades, computer scientists have developed and refined numerous algorithms that not only solved immediate problems but also paved the way for further innovation. Early breakthroughs in graph theory, dynamic programming, and numerical methods set the stage for more specialized solutions. Today, many of these algorithms are integrated into libraries and frameworks, proving that well-designed solutions can stand the test of time.
+      </p>
+      <p>
+        Understanding the historical evolution of these algorithms reveals the iterative nature of innovation—how foundational ideas are adapted to meet new challenges, resulting in robust, versatile techniques that continue to influence modern software engineering.
+      </p>
+      
+      <!-- Why Named Algorithms Matter -->
+      <h3 class="comparison-heading">Why Named Algorithms Matter</h3>
+      <ul>
+        <li><strong>Proven Reliability:</strong> Time-tested across academia and industry, these algorithms offer dependable solutions.</li>
+        <li><strong>Reusability:</strong> Familiarity with classic algorithms helps you quickly recognize recurring patterns and adapt solutions to new problems.</li>
+        <li><strong>Foundation for Innovation:</strong> Modern techniques often build upon these established methods, ensuring that innovation is rooted in solid principles.</li>
+        <li><strong>Conceptual Clarity:</strong> Studying named algorithms enhances your understanding of fundamental computer science concepts and problem-solving strategies.</li>
+      </ul>
+      
+      <!-- Key Domains & Examples -->
+      <h3 class="comparison-heading">Key Domains &amp; Examples</h3>
+      <ol>
+        <li><strong>Graph Theory:</strong> Breadth-First Search (BFS), Depth-First Search (DFS), Kruskal’s MST, etc.</li>
+        <li><strong>Numerical Optimization:</strong> Newton’s Method, Genetic Algorithms, and other iterative techniques.</li>
+        <li><strong>Data Science &amp; AI:</strong> Gradient Descent, Support Vector Machines, Decision Trees, etc.</li>
+        <li><strong>Cryptography:</strong> RSA, Diffie-Hellman, Advanced Encryption Standard (AES), and other secure protocols.</li>
+        <li><strong>Geometry &amp; Robotics:</strong> Convex Hull algorithms, A* Pathfinding, among others.</li>
+      </ol>
+      
+      <!-- Additional Insight Section -->
+      <h3 class="comparison-heading">Core Principles & Common Themes</h3>
+      <p>
+        While each algorithm is unique, many share common characteristics:
+      </p>
+      <ul>
+        <li><strong>Efficiency:</strong> Designed to minimize computational complexity and resource usage.</li>
+        <li><strong>Determinism vs. Probabilism:</strong> Some algorithms guarantee the same outcome with every execution, while others use randomness to optimize performance.</li>
+        <li><strong>Scalability:</strong> Effective algorithms handle increasing data sizes gracefully, often serving as the foundation for scalable systems.</li>
+        <li><strong>Adaptability:</strong> Many algorithms have been adapted over time to work in new environments or with new data types.</li>
+      </ul>
+      
+      <!-- Famous Algorithm Showcase -->
+      <h3 class="comparison-heading">Famous Algorithm Showcase</h3>
+      <div class="chapter-example">
+        <h4>Dijkstra’s Algorithm (Shortest Path)</h4>
+        <pre class="code-snippet">
+    <code>
+    function dijkstra(graph, source) {
+      const distances = {};
+      const visited = {};
+      
+      // Initialize distances
+      for (let vertex in graph) {
+        distances[vertex] = Infinity;
+        visited[vertex] = false;
+      }
+      distances[source] = 0;
+    
+      for (let i = 0; i < Object.keys(graph).length; i++) {
+        // Find the nearest unvisited node
+        let minDistance = Infinity;
+        let currentNode = null;
+    
+        for (let vertex in distances) {
+          if (!visited[vertex] && distances[vertex] < minDistance) {
+            minDistance = distances[vertex];
+            currentNode = vertex;
+          }
+        }
+    
+        visited[currentNode] = true;
+    
+        // Update neighbors
+        for (let neighbor of graph[currentNode]) {
+          let [adjNode, weight] = neighbor;
+          let newDist = distances[currentNode] + weight;
+          if (newDist < distances[adjNode]) {
+            distances[adjNode] = newDist;
+          }
+        }
+      }
+    
+      return distances;
+    }
+    
+    // Example usage:
+    const graph = {
+      A: [['B', 2], ['C', 4]],
+      B: [['A', 2], ['C', 1], ['D', 7]],
+      C: [['A', 4], ['B', 1], ['D', 3]],
+      D: [['B', 7], ['C', 3]],
+    };
+    console.log(dijkstra(graph, 'A')); // { A: 0, B: 2, C: 3, D: 6 }
+    </code>
+        </pre>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-subtext);">
+          Note: In larger applications, consider using priority queues (heaps) to further optimize performance.
+        </p>
+      </div>
+      
+      <!-- Final Overview Paragraph -->
+      <p>
+        While this chapter offers a broad overview of named algorithms and their significance, each subchapter below delves into specific domains in greater detail. Explore the subchapters that best match your learning interests, and use this overview as a conceptual map to guide your journey.
+      </p>
     </main>
-  </div>
+      </div>
+
+  <!-- =======================
+       FOOTER
+  ======================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by 
+        <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>, 
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &amp; 
+        <a href="https://www.youtube.com/c/juxtopposed" target="_blank">Juxtopposed</a>.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>

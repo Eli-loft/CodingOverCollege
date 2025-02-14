@@ -1,65 +1,200 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Structures</title>
-  <!-- Link to your consolidated CSS -->
+  <title>Coding Over College</title>
+  <!-- Google Fonts: Montserrat (headings), Inter (body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
+  <!-- JavaScript -->
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- =======================
+       STICKY NAVIGATION BAR
+  ======================= -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters ▼</button>
+          <div class="dropdown-content">
+            <a href="Chapters/DataStructures/DataStructures.html">Data Structures</a>
+            <a href="Chapters/NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="Chapters/PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="Chapters/DNS/DNS.html">DNS</a>
+            <a href="Chapters/ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="Chapters/AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="Chapter/References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
         <li><a href="index.html">Home</a></li>
-        <li><a href="Chapters/DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="Chapters/NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="Chapters/PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="Chapters/DNS/DNS.html">DNS</a></li>
-        <li><a href="Chapters/References/References.html">References</a></li>
-        <li><a href="Chapters/Keywords/Keywords.html">Google Keywords Library</a></li>
       </ul>
     </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <!-- Simple hamburger icon -->
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Mobile Navigation (Hidden by default) -->
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters ▼</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="Chapters/DataStructures/DataStructures.html">Data Structures</a>
+            <a href="Chapters/NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="Chapters/PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="Chapters/DNS/DNS.html">DNS</a>
+            <a href="Chapters/ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="Chapters/AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="Chapters/References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </nav>
+
+    <!-- User Profile / Auth -->
+    <div class="user-profile">
+      <a href="#" class="btn-login">Login</a>
+    </div>
   </header>
 
-  <div class = "container">
-    
-    <main>
-      <section>
-        <h2 class="section-title">Overview</h2>
-        <p>
-          Welcome to Coding Over College.
-        </p>
-        <p> 
-          The overarching chapter tabs—Data Structures, Named Algorithms, Python Libraries, and more—are 
-          divided into subcategories, each containing topics relevant to their respective chapters. 
-          The goal of this project is to provide a beginner-friendly introduction to advanced topics, 
-          offering not only enough to get you started but also enough to keep you going.
-          This project has been a long time in the making. I derived much of my inspiration from W3Schools, 
-          and I highly recommend checking them out if you haven't already. They are my top reference, listed under the 
-          References tab. 
-        </p>
-        <h2 class="section-title">Inspiration</h2>     
-        <p>
-            
-          As I sit in my Data Analytics with Python class, I watch my teacher attempt to cover the entire Python language in a 
-          two-hour lecture. I can't help but think—there must be a better way to learn alongside him. That thought led me to 
-          hatch a plan: to create a website that simplifies complex jargon in the field while serving as a hub for libraries, 
-          algorithms, and data structures, ensuring that developers don’t have to reinvent the wheel.
-          My goal is not only to provide a resource for beginners who want a deeper understanding of Python and computer science 
-          as a whole but also to refine my own knowledge in the process. I firmly believe that you don’t truly understand 
-          something until you can explain a high-level concept to a fifth grader.
-          My hope is that anyone reading this develops the same passion for the craft that I hold myself. 
-          In a time of growing uncertainty in the field, I want to personally thank those who take the time to learn. 
-          Don’t be discouraged—you can learn.
-        </p>
+  <!-- =======================
+       HERO SECTION
+  ======================= -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Master Advanced Programming Concepts</h1>
+      <p class="subtext">
+        Take a leap beyond the basics and discover in-depth lessons that bridge the gap between novice and expert.
+      </p>
+      <button class="cta-btn">Begin Your Journey</button>
+    </div>
+    <div class="hero-graphic">
+      <!-- You can replace this with a cool 3D or animated background -->
+      <div class="animated-bg"></div>
+    </div>
+  </section>
 
+  <!-- =======================
+       CHAPTERS SECTION
+  ======================= -->
+  <section class="chapters-section">
+    <h2 class="section-title">Explore Our Chapters</h2>
+    <div class="chapter-cards">
+      <!-- Card 1: Data Structures -->
+      <article class="chapter-card">
+        <div class="card-icon">📚</div>
+        <h3>Data Structures</h3>
+        <p>
+          Learn about various data structures and how they optimize storage and retrieval.
+        </p>
+        <a class="chapter-btn" href="Chapters/DataStructures/DataStructures.html">Learn More</a>
+      </article>
+      <!-- Card 2: Named Algorithms -->
+      <article class="chapter-card">
+        <div class="card-icon">🔍</div>
+        <h3>Named Algorithms</h3>
+        <p>
+          Discover essential algorithms by name, their purpose, and how they solve common problems.
+        </p>
+        <a class="chapter-btn" href="Chapters/NamedAlgorithms/NamedAlgorithms.html">Learn More</a>
+      </article>
+      <!-- Card 3: Python Libraries -->
+      <article class="chapter-card">
+        <div class="card-icon">🐍</div>
+        <h3>Python Libraries</h3>
+        <p>
+          Explore popular Python libraries and tools that accelerate development.
+        </p>
+        <a class="chapter-btn" href="Chapters/PythonLibraries/PythonLibraries.html">Learn More</a>
+      </article>
+      <!-- Card 4: DNS -->
+      <article class="chapter-card">
+        <div class="card-icon">🌐</div>
+        <h3>DNS</h3>
+        <p>
+          Understand the Domain Name System and its critical role in network communication.
+        </p>
+        <a class="chapter-btn" href="Chapters/DNS/DNS.html">Learn More</a>
+      </article>
+      <!-- Card 5: Concurrency & Threads -->
+      <article class="chapter-card">
+        <div class="card-icon">⚙️</div>
+        <h3>Concurrency &amp; Threads</h3>
+        <p>
+          Dive into threading models, synchronization, and scalable multi-threaded applications.
+        </p>
+        <a class="chapter-btn" href="Chapters/ConcurrencyAndThreads/ConcurrencyAndThreads.html">Learn More</a>
+      </article>
+      <!-- Card 6: Algorithmic Complexity -->
+      <article class="chapter-card">
+        <div class="card-icon">📈</div>
+        <h3>Algorithmic Complexity</h3>
+        <p>
+          Master the art of analyzing algorithm efficiency with Big O notation and more.
+        </p>
+        <a class="chapter-btn" href="Chapters/AlgorithmicComplexity/AlgorithmicComplexity.html">Learn More</a>
+      </article>
+    </div>
+  </section>
 
-        <!-- More content goes here -->
-      </section>
-    </main>
-  </div>
+  <!-- =======================
+       SAMPLE LESSON
+  ======================= -->
+  <section class="lesson-section">
+    <h2 class="section-title">Interactive Lesson Demo</h2>
+    <div class="lesson-content">
+      <p>
+        Here’s a sneak peek at our lesson format. Toggle the code block below
+        to see how concurrency in JavaScript works:
+      </p>
+      <button class="toggle-code-btn" id="toggleCodeBtn">Show Code</button>
+      <pre class="code-snippet hidden" id="codeSnippet">
+<code>
+// JavaScript Concurrency Example (Fake Async)
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Async process complete!");
+}, 2000);
+
+console.log("End");
+
+// You’ll see "Start" -> "End" immediately, 
+// then "Async process complete!" after 2s.
+</code>
+      </pre>
+    </div>
+  </section>
+
+  <!-- =======================
+       FOOTER
+  ======================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>Inspired by <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &amp; <a href="https://www.youtube.com/c/juxtopposed" target="_blank">Juxtopposed</a>.</p>
+    </div>
+  </footer>
 </body>
 </html>

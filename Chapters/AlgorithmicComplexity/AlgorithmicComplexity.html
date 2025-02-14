@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Algorithmic Complexity - Coding Over College</title>
+  <!-- Google Fonts: Montserrat (headings), Inter (body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../style.css" />
+  <!-- JavaScript -->
+  <script defer src="../../script.js"></script>
+</head>
+<body>
+  <!-- =======================
+       STICKY NAVIGATION BAR
+  ======================= -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="AlgorithmicComplexity.html" class="active">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="AlgorithmicComplexity.html" class="active">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Login</a>
+    </div>
+  </header>
+
+  <!-- =======================
+       CHAPTER HERO
+  ======================= -->
+  <section class="chapter-hero">
+    <div class="chapter-hero-content">
+      <h1>Algorithmic Complexity</h1>
+      <p class="chapter-subtext">
+        Delve into the analysis of algorithms—understand time and space complexity, learn Big O notation, and study how to evaluate the efficiency of your code.
+      </p>
+    </div>
+  </section>
+
+  <!-- =======================
+       SUBCHAPTERS SECTION
+  ======================= -->
+  <section class="subchapters-section">
+    <h2 class="section-title toggle-heading" id="subchaptersToggle">
+      Subchapters <span class="toggle-arrow">▼</span>
+    </h2>
+    
+    <div class="chapter-cards" id="subchaptersContent">
+      <!-- Card 1: Big O Notation -->
+      <article class="chapter-card">
+        <div class="card-icon">📊</div>
+        <h3>Big O Notation</h3>
+        <p>Master the notation used to classify algorithm performance.</p>
+        <a class="chapter-btn" href="subChapters/BigONotation.html">Learn More</a>
+      </article>
+      <!-- Card 2: Time Complexity -->
+      <article class="chapter-card">
+        <div class="card-icon">⏱️</div>
+        <h3>Time Complexity</h3>
+        <p>Analyze how algorithms scale with increasing input sizes.</p>
+        <a class="chapter-btn" href="subChapters/TimeComplexity.html">Learn More</a>
+      </article>
+      <!-- Card 3: Space Complexity -->
+      <article class="chapter-card">
+        <div class="card-icon">💾</div>
+        <h3>Space Complexity</h3>
+        <p>Understand memory usage and trade-offs in algorithm design.</p>
+        <a class="chapter-btn" href="subChapters/SpaceComplexity.html">Learn More</a>
+      </article>
+      <!-- Card 4: Amortized Analysis -->
+      <article class="chapter-card">
+        <div class="card-icon">⚖️</div>
+        <h3>Amortized Analysis</h3>
+        <p>Average out the cost of operations to gauge practical performance.</p>
+        <a class="chapter-btn" href="subChapters/AmortizedAnalysis.html">Learn More</a>
+      </article>
+      <!-- Card 5: Complexity Classes -->
+      <article class="chapter-card">
+        <div class="card-icon">🔍</div>
+        <h3>Complexity Classes</h3>
+        <p>Explore P, NP, and NP-Complete problems to grasp computational limits.</p>
+        <a class="chapter-btn" href="subChapters/ComplexityClasses.html">Learn More</a>
+      </article>
+    </div>
+  </section>
+  
+
+  <!-- =======================
+       MAIN CONTENT AREA
+  ======================= -->
+  <main class="chapter-content">
+    <section id="introduction">
+      <h2>Introduction to Algorithmic Complexity</h2>
+      <p>
+        Algorithmic complexity provides a framework for analyzing how the performance of an algorithm changes with input size. By using Big O, Theta, and Omega notations, we can predict and compare the scalability and efficiency of different approaches.
+      </p>
+    </section>
+
+    <section id="notational-analysis">
+      <h2>Big O, Big Theta &amp; Big Omega</h2>
+      <p>
+        <strong>Big O Notation</strong> describes the upper bound of an algorithm’s runtime. <strong>Big Theta</strong> gives a tight bound, and <strong>Big Omega</strong> describes the lower bound. Together, these notations help you understand the best-case, worst-case, and average-case scenarios of your code.
+      </p>
+      <pre class="code-snippet">
+<code>
+// Example: Linear search in an array
+function linearSearch(arr, target) {
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === target) return i;
+  }
+  return -1;
+}
+// Worst-case: O(n)
+</code>
+      </pre>
+    </section>
+
+    <section id="time-space">
+      <h2>Time and Space Complexity</h2>
+      <p>
+        Time complexity measures how the runtime of an algorithm increases with input size, while space complexity considers the amount of memory needed. Balancing these factors is key to efficient algorithm design.
+      </p>
+    </section>
+
+    <section id="amortized">
+      <h2>Amortized Analysis</h2>
+      <p>
+        Amortized analysis smooths out the cost of expensive operations over many cheaper ones. A classic example is dynamic array resizing: while a single insertion might take O(n) time when resizing occurs, the average cost per insertion is O(1).
+      </p>
+    </section>
+
+    <section id="complexity-classes">
+      <h2>Complexity Classes</h2>
+      <p>
+        Complexity classes, such as P, NP, NP-Complete, and NP-Hard, categorize problems based on the computational resources required to solve them. Understanding these classes helps in choosing algorithms and setting realistic performance expectations.
+      </p>
+    </section>
+
+    <section id="case-studies">
+      <h2>Case Studies &amp; Examples</h2>
+      <p>
+        We’ll analyze common algorithms—from sorting and searching to graph algorithms—breaking down their complexities with real-world examples and code snippets.
+      </p>
+      <ul>
+        <li><strong>Sorting Algorithms:</strong> Compare Quick Sort (O(n log n) average) versus Bubble Sort (O(n²)).</li>
+        <li><strong>Graph Algorithms:</strong> Analyze Dijkstra’s algorithm for shortest paths and its complexity in dense vs. sparse graphs.</li>
+        <li><strong>Data Structures:</strong> Understand the trade-offs in using arrays versus linked lists in terms of time and space complexity.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- =======================
+       FOOTER
+  ======================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &amp;
+        <a href="https://www.youtube.com/c/juxtopposed" target="_blank">Juxtopposed</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
