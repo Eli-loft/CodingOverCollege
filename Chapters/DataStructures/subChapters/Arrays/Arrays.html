@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Structures - Coding Over College</title>
+  <!-- Google Fonts: Montserrat (headings), Inter (body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../../../style.css" />
+  <!-- JavaScript -->
+  <script defer src="../../../../script.js"></script>
+</head>
+<body>
+  <!-- =======================
+       STICKY NAVIGATION BAR
+  ======================= -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-links">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters </button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures.html">Data Structures</a>
+            <a href="../../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../../DNS/DNS.html">DNS</a>
+            <a href="../../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <!-- Simple hamburger icon -->
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Mobile Navigation (Hidden by default) -->
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures.html">Data Structures</a>
+            <a href="../../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../../DNS/DNS.html">DNS</a>
+            <a href="../../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+
+    <!-- User Profile / Auth -->
+    <div class="user-profile">
+      <a href="#" class="btn-login">Login</a>
+    </div>
+  </header>
+
+  <section class="subchapters-section">
+    <h2 class="section-title toggle-heading" id="subchaptersToggle">
+      Subchapters <span class="toggle-arrow">▼</span>
+    </h2>
+    
+    <div class="chapter-cards" id="subchaptersContent">
+      <!-- Part I: Introduction to Arrays -->
+      <article class="chapter-card">
+        <div class="card-icon">🔢</div>
+        <h3>What Are Arrays?</h3>
+        <p>Explore the definition, characteristics, and memory layout of arrays.</p>
+        <a class="chapter-btn" href="SubChapters/WhatAreArrays.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">💡</div>
+        <h3>Why Arrays Matter</h3>
+        <p>Understand the fundamental role of arrays in data structures and algorithm design.</p>
+        <a class="chapter-btn" href="SubChapters/WhyArraysMatter.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🐍</div>
+        <h3>Arrays in Python – An Overview</h3>
+        <p>Compare Python lists, the array module, and NumPy arrays for different use cases.</p>
+        <a class="chapter-btn" href="SubChapters/ArraysInPython.html">Learn More</a>
+      </article>
+      
+      <!-- Part II: Python Lists (as Dynamic Arrays) -->
+      <article class="chapter-card">
+        <div class="card-icon">📝</div>
+        <h3>Python Lists – The Basics</h3>
+        <p>Learn to create and manipulate dynamic arrays using Python lists.</p>
+        <a class="chapter-btn" href="SubChapters/PythonListsBasics.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🔄</div>
+        <h3>Manipulating and Traversing Lists</h3>
+        <p>Master list methods, iteration patterns, and Pythonic techniques for list operations.</p>
+        <a class="chapter-btn" href="SubChapters/ManipulatingTraversingLists.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">⚡</div>
+        <h3>Performance and Memory</h3>
+        <p>Analyze time complexities and memory management for Python list operations.</p>
+        <a class="chapter-btn" href="SubChapters/PerformanceAndMemory.html">Learn More</a>
+      </article>
+      
+      <!-- Part III: The array Module in Python -->
+      <article class="chapter-card">
+        <div class="card-icon">📏</div>
+        <h3>Why Use array Module?</h3>
+        <p>Discover when and why to choose the array module for homogeneous data and performance.</p>
+        <a class="chapter-btn" href="SubChapters/WhyUseArrayModule.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🔧</div>
+        <h3>Working with array Objects</h3>
+        <p>Learn to create, initialize, and perform operations with Python's array module.</p>
+        <a class="chapter-btn" href="SubChapters/WorkingWithArrayObjects.html">Learn More</a>
+      </article>
+      
+      <!-- Part IV: NumPy Arrays -->
+      <article class="chapter-card">
+        <div class="card-icon">🔬</div>
+        <h3>Introduction to NumPy</h3>
+        <p>Dive into NumPy's capabilities for scientific computing and vectorized operations.</p>
+        <a class="chapter-btn" href="SubChapters/IntroductionToNumPy.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🛠️</div>
+        <h3>Creating NumPy Arrays</h3>
+        <p>Explore methods for constructing arrays from lists, zeros, ones, and ranges.</p>
+        <a class="chapter-btn" href="SubChapters/CreatingNumPyArrays.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">✂️</div>
+        <h3>Indexing and Slicing in NumPy</h3>
+        <p>Learn about basic, fancy, and boolean indexing along with slicing differences.</p>
+        <a class="chapter-btn" href="SubChapters/IndexingSlicingNumPy.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">➕</div>
+        <h3>NumPy Array Operations</h3>
+        <p>Perform arithmetic, broadcasting, and aggregation operations on NumPy arrays.</p>
+        <a class="chapter-btn" href="SubChapters/NumPyArrayOperations.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🚀</div>
+        <h3>Advanced NumPy Topics</h3>
+        <p>Understand matrix operations, reshaping, stacking, and in-depth broadcasting techniques.</p>
+        <a class="chapter-btn" href="SubChapters/AdvancedNumPyTopics.html">Learn More</a>
+      </article>
+      
+      <!-- Part V: Pandas Series and DataFrames (Built on Arrays) -->
+      <article class="chapter-card">
+        <div class="card-icon">🐼</div>
+        <h3>Introduction to Pandas</h3>
+        <p>Get started with Pandas for powerful tabular data manipulation and analysis.</p>
+        <a class="chapter-btn" href="SubChapters/IntroductionToPandas.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">📊</div>
+        <h3>Pandas Series</h3>
+        <p>Learn to create, index, and operate on Pandas Series for one-dimensional data.</p>
+        <a class="chapter-btn" href="SubChapters/PandasSeries.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🗂️</div>
+        <h3>DataFrames: Arrays with Row and Column Indexes</h3>
+        <p>Master DataFrame creation, indexing, vectorized operations, and merging techniques.</p>
+        <a class="chapter-btn" href="SubChapters/DataFrames.html">Learn More</a>
+      </article>
+      
+      <!-- Part VI: Algorithmic Patterns and Techniques with Arrays -->
+      <article class="chapter-card">
+        <div class="card-icon">🔍</div>
+        <h3>Searching and Sorting</h3>
+        <p>Implement linear and binary search algorithms along with common sorting techniques.</p>
+        <a class="chapter-btn" href="SubChapters/SearchingAndSorting.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🏆</div>
+        <h3>Common Array-Based Algorithms</h3>
+        <p>Explore two-pointer, sliding window, prefix sums, and Kadane's algorithm for array challenges.</p>
+        <a class="chapter-btn" href="SubChapters/CommonArrayAlgorithms.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🏗️</div>
+        <h3>Advanced Data Structures Built on Arrays</h3>
+        <p>Learn to implement stacks, queues, heaps, and tries using array-based techniques.</p>
+        <a class="chapter-btn" href="SubChapters/AdvancedDataStructures.html">Learn More</a>
+      </article>
+      
+      <!-- Part VII: Memory, Complexity, and Optimization -->
+      <article class="chapter-card">
+        <div class="card-icon">💾</div>
+        <h3>Memory Management for Arrays</h3>
+        <p>Understand physical vs. logical representation and the trade-offs of in-place operations.</p>
+        <a class="chapter-btn" href="SubChapters/MemoryManagement.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">📈</div>
+        <h3>Complexity Analysis</h3>
+        <p>Review Big-O notation and analyze the time and space complexities of array operations.</p>
+        <a class="chapter-btn" href="SubChapters/ComplexityAnalysis.html">Learn More</a>
+      </article>
+      
+      <!-- Part VIII: Applications and Best Practices -->
+      <article class="chapter-card">
+        <div class="card-icon">🌍</div>
+        <h3>Real-World Array Use Cases</h3>
+        <p>Discover practical applications of arrays in data science, image processing, and more.</p>
+        <a class="chapter-btn" href="SubChapters/RealWorldUseCases.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">💼</div>
+        <h3>Best Practices for Coding Interviews and Projects</h3>
+        <p>Gain insights on writing clean, Pythonic code and handling large datasets effectively.</p>
+        <a class="chapter-btn" href="SubChapters/BestPractices.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">⚠️</div>
+        <h3>Common Pitfalls and How to Avoid Them</h3>
+        <p>Identify and mitigate common mistakes such as off-by-one errors and inefficient operations.</p>
+        <a class="chapter-btn" href="SubChapters/CommonPitfalls.html">Learn More</a>
+      </article>
+      
+      <!-- Part IX: Further Exploration -->
+      <article class="chapter-card">
+        <div class="card-icon">🔌</div>
+        <h3>Additional Libraries and Tools</h3>
+        <p>Explore SciPy, Dask, and Xarray for advanced scientific and distributed computing tasks.</p>
+        <a class="chapter-btn" href="SubChapters/AdditionalLibraries.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🛠️</div>
+        <h3>Practical Projects and Exercises</h3>
+        <p>Engage in projects to apply array concepts in image processing, data analytics, and more.</p>
+        <a class="chapter-btn" href="SubChapters/PracticalProjects.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🏁</div>
+        <h3>Final Thoughts and Next Steps</h3>
+        <p>Summarize key takeaways and explore further learning paths in data structures and algorithms.</p>
+        <a class="chapter-btn" href="SubChapters/FinalThoughts.html">Learn More</a>
+      </article>
+      
+      <!-- Appendix -->
+      <article class="chapter-card">
+        <div class="card-icon">📖</div>
+        <h3>Glossary</h3>
+        <p>Definitions for key terms like slicing, broadcasting, and array indexing.</p>
+        <a class="chapter-btn" href="SubChapters/Glossary.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">📝</div>
+        <h3>Cheat Sheets</h3>
+        <p>Quick reference guides for Python list methods, NumPy functions, and Pandas operations.</p>
+        <a class="chapter-btn" href="SubChapters/CheatSheets.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">🔗</div>
+        <h3>References and Recommended Reading</h3>
+        <p>Official documentation, tutorials, and books to deepen your understanding of arrays.</p>
+        <a class="chapter-btn" href="SubChapters/References.html">Learn More</a>
+      </article>
+      
+      <article class="chapter-card">
+        <div class="card-icon">✅</div>
+        <h3>Final Notes</h3>
+        <p>Concluding remarks and additional insights to wrap up the arrays series.</p>
+        <a class="chapter-btn" href="SubChapters/FinalNotes.html">Learn More</a>
+      </article>
+    </div>
+  </section>
+  <!-- =======================
+       MAIN CONTENT
+  ======================= -->
+
+  <main class="chapter-content">
+    <div class="subchapterBody">
+      
+      <!-- Hero Section -->
+      <section class="preface-section" id="preface-section">
+        <div class="hero-content">
+          <h2>Explore the World of Arrays</h2>
+          <p>
+            Your comprehensive guide to understanding arrays—from Python lists and the array module to advanced NumPy and Pandas techniques.
+          </p>
+          <a class="btn primary-btn" href="#subchaptersContent">Get Started</a>
+        </div>
+      </section>
+  
+      <!-- Introduction Section -->
+      <section class="preface-section" id="preface-section"> 
+        <h2>Welcome to the Array Series</h2>
+        <p>
+          This website is designed to be your one-stop resource for mastering arrays in programming.
+          Whether you’re a beginner learning the basics or an experienced developer tackling advanced data structures,
+          our step-by-step tutorials, practical projects, and in-depth guides will help you build a strong foundation in arrays and their applications.
+        </p>
+      </section>
+  
+      <!-- Features/Overview Section -->
+      <section class="preface-section" id="preface-section">
+        <h2>What You'll Discover</h2>
+        <ul>
+          <li>Fundamental concepts of arrays and memory management.</li>
+          <li>Dynamic Python lists and the use of the array module.</li>
+          <li>Efficient data processing with NumPy arrays and Pandas DataFrames.</li>
+          <li>Algorithmic techniques, including searching, sorting, and more.</li>
+          <li>Real-world applications in data science, image processing, and beyond.</li>
+        </ul>
+      </section>
+  
+      <!-- Preface Section -->
+      <section class="preface-section" id="preface-section">
+        <h2>Preface</h2>
+        <p>
+          Arrays are one of the most fundamental and versatile data structures in computer science. They form the basis of more complex structures like matrices, tensors, stacks, queues, and even higher-level constructs we use on a daily basis. Whether you are just embarking on your programming journey or are a seasoned developer looking to strengthen your foundations, a deep understanding of arrays will serve you well in many areas—software development, data science, machine learning, competitive programming, and more.
+        </p>
+        <p>
+          In Python, arrays come in many flavors. You have the built-in list type, a dynamic array that is both powerful and flexible for day-to-day coding. There is also the lower-level array module, which, while less commonly used, offers memory-efficient arrays constrained to specific data types. On the other end of the spectrum, libraries such as NumPy extend the concept of arrays to powerful n-dimensional data structures, enabling vectorized operations that are critical in scientific computing and data analysis. And for tabular, labeled data, Pandas leverages these underlying NumPy arrays to deliver DataFrames, a staple tool in data science for everything from small side projects to enterprise-level pipelines.
+        </p>
+        <p>
+          This book aims to demystify the world of arrays in Python, starting from the foundational concepts and building up to advanced techniques. We begin by discussing what arrays truly are and why they continue to be an essential part of modern programming. We highlight key differences in how arrays are implemented in various languages—information that can help you see the potential trade-offs and efficiencies in Python’s approach. From there, we delve into the rich ecosystem of Python data structures, unveiling how lists, the array module, NumPy arrays, and Pandas Series/DataFrames can all be leveraged for different problem scenarios.
+        </p>
+        <p>
+          Alongside these discussions, you will find comprehensive coverage of core algorithmic practices. We explore searching, sorting, two-pointer methods, sliding windows, prefix sums, and other essential techniques found in coding interviews and competitive programming challenges. By understanding these patterns and applying them to arrays, you will develop the skills to tackle real-world problems and ace technical interviews.
+        </p>
+        <p>
+          Additionally, we do not shy away from performance and memory considerations. Arrays are intimately tied to concepts of contiguous memory, data locality, and caching, which in turn influence how fast your programs run. Understanding Big-O complexities and when to use in-place vs. out-of-place operations can be the difference between code that is merely functional and code that is both efficient and elegant.
+        </p>
+        <p>
+          If you are a data enthusiast, you will appreciate our dive into Pandas, the library at the heart of Python’s data science ecosystem. We walk through Series and DataFrames—how they build on NumPy arrays, how to manipulate data at scale, and how to clean and transform large datasets. This integration of theory and practice ensures you not only grasp the how, but also the why.
+        </p>
+        <p>
+          By the end of this book, you will have a solid grasp of the many facets of arrays in Python, from basic list operations to advanced tensor manipulations in NumPy, alongside real-world applications in data science, analytics, and algorithmic problem-solving. Whether you are polishing your skills for interviews, seeking to optimize code in a production environment, or exploring the wide horizon of data analysis, this book provides the knowledge and confidence to harness arrays effectively in your projects.
+        </p>
+        <p>
+          Welcome to the world of arrays in Python. Let’s begin our journey toward becoming highly proficient in a data structure that underpins so much of what we do as programmers.
+        </p>
+      </section>
+      
+          <!-- =======================
+          FOOTER
+      ======================= -->
+      <footer class="footer">
+        <div class="footer-content">
+          <p>© 2025 Coding Over College</p>
+          <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+          <p>Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>, <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &amp; <a href="https://www.youtube.com/c/juxtopposed" target="_blank">Juxtopposed</a>.</p>
+        </div>
+      </footer>
+    </body>
+    </html>

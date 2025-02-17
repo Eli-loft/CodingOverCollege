@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 1: What Are Arrays?</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Main CSS (adjust the path if needed) -->
+  <link rel="stylesheet" href="../../../../../style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../../DataStructures.html">Data Structures</a>
+            <a href="../../../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../../../DNS/DNS.html">DNS</a>
+            <a href="../../../../ConcurrencyAndThreads/oncurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+           </div>
+        </li>
+        <li><a href="../../../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../../DataStructures.html">Data Structures</a>
+            <a href="../../../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../../../DNS/DNS.html">DNS</a>
+            <a href="../../../../ConcurrencyAndThreads/oncurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Login</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="chapter-hero">
+    <div class="chapter-hero-content">
+      <h1 class="fade-in">Chapter 1: What Are Arrays?</h1>
+      <p class="chapter-subtext fade-in">
+        Dive into the fundamental data structure that powers efficient data storage and access.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="chapter-content">
+    <div class="subchapterBody">
+      <section id="definition-characteristics" class="fade-in">
+        <h2 class="section-title">Definition and Characteristics</h2>
+        <p>
+          An array is a data structure that stores a collection of elements, each identified by an index or a key. Arrays are widely used due to their efficiency in storing and accessing elements in a structured manner. They have several key characteristics:
+        </p>
+      </section>
+
+      <section id="contiguity" class="fade-in">
+        <h3>Contiguity in Memory</h3>
+        <p>
+          Arrays are stored in contiguous memory locations. This means that all elements of an array are placed next to each other in memory, allowing for quick access using an index. Because of this property, retrieving an element from an array is an O(1) operation, meaning it takes constant time regardless of the array's size.
+        </p>
+      </section>
+
+      <section id="homogeneous-heterogeneous" class="fade-in">
+        <h3>Homogeneous vs. Heterogeneous Arrays</h3>
+        <p>
+          <strong>Homogeneous Arrays:</strong> These arrays contain elements of the same data type. Many languages, such as C, C++, and Java, enforce homogeneous arrays for better memory efficiency and type safety.
+        </p>
+        <p>
+          <strong>Heterogeneous Arrays:</strong> Some languages, like Python, allow arrays (or lists) to store elements of different types. While this provides flexibility, it often comes with performance trade-offs.
+        </p>
+      </section>
+
+      <section id="fixed-dynamic" class="fade-in">
+        <h3>Fixed Size vs. Dynamic Arrays</h3>
+        <p>
+          <strong>Fixed-Size Arrays:</strong> Traditional arrays, as seen in C and Java, have a predetermined size allocated at the time of creation. This means their capacity is fixed, and resizing requires creating a new array and copying the elements over.
+        </p>
+        <p>
+          <strong>Dynamic Arrays:</strong> Some languages, such as Python and JavaScript, provide dynamic arrays that can grow or shrink as needed. These arrays use underlying resizing mechanisms to allocate more memory when required.
+        </p>
+      </section>
+
+      <section id="language-implementation" class="fade-in">
+        <h3>Arrays in Different Programming Languages</h3>
+        <p>
+          Different programming languages implement arrays in distinct ways, each with its own strengths and limitations.
+        </p>
+        <h4>C/C++ Static Arrays</h4>
+        <p>
+          In C and C++, arrays are fixed in size and must be declared before use. Memory for the array is allocated either statically (compile-time) or dynamically (heap allocation).
+        </p>
+        <pre class="code-snippet">
+int numbers[5] = {1, 2, 3, 4, 5}; // Fixed-size array
+        </pre>
+        <p>
+          C++ also provides dynamic arrays via the vector class, which functions as a dynamic array.
+        </p>
+        <h4>Java Arrays</h4>
+        <p>
+          In Java, arrays are objects and must be instantiated using the new keyword.
+        </p>
+        <pre class="code-snippet">
+int[] numbers = new int[5]; // Fixed-size array
+        </pre>
+        <p>
+          Java does not support dynamically resizing arrays natively, but the ArrayList class in the java.util package provides dynamic array functionality.
+        </p>
+        <h4>Python Differences: Lists vs. array Module vs. NumPy</h4>
+        <p>
+          Python does not have built-in static arrays like C or Java. Instead, it provides:
+        </p>
+        <ul>
+          <li>
+            <strong>Lists:</strong> A flexible, dynamically-sized collection that allows heterogeneous data.
+          </li>
+          <li>
+            <strong>array Module:</strong> A more memory-efficient alternative for homogeneous data.
+          </li>
+          <li>
+            <strong>NumPy Arrays:</strong> Optimized for numerical computing and scientific applications.
+          </li>
+        </ul>
+        <p>Example of a Python list:</p>
+        <pre class="code-snippet">
+numbers = [1, 2, 3, 4, 5]  # Dynamic and heterogeneous
+        </pre>
+        <p>Using the array module for efficiency:</p>
+        <pre class="code-snippet">
+from array import array
+numbers = array('i', [1, 2, 3, 4, 5])  # Homogeneous and memory-efficient
+        </pre>
+        <p>For high-performance computing, NumPy arrays are preferred:</p>
+        <pre class="code-snippet">
+import numpy as np
+numbers = np.array([1, 2, 3, 4, 5])
+        </pre>
+      </section>
+
+      <section id="summary" class="fade-in">
+        <h3>Summary</h3>
+        <p>
+          Arrays are a fundamental data structure that store elements in contiguous memory locations. They can be homogeneous or heterogeneous and may have fixed or dynamic sizes depending on the programming language. Different languages offer varying implementations, from static arrays in C/C++ to dynamic lists in Python and specialized structures like NumPy arrays for high-performance computing.
+        </p>
+        <p>
+          In the next chapter, we will explore why arrays matter and how they form the building blocks of more advanced data structures and algorithms.
+        </p>
+      </section>
+    </div>
+    <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+      <a href="../SubChapters/PythonListsBasics.html" class="chapter-btn">Next Chapter &rarr;</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript (adjust the path if needed) -->
+  <script defer src="../../../../../script.js"></script>
+</body>
+</html>

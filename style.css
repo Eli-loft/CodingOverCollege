@@ -910,3 +910,54 @@ img {
   margin-bottom: 1rem;
 }
 /*This is a test*/
+/* =======================
+   Preface Section 
+======================= */
+/* Preface Section Styles */
+.preface-section {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: var(--color-card-bg);
+  border-left: 6px solid var(--color-accent);
+}
+
+.preface-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--color-subtext);
+  padding-bottom: 5px;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+}
+
+.preface-section p {
+  background-color: var(--color-bg);
+  text-indent: 2em;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: var(--color-text);
+  padding: 15px;
+  border: 1px solid var(--color-subtext);
+  border-radius: 4px;
+}
+.preface-section ul{
+  background-color: var(--color-bg);
+  margin-left: 0%;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: var(--color-text);
+  padding: 30px;
+  border: 1px solid var(--color-subtext);
+  border-radius: 4px;
+}
+#language-implementation h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+#language-implementation p,
+#language-implementation pre,
+#language-implementation ul {
+  margin-bottom: 1.5rem;
+}
