@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Second Chance</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../../style.css" />
+  <!-- OPTIONAL: Nudging on Leaving -->
+
+</head>
+<body class="second-chance">
+  <!-- =======================
+       STICKY NAVIGATION BAR
+  ======================= -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <!-- Desktop Navigation (all links loop back) -->
+    <nav class="nav-links">
+      <ul>
+        <li><a href="SecondChance.html">Home</a></li>
+        <li><a href="SecondChance.html">Data Structures</a></li>
+        <li><a href="SecondChance.html">Community</a></li>
+        <li><a href="SecondChance.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Mobile Nav (also loops back) -->
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li><a href="SecondChance.html">Home</a></li>
+        <li><a href="SecondChance.html">Data Structures</a></li>
+        <li><a href="SecondChance.html">Community</a></li>
+        <li><a href="SecondChance.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- User Profile / Auth -->
+    <div class="user-profile">
+      <a href="SecondChance.html" class="btn-login">Donate</a>
+    </div>
+  </header>
+
+  <!-- =======================
+       MAIN CONTENT AREA
+  ======================= -->
+  <section class="chapter-content">
+    <h1>You’ve Caught Me.</h1>
+    <p>
+      So, the secret’s out—I was pushing pretty hard to get that resume in your hands.
+      But let’s face it: sometimes a well-placed <em>encouragement</em> is all it takes to spark something good.
+      <br><br>
+      Since you’re here, consider this your <strong>second chance</strong>. I’m not blocking anything anymore.
+      No blurred text, no hidden content, no tricks—just a moment for you to decide.
+      <br><br>
+      If you <em>do</em> want to see what else I bring to the table, click below.
+      After all, second chances don’t always come around, and I’d hate for you to miss out.
+    </p>
+    <!-- Big Button to Download Resume -->
+    <button class="try-again-btn" id="downloadResumejs">Download My Resume</button>
+  </section>
+  <div id="exitModal" class="exit-modal">
+    <div class="modal-content">
+      <p>Are you sure you want to leave right now? Not everyone gets a second chance.</p>
+      <button onclick="closeExitModal()">Stay</button>
+    </div>
+  </div>
+
+  <!-- =======================
+       FOOTER
+  ======================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="SecondChance.html">Privacy Policy</a></li>
+        <li><a href="SecondChance.html">Terms of Service</a></li>
+        <li><a href="SecondChance.html">Support</a></li>
+      </ul>
+      <p>
+        Inspired by 
+        <a href="SecondChance.html" target="_blank">W3Schools</a>, 
+        <a href="SecondChance.html" target="_blank">Fireship</a> &amp; 
+        <a href="SecondChance.html" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- =======================
+       MAIN SCRIPTS
+  ======================= -->
+  <script src="../../script.js"></script>
+</body>
+</html>

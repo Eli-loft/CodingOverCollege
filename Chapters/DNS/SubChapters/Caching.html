@@ -1,145 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNS Caching</title>
-  <!-- Make sure the path below is correct relative to your HTML file -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caching - Performance Made Easy</title>
+  <!-- Google Fonts: Montserrat (headings), Inter (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Link to main stylesheet (adjust the path as needed) -->
+  <link rel="stylesheet" href="../../../style.css">
+  <!-- Inline styles specific to Caching chapter (optional) -->
+  <style>
+    /* Terminal style specifically for code snippets in Caching chapter */
+    .terminal {
+      background-color: #121212;
+      color: #33ff33;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: inset 0 0 10px rgba(51, 255, 51, 0.3);
+      white-space: pre-wrap;
+      margin: 1rem 0;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <!-- Adjust paths as needed for your project structure -->
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+            <a href="../../Resolvers/Resolvers.html">Resolvers</a>
+            <!-- Now add the new caching chapter if you want it listed -->
+            <a href="Caching.html">Caching</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
         <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../../DNS/DNS.html">DNS</a></li>
-        <li><a href="../../References/References.html">References</a></li>
-        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
       </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+            <a href="../../Resolvers/Resolvers.html">Resolvers</a>
+            <a href="Caching.html">Caching</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
-      <ul>
-        <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
-        <li><a href="../SubChapters/Caching.html">Caching</a></li>
-        <li><a href="../SubChapters/ZoneFiles.html">Zone Files</a></li>
-        <li><a href="../SubChapters/IPAddress.html">IP Addresses</a></li>
-        <li><a href="../SubChapters/Proticals.html">Proticals</a></li>
-        <li><a href="../SubChapters/Ports.html">Ports</a></li>
-        <li><a href="../SubChapters/PublicDNS.html">Public DNS</a></li>
-        <li><a href="../SubChapters/PrivateDNS.html">Private DNS</a></li>
-        <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
-        <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
-        <li><a href="../SubChapters/nslookup.html">nslookup</a></li>
-        <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
-        <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
-        <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
-        <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
-        <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
-        <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
-        <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
-        <li><a href="../SubChapters/ResolvingDomainFailures.html">Resolving Domain Failures</a></li>
-        <li><a href="../SubChapters/CheckingDNSPropagation.html">Checking DNS Propagation</a></li>
-      </ul>
-    </aside>
+  <!-- HERO SECTION -->
+  <section class="chapter-hero">
+    <div class="chapter-hero-content">
+      <h1 class="fade-in">Caching: Boosting Performance, One Hit at a Time</h1>
+      <p class="chapter-subtext fade-in">
+        An in-depth look at how caching helps speed up applications, reduce latency, and cut down on unnecessary work.
+      </p>
+    </div>
+  </section>
 
-    <main class="mainbody">
-      
-      <div class="subchapterBody">
-        <h2 class="section-title hidden">What is DNS Caching?</h2>
-        <section id="introduction" class="hidden">
+  <!-- MAIN CONTENT -->
+  <main class="chapter-content">
+    <div class="subchapterBody">
+      <!-- Caching Introduction -->
+      <h2 class="section-title">Caching Introduction</h2>
+      <section id="caching-intro" class="fade-in">
         <p>
-          DNS caching stores recently visited IP addresses for your computer to load websites much faster.
-          It’s like saving answers so you have them if the question gets re-asked.
-        </p>
-      </section>
-      
-      <h2 class="section-title hidden">How Does DNS Caching Work?</h2>
-      <section id="how-dns-caching-works" class="hidden">
-        <p>
-          When you visit a website for the first time, your computer goes through the full DNS lookup process. 
-          But instead of forgetting the result, it stores it in cache for future use.
-        </p>
-        <p>
-          The next time you visit the same site, your computer skips the whole DNS lookup and uses the stored IP address to load the website instantly.
+          In computing, <strong>caching</strong> is the process of storing data in a temporary storage area (the <em>cache</em>) so that future requests for that data can be served more quickly. Caches exist everywhere: in your CPU, your web browser, your operating system, your DNS resolver, and even distributed across global servers in Content Delivery Networks (CDNs).
         </p>
       </section>
 
-      <h2 class="section-title hidden">Where Does DNS Caching Happen?</h2>
-      <section id="dns-caching-locations" class="hidden">
-        <p>DNS caching happens in multiple places, like layers of memory storage:</p>
+      <!-- Why Caching Matters -->
+      <h2 class="section-title">Why Caching Matters</h2>
+      <section id="why-caching" class="fade-in">
+        <ul>
+          <li><strong>Speed:</strong> Serving cached data is much faster than computing or fetching it anew.</li>
+          <li><strong>Reduced Latency:</strong> Resources stored locally (or closer to the user) reduce network round trips.</li>
+          <li><strong>Lower Costs:</strong> Less bandwidth usage and fewer CPU cycles can mean big savings at scale.</li>
+          <li><strong>Improved User Experience:</strong> Faster load times keep users engaged.</li>
+        </ul>
+      </section>
+
+      <!-- Types of Caches -->
+      <h2 class="section-title">Types of Caches</h2>
+      <section id="types-of-caches" class="fade-in">
+        <section class="preface-section">
+        <h3>1. CPU Cache</h3>
+        <p>
+          Tiny, ultra-fast memory built into modern processors (L1, L2, L3 caches) that speed up program execution by storing frequently accessed instructions and data.
+        </p>
+        </section>
+        <section class="preface-section">
+        <h3>2. Application Cache</h3>
+        <p>
+          Many server-side frameworks or client applications maintain their own in-memory caching layers (e.g., Redis, Memcached) to quickly serve results.
+        </p>
+        </section>
+        <section class="preface-section">
+        <h3>3. Database Cache</h3>
+        <p>
+          Databases often cache query results or frequently accessed records to reduce disk I/O and speed up responses.
+        </p>
+        </section>
+        <section class="preface-section">
+        <h3>4. DNS Cache</h3>
+        <p>
+          DNS resolvers cache domain-to-IP mappings to avoid repeated lookups. (See our previous chapter on <em>Resolvers</em>!)
+        </p>
+        </section>
+        <section class="preface-section">
+        <h3>5. Browser Cache</h3>
+        <p>
+          Modern browsers store images, CSS, JavaScript, and other assets locally to speed up page loads. HTTP headers like <code>Cache-Control</code>, <code>Expires</code>, <code>ETag</code>, and <code>Last-Modified</code> help manage this.
+        </p>
+        </section>
+        <section class="preface-section">
+        <h3>6. CDN (Content Delivery Network) Cache</h3>
+        <p>
+          CDNs store site content on servers across the globe. Users retrieve data from the nearest server, reducing latency and network congestion.
+        </p>
+        </section>
+      </section>
+
+      <!-- How Caching Works -->
+      <h2 class="section-title">How Caching Works</h2>
+      <section id="caching-workflow" class="fade-in">
         <ol>
-          <li><strong>Your Computer (Local Cache)</strong>
+          <li><strong>Request Data:</strong> The application or user requests a piece of data (e.g., a web page, an image, or a database record).</li>
+          <li><strong>Check Cache:</strong> Before doing the heavy lifting, the system checks if the data is already in the cache.</li>
+          <li><strong>Cache Hit or Miss:</strong> 
             <ul>
-              <li>Your own laptop, phone, or browser stores recent DNS lookups.</li>
-              <li>Example: If you visited example.com 5 minutes ago, your device remembers it and loads it instantly next time.</li>
+              <li><em>Cache Hit:</em> Data is found in the cache and returned immediately.</li>
+              <li><em>Cache Miss:</em> Data isn’t in the cache, so the system fetches or computes it, then writes it to the cache.</li>
             </ul>
           </li>
-          <li><strong>Your Router (Home Network Cache)</strong>
-            <ul>
-              <li>Your Wi-Fi router caches DNS responses for everyone on your network.</li>
-              <li>Example: If your sibling visits example.com, your router stores it, so when YOU visit the same site, it's faster.</li>
-            </ul>
-          </li>
-          <li><strong>Your ISP’s DNS Server (ISP Cache)</strong>
-            <ul>
-              <li>Your Internet Service Provider (ISP) caches DNS records for commonly visited websites.</li>
-              <li>Example: If thousands of people in your city visit google.com, your ISP saves the IP to speed up future requests.</li>
-            </ul>
-          </li>
-          <li><strong>Public DNS Resolvers (Google, Cloudflare, etc.)</strong>
-            <ul>
-              <li>Google DNS (8.8.8.8) or Cloudflare (1.1.1.1) cache millions of DNS records worldwide.</li>
-              <li>They serve results way faster than asking root and TLD servers every time.</li>
-            </ul>
-          </li>
+          <li><strong>Expiration &amp; Eviction:</strong> Data stays in the cache until it expires (TTL) or is evicted by an algorithm (LRU, LFU, FIFO) when space runs out or data is invalidated.</li>
         </ol>
       </section>
 
-      <h2 class="section-title hidden">How Long Does DNS Caching Last? (TTL – Time To Live)</h2>
-      <section id="ttl" class="hidden">
-        <p>DNS cache doesn’t last forever. Each record has a TTL (Time-To-Live) value, which tells how long it should be stored before expiring.</p>
+      <!-- Common Caching Algorithms -->
+      <h2 class="section-title">Common Caching Algorithms</h2>
+      <section id="caching-algorithms" class="fade-in">
         <ul>
-          <li>Short TTL (5 min – 1 hour) = More up-to-date, but slower performance.</li>
-          <li>Long TTL (24 hours – 48 hours) = Faster performance, but takes longer to update if changes happen.</li>
+          <li><strong>LRU (Least Recently Used):</strong> Evicts the item that has not been used for the longest period of time.</li>
+          <li><strong>LFU (Least Frequently Used):</strong> Evicts the item used the fewest times.</li>
+          <li><strong>FIFO (First In First Out):</strong> Evicts the item that entered the cache earliest.</li>
+          <li><strong>Random Replacement:</strong> Evicts a random item when needed.</li>
+        </ul>
+        <p>
+          These strategies aim to keep the most valuable or frequently requested data in cache for as long as possible.
+        </p>
+      </section>
+
+      <!-- Real-World Example -->
+      <h2 class="section-title">Real-World Example: HTTP Caching</h2>
+      <section id="http-caching" class="fade-in">
+        <p>
+          When you visit a website, the server can include HTTP headers like <code>Cache-Control</code> or <code>ETag</code>:
+        </p>
+        <ul>
+          <li><strong>Cache-Control:</strong> <code>max-age=3600</code> tells your browser it can reuse the resource for an hour.</li>
+          <li><strong>ETag:</strong> A unique identifier for the resource. The browser can revalidate the resource by sending an <code>If-None-Match</code> header.</li>
+        </ul>
+        <p>As a result, you see faster page loads on repeated visits or for shared resources across multiple pages.</p>
+      </section>
+
+      <!-- Flushing the Cache (Terminal Examples) -->
+    </section>
+
+    <h2 class="section-title">Clearing Cache (Terminal Examples)</h2>
+    <section class="fade-in">
+      <p>To manually clear different types of caches, use the following commands:</p>
+
+      <br>
+      <p><strong>Windows (DNS Cache):</strong></p>
+      <pre class="code-snippet">
+ipconfig /flushdns
+      </pre>
+
+      <br>
+      <p><strong>macOS (DNS Cache):</strong></p>
+      <pre class="code-snippet">
+sudo killall -HUP mDNSResponder
+      </pre>
+
+      <br>
+      <p><strong>Linux (Systemd Resolver Cache):</strong></p>
+      <pre class="code-snippet">
+sudo systemd-resolve --flush-caches
+      </pre>
+    </section>
+
+      <!-- Common Pitfalls & Security -->
+      <h2 class="section-title">Pitfalls & Security</h2>
+      <section id="pitfalls-and-security" class="fade-in">
+        <ul>
+          <li><strong>Stale Data:</strong> Overly aggressive caching can serve outdated information.</li>
+          <li><strong>Inconsistency:</strong> Multiple layers of caches risk data inconsistency if invalidation is not carefully managed.</li>
+          <li><strong>Privacy &amp; Security:</strong> Sensitive data should not be cached publicly (e.g., personal user info). Use correct <code>Cache-Control</code> directives to ensure private data isn’t stored improperly.</li>
         </ul>
       </section>
 
-      <h2 class="section-title hidden">What Happens When a Cached DNS Record Expires?</h2>
-      <section id="expired-records" class="hidden">
-        <p>Once a DNS record reaches its TTL limit, your device forgets it and asks the DNS resolver for an updated record.</p>
-        <ul>
-          <li>If the IP is the same: It just re-caches it for another TTL period.</li>
-          <li>If the IP has changed: Your computer updates its cache with the new IP.</li>
-        </ul>
-      </section>
-
-      <h2 class="section-title hidden">What If a Website Changes Its IP Address?</h2>
-      <section id="changing-ip" class="hidden">
-        <p>If a website moves to a new server, but your computer still has the old cached IP, you might get errors or connect to the wrong server.</p>
-        <p><strong>Solution:</strong> You can clear your DNS cache to force a fresh lookup.</p>
-        <p>For Windows, you can do this using the command:</p>
-        <pre>‘ipconfig /flushdns’</pre>
-      </section>
-
-      <h2 class="section-title hidden">How DNS Caching Speeds Up Connections</h2>
-      <section id="caching-speed" class="hidden">
-        <p>Caching can speed up connection times on reoccurring websites by 150x.</p>
+      <!-- Summary -->
+      <h2 class="section-title">TL;DR</h2>
+      <section id="caching-summary" class="fade-in">
+        <p>
+          Caching can drastically improve performance and reduce resource usage—just be mindful of eviction, expiration policies, and invalidation to avoid stale or inconsistent data. Whether you’re a systems designer, a web developer, or a curious learner, understanding caching is vital for building efficient, user-friendly applications.
+        </p>
       </section>
     </div>
-    </main>
-  </div>
-  <script src="../../../script.js" defer></script>  
+    <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+      <a href="../SubChapters/ZoneFiles.html" class="chapter-btn">Next Chapter &rarr;</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &amp;
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script defer src="../../../script.js"></script>
 </body>
 </html>

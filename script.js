@@ -105,3 +105,26 @@ document.addEventListener("DOMContentLoaded", function() {
     appearOnScroll.observe(fader);
   });
 });
+
+/* =======================
+   CONTENT BLUR EFFECT FUNCTION
+======================== */
+function initContentBlurEffect() {
+  const content = document.getElementById('mainContent');
+  const unlockBtn = document.getElementById('unlockContent');
+  if (unlockBtn && content) {
+    unlockBtn.addEventListener('click', function() {
+      // Remove blur from the content
+      content.classList.remove('blur');
+      // Fade out the caution tape overlay
+      const tape = document.querySelector('.caution-tape');
+      if (tape) {
+        tape.style.opacity = '0';
+      }
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", initContentBlurEffect);
+
+

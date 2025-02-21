@@ -496,6 +496,8 @@ img {
   padding: 1rem;
   border-radius: 6px;
   overflow-x: auto;
+  margin:1rem;
+  margin-left: 0;
 }
 
 /* =======================
@@ -886,6 +888,7 @@ img {
   box-shadow: inset 0 0 10px rgba(51, 255, 51, 0.3);
   white-space: pre-wrap;
   margin: 1rem 0;
+  text-align: left;
 }
 /* Improved Section Separation for Resolvers Subchapter */
 .subchapterBody section {
@@ -960,4 +963,191 @@ img {
 #language-implementation pre,
 #language-implementation ul {
   margin-bottom: 1.5rem;
+}
+
+/* =======================
+   NEW CONTENT BLUR EFFECT STYLES
+======================== */
+.chapter-content {
+      position: relative;
+      padding: 2rem;
+    }
+    /* Hazard ribbons container: above the blurred content (default z-index) but below the button */
+    .hazard-ribbons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 8;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    /* Each hazard ribbon styled to look like a thin diagonal ribbon */
+    .hazard-ribbon {
+      position: absolute;
+      width: 150%;
+      height: 40px;
+      background-image: repeating-linear-gradient(
+        -55deg,
+        #000,
+        #000 20px,
+        #ffb101 20px,
+        #ffb101 40px
+      );
+      opacity: 0.8;
+    }
+    /* Example positions for multiple ribbons */
+    .hazard-ribbon:nth-child(1) {
+      top: 20%;
+      left: -10%;
+      transform: rotate(10deg);
+    }
+    .hazard-ribbon:nth-child(2) {
+      top: 40%;
+      left: -10%;
+      transform: rotate(-10deg);
+    }
+    .hazard-ribbon:nth-child(3) {
+      top: 80%;
+      left: -5%;
+      transform: rotate(5deg)
+    }
+    /* Blurred content styling */
+    .blur {
+      filter: blur(8px);
+      transition: filter 0.5s ease;
+      height: 85vh;
+    }
+    /* Center the unlock button on top (z-index:10) */
+    #unlockContent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+   
+    
+    
+    /* Keep the button centered on top of the blurred content */
+    #downloadResume {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+
+    /* ================================
+   SECOND CHANCE PAGE SPECIFIC STYLES
+   (Scoped under body.second-chance)
+================================ */
+.second-chance .chapter-content {
+  height: 85vh; /* Chapter content occupies 85% of viewport height */
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0; /* Remove any top margin */
+}
+
+.second-chance .chapter-content h1 {
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+}
+
+.second-chance .chapter-content p {
+  max-width: 700px;
+  margin: 1rem auto;
+  line-height: 1.6;
+}
+
+.second-chance .try-again-btn {
+  background-color: var(--color-accent);
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: 2rem auto;
+  position: relative;
+ 
+  
+  z-index: 10;
+}
+    
+ /* ================================
+   SECOND CHANCE PAGE SPECIFIC STYLES
+   (Scoped under body.second-chance)
+================================ */
+.second-chance .chapter-content {
+  height: 85vh; /* Chapter content occupies 85% of viewport height */
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0; /* Remove any top margin */
+}
+
+.second-chance .chapter-content h1 {
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+}
+
+.second-chance .chapter-content p {
+  max-width: 700px;
+  margin: 1rem auto;
+  line-height: 1.6;
+}
+
+.second-chance .cta-btn {
+  background-color: var(--color-accent);
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: 2rem auto;
+}
+
+/* Exit Modal Styles */
+.exit-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.exit-modal .modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.exit-modal .modal-content button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+.term{
+  text-align: left;
+  padding-left: 0%;
+  text-indent: 0, !important;
 }
