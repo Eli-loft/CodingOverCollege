@@ -128,3 +128,63 @@ function initContentBlurEffect() {
 document.addEventListener("DOMContentLoaded", initContentBlurEffect);
 
 
+// Mobile Menu Toggle
+document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+  const mobileNav = document.getElementById('mobileNav');
+  mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+});
+
+// Back to Top Button
+window.addEventListener('scroll', () => {
+  const backToTop = document.getElementById('backToTop');
+  backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+document.getElementById('backToTop').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Progress Bar
+window.addEventListener('scroll', () => {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.querySelector('.progress-bar').style.width = scrolled + '%';
+});
+
+// Reading Time Calculation
+document.addEventListener('DOMContentLoaded', () => {
+  const content = document.querySelector('.chapter-content').textContent;
+  const wordCount = content.split(/\s+/).length;
+  const readingTime = Math.ceil(wordCount / 200);
+  document.querySelector('.reading-time').textContent = `Estimated reading time: ${readingTime} min`;
+});
+
+// TOC Active Section Highlighting
+const sections = document.querySelectorAll('.preface-section');
+const tocLinks = document.querySelectorAll('.toc a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 60) {
+      current = section.getAttribute('id');
+    }
+  });
+  tocLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').substring(1) === current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Copy Button for Code Snippets
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const code = btn.nextElementSibling.textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
+  });
+});

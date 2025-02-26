@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNS</title>
-  <!-- Make sure the path below is correct relative to your HTML file -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nslookup: A Powerful DNS Query Tool</title>
+  <!-- Google Fonts for Montserrat and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="../SubChapters/SubChapter.css">
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
         <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../../DNS/DNS.html">DNS</a></li>
-        <li><a href="../../References/References.html">References</a></li>
-        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
       </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>nslookup: A Powerful DNS Query Tool</h1>
+      <p class="chapter-subtext">
+        Discover how nslookup can help you diagnose DNS issues, verify domain configurations, and troubleshoot network problems.
+      </p>
+      <p class="reading-time">Estimated reading time: calculating...</p>
+    </div>
+    <div class="hero-graphic">
+      <div class="animated-bg"></div>
+    </div>
+  </section>
+
+  <!-- THREE-COLUMN LAYOUT -->
+  <div class="three-column-container">
+    <!-- Left Sidebar: Subchapters -->
+    <aside class="sidebar-subchapters">
+      <h2>Subchapters</h2>
       <ul>
         <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="../SubChapters/Caching.html">Caching</a></li>
@@ -39,13 +94,13 @@
         <li><a href="../SubChapters/PrivateDNS.html">Private DNS</a></li>
         <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
         <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
-        <li><a href="../SubChapters/nslookup.html">nslookup</a></li>
+        <li><a href="../SubChapters/nslookup.html" class="active">nslookup</a></li>
         <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
         <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
         <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
@@ -54,254 +109,331 @@
       </ul>
     </aside>
 
-    <main class="mainbody">
-      
+    <!-- Main Content -->
+    <main class="chapter-content">
       <div class="subchapterBody">
-      <section id="introduction">
-        <h2 class="section-title">DNS Resolvers</h2>
-        <p>
-          DNS resolvers are servers on the internet that translate domain names into IP addresses. Their purpose is to let people use the internet using readable names instead of long strings of numbers. There are two main types:
-          <strong>Recursive Resolvers</strong> and <strong>Iterative Resolvers</strong>.
-        </p>
-      </section>
+        <!-- Section 1: Introduction -->
+        <section class="preface-section fade-in" id="introduction">
+          <h4>Introduction</h4>
+          <p>
+            <code>nslookup</code> (Name Server Lookup) is a command‑line tool available on Windows, macOS, and Linux that allows users to query the Domain Name System (DNS) to retrieve domain-related information. It is an essential tool for diagnosing DNS issues, verifying domain configurations, and troubleshooting network connectivity problems.
+          </p>
+        </section>
 
-      <section id="recursive-resolvers">
-        
-        <h2 class="section-title">Recursive Resolvers</h2>
+        <!-- Section 2: What is nslookup? -->
+        <section class="preface-section fade-in" id="what-is-nslookup">
+          <h4>What is nslookup?</h4>
+          <h3>Definition</h3>
+          <p>
+            <code>nslookup</code> is a built‑in network utility that converts domain names to IP addresses and vice versa. It retrieves various DNS record types (such as A, AAAA, MX, TXT, and CNAME) and performs reverse lookups to resolve IP addresses back to domain names.
+          </p>
+          <h3>Key Features</h3>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Domain Name Resolution</strong></td>
+                <td>Converts domain names to IP addresses and vice versa.</td>
+              </tr>
+              <tr>
+                <td><strong>Record Query</strong></td>
+                <td>Retrieves DNS records (A, AAAA, MX, TXT, CNAME, etc.).</td>
+              </tr>
+              <tr>
+                <td><strong>Reverse Lookup</strong></td>
+                <td>Determines the domain name associated with an IP address.</td>
+              </tr>
+              <tr>
+                <td><strong>Custom DNS Server</strong></td>
+                <td>Queries specified DNS servers for results.</td>
+              </tr>
+              <tr>
+                <td><strong>Interactive Mode</strong></td>
+                <td>Allows multiple queries in one session.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-        <h3>What is a Recursive Resolver?</h3>
-        <p>
-          A recursive resolver (also called a DNS resolver) is a server that receives DNS queries from clients (such as web browsers) and recursively queries other DNS servers until it finds the correct answer.
-        </p>
-      
-      
-        <h3>Key Characteristics</h3>
-        <ul>
-          <li>Performs all the work to resolve a domain name.</li>
-          <li>Caches responses to improve performance.</li>
-          <li>Communicates with multiple types of DNS servers (root, TLD, authoritative).</li>
-          <li>Can be provided by ISPs, cloud services (Google, Cloudflare), or private networks.</li>
-        </ul>
+        <!-- Section 3: Installing and Using nslookup -->
+        <section class="preface-section fade-in" id="installing-using">
+          <h4>Installing and Using nslookup</h4>
+          <p>
+            On most operating systems, <code>nslookup</code> is installed by default. To verify, run:
+          </p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">nslookup -version  # Linux/macOS</pre>
+          </div>
+          <p>
+            On Windows, open Command Prompt and simply enter <code>nslookup</code>. If it is not installed on Linux, you can install it using:
+          </p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">sudo apt install dnsutils  # Debian/Ubuntu</pre>
+          </div>
+        </section>
 
-        <h3>How Does It Work?</h3>
-        <ol>
-          <li>
-            <strong>Check Local Cache:</strong>
-            <ul>
-              <li>The resolver first checks if it already knows the answer (from a previous lookup or local host files).</li>
-              <li>If found in cache, it returns the result immediately; otherwise, it proceeds to ask external servers.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Root DNS Server:</strong>
-            <ul>
-              <li>If the answer is not cached, the resolver contacts a root DNS server, which does not know the IP for the domain but directs it to a Top-Level Domain (TLD) server (e.g., for .com).</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the TLD DNS Server:</strong>
-            <ul>
-              <li>The TLD server doesn’t store the full record but tells the resolver which authoritative DNS server holds the information.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Authoritative DNS Server:</strong>
-            <ul>
-              <li>The authoritative server, which belongs to the website owner or hosting provider, provides the exact IP address.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Return the Answer:</strong>
-            <ul>
-              <li>The resolver sends the IP address back to the requesting client.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Cache the Result:</strong>
-            <ul>
-              <li>The result is stored for a certain Time-To-Live (TTL) to answer future queries quickly.</li>
-            </ul>
-          </li>
-        </ol>
+        <!-- Section 4: nslookup Query Modes -->
+        <section class="preface-section fade-in" id="query-modes">
+          <h4>nslookup Query Modes</h4>
+          <h3>Non-Interactive Mode</h3>
+          <p>
+            For quick, single queries:
+          </p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">nslookup example.com</pre>
+          </div>
+          <h3>Interactive Mode</h3>
+          <p>
+            Enter <code>nslookup</code> without arguments to start interactive mode, where you can type multiple queries:
+          </p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+> set type=A
+> example.com
+> set type=MX
+> example.com
+> exit
+            </pre>
+          </div>
+        </section>
 
-        <h3>Example Process</h3>
-        <p>For example, when a user enters <code>example.com</code> in a browser:</p>
-        <ul>
-          <li>The resolver (e.g., Google’s 8.8.8.8) is contacted.</li>
-          <li>If no cached record exists, it queries a root server, then a .com TLD server, and finally the authoritative server which returns an IP (e.g., <code>93.184.216.34</code>).</li>
-          <li>The IP is sent back to the browser, allowing the website to load.</li>
-        </ul>
+        <!-- Section 5: Common nslookup Commands & Examples -->
+        <section class="preface-section fade-in" id="common-commands">
+          <h4>Common nslookup Commands &amp; Examples</h4>
+          <ul>
+            <li>
+              <strong>Retrieve an A Record:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">nslookup example.com</pre>
+              </div>
+            </li>
+            <li>
+              <strong>Retrieve an AAAA Record:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">nslookup -type=AAAA example.com</pre>
+              </div>
+            </li>
+            <li>
+              <strong>Retrieve MX Records:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">nslookup -type=MX example.com</pre>
+              </div>
+            </li>
+            <li>
+              <strong>Perform a Reverse DNS Lookup:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">nslookup 93.184.216.34</pre>
+              </div>
+            </li>
+            <li>
+              <strong>Query a Specific DNS Server:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">nslookup example.com 8.8.8.8</pre>
+              </div>
+            </li>
+            <li>
+              <strong>Retrieve SOA Record:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">nslookup -type=SOA example.com</pre>
+              </div>
+            </li>
+          </ul>
+        </section>
 
-        <h3>Where Do Recursive Resolvers Exist?</h3>
-        <ul>
-          <li>Internet Service Providers (ISPs) such as Comcast, AT&T, or Vodafone.</li>
-          <li>Public DNS Providers:
-            <ul>
-              <li>Google Public DNS (8.8.8.8, 8.8.4.4)</li>
-              <li>Cloudflare DNS (1.1.1.1)</li>
-              <li>OpenDNS (208.67.222.222)</li>
-            </ul>
-          </li>
-          <li>Private Networks (organizations running their own DNS infrastructure).</li>
-          <li>Self-hosted resolvers using software like Unbound, BIND, or Pi-hole.</li>
-        </ul>
+        <!-- Section 6: Alternative DNS Query Tools -->
+        <section class="preface-section fade-in" id="alternative-tools">
+          <h4>Alternative DNS Query Tools</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>Platform</th>
+                <th>Advantages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>nslookup</strong></td>
+                <td>Windows, Linux, macOS</td>
+                <td>Simple and built-in</td>
+              </tr>
+              <tr>
+                <td><strong>dig</strong></td>
+                <td>Linux, macOS</td>
+                <td>More detailed output and flexible queries</td>
+              </tr>
+              <tr>
+                <td><strong>host</strong></td>
+                <td>Linux, macOS</td>
+                <td>Quick and concise lookups</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Example usage:
+          </p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+dig example.com
+host example.com
+            </pre>
+          </div>
+        </section>
 
-        <h3>Security Risks &amp; Protections</h3>
-        <ul>
-          <li>
-            <strong>DNS Cache Poisoning:</strong> Attackers may inject false DNS records into a resolver’s cache. 
-            <br /><em>Protection:</em> Use DNSSEC (DNS Security Extensions) to validate responses.
-          </li>
-          <li>
-            <strong>DDoS Attacks (Amplification &amp; Reflection):</strong> Spoofed DNS queries can cause a resolver to flood a target with traffic.
-            <br /><em>Protection:</em> Implement rate limiting and proper query filtering.
-          </li>
-          <li>
-            <strong>Data Privacy Concerns:</strong> Logging by ISPs can compromise privacy.
-            <br /><em>Protection:</em> Use privacy-focused resolvers (e.g., Cloudflare 1.1.1.1, Quad9) or encrypted DNS protocols such as DNS over HTTPS (DoH) or DNS over TLS (DoT).
-          </li>
-        </ul>
+        <!-- Section 7: Automating nslookup in Scripts -->
+        <section class="preface-section fade-in" id="automation">
+          <h4>Automating nslookup in Scripts</h4>
+          <h3>Bash Example</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+#!/bin/bash
+domains=("example.com" "google.com" "yahoo.com")
+for domain in "${domains[@]}"; do
+    echo "Checking $domain"
+    nslookup $domain
+done
+            </pre>
+          </div>
+          <h3>PowerShell Example</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+$domains = @("example.com", "google.com", "yahoo.com")
+foreach ($domain in $domains) {
+    Write-Output "Checking $domain"
+    nslookup $domain
+}
+            </pre>
+          </div>
+        </section>
 
-        <h3>Performance Optimizations</h3>
-        <ul>
-          <li>Caching recent lookups to avoid redundant queries.</li>
-          <li>Prefetching to resolve queries in advance.</li>
-          <li>Load Balancing to distribute traffic across multiple servers.</li>
-          <li>Anycast Routing to direct queries to the nearest server, reducing latency.</li>
-          <li>Negative Caching to store information about failed lookups.</li>
-        </ul>
+        <!-- Section 8: Common nslookup Error Messages -->
+        <section class="preface-section fade-in" id="error-messages">
+          <h4>Common nslookup Error Messages</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Error Message</th>
+                <th>Meaning</th>
+                <th>Possible Solution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Non-existent domain (NXDOMAIN)</td>
+                <td>The domain does not exist or records are missing</td>
+                <td>Check spelling or try another DNS server</td>
+              </tr>
+              <tr>
+                <td>Request timed out</td>
+                <td>No response from DNS server</td>
+                <td>Try a different server or check firewall settings</td>
+              </tr>
+              <tr>
+                <td>Server failed</td>
+                <td>The DNS server encountered an issue</td>
+                <td>Use another resolver or check server configuration</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-        <h3>Real-World Example: Google Public DNS (8.8.8.8)</h3>
-        <ul>
-          <li>Fast performance with a global network of servers.</li>
-          <li>Enhanced security via DNSSEC validation.</li>
-          <li>Privacy improvements with minimal logging and support for encrypted DNS (DoH, DoT).</li>
-        </ul>
-      </section>
+        <!-- Section 9: Checking TTL Values -->
+        <section class="preface-section fade-in" id="checking-ttl">
+          <h4>Checking TTL Values</h4>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">nslookup -debug example.com</pre>
+          </div>
+          <p>
+            Example output may show a TTL (Time-To-Live) value, indicating how long the record is cached.
+          </p>
+        </section>
 
-      <!-- Iterative Resolvers Section -->
-      <section id="iterative-resolvers">
-        <h2 class="section-title">Iterative Resolvers</h2>
+        <!-- Section 10: Conclusion -->
+        <section class="preface-section fade-in" id="conclusion">
+          <h4>Conclusion</h4>
+          <p>
+            <code>nslookup</code> is an essential DNS troubleshooting tool that enables network administrators, web developers, and IT professionals to diagnose and resolve DNS-related issues. By mastering its commands and understanding its output, you can effectively verify domain configurations, perform reverse lookups, and ensure reliable network connectivity.
+          </p>
+        </section>
 
-        <h3>How Does an Iterative Resolver Work?</h3>
-        <ol>
-          <li>
-            <strong>Client Query:</strong>
-            <ul>
-              <li>The client (e.g., a browser) sends a DNS query to the iterative resolver.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Root DNS Server:</strong>
-            <ul>
-              <li>The client directly queries a root DNS server, which responds with a referral to a Top-Level Domain (TLD) server.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the TLD DNS Server:</strong>
-            <ul>
-              <li>The client then queries the referred TLD server, which provides a referral to the authoritative server.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Authoritative DNS Server:</strong>
-            <ul>
-              <li>The client queries the authoritative server, which returns the final IP address.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Establish Connection:</strong>
-            <ul>
-              <li>The client uses the obtained IP address to connect directly to the website.</li>
-            </ul>
-          </li>
-        </ol>
-
-        <h3>Example of Iterative Query Resolution</h3>
-        <ul>
-          <li>User enters <code>example.com</code> in a browser.</li>
-          <li>The client’s local resolver contacts a root server, receiving a referral to a TLD server.</li>
-          <li>The client then queries the TLD server, and finally the authoritative server, which returns <code>93.184.216.34</code>.</li>
-          <li>The browser connects to the website using the provided IP address.</li>
-        </ul>
-
-        <h3>Security Risks &amp; Protections</h3>
-        <ul>
-          <li>
-            <strong>DNS Spoofing &amp; Cache Poisoning:</strong> Attackers may inject false records.
-            <br /><em>Protection:</em> Use DNSSEC to validate responses.
-          </li>
-          <li>
-            <strong>DDoS Attacks on Root &amp; TLD Servers:</strong> High query volumes can overwhelm servers.
-            <br /><em>Protection:</em> Rate limiting and Anycast routing help mitigate these attacks.
-          </li>
-          <li>
-            <strong>Interception &amp; Surveillance:</strong> Unencrypted DNS queries can be intercepted.
-            <br /><em>Protection:</em> Encrypted DNS protocols like DoH and DoT offer improved security.
-          </li>
-        </ul>
-
-        <h3>Performance Optimizations</h3>
-        <ul>
-          <li>Anycast Routing to reduce latency by directing queries to the nearest available server.</li>
-          <li>Load Balancing to evenly distribute query traffic.</li>
-          <li>Distributed Root Servers that lower response times globally.</li>
-          <li>Efficient query processing at TLD and root servers.</li>
-        </ul>
-
-        <h3>Real-World Example: Root DNS Servers</h3>
-        <p>
-          When a recursive resolver queries a root DNS server for <code>example.com</code>, the root server responds with a referral rather than a final IP address. For example:
-        </p>
-        <pre>
-dig example.com @198.41.0.4
-
-Response:
-example.com. 172800 IN NS a.iana-servers.net.
-        </pre>
-      </section>
-
-      <!-- Comparison Table -->
-      <section id="comparison">
-        <h3 class="section-title">Comparison: Recursive vs. Iterative Resolvers</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Recursive Resolver</th>
-              <th>Iterative Resolver</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Handles Full Query Process?</td>
-              <td>Yes, it contacts multiple servers</td>
-              <td>No, it directs the client to contact servers</td>
-            </tr>
-            <tr>
-              <td>Used by Clients?</td>
-              <td>Yes (Browsers, OS)</td>
-              <td>No</td>
-            </tr>
-            <tr>
-              <td>Caches DNS Responses?</td>
-              <td>Yes</td>
-              <td>No</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- TL;DR Summary -->
-      <section id="summary">
-        <h3 class="section-title">TL;DR</h2>
-        <p>
-          The main difference between recursive and iterative resolvers is that recursive resolvers handle the entire DNS query process on behalf of the client, while iterative resolvers provide referrals at each step, leaving the client to make the subsequent queries.
-        </p>
-      
-      </section>
-    </div>
+        <!-- Section 11: Next Steps -->
+        <section class="preface-section fade-in" id="next-steps">
+          <h4>Next Steps</h4>
+          <ul>
+            <li>Practice various <code>nslookup</code> commands on different domains.</li>
+            <li>Compare results using alternative tools like <code>dig</code> and <code>host</code>.</li>
+            <li>Automate DNS checks with scripts in Bash or PowerShell.</li>
+            <li>Monitor and troubleshoot DNS configurations regularly.</li>
+          </ul>
+        </section>
+      </div>
+      <!-- Next Chapter Navigation -->
+      <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+        <a href="../SubChapters/ServerSetup.html" class="chapter-btn">
+          Next Chapter <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </main>
+
+    <!-- Right Sidebar: Table of Contents -->
+    <aside class="sidebar-toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#what-is-nslookup">What is nslookup?</a></li>
+        <li><a href="#installing-using">Installing &amp; Using nslookup</a></li>
+        <li><a href="#query-modes">nslookup Query Modes</a></li>
+        <li><a href="#common-commands">Common Commands &amp; Examples</a></li>
+        <li><a href="#alternative-tools">Alternative Tools</a></li>
+        <li><a href="#automation">Automating nslookup</a></li>
+        <li><a href="#error-messages">Common Error Messages</a></li>
+        <li><a href="#checking-ttl">Checking TTL Values</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#next-steps">Next Steps</a></li>
+      </ul>
+    </aside>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <!-- JavaScript -->
+  <script defer src="../../../script.js"></script>
 </body>
 </html>

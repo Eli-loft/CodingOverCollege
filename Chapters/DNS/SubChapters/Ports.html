@@ -1,41 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DNS Ports</title>
-  <!-- Link to your shared CSS file (adjust path if needed) -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ports: The Gateways of Network Communication</title>
+  <!-- Google Fonts for Montserrat and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="../SubChapters/SubChapter.css">
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
-        <ul>
-          <li><a href="../../../index.html">Home</a></li>
-          <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-          <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-          <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-          <li><a href="../../DNS/DNS.html">DNS</a></li>
-          <li><a href="../../References/References.html">References</a></li>
-          <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
-        </ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics (or Networking Topics) -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Ports: The Gateways of Network Communication</h1>
+      <p class="chapter-subtext">
+        Learn how ports enable data flow between devices, their numbering system, port forwarding, security implications, and advanced topics.
+      </p>
+      <p class="reading-time">Estimated reading time: calculating...</p>
+    </div>
+    <div class="hero-graphic">
+      <div class="animated-bg"></div>
+    </div>
+  </section>
+
+  <!-- THREE-COLUMN LAYOUT -->
+  <div class="three-column-container">
+    <!-- Left Sidebar: Subchapters -->
+    <aside class="sidebar-subchapters">
+      <h2>Subchapters</h2>
       <ul>
         <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="../SubChapters/Caching.html">Caching</a></li>
         <li><a href="../SubChapters/ZoneFiles.html">Zone Files</a></li>
         <li><a href="../SubChapters/IPAddress.html">IP Addresses</a></li>
         <li><a href="../SubChapters/Proticals.html">Proticals</a></li>
-        <li><a href="../SubChapters/Ports.html">Ports</a></li>
+        <li><a href="../SubChapters/Ports.html" class="active">Ports</a></li>
         <li><a href="../SubChapters/PublicDNS.html">Public DNS</a></li>
         <li><a href="../SubChapters/PrivateDNS.html">Private DNS</a></li>
         <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
@@ -44,9 +98,9 @@
         <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
         <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
         <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
@@ -55,286 +109,271 @@
       </ul>
     </aside>
 
-    <main class="mainbody">
+    <!-- Main Content -->
+    <main class="chapter-content">
       <div class="subchapterBody">
-
-        <!-- Introduction Section -->
-        <section id="introduction">
-          <h2 class="section-title">DNS Ports</h2>
+        <!-- 1. Introduction -->
+        <section class="preface-section fade-in" id="ports-introduction">
+          <h4>Introduction</h4>
           <p>
-            A <strong>port</strong> is a logical endpoint used by the Transport Layer (TCP or UDP) to differentiate services or processes on a networked device. When we talk about “DNS ports,” we typically mean <strong>UDP/TCP 53</strong>, though additional ports come into play for encrypted DNS protocols (e.g., 853 for DNS over TLS). Understanding how ports work—along with their security and configuration implications—is critical for DNS administration.
+            In the world of networking, <strong>ports</strong> serve as the gateways through which data flows between devices. Every device connected to a network uses ports to send and receive information, ensuring that data packets reach the correct applications or services. Ports are especially crucial in <strong>DNS, web browsing, email communication, file transfers, and security protocols</strong>.
+          </p>
+          <p>
+            To fully grasp how ports function, we will cover the basics, explore commonly used ports, discuss port forwarding, examine security implications, and analyze how ports are managed in real-world scenarios.
           </p>
         </section>
 
-        <!-- What Are Ports? -->
-        <section id="what-are-ports">
-          <h2 class="section-title">What Are Ports?</h2>
+        <!-- 2. Understanding Ports: The Basics -->
+        <section class="preface-section fade-in" id="ports-basics">
+          <h4>Understanding Ports: The Basics</h4>
           <p>
-            In networking, an IP address identifies a host, while a <strong>port number</strong> specifies a particular service or application on that host. The combination <em>(IP address + port number)</em> uniquely distinguishes network connections. Common examples:
+            A <strong>port</strong> is a <strong>logical endpoint</strong> assigned to specific network services or applications. While IP addresses identify a device, ports specify which service or application on that device should receive the data.
+          </p>
+          <h3>Port Numbering System</h3>
+          <p>
+            Ports are defined using <strong>16-bit numbers</strong>, meaning they range from <strong>0 to 65,535</strong>. The Internet Assigned Numbers Authority (IANA) categorizes ports into three ranges:
           </p>
           <ul>
-            <li><strong>TCP/80:</strong> Default port for unencrypted HTTP web traffic.</li>
-            <li><strong>TCP/443:</strong> Default port for HTTPS (secure web traffic).</li>
-            <li><strong>UDP/53 &amp; TCP/53:</strong> Default ports for DNS queries and zone transfers.</li>
-            <li><strong>TCP/22:</strong> Default port for SSH remote administration.</li>
+            <li><strong>Well-Known Ports (0 - 1,023):</strong> Reserved for essential network services (e.g., HTTP, HTTPS, DNS, FTP, SSH).</li>
+            <li><strong>Registered Ports (1,024 - 49,151):</strong> Assigned to specific applications by IANA (e.g., MySQL, RDP, game servers).</li>
+            <li><strong>Dynamic/Private Ports (49,152 - 65,535):</strong> Used by client applications for temporary connections.</li>
           </ul>
+          <h3>Transport Protocols: TCP vs. UDP</h3>
           <p>
-            Ports range from <strong>0</strong> to <strong>65535</strong>. The first 1024 are “well-known” or “system” ports, typically reserved for standard services like HTTP, SMTP, etc. Higher ports can be used for custom services or dynamic (ephemeral) connections.
+            Ports operate using either <strong>TCP (Transmission Control Protocol)</strong> or <strong>UDP (User Datagram Protocol)</strong>:
           </p>
+          <ul>
+            <li><strong>TCP:</strong> Reliable, connection-oriented communication with error checking (e.g., HTTP, FTP, SSH).</li>
+            <li><strong>UDP:</strong> Fast, connectionless communication without error checking (e.g., DNS, VoIP, gaming traffic).</li>
+          </ul>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+# Example: Checking open ports on a Linux system
+netstat -tulnp  # Displays open TCP/UDP ports with associated processes
+            </pre>
+          </div>
         </section>
 
-        <!-- DNS Ports (53) -->
-        <section id="dns-port-53">
-          <h2 class="section-title">DNS on Port 53</h2>
-
-          <h3>UDP/53</h3>
+        <!-- 3. Port Forwarding: Redirecting Traffic -->
+        <section class="preface-section fade-in" id="port-forwarding">
+          <h4>Port Forwarding: Redirecting Traffic</h4>
+          <h3>What is Port Forwarding?</h3>
           <p>
-            By default, DNS queries use <strong>UDP port 53</strong> for speed. This is the most common port for DNS lookups, where resolvers and authoritative servers exchange short messages (question-answer pairs). 
+            Port forwarding is a networking technique that allows <strong>external traffic</strong> to reach a specific device or service within a private network. It is commonly used for:
           </p>
           <ul>
-            <li>
-              <strong>Connectionless:</strong> No handshake—packets are simply sent and potentially re-sent if lost or truncated.
-            </li>
-            <li>
-              <strong>Packet Size Limit:</strong> Historically 512 bytes; with EDNS0, can extend to up to 4096 bytes or more.
-            </li>
-            <li>
-              <strong>Fallback to TCP:</strong> If the server sets the “truncation” bit, the client must retry on TCP to retrieve the full data.
-            </li>
+            <li>Hosting <strong>web servers, game servers, and remote desktop access</strong>.</li>
+            <li>Enabling <strong>VPNs and security cameras</strong> to be accessible over the internet.</li>
+            <li>Allowing <strong>file-sharing applications</strong> to connect through firewalls.</li>
           </ul>
-
-          <h3>TCP/53</h3>
-          <p>
-            While DNS primarily uses UDP, <strong>TCP port 53</strong> is essential for zone transfers and large responses (e.g., DNSSEC records). 
-          </p>
-          <ul>
-            <li>
-              <strong>Zone Transfers (AXFR/IXFR):</strong> Secondary DNS servers receive entire zone data reliably via TCP.
-            </li>
-            <li>
-              <strong>Large DNS Responses:</strong> For responses that exceed typical UDP packet limits, DNS servers switch to TCP to ensure no data is lost.
-            </li>
-            <li>
-              <strong>Security:</strong> TCP is more difficult to spoof than UDP, but also has more overhead (handshake, acknowledgments).
-            </li>
-          </ul>
+          <h3>Configuring Port Forwarding</h3>
+          <ol>
+            <li>Access your router’s <strong>admin panel</strong> (e.g., <code>192.168.1.1</code>).</li>
+            <li>Locate the <strong>Port Forwarding</strong> section.</li>
+            <li>Add a new rule specifying the <strong>port number</strong>, <strong>protocol (TCP/UDP)</strong>, and the <strong>destination IP</strong> within the network.</li>
+            <li>Save and restart the router.</li>
+          </ol>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+# Example: Forwarding TCP port 3389 using iptables
+sudo iptables -t nat -A PREROUTING -p tcp --dport 3389 -j DNAT --to-destination 192.168.1.100:3389
+            </pre>
+          </div>
         </section>
 
-        <!-- Encrypted DNS Ports -->
-        <section id="encrypted-dns-ports">
-          <h2 class="section-title">Encrypted DNS Ports</h2>
-          <p>
-            To address privacy and security concerns with plain-text DNS, several encrypted DNS protocols have emerged, each using a distinct port:
-          </p>
-
-          <h3>DNS over TLS (DoT) — Port 853</h3>
+        <!-- 4. Security Implications of Open Ports -->
+        <section class="preface-section fade-in" id="port-security">
+          <h4>Security Implications of Open Ports</h4>
+          <h3>Common Port Security Risks</h3>
           <ul>
-            <li>
-              <strong>Port 853:</strong> A dedicated port for DNS over TLS connections.
-            </li>
-            <li>
-              <strong>TCP-based:</strong> Establishes a TLS-encrypted session over TCP, preventing eavesdropping.
-            </li>
-            <li>
-              <strong>Firewall Implications:</strong> Some networks may block or monitor traffic on port 853 if they only allow standard ports (e.g., 80/443).
-            </li>
+            <li><strong>Port Scanning Attacks:</strong> Attackers use tools like <code>Nmap</code> to discover open ports and services.</li>
+            <li><strong>Unauthorized Access:</strong> Open ports can allow unauthorized connections if improperly secured.</li>
+            <li><strong>Denial-of-Service (DoS) Attacks:</strong> Attackers flood open ports with traffic to disrupt services.</li>
           </ul>
-
-          <h3>DNS over HTTPS (DoH) — Port 443</h3>
-          <ul>
-            <li>
-              <strong>Port 443:</strong> The standard HTTPS port, making DNS traffic look like normal web traffic.
-            </li>
-            <li>
-              <strong>Encryption &amp; TLS:</strong> Uses HTTP/2 (or HTTP/3 with QUIC) to send DNS queries in encrypted form.
-            </li>
-            <li>
-              <strong>Bypasses Some Filters:</strong> Because it’s indistinguishable from standard HTTPS, it can circumvent certain network-level content filtering.
-            </li>
-          </ul>
-
-          <h3>DNS over QUIC (DoQ) — Typically Port 784 or 443</h3>
-          <ul>
-            <li>
-              <strong>Experimental:</strong> QUIC is a transport protocol over UDP offering built-in encryption and faster connection setup.
-            </li>
-            <li>
-              <strong>Port Usage:</strong> Some implementations use port 784 for DoQ, but it may also run over 443 to further blend with HTTPS traffic.
-            </li>
-            <li>
-              <strong>Performance Gains:</strong> Reduces latency vs. TCP/TLS, but remains in early adoption stages.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Port Ranges & Ephemeral Ports -->
-        <section id="port-ranges">
-          <h2 class="section-title">Port Ranges & Ephemeral Ports</h2>
-          <p>
-            Ports are classified in three broad ranges:
-          </p>
-          <ul>
-            <li>
-              <strong>Well-Known Ports (0–1023):</strong> Assigned to major services (DNS is 53, HTTP is 80, etc.).
-            </li>
-            <li>
-              <strong>Registered Ports (1024–49151):</strong> Less common or specialized services, e.g., 3306 for MySQL, 8080 for alternative HTTP.
-            </li>
-            <li>
-              <strong>Dynamic/Ephemeral Ports (49152–65535):</strong> Often used by clients when initiating outgoing connections. For instance, a DNS resolver might use an ephemeral port to send a query to UDP/53 on a server.
-            </li>
-          </ul>
-          <p>
-            When your computer contacts a DNS server on port 53, it typically assigns itself an ephemeral source port (e.g., UDP/51936). This randomization helps improve security (harder to guess the source port for attacks like DNS spoofing).
-          </p>
-        </section>
-
-        <!-- Security Risks & Protections -->
-        <section id="security">
-          <h2 class="section-title">Security Risks & Protections</h2>
-
-          <h3>Port Scanning</h3>
-          <p>
-            Attackers often <strong>port scan</strong> servers to discover open ports. If port 53 is open on a system that isn’t intended to serve DNS, it could be exploited or used in reflection attacks.
-          </p>
-          <ul>
-            <li><strong>Mitigation:</strong> Restrict inbound traffic on port 53 to only those systems that actually need to run DNS. Use firewalls to block or whitelist known IPs.</li>
-          </ul>
-
-          <h3>DNS Amplification (Reflection Attacks)</h3>
-          <p>
-            UDP/53 can be abused if attackers send spoofed queries from a victim’s IP, causing large DNS responses to flood the victim. 
-          </p>
-          <ul>
-            <li><strong>Mitigation:</strong> Rate limiting, blocking open resolvers, and employing response size limits or RRL (Response Rate Limiting).</li>
-          </ul>
-
-          <h3>Zone Transfer Exposure (TCP/53)</h3>
-          <p>
-            Improperly restricting TCP-based <strong>zone transfers</strong> can leak entire DNS zones to attackers scanning port 53.
-          </p>
-          <ul>
-            <li><strong>Mitigation:</strong> Allow AXFR/IXFR only from trusted secondary DNS servers (by IP address or TSIG keys).</li>
-          </ul>
-
-          <h3>Encrypted DNS Blocking</h3>
-          <p>
-            Some corporate or governmental networks may block or intercept ports <strong>853</strong> (DoT) or attempt to filter <strong>443</strong> (DoH). This can limit user privacy.
-          </p>
-          <ul>
-            <li><strong>Mitigation:</strong> If lawful and allowed, advanced tunneling or VPN may bypass such filters. Otherwise, network admins should implement official policies for DNS encryption.</li>
-          </ul>
-        </section>
-
-        <!-- Real-World Scenarios & Usage -->
-        <section id="real-world">
-          <h2 class="section-title">Real-World Usage & Examples</h2>
-          <ul>
-            <li>
-              <strong>ISP DNS Servers:</strong> Typically listen on UDP/53 (and TCP/53 for large responses). Some also support DoT on port 853 to offer privacy to subscribers.
-            </li>
-            <li>
-              <strong>Public DNS Providers:</strong> Google DNS (8.8.8.8) and Cloudflare (1.1.1.1) accept queries on UDP/53, TCP/53, and DoT/DoH. 
-            </li>
-            <li>
-              <strong>Enterprise Networks:</strong> May require on-prem DNS resolvers. Administrators often open inbound UDP/53 and TCP/53 only from known IP ranges or behind NAT/DMZ setups.
-            </li>
-            <li>
-              <strong>Blocking Malicious Traffic:</strong> Firewalls sometimes block unknown inbound ports. If you run a public authoritative DNS server, you must permit inbound 53 on both UDP and TCP, but defend against reflection attacks.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Performance Optimizations -->
-        <section id="performance">
-          <h2 class="section-title">Performance Optimizations</h2>
-          <ul>
-            <li>
-              <strong>EDNS0 for UDP/53:</strong> Allows larger packet sizes, reducing the need for TCP and improving performance for DNSSEC or other large record sets.
-            </li>
-            <li>
-              <strong>Load Balancing & Anycast:</strong> Deploy DNS servers worldwide, each listening on port 53, so clients reach the nearest node quickly.
-            </li>
-            <li>
-              <strong>Keep-Alive on TCP:</strong> When using DNS over TCP or TLS, keep the connection open for multiple queries to reduce handshake overhead.
-            </li>
-            <li>
-              <strong>Monitoring & Logging:</strong> Track query volumes on port 53 to detect anomalies or DDoS attempts.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Comparison Table: Common DNS-Related Ports -->
-        <section id="comparison">
-          <h2 class="section-title">Common DNS-Related Ports Comparison</h2>
-          <table>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+# Example: Scanning for open ports on a target machine using Nmap
+nmap -p 1-1000 192.168.1.1
+            </pre>
+          </div>
+          <h3>Securing Your Ports</h3>
+          <table class="comparison-table">
             <thead>
               <tr>
-                <th>Port/Protocol</th>
-                <th>Primary Usage</th>
-                <th>Transport</th>
-                <th>Security</th>
-                <th>Typical Notes</th>
+                <th>Security Measure</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>UDP/53</td>
-                <td>Standard DNS queries</td>
-                <td>Connectionless</td>
-                <td>None (plaintext)</td>
-                <td>Fast, minimal overhead, can be spoofed</td>
+                <td>Close Unused Ports</td>
+                <td>Disable unnecessary services to reduce attack surface.</td>
               </tr>
               <tr>
-                <td>TCP/53</td>
-                <td>DNS zone transfers, large responses</td>
-                <td>Connection-oriented</td>
-                <td>None (plaintext)</td>
-                <td>Essential for AXFR, supports larger messages</td>
+                <td>Use Firewalls</td>
+                <td>Configure firewalls to block unauthorized connections.</td>
               </tr>
               <tr>
-                <td>TCP/853</td>
-                <td>DNS over TLS (DoT)</td>
-                <td>Connection-oriented (TLS)</td>
-                <td>Encrypted</td>
-                <td>Dedicated port for encrypted DNS traffic</td>
+                <td>Enable Encryption</td>
+                <td>Use protocols like SSH, HTTPS, and VPNs to secure communication.</td>
               </tr>
               <tr>
-                <td>TCP/443</td>
-                <td>DNS over HTTPS (DoH)</td>
-                <td>HTTPS over TLS</td>
-                <td>Encrypted</td>
-                <td>Blends with standard HTTPS, can bypass filters</td>
-              </tr>
-              <tr>
-                <td>UDP/TCP (various ephemeral)</td>
-                <td>Client outbound connections</td>
-                <td>Connectionless / oriented</td>
-                <td>Depends on protocol</td>
-                <td>Used for dynamic source ports</td>
+                <td>Implement IDS</td>
+                <td>Monitor and block suspicious activity using Intrusion Detection Systems.</td>
               </tr>
             </tbody>
           </table>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+# Example: Blocking all incoming connections on port 22 (SSH) using UFW
+sudo ufw deny 22
+            </pre>
+          </div>
         </section>
 
-        <!-- TL;DR Summary -->
-        <section id="summary">
-          <h2 class="section-title">TL;DR</h2>
-          <p>
-            DNS commonly operates on <strong>UDP/53</strong> for fast, lightweight queries and <strong>TCP/53</strong> for zone transfers or large responses. Modern security and privacy demands have led to <strong>encrypted DNS</strong> via ports like <strong>853</strong> (DoT) or <strong>443</strong> (DoH). Understanding these ports—and securing them from misuse—is critical for stable, safe DNS operations.
-          </p>
+        <!-- 5. Additional Advanced Topics -->
+        <section class="preface-section fade-in" id="advanced-topics">
+          <h4>Additional Advanced Topics</h4>
+          <h3>Ephemeral Ports &amp; NAT</h3>
           <ul>
-            <li><strong>Well-known DNS Ports:</strong> 53 (UDP/TCP) for plaintext DNS; 853 for TLS; 443 for HTTPS-based DNS.</li>
-            <li><strong>Security:</strong> Limit open ports, enable rate-limiting, and restrict zone transfers to protect from DDoS, spoofing, or data leaks.</li>
-            <li><strong>Performance:</strong> Use EDNS0 to reduce fallback to TCP, keep anycast servers updated, and monitor logs for anomalies.</li>
+            <li><strong>Ephemeral Ports:</strong> Temporary ports assigned dynamically for outgoing connections (range: 49,152 – 65,535).</li>
+            <li><strong>NAT (Network Address Translation):</strong> Modifies IP addresses and ports to allow multiple devices to share a public IP.</li>
           </ul>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+# Example: Checking ephemeral ports used by your system
+ss -tulnp | grep ESTABLISHED
+            </pre>
+          </div>
+          <h3>Deep Dive into Firewall Rules &amp; Port Filtering</h3>
+          <ul>
+            <li>Configuring tools like IPTables, Windows Firewall, or pfSense.</li>
+            <li>Stateful firewalls track active connections; stateless firewalls use predefined rules.</li>
+          </ul>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+# Example: Allowing only a specific IP to access SSH (port 22) using iptables
+sudo iptables -A INPUT -p tcp --dport 22 -s 192.168.1.100 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 22 -j DROP
+            </pre>
+          </div>
+          <h3>Hands-On Guide: Port Scanning &amp; Troubleshooting</h3>
+          <ul>
+            <li><strong>Nmap:</strong> Scanning open ports on a network.</li>
+            <li><strong>Netstat:</strong> Checking active connections and listening ports.</li>
+            <li><strong>Telnet &amp; Netcat:</strong> Testing connectivity to specific ports.</li>
+          </ul>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+# Example: Testing if port 80 is open using Netcat
+nc -zv 192.168.1.1 80
+            </pre>
+          </div>
+        </section>
+
+        <!-- 6. Next Steps -->
+        <section class="preface-section fade-in" id="next-steps">
+          <h4>Next Steps</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Step</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Experiment with Port Forwarding</td>
+                <td>Try hosting a simple web server and make it accessible over the internet.</td>
+              </tr>
+              <tr>
+                <td>Set Up a Firewall</td>
+                <td>Configure UFW (Linux) or Windows Defender Firewall and test its effectiveness.</td>
+              </tr>
+              <tr>
+                <td>Perform a Security Audit</td>
+                <td>Use Nmap to scan your network and identify open ports.</td>
+              </tr>
+              <tr>
+                <td>Learn About VPNs and Tunneling</td>
+                <td>Explore how ports are used in VPNs to secure communications.</td>
+              </tr>
+              <tr>
+                <td>Simulate Attacks in a Safe Environment</td>
+                <td>Set up a controlled environment to practice penetration testing techniques.</td>
+              </tr>
+              <tr>
+                <td>Study Advanced Network Monitoring</td>
+                <td>Use tools like Wireshark to analyze network traffic and identify vulnerabilities.</td>
+              </tr>
+            </tbody>
+          </table>
           <p>
-            Whether you’re hosting your own authoritative DNS or relying on public resolvers, ports remain a fundamental piece of network configuration. Properly configured, they enable efficient name resolution; mismanaged, they can open the door to attacks.
+            By continuously experimenting and applying what you've learned, you'll develop a stronger grasp of port management and network security.
           </p>
         </section>
 
+        <!-- 7. Conclusion -->
+        <section class="preface-section fade-in" id="conclusion">
+          <h4>Conclusion</h4>
+          <p>
+            Ports are an essential part of networking and cybersecurity. Whether browsing the web, sending emails, gaming, or managing servers, ports facilitate communication between devices and applications.
+          </p>
+          <p>
+            To ensure security and performance, understanding how ports work, configuring port forwarding properly, and securing open ports is crucial for both individuals and organizations.
+          </p>
+        </section>
+      </div>
+      <!-- Next Chapter Navigation -->
+      <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+        <a href="../SubChapters/PublicDNS.html" class="chapter-btn">
+          Next Chapter <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </main>
+
+    <!-- Right Sidebar: Table of Contents -->
+    <aside class="sidebar-toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#ports-introduction">Introduction</a></li>
+        <li><a href="#ports-basics">Understanding Ports</a></li>
+        <li><a href="#port-forwarding">Port Forwarding</a></li>
+        <li><a href="#port-security">Security Implications</a></li>
+        <li><a href="#advanced-topics">Additional Advanced Topics</a></li>
+        <li><a href="#next-steps">Next Steps</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </aside>
   </div>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2025 Coding Over College</p>
+    <ul class="footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul>
+    <p>
+      Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+      <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+      <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+    </p>
+  </div>
+</footer>
+
+<!-- Back to Top Button (added from inline text) -->
+<button id="backToTop" class="back-to-top">↑</button>
+
+<!-- JavaScript -->
+<script defer src="../../../script.js"></script>
 </body>
 </html>

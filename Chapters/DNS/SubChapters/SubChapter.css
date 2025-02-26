@@ -1,0 +1,872 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & RESETS
+   ========================================================================== */
+   :root {
+    --color-bg: #1e1e1e;
+    --color-card-bg: #2d2d2d;
+    --color-accent: #3ce3ce;
+    --color-secondary: #b082f7;
+    --color-text: #f7f7f7;
+    --color-subtext: #cccccc;
+    --color-heading: #ffffff;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    font-size: 16px;
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    /* Subtle background pattern */
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    scroll-behavior: smooth;
+  }
+  
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  /* ==========================================================================
+     2. ANIMATIONS
+     ========================================================================== */
+  .fade-in {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes heroGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* ==========================================================================
+     3. PROGRESS BAR
+     ========================================================================== */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background-color: var(--color-accent);
+    width: 0;
+    z-index: 100;
+  }
+  
+  /* ==========================================================================
+     4. HEADER & NAVIGATION
+     ========================================================================== */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #2a2a2a;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  
+  .logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+  
+  .nav-links ul {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: var(--color-text);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--color-accent);
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropbtn {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 16px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #393939;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  }
+  
+  .dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    color: var(--color-text);
+    transition: background 0.3s;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: var(--color-accent);
+    color: #000;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Login Button */
+  .btn-login {
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .btn-login:hover {
+    background-color: var(--color-accent);
+    color: #000;
+  }
+  
+  /* Mobile Navigation */
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .mobile-menu-btn .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text);
+  }
+  
+  .mobile-nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-card-bg);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  
+  .mobile-nav-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .mobile-nav-links a {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  .mobile-dropbtn {
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .mobile-dropdown-content {
+    display: none;
+    background-color: #393939;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  /* ==========================================================================
+     5. HERO SECTION
+     ========================================================================== */
+  .chapter-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    background-size: 400% 400%;
+    animation: heroGradient 10s ease infinite;
+    color: var(--color-heading);
+    border-bottom: 2px solid var(--color-accent);
+  }
+  
+  .chapter-hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .chapter-subtext {
+    font-size: 1.2rem;
+    color: var(--color-subtext);
+  }
+  
+  .reading-time {
+    font-size: 0.9rem;
+    color: var(--color-subtext);
+    margin-top: 1rem;
+  }
+  
+  /* ==========================================================================
+     6. CHAPTER CONTENT & SECTIONS
+     ========================================================================== */
+  .chapter-content {
+    max-width: 1200px;
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    padding: 2rem;
+    margin: 2rem auto;
+  }
+  
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* Subchapter Sections */
+  .subchapterBody section {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .subchapterBody section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+  
+ 
+.preface-section p {
+    margin: 1rem 0;      
+    line-height: 1.6;   
+  }
+  .strong {
+    
+    margin: 1rem 0;      
+    line-height: 1.6;   
+  }
+  .chapter-content ol li {
+    list-style-type: decimal;  
+  }
+
+  .chapter-content ul li {
+    margin: 0.5rem;
+    margin-left: 1.5rem;
+    list-style-type: disc; 
+  }
+
+  .chapter-content ol > li::marker {
+    color: var(--color-accent); 
+    font-weight: bold;
+    font-size: 1rem; 
+  }
+  .Cm-Reg ol > li::marker {
+    color: var(--color-text) !important; 
+    font-weight: bold;
+    font-size: 1.2em; 
+  }
+  .chapter-content ol{
+    list-style-type:decimal !important;
+    margin: 0.5rem;
+    
+  }
+  .chapter-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: underline;
+    
+  }
+
+  .preface-section h4 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-heading);
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, rgba(60,227,206,0.15), rgba(176,130,247,0.15));
+    border-left: 6px solid var(--color-accent);
+    border-right: 6px solid var(--color-accent);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    display: inline-block;
+    margin: 0 auto 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    max-width: 100%;        
+    white-space: normal;     
+    word-wrap: break-word;  
+  }
+  
+  /* Section Icon */
+  .section-icon {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .section-icon i {
+    font-size: 2rem;
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+  }
+  
+  .section-icon:hover i {
+    transform: scale(1.1);
+  }
+  
+  /* Tooltip */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* ==========================================================================
+     7. COMPARISON TABLE
+     ========================================================================== */
+  .comparison-table {
+    width: 95%;
+    margin: 1rem auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  }
+  
+  .comparison-table thead {
+    background: linear-gradient(135deg, #444, #393939);
+  }
+  
+  .comparison-table thead th {
+    padding: 0.75rem 1rem;
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #444;
+    text-align: left;
+    color: var(--color-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .comparison-table thead th:last-child {
+    border-right: none;
+  }
+  
+  .comparison-table tbody tr {
+    transition: background-color 0.2s ease;
+    border-bottom: 2px dotted #444;
+  }
+  
+  .comparison-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  
+  .comparison-table tbody tr:hover {
+    background-color: #2d2a2d;
+  }
+  
+  .comparison-table td {
+    padding: 0.75rem 1rem;
+    border-right: 1px solid #444;
+    text-align: left;
+    vertical-align: middle;
+    color: var(--color-text);
+  }
+  
+  .comparison-table tbody td:last-child {
+    border-right: none;
+  }
+  
+  /* ==========================================================================
+     8. CODE SNIPPETS
+     ========================================================================== */
+  .code-block { 
+    position: relative; 
+  }
+  
+  .code-snippet {
+    background-color: #1b1b1b;
+    color: #f7f7f7;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    position: relative;
+    border: 1px solid #333;
+  }
+  
+  /* Copy Button for Code */
+  .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: var(--color-accent);
+    color: #000;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  
+  .copy-btn:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  /* ==========================================================================
+     9. BUTTONS
+     ========================================================================== */
+  .chapter-btn {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .chapter-btn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+  }
+  
+  /* ==========================================================================
+     10. BACK TO TOP BUTTON
+     ========================================================================== */
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--color-accent);
+    color: #000;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s;
+  }
+  
+  .back-to-top:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  /* ==========================================================================
+     11. FOOTER
+     ========================================================================== */
+  .footer {
+    background-color: #2a2a2a;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  
+  .footer-links a {
+    color: var(--color-text);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-accent);
+  }
+  
+  .footer-content p,
+  .footer-content a {
+    color: var(--color-subtext);
+    font-size: 0.9rem;
+  }
+  
+  .footer-content a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    margin: 0 0.25rem;
+  }
+  
+  /* ==========================================================================
+     12. NEXT CHAPTER NAVIGATION
+     ========================================================================== */
+  .next-chapter {
+    text-align: right;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+  }
+  
+  /* ==========================================================================
+     13. RESPONSIVE DESIGN (General)
+     ========================================================================== */
+  @media (max-width: 768px) {
+    .nav-links { 
+      display: none; 
+    }
+    
+    .mobile-menu-btn {
+      display: flex;
+    }
+    
+    .chapter-hero h1 {
+      font-size: 1.5rem;
+    }
+    
+    .chapter-subtext {
+      font-size: 0.9rem;
+    }
+    
+    .preface-section h4 {
+      font-size: 1.25rem;
+    }
+    
+    .chapter-content {
+      padding: 1rem;
+      margin: 1rem;
+    }
+    
+    .preface-section {
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .comparison-table,
+    .code-snippet {
+      display: block;
+      overflow-x: auto;
+    }
+    
+    .toc ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  
+/* ==========================================================================
+   14. THREE-COLUMN LAYOUT FOR LARGER SCREENS
+   ========================================================================== */
+/* Container for three columns with side padding ensuring asides remain 2rem from screen edge */
+.three-column-container {
+  display: flex;
+  align-items: flex-start;
+  overflow: visible;
+  width: 100%;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.three-column-container .chapter-content {
+  flex: 1;
+  min-width: 500;
+}
+.sidebar-subchapters,
+.sidebar-toc {
+  flex: 0 1 300px;  /* Start with 300px but allow shrinking */
+  min-width: 150px; /* They won’t shrink below 150px */
+}
+  
+
+  .sidebar-subchapters {
+    flex: 0 1 300px; 
+    position: sticky;
+    top: 100px; 
+    max-height: calc(100vh - 4rem - 100px); 
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    direction: rtl; 
+    text-align: left;
+  }
+  
+  
+  
+
+.sidebar-toc {
+  flex: 0 1 300px;
+  position: sticky;
+  top: 100px; 
+  max-height: calc(100vh - 4rem - 100px); 
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+  
+  /* Hide scrollbar for aesthetics, but keep functionality */
+.sidebar-subchapters::-webkit-scrollbar,
+.sidebar-toc::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar-subchapters::-webkit-scrollbar-track,
+.sidebar-toc::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-subchapters::-webkit-scrollbar-thumb,
+.sidebar-toc::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 4px;
+}
+
+  /* Main Content: Grows to fill remaining space */
+  .three-column-container .chapter-content {
+    flex: 1;
+  }
+  
+  /* Sidebar Headings */
+  .sidebar-subchapters h2,
+  .sidebar-toc h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-heading);
+    margin-bottom: 1rem;
+  }
+  
+  /* Sidebar Lists */
+  .sidebar-subchapters ul,
+  .sidebar-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-subchapters li,
+  .sidebar-toc li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Sidebar Links */
+  .sidebar-subchapters a,
+  .sidebar-toc a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .sidebar-subchapters a:hover,
+  .sidebar-toc a:hover {
+    background-color: var(--color-accent);
+    color: #000;
+    transform: translateX(4px);
+  }
+  
+  /* Active TOC link style */
+  .sidebar-toc a.active {
+    background-color: var(--color-secondary);
+    color: #000;
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments for three-column layout */
+  @media (max-width: 768px) {
+    .three-column-container {
+      flex-direction: column;
+    }
+    
+    .sidebar-subchapters,
+    .sidebar-toc {
+      display: none;
+    }
+  }
+  /* =======================
+   15. HERO SECTION
+======================= */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-content {
+    z-index: 1;
+    max-width: 700px;
+  }
+  
+  .hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-heading);
+    margin-bottom: 1rem;
+  }
+  
+  .subtext {
+    font-size: 1rem;
+    color: var(--color-subtext);
+    margin-bottom: 2rem;
+  }
+  
+  .cta-btn {
+    background-color: var(--color-accent);
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+  }
+  
+  .cta-btn:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  .hero-graphic {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    opacity: 0.15; /* Subtle overlay effect */
+  }
+  
+  .animated-bg {
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(var(--color-accent), var(--color-bg));
+    animation: rotateGradient 10s linear infinite;
+  }
+  
+  @keyframes rotateGradient {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  /* ==========================================================================
+   16. Scrollbar
+   ========================================================================== */
+/* Scrollbar for the entire page */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Background color of the scrollbar track */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent); /* Color of the scrollbar handle */
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary); /* Color when hovering over the scrollbar */
+}

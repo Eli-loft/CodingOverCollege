@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Domain Registration</title>
-  <!-- Link to your shared CSS (adjust the path if needed) -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain Registration: Acquiring and Managing Domain Names</title>
+  <!-- Google Fonts for Montserrat and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="../SubChapters/SubChapter.css">
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
         <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../../DNS/DNS.html">DNS</a></li>
-        <li><a href="../../References/References.html">References</a></li>
-        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
       </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Domain Registration: Acquiring and Managing Domain Names</h1>
+      <p class="chapter-subtext">
+        Learn how to acquire and manage domain names—from choosing the right name and registrar to setting up DNS and securing your online identity.
+      </p>
+      <p class="reading-time">Estimated reading time: calculating...</p>
+    </div>
+    <div class="hero-graphic">
+      <div class="animated-bg"></div>
+    </div>
+  </section>
+
+  <!-- THREE-COLUMN LAYOUT -->
+  <div class="three-column-container">
+    <!-- Left Sidebar: Subchapters -->
+    <aside class="sidebar-subchapters">
+      <h2>Subchapters</h2>
       <ul>
         <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="../SubChapters/Caching.html">Caching</a></li>
@@ -37,15 +92,15 @@
         <li><a href="../SubChapters/Ports.html">Ports</a></li>
         <li><a href="../SubChapters/PublicDNS.html">Public DNS</a></li>
         <li><a href="../SubChapters/PrivateDNS.html">Private DNS</a></li>
-        <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
+        <li><a href="../SubChapters/DomainRegistration.html" class="active">Domain Registration</a></li>
         <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
         <li><a href="../SubChapters/nslookup.html">nslookup</a></li>
         <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
         <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
         <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
@@ -54,328 +109,324 @@
       </ul>
     </aside>
 
-    <main class="mainbody">
+    <!-- Main Content -->
+    <main class="chapter-content">
       <div class="subchapterBody">
-        
-        <!-- Introduction -->
-        <section id="introduction">
-          <h2 class="section-title">Domain Registration</h2>
+        <!-- Section 1: Introduction -->
+        <section class="preface-section fade-in" id="introduction">
+          <h4>Introduction</h4>
           <p>
-            A <strong>domain name</strong> is a user-friendly address (e.g., <code>example.com</code>) that represents a resource on the internet, usually a website or email server. <strong>Domain Registration</strong> is the process by which you lease the right to use a domain name for a specific period (often 1-10 years) from an accredited registrar. This chapter explores how domain registration works, who oversees it, how to choose a domain registrar, the domain lifecycle, and common pitfalls to avoid.
+            A domain name is a unique, human-readable address that maps to an IP address, enabling users to access websites and online services easily. Domain registration is the process of purchasing and managing a domain name through accredited registrars.
+          </p>
+          <p>
+            This chapter explores the entire domain registration process—from understanding what it is and its key components to best practices, security considerations, and domain management strategies.
           </p>
         </section>
 
-        <!-- Understanding Domain Registrars & ICANN -->
-        <section id="registrars">
-          <h2 class="section-title">Domain Registrars & ICANN</h2>
-
-          <h3>What is ICANN?</h3>
+        <!-- Section 2: What is Domain Registration? -->
+        <section class="preface-section fade-in" id="what-is-domain-registration">
+          <h4>What is Domain Registration?</h4>
+          <h3>Definition</h3>
           <p>
-            The <strong>Internet Corporation for Assigned Names and Numbers (ICANN)</strong> is a nonprofit organization responsible for coordinating the global DNS, maintaining the root zone, and accrediting domain registrars. They ensure that each domain is uniquely registered and the global DNS remains stable.
-          </p>
-
-          <h3>Role of Registrars</h3>
-          <p>
-            A <strong>domain registrar</strong> is a company authorized (by ICANN or a national authority for country-code TLDs) to lease domain names to the public. Examples include GoDaddy, Namecheap, Google Domains, and many others.
-          </p>
-          <ul>
-            <li>
-              <strong>Registration Interface:</strong> Registrars provide the platform where you search for a domain’s availability and purchase it.
-            </li>
-            <li>
-              <strong>WHOIS Data Collection:</strong> They collect information (registrant name, contact details) required by ICANN policy.
-            </li>
-            <li>
-              <strong>Domain Management:</strong> Registrars let you update DNS server settings (to point to hosting providers), enable domain privacy, or lock the domain against unauthorized transfers.
-            </li>
-          </ul>
-        </section>
-
-        <!-- TLDs & Domain Name Structure -->
-        <section id="tlds">
-          <h2 class="section-title">TLDs & Domain Name Structure</h2>
-          <p>
-            A domain name is typically structured as: <code>subdomain.domainname.TLD</code> (e.g., <code>www.example.com</code>). The <strong>Top-Level Domain (TLD)</strong> is the final segment (<code>.com</code>, <code>.org</code>, <code>.net</code>, <code>.io</code>, etc.). ICANN classifies TLDs primarily into:
-          </p>
-          <ul>
-            <li>
-              <strong>gTLDs (Generic TLDs):</strong> <code>.com</code>, <code>.org</code>, <code>.net</code>, <code>.info</code>, <code>.xyz</code>, etc.
-            </li>
-            <li>
-              <strong>ccTLDs (Country-Code TLDs):</strong> <code>.us</code>, <code>.uk</code>, <code>.de</code>, <code>.jp</code>, etc., often subject to local rules.
-            </li>
-            <li>
-              <strong>New gTLDs:</strong> A wave of new TLDs like <code>.tech</code>, <code>.dev</code>, <code>.guru</code>, and <code>.store</code>.
-            </li>
-          </ul>
-          <p>
-            The choice of TLD can impact your branding, cost, and sometimes SEO or geographical relevance (for ccTLDs).
+            Domain registration is the process of reserving a domain name for use on the internet. Domains are managed by the Internet Corporation for Assigned Names and Numbers (ICANN) and can be purchased through domain registrars.
           </p>
         </section>
 
-        <!-- Domain Registration Steps -->
-        <section id="registration-steps">
-          <h2 class="section-title">Domain Registration Steps</h2>
-          <ol>
-            <li>
-              <strong>Search for Availability:</strong>
-              <ul>
-                <li>Use your chosen registrar’s search tool or a third-party domain checker to find if the desired name is available.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Select a TLD & Pricing Plan:</strong>
-              <ul>
-                <li>Check alternative TLDs if <code>.com</code> is taken or expensive. Some TLDs have premium pricing.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Provide Registrant Information:</strong>
-              <ul>
-                <li>ICANN requires accurate contact details (name, email, address). Some registrars require phone verification depending on local laws.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Opt-in or Opt-out of Privacy:</strong>
-              <ul>
-                <li>Many registrars offer <em>domain privacy</em> or “WHOIS privacy” to shield your personal info from public WHOIS listings.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Review Registration Period & Auto-Renewal:</strong>
-              <ul>
-                <li>Most domains can be registered for 1–10 years. Auto-renewal ensures you don’t accidentally lose the domain upon expiry.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Pay & Confirm:</strong>
-              <ul>
-                <li>Complete the checkout process. Some registrars also bundle hosting, email, or SSL—verify if you need these extras or prefer separate providers.</li>
-              </ul>
-            </li>
-          </ol>
-        </section>
-
-        <!-- Domain Lifecycle -->
-        <section id="domain-lifecycle">
-          <h2 class="section-title">Domain Lifecycle</h2>
-          <p>
-            Once you register a domain, it follows a predictable lifecycle:
-          </p>
-          <ul>
-            <li>
-              <strong>Active Registration (1–10 years):</strong> Your domain remains valid as long as you pay renewal fees before it expires.
-            </li>
-            <li>
-              <strong>Expiration Grace Period (0–45 days):</strong> If you fail to renew, most registrars allow a grace period where you can still renew without incurring extra fees.
-            </li>
-            <li>
-              <strong>Redemption Period (30 days):</strong> If you don’t renew during the grace period, the domain enters a redemption period where additional fees often apply to reclaim it.
-            </li>
-            <li>
-              <strong>Pending Delete (5 days):</strong> The domain is slated for release to the public after a final hold period.
-            </li>
-            <li>
-              <strong>Available Again:</strong> Once fully deleted, anyone can register it anew.
-            </li>
-          </ul>
-          <p>
-            High-value or popular domains might be snapped up quickly by drop-catch services if they become available.
-          </p>
-        </section>
-
-        <!-- WHOIS & Domain Privacy -->
-        <section id="whois-privacy">
-          <h2 class="section-title">WHOIS & Domain Privacy</h2>
-          <p>
-            <strong>WHOIS</strong> is a publicly accessible database showing domain registrant details, including name, email, address, and phone number, unless privacy is enabled. Depending on your registrar:
-          </p>
-          <ul>
-            <li>
-              <strong>Private Registration:</strong> Replaces your info with the registrar’s or a proxy service, hiding your personal contact details.
-            </li>
-            <li>
-              <strong>GDPR Considerations:</strong> For EU-based registrants, GDPR has led to masked WHOIS data. Some registrars mask it by default now.
-            </li>
-            <li>
-              <strong>Cost:</strong> Domain privacy might be free or a paid add-on, depending on the provider and TLD.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Pointing Your Domain (DNS Configuration) -->
-        <section id="dns-configuration">
-          <h2 class="section-title">Pointing Your Domain to a Hosting Provider</h2>
-          <p>
-            After registering a domain, you typically need to set up DNS records so your domain resolves to the correct server (website, email, etc.). Basic steps include:
-          </p>
-          <ol>
-            <li>
-              <strong>Update Nameservers:</strong> Change your domain’s nameservers to those of your hosting provider or custom DNS. For example, <code>ns1.hostingcompany.com</code> and <code>ns2.hostingcompany.com</code>.
-            </li>
-            <li>
-              <strong>Verify or Add DNS Records:</strong> Ensure that A/AAAA records (for IPv4/IPv6), MX records (for email), and other relevant records are set up in your chosen DNS host’s zone file.
-            </li>
-            <li>
-              <strong>Propagation Time:</strong> DNS changes can take up to 24–48 hours to propagate, although in practice it’s often much faster.
-            </li>
-          </ol>
-          <p>
-            Many registrars offer their own DNS hosting (sometimes free). Alternatively, you can use third-party DNS providers like Cloudflare, Amazon Route 53, or a self-hosted DNS server.
-          </p>
-        </section>
-
-        <!-- Domain Transfer -->
-        <section id="domain-transfer">
-          <h2 class="section-title">Transferring a Domain</h2>
-          <p>
-            You can move your domain from one registrar to another. Common reasons include better pricing, superior interface, or integrated hosting packages. Key points:
-          </p>
-          <ul>
-            <li>
-              <strong>EPP/Authorization Code:</strong> Required for most TLDs to verify your right to transfer.
-            </li>
-            <li>
-              <strong>60-Day Lock (New Registrations or Transfers):</strong> ICANN policies typically prevent transfers within 60 days of initial registration or a prior transfer.
-            </li>
-            <li>
-              <strong>Domain Privacy Impact:</strong> You may need to temporarily disable privacy to view or provide accurate WHOIS data for the transfer.
-            </li>
-            <li>
-              <strong>Fees & Renewal:</strong> The new registrar often charges a transfer fee, which typically adds one year to your domain’s expiration date.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Security & Best Practices -->
-        <section id="security-bestpractices">
-          <h2 class="section-title">Security & Best Practices</h2>
-          <ul>
-            <li>
-              <strong>Domain Lock:</strong> Enable registrar lock (also called transfer lock) to prevent unauthorized transfers.
-            </li>
-            <li>
-              <strong>Two-Factor Authentication (2FA):</strong> Use 2FA for your registrar account to protect against hijacking.
-            </li>
-            <li>
-              <strong>Accurate WHOIS Info:</strong> Use real contact details or a privacy service. Fake data can lead to domain suspension.
-            </li>
-            <li>
-              <strong>Auto-Renew:</strong> Avoid losing a valuable domain by forgetting to renew manually.
-            </li>
-            <li>
-              <strong>DNSSEC:</strong> Some registrars allow you to add DS records to secure your domain with DNSSEC, preventing certain types of DNS spoofing.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Real-World Example: Registering a .com Domain -->
-        <section id="example-registration">
-          <h2 class="section-title">Example: Registering a .com Domain</h2>
-          <ol>
-            <li>
-              <strong>Choose a Registrar:</strong> Let’s say you pick <code>Namecheap</code> due to competitive pricing and free WHOIS privacy.
-            </li>
-            <li>
-              <strong>Search for Desired Domain:</strong>
-              <ul>
-                <li>Type <code>mycoolproject.com</code> in the search box. If it’s available, proceed.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Add to Cart & Provide Info:</strong>
-              <ul>
-                <li>Enter your contact details or sign in to an existing account.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Privacy Protection:</strong>
-              <ul>
-                <li>Choose free domain privacy if offered. Otherwise, decide if you want to pay extra.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Review Cart & Check Extras:</strong>
-              <ul>
-                <li>Uncheck services you don’t need (e.g., email hosting) if you have separate plans.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Payment & Confirmation:</strong>
-              <ul>
-                <li>After checkout, you’ll receive an email confirming domain registration. You can now manage DNS settings or hosting from the registrar’s dashboard.</li>
-              </ul>
-            </li>
-          </ol>
-        </section>
-
-        <!-- Comparison Table: Domain Registrar Features -->
-        <section id="comparison">
-          <h2 class="section-title">Comparison: Domain Registrar Features</h2>
-          <table>
+        <!-- Section 3: Key Components of a Domain Name -->
+        <section class="preface-section fade-in" id="key-components">
+          <h4>Key Components of a Domain Name</h4>
+          <table class="comparison-table">
             <thead>
               <tr>
-                <th>Feature</th>
-                <th>Registrar A</th>
-                <th>Registrar B</th>
-                <th>Registrar C</th>
+                <th>Component</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Price (yearly, .com)</td>
-                <td>$12.99</td>
-                <td>$10.99</td>
-                <td>$14.99</td>
+                <td><strong>Top-Level Domain (TLD)</strong></td>
+                <td>The extension at the end of a domain (e.g., .com, .org, .net).</td>
               </tr>
               <tr>
-                <td>Free WHOIS Privacy?</td>
-                <td>Yes</td>
-                <td>No ($2.99/year)</td>
-                <td>Yes</td>
+                <td><strong>Second-Level Domain (SLD)</strong></td>
+                <td>The primary part of the domain (e.g., example in example.com).</td>
               </tr>
               <tr>
-                <td>DNS Management</td>
-                <td>Included</td>
-                <td>Included</td>
-                <td>Paid upgrade</td>
+                <td><strong>Subdomain</strong></td>
+                <td>A subdivision of a domain (e.g., blog.example.com).</td>
               </tr>
               <tr>
-                <td>ICANN Fee</td>
-                <td>Included</td>
-                <td>+$0.18/yr</td>
-                <td>Included</td>
+                <td><strong>Name Server</strong></td>
+                <td>A DNS server that resolves domain names to IP addresses.</td>
               </tr>
               <tr>
-                <td>2FA Support</td>
-                <td>SMS or App</td>
-                <td>None</td>
-                <td>Email or App</td>
+                <td><strong>Registrar</strong></td>
+                <td>A company authorized to register and manage domain names.</td>
               </tr>
             </tbody>
           </table>
         </section>
 
-        <!-- TL;DR Summary -->
-        <section id="summary">
-          <h2 class="section-title">TL;DR</h2>
-          <p>
-            Domain registration is the backbone of creating a recognizable online presence. It involves:
-          </p>
+        <!-- Section 4: How to Register a Domain Name -->
+        <section class="preface-section fade-in" id="how-to-register">
+          <h4>How to Register a Domain Name</h4>
+          <ol>
+            <li>
+              <strong>Choose a Domain Name:</strong>
+              <ul>
+                <li>Keep it short, memorable, and brandable.</li>
+                <li>Avoid numbers and hyphens for better readability.</li>
+                <li>Use keywords relevant to your business or website.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Select a Domain Registrar:</strong>
+              <ul>
+                <li>Ensure the registrar is ICANN-accredited.</li>
+                <li>Compare pricing, renewal fees, and additional services.</li>
+                <li>Popular registrars include: GoDaddy, Namecheap, Google Domains, Cloudflare Registrar, Hover.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Check Domain Availability:</strong>
+              <ul>
+                <li>Use the registrar’s search tool to find available domains.</li>
+                <li>If taken, consider alternative TLDs or variations.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Register the Domain:</strong>
+              <ul>
+                <li>Provide accurate contact details for WHOIS records.</li>
+                <li>Choose a registration period (typically 1 to 10 years).</li>
+                <li>Enable auto-renewal to avoid accidental expiration.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Configure DNS Settings:</strong>
+              <ul>
+                <li>Set up name servers from your hosting provider or use a custom DNS provider.</li>
+                <li>Add necessary DNS records (A, CNAME, MX, TXT, etc.).</li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+
+        <!-- Section 5: Understanding TLDs and Domain Extensions -->
+        <section class="preface-section fade-in" id="tlds-domain-extensions">
+          <h4>Understanding TLDs and Domain Extensions</h4>
+          <h3>Types of Top-Level Domains (TLDs)</h3>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>TLD Type</th>
+                <th>Examples</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Generic TLDs (gTLDs)</strong></td>
+                <td>.com, .org, .net, .info</td>
+                <td>General-purpose domains</td>
+              </tr>
+              <tr>
+                <td><strong>Country Code TLDs (ccTLDs)</strong></td>
+                <td>.us, .uk, .ca, .de</td>
+                <td>Country-specific domains</td>
+              </tr>
+              <tr>
+                <td><strong>Sponsored TLDs (sTLDs)</strong></td>
+                <td>.gov, .edu, .mil</td>
+                <td>Restricted use for specific entities</td>
+              </tr>
+              <tr>
+                <td><strong>New gTLDs</strong></td>
+                <td>.tech, .app, .blog</td>
+                <td>Industry-specific and brandable domains</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Choosing the Right TLD</h3>
           <ul>
-            <li><strong>Selecting a TLD:</strong> <code>.com</code>, <code>.org</code>, <code>.net</code>, or dozens of new gTLDs.</li>
-            <li><strong>Choosing a Registrar:</strong> Evaluate cost, privacy options, DNS management features, and user interface.</li>
-            <li><strong>Providing WHOIS Info:</strong> Required by ICANN, though you can opt for privacy services or proxy registrations.</li>
-            <li><strong>Paying & Renewing Periodically:</strong> Domains expire if not renewed, so consider auto-renew or track your expiration date carefully.</li>
-            <li><strong>Pointing the Domain:</strong> Update nameservers and DNS records to connect your domain with a hosting provider or custom DNS setup.</li>
+            <li>Use .com for businesses and global websites.</li>
+            <li>Use ccTLDs if targeting specific countries.</li>
+            <li>Consider industry-specific TLDs for branding purposes.</li>
           </ul>
+        </section>
+
+        <!-- Section 6: WHOIS and Domain Privacy Protection -->
+        <section class="preface-section fade-in" id="whois-privacy-protection">
+          <h4>WHOIS and Domain Privacy Protection</h4>
+          <h3>What is WHOIS?</h3>
           <p>
-            A successful domain registration strategy balances cost, ease of management, security, and privacy. Once registered, your domain becomes your brand’s identity on the internet—treat it as a valuable asset.
+            WHOIS is a public database that stores domain registration details, including registrant name, registrar information, registration and expiration dates, and name servers.
+          </p>
+          <h3>Privacy Considerations</h3>
+          <ul>
+            <li>Without WHOIS Privacy Protection, personal details can be publicly accessible—leading to spam, phishing, and potential hijacking.</li>
+          </ul>
+          <h3>How to Enable Domain Privacy</h3>
+          <ul>
+            <li>Most registrars offer WHOIS Privacy Protection (often for an additional fee) which hides registrant details, reduces spam, and prevents fraud.</li>
+          </ul>
+        </section>
+
+        <!-- Section 7: Managing and Renewing Domains -->
+        <section class="preface-section fade-in" id="managing-renewing">
+          <h4>Managing and Renewing Domains</h4>
+          <h3>Domain Renewal Best Practices</h3>
+          <ul>
+            <li>Enable auto-renewal to prevent expiration.</li>
+            <li>Monitor renewal dates using reminders.</li>
+            <li>Register domains for multiple years to maintain long-term ownership.</li>
+          </ul>
+        </section>
+
+        <!-- Section 8: Transferring a Domain -->
+        <section class="preface-section fade-in" id="domain-transfer">
+          <h4>Transferring a Domain</h4>
+          <ul>
+            <li><strong>Unlock the Domain:</strong> Remove any transfer locks from your current registrar.</li>
+            <li><strong>EPP/Authorization Code:</strong> Obtain this code to verify your right to transfer.</li>
+            <li><strong>Initiate Transfer:</strong> Start the transfer process with your new registrar and confirm via email.</li>
+            <li><strong>Wait for Completion:</strong> Transfers typically take 5-7 days.</li>
+          </ul>
+        </section>
+
+        <!-- Section 9: Securing Your Domain -->
+        <section class="preface-section fade-in" id="securing-domain">
+          <h4>Securing Your Domain</h4>
+          <ul>
+            <li>Use strong, unique passwords for your registrar account.</li>
+            <li>Enable two-factor authentication (2FA) for added security.</li>
+            <li>Lock your domain to prevent unauthorized transfers.</li>
+            <li>Regularly review WHOIS information for accuracy.</li>
+          </ul>
+        </section>
+
+        <!-- Section 10: Expired Domains and Redemption Period -->
+        <section class="preface-section fade-in" id="expired-domains">
+          <h4>Expired Domains and Redemption Period</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>Duration</th>
+                <th>Action Needed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Grace Period</strong></td>
+                <td>0-30 days</td>
+                <td>Domain can be renewed at the normal price.</td>
+              </tr>
+              <tr>
+                <td><strong>Redemption Period</strong></td>
+                <td>30-60 days</td>
+                <td>Renewal incurs additional fees.</td>
+              </tr>
+              <tr>
+                <td><strong>Pending Delete</strong></td>
+                <td>60-75 days</td>
+                <td>Domain is about to be released for registration.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>How to Recover an Expired Domain</h3>
+          <ul>
+            <li>Renew the domain as soon as possible to avoid higher fees.</li>
+            <li>If in the redemption period, contact your registrar immediately.</li>
+            <li>If deleted, attempt to re-register once available.</li>
+          </ul>
+        </section>
+
+        <!-- Section 11: Buying and Selling Domains -->
+        <section class="preface-section fade-in" id="buying-selling">
+          <h4>Buying and Selling Domains</h4>
+          <h3>Domain Aftermarket &amp; Auctions</h3>
+          <ul>
+            <li>High-value domains can be bought and sold on platforms like Sedo, Flippa, GoDaddy Auctions, Namecheap Marketplace, and Afternic.</li>
+          </ul>
+          <h3>Factors Affecting Domain Value</h3>
+          <ul>
+            <li>Short, memorable names generally have higher value.</li>
+            <li>Keyword-rich domains improve SEO and branding.</li>
+            <li>.com extensions tend to be more valuable than other TLDs.</li>
+          </ul>
+        </section>
+
+        <!-- Section 12: Conclusion -->
+        <section class="preface-section fade-in" id="conclusion">
+          <h4>Conclusion</h4>
+          <p>
+            Domain registration is a critical step in establishing an online presence. Choosing the right domain name, TLD, registrar, and DNS configuration can significantly impact your website's branding, security, and accessibility.
           </p>
         </section>
 
+        <!-- Section 13: Next Steps -->
+        <section class="preface-section fade-in" id="next-steps">
+          <h4>Next Steps</h4>
+          <ul>
+            <li>Register a domain through an accredited registrar.</li>
+            <li>Enable WHOIS privacy protection for enhanced security.</li>
+            <li>Set up auto-renewal to avoid accidental expiration.</li>
+            <li>Explore domain marketplaces if considering buying or selling domains.</li>
+            <li>Secure your domain with strong authentication measures.</li>
+          </ul>
+        </section>
+      </div>
+      <!-- Next Chapter Navigation -->
+      <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+        <a href="../SubChapters/HostingProvider.html" class="chapter-btn">
+          Next Chapter <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </main>
+
+    <!-- Right Sidebar: Table of Contents -->
+    <aside class="sidebar-toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#what-is-domain-registration">What is Domain Registration?</a></li>
+        <li><a href="#key-components">Key Components of a Domain Name</a></li>
+        <li><a href="#how-to-register">How to Register a Domain Name</a></li>
+        <li><a href="#tlds-domain-extensions">TLDs &amp; Domain Extensions</a></li>
+        <li><a href="#whois-privacy-protection">WHOIS &amp; Domain Privacy</a></li>
+        <li><a href="#managing-renewing">Managing &amp; Renewing Domains</a></li>
+        <li><a href="#domain-transfer">Transferring a Domain</a></li>
+        <li><a href="#securing-domain">Securing Your Domain</a></li>
+        <li><a href="#expired-domains">Expired Domains</a></li>
+        <li><a href="#buying-selling">Buying &amp; Selling Domains</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#next-steps">Next Steps</a></li>
+      </ul>
+    </aside>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <!-- JavaScript -->
+  <script defer src="../../../script.js"></script>
 </body>
 </html>

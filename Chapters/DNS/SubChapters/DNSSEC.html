@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNS</title>
-  <!-- Make sure the path below is correct relative to your HTML file -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNSSEC: Securing the Domain Name System</title>
+  <!-- Google Fonts for Montserrat and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="../SubChapters/SubChapter.css">
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
         <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../../DNS/DNS.html">DNS</a></li>
-        <li><a href="../../References/References.html">References</a></li>
-        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
-      </ul> 
+      </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>DNSSEC: Securing the Domain Name System</h1>
+      <p class="chapter-subtext">
+        Enhance the security of DNS with cryptographic signatures that ensure data authenticity and integrity.
+      </p>
+      <p class="reading-time">Estimated reading time: calculating...</p>
+    </div>
+    <div class="hero-graphic">
+      <div class="animated-bg"></div>
+    </div>
+  </section>
+
+  <!-- THREE-COLUMN LAYOUT -->
+  <div class="three-column-container">
+    <!-- Left Sidebar: Subchapters -->
+    <aside class="sidebar-subchapters">
+      <h2>Subchapters</h2>
       <ul>
         <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="../SubChapters/Caching.html">Caching</a></li>
@@ -41,11 +96,11 @@
         <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
         <li><a href="../SubChapters/nslookup.html">nslookup</a></li>
         <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
-        <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
+        <li><a href="../SubChapters/DNSSEC.html" class="active">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
         <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
         <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
@@ -54,254 +109,253 @@
       </ul>
     </aside>
 
-    <main class="mainbody">
-      
+    <!-- Main Content -->
+    <main class="chapter-content">
       <div class="subchapterBody">
-      <section id="introduction">
-        <h2 class="section-title">DNS Resolvers</h2>
-        <p>
-          DNS resolvers are servers on the internet that translate domain names into IP addresses. Their purpose is to let people use the internet using readable names instead of long strings of numbers. There are two main types:
-          <strong>Recursive Resolvers</strong> and <strong>Iterative Resolvers</strong>.
-        </p>
-      </section>
+        <!-- Section 1: Introduction -->
+        <section class="preface-section fade-in" id="introduction">
+          <h4>Introduction</h4>
+          <p>
+            The Domain Name System (DNS) is essential for translating domain names into IP addresses, yet it was not originally built with robust security in mind. This leaves it vulnerable to attacks such as DNS spoofing and cache poisoning. DNSSEC (Domain Name System Security Extensions) was introduced to secure DNS by adding cryptographic signatures to DNS records, ensuring that responses are authentic and have not been tampered with.
+          </p>
+        </section>
 
-      <section id="recursive-resolvers">
-        
-        <h2 class="section-title">Recursive Resolvers</h2>
+        <!-- Section 2: What is DNSSEC? -->
+        <section class="preface-section fade-in" id="what-is-dnssec">
+          <h4>What is DNSSEC?</h4>
+          <h3>Definition</h3>
+          <p>
+            DNSSEC is a set of extensions to DNS that employs public-key cryptography to digitally sign DNS records. These signatures provide a way to verify that the DNS data has not been altered, protecting against forged responses.
+          </p>
+          <h3>Why is DNSSEC Important?</h3>
+          <ul>
+            <li><strong>Prevents DNS Spoofing:</strong> Ensures that the DNS responses come from the authoritative source.</li>
+            <li><strong>Protects Data Integrity:</strong> Verifies that DNS records have not been modified maliciously.</li>
+            <li><strong>Prevents Cache Poisoning:</strong> Blocks attackers from inserting fraudulent DNS data.</li>
+          </ul>
+        </section>
 
-        <h3>What is a Recursive Resolver?</h3>
-        <p>
-          A recursive resolver (also called a DNS resolver) is a server that receives DNS queries from clients (such as web browsers) and recursively queries other DNS servers until it finds the correct answer.
-        </p>
-      
-      
-        <h3>Key Characteristics</h3>
-        <ul>
-          <li>Performs all the work to resolve a domain name.</li>
-          <li>Caches responses to improve performance.</li>
-          <li>Communicates with multiple types of DNS servers (root, TLD, authoritative).</li>
-          <li>Can be provided by ISPs, cloud services (Google, Cloudflare), or private networks.</li>
-        </ul>
+        <!-- Section 3: How DNSSEC Works -->
+        <section class="preface-section fade-in" id="how-dnssec-works">
+          <h4>How DNSSEC Works</h4>
+          <p>
+            DNSSEC adds digital signatures to DNS records using public-key cryptography. When a resolver receives a DNS response, it uses the corresponding public key (found in DNSKEY records) to verify the digital signature (RRSIG). If the signature is valid, the data is trusted; if not, the response is discarded.
+          </p>
+          <h3>Key Concepts in DNSSEC</h3>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>RRSIG</strong></td>
+                <td>Digital signature for DNS records.</td>
+              </tr>
+              <tr>
+                <td><strong>DNSKEY</strong></td>
+                <td>Stores public keys used to validate DNS signatures.</td>
+              </tr>
+              <tr>
+                <td><strong>DS</strong></td>
+                <td>Delegation Signer record linking parent and child zones.</td>
+              </tr>
+              <tr>
+                <td><strong>NSEC</strong></td>
+                <td>Records that prove the non-existence of DNS names.</td>
+              </tr>
+              <tr>
+                <td><strong>ZSK &amp; KSK</strong></td>
+                <td>Zone Signing Key and Key Signing Key used in the chain of trust.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>The DNSSEC Chain of Trust</h3>
+          <ol>
+            <li>Root Zone signs TLDs (e.g., .com, .org).</li>
+            <li>TLDs sign individual domains.</li>
+            <li>Each domain signs its own DNS records.</li>
+            <li>Resolvers verify signatures using DNSKEY records.</li>
+          </ol>
+        </section>
 
-        <h3>How Does It Work?</h3>
-        <ol>
-          <li>
-            <strong>Check Local Cache:</strong>
-            <ul>
-              <li>The resolver first checks if it already knows the answer (from a previous lookup or local host files).</li>
-              <li>If found in cache, it returns the result immediately; otherwise, it proceeds to ask external servers.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Root DNS Server:</strong>
-            <ul>
-              <li>If the answer is not cached, the resolver contacts a root DNS server, which does not know the IP for the domain but directs it to a Top-Level Domain (TLD) server (e.g., for .com).</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the TLD DNS Server:</strong>
-            <ul>
-              <li>The TLD server doesn’t store the full record but tells the resolver which authoritative DNS server holds the information.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Authoritative DNS Server:</strong>
-            <ul>
-              <li>The authoritative server, which belongs to the website owner or hosting provider, provides the exact IP address.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Return the Answer:</strong>
-            <ul>
-              <li>The resolver sends the IP address back to the requesting client.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Cache the Result:</strong>
-            <ul>
-              <li>The result is stored for a certain Time-To-Live (TTL) to answer future queries quickly.</li>
-            </ul>
-          </li>
-        </ol>
+        <!-- Section 4: Implementing DNSSEC -->
+        <section class="preface-section fade-in" id="implementing-dnssec">
+          <h4>Implementing DNSSEC</h4>
+          <ol>
+            <li>
+              <strong>Check Domain Support:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">dig +short DNSKEY example.com</pre>
+              </div>
+              If no DNSKEY records are found, DNSSEC is not enabled.
+            </li>
+            <li>
+              <strong>Generate Keys:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+# Generate Zone Signing Key (ZSK)
+dnssec-keygen -a RSASHA256 -b 2048 -n ZONE example.com
 
-        <h3>Example Process</h3>
-        <p>For example, when a user enters <code>example.com</code> in a browser:</p>
-        <ul>
-          <li>The resolver (e.g., Google’s 8.8.8.8) is contacted.</li>
-          <li>If no cached record exists, it queries a root server, then a .com TLD server, and finally the authoritative server which returns an IP (e.g., <code>93.184.216.34</code>).</li>
-          <li>The IP is sent back to the browser, allowing the website to load.</li>
-        </ul>
+# Generate Key Signing Key (KSK)
+dnssec-keygen -a RSASHA256 -b 4096 -n ZONE -f KSK example.com
+                </pre>
+              </div>
+            </li>
+            <li>
+              <strong>Sign the Zone File:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+dnssec-signzone -o example.com -k Kexample.com.+008+12345 example.com.zone
+                </pre>
+              </div>
+            </li>
+            <li>
+              <strong>Publish the DS Record:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+dnssec-dsfromkey -f Kexample.com.+008+12345.key example.com
+                </pre>
+              </div>
+              Then add the DS record to your parent zone (via your registrar).
+            </li>
+            <li>
+              <strong>Enable DNSSEC Validation on Resolvers:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+# Example for Unbound DNS Resolver:
+server:
+    auto-trust-anchor-file: "/var/lib/unbound/root.key"
+sudo systemctl restart unbound
+                </pre>
+              </div>
+            </li>
+          </ol>
+        </section>
 
-        <h3>Where Do Recursive Resolvers Exist?</h3>
-        <ul>
-          <li>Internet Service Providers (ISPs) such as Comcast, AT&T, or Vodafone.</li>
-          <li>Public DNS Providers:
-            <ul>
-              <li>Google Public DNS (8.8.8.8, 8.8.4.4)</li>
-              <li>Cloudflare DNS (1.1.1.1)</li>
-              <li>OpenDNS (208.67.222.222)</li>
-            </ul>
-          </li>
-          <li>Private Networks (organizations running their own DNS infrastructure).</li>
-          <li>Self-hosted resolvers using software like Unbound, BIND, or Pi-hole.</li>
-        </ul>
+        <!-- Section 5: Verifying DNSSEC Setup -->
+        <section class="preface-section fade-in" id="verifying-dnssec">
+          <h4>Verifying DNSSEC Setup</h4>
+          <p>
+            Use tools like <code>dig +dnssec</code> to check if DNSSEC is active:
+          </p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">dig +dnssec example.com</pre>
+          </div>
+          <p>
+            Alternatively, test with online tools such as Google Public DNS Test or Verisign DNSSEC Analyzer.
+          </p>
+        </section>
 
-        <h3>Security Risks &amp; Protections</h3>
-        <ul>
-          <li>
-            <strong>DNS Cache Poisoning:</strong> Attackers may inject false DNS records into a resolver’s cache. 
-            <br /><em>Protection:</em> Use DNSSEC (DNS Security Extensions) to validate responses.
-          </li>
-          <li>
-            <strong>DDoS Attacks (Amplification &amp; Reflection):</strong> Spoofed DNS queries can cause a resolver to flood a target with traffic.
-            <br /><em>Protection:</em> Implement rate limiting and proper query filtering.
-          </li>
-          <li>
-            <strong>Data Privacy Concerns:</strong> Logging by ISPs can compromise privacy.
-            <br /><em>Protection:</em> Use privacy-focused resolvers (e.g., Cloudflare 1.1.1.1, Quad9) or encrypted DNS protocols such as DNS over HTTPS (DoH) or DNS over TLS (DoT).
-          </li>
-        </ul>
+        <!-- Section 6: Benefits of DNSSEC -->
+        <section class="preface-section fade-in" id="benefits-dnssec">
+          <h4>Benefits of DNSSEC</h4>
+          <ul>
+            <li> Prevents DNS spoofing and cache poisoning by verifying data authenticity.</li>
+            <li> Maintains data integrity and builds trust in DNS responses.</li>
+            <li> Enhances security for critical services (banking, government, enterprise).</li>
+            <li> Supports secure email authentication methods (DKIM, SPF, DMARC).</li>
+          </ul>
+        </section>
 
-        <h3>Performance Optimizations</h3>
-        <ul>
-          <li>Caching recent lookups to avoid redundant queries.</li>
-          <li>Prefetching to resolve queries in advance.</li>
-          <li>Load Balancing to distribute traffic across multiple servers.</li>
-          <li>Anycast Routing to direct queries to the nearest server, reducing latency.</li>
-          <li>Negative Caching to store information about failed lookups.</li>
-        </ul>
+        <!-- Section 7: Challenges & Limitations -->
+        <section class="preface-section fade-in" id="challenges-limitations">
+          <h4>Challenges &amp; Limitations</h4>
+          <ul>
+            <li> Complex implementation and key management.</li>
+            <li> Larger DNS responses require EDNS(0) support.</li>
+            <li> Not all ISPs and resolvers validate DNSSEC.</li>
+            <li> Periodic key rollovers are necessary for maintaining security.</li>
+          </ul>
+        </section>
 
-        <h3>Real-World Example: Google Public DNS (8.8.8.8)</h3>
-        <ul>
-          <li>Fast performance with a global network of servers.</li>
-          <li>Enhanced security via DNSSEC validation.</li>
-          <li>Privacy improvements with minimal logging and support for encrypted DNS (DoH, DoT).</li>
-        </ul>
-      </section>
+        <!-- Section 8: Best Practices for DNSSEC Deployment -->
+        <section class="preface-section fade-in" id="best-practices">
+          <h4>Best Practices for DNSSEC Deployment</h4>
+          <ul>
+            <li> Use strong cryptographic algorithms (e.g., RSASHA256 or ECDSAP256SHA256).</li>
+            <li> Regularly monitor DNSSEC status using tools like <code>dig +dnssec</code>.</li>
+            <li> Automate key rollovers to maintain up-to-date security.</li>
+            <li> Enable DNSSEC validation on resolvers to prevent insecure responses.</li>
+            <li> Ensure your registrar and hosting provider fully support DNSSEC.</li>
+          </ul>
+        </section>
 
-      <!-- Iterative Resolvers Section -->
-      <section id="iterative-resolvers">
-        <h2 class="section-title">Iterative Resolvers</h2>
+        <!-- Section 9: Conclusion -->
+        <section class="preface-section fade-in" id="conclusion">
+          <h4>Conclusion</h4>
+          <p>
+            DNSSEC is a crucial security enhancement for the Domain Name System. By cryptographically signing DNS data, it ensures authenticity and integrity, protecting against spoofing and cache poisoning. Despite its challenges, implementing DNSSEC is essential for securing internet infrastructure.
+          </p>
+        </section>
 
-        <h3>How Does an Iterative Resolver Work?</h3>
-        <ol>
-          <li>
-            <strong>Client Query:</strong>
-            <ul>
-              <li>The client (e.g., a browser) sends a DNS query to the iterative resolver.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Root DNS Server:</strong>
-            <ul>
-              <li>The client directly queries a root DNS server, which responds with a referral to a Top-Level Domain (TLD) server.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the TLD DNS Server:</strong>
-            <ul>
-              <li>The client then queries the referred TLD server, which provides a referral to the authoritative server.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Authoritative DNS Server:</strong>
-            <ul>
-              <li>The client queries the authoritative server, which returns the final IP address.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Establish Connection:</strong>
-            <ul>
-              <li>The client uses the obtained IP address to connect directly to the website.</li>
-            </ul>
-          </li>
-        </ol>
-
-        <h3>Example of Iterative Query Resolution</h3>
-        <ul>
-          <li>User enters <code>example.com</code> in a browser.</li>
-          <li>The client’s local resolver contacts a root server, receiving a referral to a TLD server.</li>
-          <li>The client then queries the TLD server, and finally the authoritative server, which returns <code>93.184.216.34</code>.</li>
-          <li>The browser connects to the website using the provided IP address.</li>
-        </ul>
-
-        <h3>Security Risks &amp; Protections</h3>
-        <ul>
-          <li>
-            <strong>DNS Spoofing &amp; Cache Poisoning:</strong> Attackers may inject false records.
-            <br /><em>Protection:</em> Use DNSSEC to validate responses.
-          </li>
-          <li>
-            <strong>DDoS Attacks on Root &amp; TLD Servers:</strong> High query volumes can overwhelm servers.
-            <br /><em>Protection:</em> Rate limiting and Anycast routing help mitigate these attacks.
-          </li>
-          <li>
-            <strong>Interception &amp; Surveillance:</strong> Unencrypted DNS queries can be intercepted.
-            <br /><em>Protection:</em> Encrypted DNS protocols like DoH and DoT offer improved security.
-          </li>
-        </ul>
-
-        <h3>Performance Optimizations</h3>
-        <ul>
-          <li>Anycast Routing to reduce latency by directing queries to the nearest available server.</li>
-          <li>Load Balancing to evenly distribute query traffic.</li>
-          <li>Distributed Root Servers that lower response times globally.</li>
-          <li>Efficient query processing at TLD and root servers.</li>
-        </ul>
-
-        <h3>Real-World Example: Root DNS Servers</h3>
-        <p>
-          When a recursive resolver queries a root DNS server for <code>example.com</code>, the root server responds with a referral rather than a final IP address. For example:
-        </p>
-        <pre>
-dig example.com @198.41.0.4
-
-Response:
-example.com. 172800 IN NS a.iana-servers.net.
-        </pre>
-      </section>
-
-      <!-- Comparison Table -->
-      <section id="comparison">
-        <h3 class="section-title">Comparison: Recursive vs. Iterative Resolvers</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Recursive Resolver</th>
-              <th>Iterative Resolver</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Handles Full Query Process?</td>
-              <td>Yes, it contacts multiple servers</td>
-              <td>No, it directs the client to contact servers</td>
-            </tr>
-            <tr>
-              <td>Used by Clients?</td>
-              <td>Yes (Browsers, OS)</td>
-              <td>No</td>
-            </tr>
-            <tr>
-              <td>Caches DNS Responses?</td>
-              <td>Yes</td>
-              <td>No</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- TL;DR Summary -->
-      <section id="summary">
-        <h3 class="section-title">TL;DR</h2>
-        <p>
-          The main difference between recursive and iterative resolvers is that recursive resolvers handle the entire DNS query process on behalf of the client, while iterative resolvers provide referrals at each step, leaving the client to make the subsequent queries.
-        </p>
-      
-      </section>
-    </div>
+        <!-- Section 10: Next Steps -->
+        <section class="preface-section fade-in" id="next-steps">
+          <h4>Next Steps</h4>
+          <ul>
+            <li>Check if your domain supports DNSSEC and enable it if not.</li>
+            <li>Generate and manage cryptographic keys (ZSK and KSK) for your domain.</li>
+            <li>Sign your DNS zones and publish DS records with your registrar.</li>
+            <li>Verify DNSSEC functionality using <code>dig +dnssec</code> or online analyzers.</li>
+            <li>Automate key rollovers and monitor DNSSEC adoption in your network.</li>
+          </ul>
+        </section>
+      </div>
+      <!-- Next Chapter Navigation -->
+      <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+        <a href="../SubChapters/CachePoisoning.html" class="chapter-btn">
+          Next Chapter <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </main>
+
+    <!-- Right Sidebar: Table of Contents -->
+    <aside class="sidebar-toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#what-is-dnssec">What is DNSSEC?</a></li>
+        <li><a href="#how-dnssec-works">How DNSSEC Works</a></li>
+        <li><a href="#implementing-dnssec">Implementing DNSSEC</a></li>
+        <li><a href="#verifying-dnssec">Verifying DNSSEC Setup</a></li>
+        <li><a href="#benefits-dnssec">Benefits of DNSSEC</a></li>
+        <li><a href="#challenges-limitations">Challenges &amp; Limitations</a></li>
+        <li><a href="#best-practices">Best Practices</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#next-steps">Next Steps</a></li>
+      </ul>
+    </aside>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <!-- JavaScript -->
+  <script defer src="../../../script.js"></script>
 </body>
 </html>

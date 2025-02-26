@@ -1,34 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNS</title>
-  <!-- Make sure the path below is correct relative to your HTML file -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hosting Providers: Choosing the Right Web Hosting Solution</title>
+  <!-- Google Fonts for Montserrat and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="../SubChapters/SubChapter.css">
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
-        <ul>
-          <li><a href="../../../index.html">Home</a></li>
-          <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-          <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-          <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-          <li><a href="../../DNS/DNS.html">DNS</a></li>
-          <li><a href="../../References/References.html">References</a></li>
-          <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
-        </ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hosting Providers: Choosing the Right Web Hosting Solution</h1>
+      <p class="chapter-subtext">
+        Explore the infrastructure, services, and key factors that impact website performance, security, and scalability.
+      </p>
+      <p class="reading-time">Estimated reading time: calculating...</p>
+    </div>
+    <div class="hero-graphic">
+      <div class="animated-bg"></div>
+    </div>
+  </section>
+
+  <!-- THREE-COLUMN LAYOUT -->
+  <div class="three-column-container">
+    <!-- Left Sidebar: Subchapters -->
+    <aside class="sidebar-subchapters">
+      <h2>Subchapters</h2>
       <ul>
         <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="../SubChapters/Caching.html">Caching</a></li>
@@ -39,14 +93,14 @@
         <li><a href="../SubChapters/PublicDNS.html">Public DNS</a></li>
         <li><a href="../SubChapters/PrivateDNS.html">Private DNS</a></li>
         <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
-        <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
+        <li><a href="../SubChapters/HostingProvider.html" class="active">Hosting Providers</a></li>
         <li><a href="../SubChapters/nslookup.html">nslookup</a></li>
         <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
         <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
         <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
@@ -55,254 +109,307 @@
       </ul>
     </aside>
 
-    <main class="mainbody">
-      
+    <!-- Main Content -->
+    <main class="chapter-content">
       <div class="subchapterBody">
-      <section id="introduction">
-        <h2 class="section-title">DNS Resolvers</h2>
-        <p>
-          DNS resolvers are servers on the internet that translate domain names into IP addresses. Their purpose is to let people use the internet using readable names instead of long strings of numbers. There are two main types:
-          <strong>Recursive Resolvers</strong> and <strong>Iterative Resolvers</strong>.
-        </p>
-      </section>
+        <!-- Section 1: Introduction -->
+        <section class="preface-section fade-in" id="introduction">
+          <h4>Introduction</h4>
+          <p>
+            Web hosting providers offer the infrastructure and services necessary to make a website accessible on the internet. Choosing the right hosting provider is essential for performance, security, scalability, and cost efficiency. This chapter explores the types of hosting, key features, pricing considerations, security measures, and best practices for selecting a hosting solution.
+          </p>
+        </section>
 
-      <section id="recursive-resolvers">
-        
-        <h2 class="section-title">Recursive Resolvers</h2>
+        <!-- Section 2: What is Web Hosting? -->
+        <section class="preface-section fade-in" id="what-is-web-hosting">
+          <h4>What is Web Hosting?</h4>
+          <h3>Definition</h3>
+          <p>
+            Web hosting is a service that stores website files and serves them to users when requested via a web browser. Hosting providers allocate resources such as server space, bandwidth, and security features to ensure that websites remain online and functional.
+          </p>
+        </section>
 
-        <h3>What is a Recursive Resolver?</h3>
-        <p>
-          A recursive resolver (also called a DNS resolver) is a server that receives DNS queries from clients (such as web browsers) and recursively queries other DNS servers until it finds the correct answer.
-        </p>
-      
-      
-        <h3>Key Characteristics</h3>
-        <ul>
-          <li>Performs all the work to resolve a domain name.</li>
-          <li>Caches responses to improve performance.</li>
-          <li>Communicates with multiple types of DNS servers (root, TLD, authoritative).</li>
-          <li>Can be provided by ISPs, cloud services (Google, Cloudflare), or private networks.</li>
-        </ul>
+        <!-- Section 3: Key Hosting Components -->
+        <section class="preface-section fade-in" id="hosting-components">
+          <h4>Key Hosting Components</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Server</strong></td>
+                <td>The physical or virtual machine where website files are stored.</td>
+              </tr>
+              <tr>
+                <td><strong>Bandwidth</strong></td>
+                <td>Determines how much data can be transferred to and from the website.</td>
+              </tr>
+              <tr>
+                <td><strong>Storage</strong></td>
+                <td>The allocated disk space for website files, databases, and emails.</td>
+              </tr>
+              <tr>
+                <td><strong>Uptime</strong></td>
+                <td>The percentage of time the hosting server is operational (99.9%+ recommended).</td>
+              </tr>
+              <tr>
+                <td><strong>Support</strong></td>
+                <td>Customer service and technical assistance for troubleshooting issues.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-        <h3>How Does It Work?</h3>
-        <ol>
-          <li>
-            <strong>Check Local Cache:</strong>
-            <ul>
-              <li>The resolver first checks if it already knows the answer (from a previous lookup or local host files).</li>
-              <li>If found in cache, it returns the result immediately; otherwise, it proceeds to ask external servers.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Root DNS Server:</strong>
-            <ul>
-              <li>If the answer is not cached, the resolver contacts a root DNS server, which does not know the IP for the domain but directs it to a Top-Level Domain (TLD) server (e.g., for .com).</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the TLD DNS Server:</strong>
-            <ul>
-              <li>The TLD server doesn’t store the full record but tells the resolver which authoritative DNS server holds the information.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Authoritative DNS Server:</strong>
-            <ul>
-              <li>The authoritative server, which belongs to the website owner or hosting provider, provides the exact IP address.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Return the Answer:</strong>
-            <ul>
-              <li>The resolver sends the IP address back to the requesting client.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Cache the Result:</strong>
-            <ul>
-              <li>The result is stored for a certain Time-To-Live (TTL) to answer future queries quickly.</li>
-            </ul>
-          </li>
-        </ol>
+        <!-- Section 4: Types of Web Hosting -->
+        <section class="preface-section fade-in" id="types-of-hosting">
+          <h4>Types of Web Hosting</h4>
+          <ol>
+            <li>
+              <strong>Shared Hosting:</strong> Most affordable and beginner-friendly; websites share server resources. Suitable for small sites, blogs, and personal projects. Limitation: Performance can be affected by other sites.
+            </li>
+            <li>
+              <strong>Virtual Private Server (VPS) Hosting:</strong> A virtualized server with dedicated resources. More powerful and scalable than shared hosting. Suitable for growing websites, small businesses, and e-commerce. Requires some technical knowledge.
+            </li>
+            <li>
+              <strong>Dedicated Hosting:</strong> A physical server exclusively allocated to one client. Best for high-traffic websites and enterprises. Provides full control and high security but is more expensive and requires advanced management.
+            </li>
+            <li>
+              <strong>Cloud Hosting:</strong> Uses multiple interconnected servers to balance load and ensure uptime. Highly scalable and flexible; suitable for dynamic websites and SaaS applications. Can be costly at high usage.
+            </li>
+            <li>
+              <strong>Managed WordPress Hosting:</strong> Optimized specifically for WordPress, including automatic updates and security enhancements. Suitable for blogs and e-commerce on WordPress. Limited customization compared to VPS or dedicated hosting.
+            </li>
+            <li>
+              <strong>Reseller Hosting:</strong> Allows you to resell hosting services by managing multiple client accounts. Suitable for agencies and developers. Requires server management and client support.
+            </li>
+          </ol>
+        </section>
 
-        <h3>Example Process</h3>
-        <p>For example, when a user enters <code>example.com</code> in a browser:</p>
-        <ul>
-          <li>The resolver (e.g., Google’s 8.8.8.8) is contacted.</li>
-          <li>If no cached record exists, it queries a root server, then a .com TLD server, and finally the authoritative server which returns an IP (e.g., <code>93.184.216.34</code>).</li>
-          <li>The IP is sent back to the browser, allowing the website to load.</li>
-        </ul>
+        <!-- Section 5: Comparing Popular Hosting Providers -->
+        <section class="preface-section fade-in" id="comparing-hosting">
+          <h4>Comparing Popular Hosting Providers</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Provider</th>
+                <th>Type of Hosting</th>
+                <th>Key Features</th>
+                <th>Pricing (Starting)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Bluehost</strong></td>
+                <td>Shared, VPS, Dedicated</td>
+                <td>Free domain, 24/7 support, WordPress optimized</td>
+                <td>$2.95/month</td>
+              </tr>
+              <tr>
+                <td><strong>SiteGround</strong></td>
+                <td>Shared, Cloud, Managed WP</td>
+                <td>High performance, free CDN, security tools</td>
+                <td>$3.99/month</td>
+              </tr>
+              <tr>
+                <td><strong>Hostinger</strong></td>
+                <td>Shared, VPS, Cloud</td>
+                <td>Affordable, fast, beginner-friendly</td>
+                <td>$1.99/month</td>
+              </tr>
+              <tr>
+                <td><strong>A2 Hosting</strong></td>
+                <td>Shared, VPS, Dedicated</td>
+                <td>Turbo servers, speed optimization</td>
+                <td>$2.99/month</td>
+              </tr>
+              <tr>
+                <td><strong>Cloudways</strong></td>
+                <td>Managed Cloud</td>
+                <td>Scalable, multiple cloud providers</td>
+                <td>$10/month</td>
+              </tr>
+              <tr>
+                <td><strong>Kinsta</strong></td>
+                <td>Managed WP</td>
+                <td>High-performance, enterprise-level WP hosting</td>
+                <td>$35/month</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-        <h3>Where Do Recursive Resolvers Exist?</h3>
-        <ul>
-          <li>Internet Service Providers (ISPs) such as Comcast, AT&T, or Vodafone.</li>
-          <li>Public DNS Providers:
-            <ul>
-              <li>Google Public DNS (8.8.8.8, 8.8.4.4)</li>
-              <li>Cloudflare DNS (1.1.1.1)</li>
-              <li>OpenDNS (208.67.222.222)</li>
-            </ul>
-          </li>
-          <li>Private Networks (organizations running their own DNS infrastructure).</li>
-          <li>Self-hosted resolvers using software like Unbound, BIND, or Pi-hole.</li>
-        </ul>
+        <!-- Section 6: Key Features to Consider -->
+        <section class="preface-section fade-in" id="key-features">
+          <h4>Key Features to Consider When Choosing a Hosting Provider</h4>
+          <ul>
+            <li>
+              <strong>Performance &amp; Uptime:</strong> Look for 99.9%+ uptime guarantees, CDN integration, and SSD storage for faster file retrieval.
+            </li>
+            <li>
+              <strong>Security Features:</strong> Ensure the provider offers SSL certificates, DDoS protection, malware scanning, and firewalls.
+            </li>
+            <li>
+              <strong>Scalability &amp; Resource Allocation:</strong> Choose plans that allow easy upgrades and auto-scaling options as traffic grows.
+            </li>
+            <li>
+              <strong>Technical Support:</strong> 24/7 live chat and phone support with knowledgeable teams is crucial.
+            </li>
+            <li>
+              <strong>Ease of Use:</strong> An intuitive control panel (like cPanel or Plesk) and one-click installs make site management easier.
+            </li>
+          </ul>
+        </section>
 
-        <h3>Security Risks &amp; Protections</h3>
-        <ul>
-          <li>
-            <strong>DNS Cache Poisoning:</strong> Attackers may inject false DNS records into a resolver’s cache. 
-            <br /><em>Protection:</em> Use DNSSEC (DNS Security Extensions) to validate responses.
-          </li>
-          <li>
-            <strong>DDoS Attacks (Amplification &amp; Reflection):</strong> Spoofed DNS queries can cause a resolver to flood a target with traffic.
-            <br /><em>Protection:</em> Implement rate limiting and proper query filtering.
-          </li>
-          <li>
-            <strong>Data Privacy Concerns:</strong> Logging by ISPs can compromise privacy.
-            <br /><em>Protection:</em> Use privacy-focused resolvers (e.g., Cloudflare 1.1.1.1, Quad9) or encrypted DNS protocols such as DNS over HTTPS (DoH) or DNS over TLS (DoT).
-          </li>
-        </ul>
+        <!-- Section 7: Hosting Pricing & Budgeting -->
+        <section class="preface-section fade-in" id="pricing-budgeting">
+          <h4>Hosting Pricing &amp; Budgeting</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Hosting Type</th>
+                <th>Price Range</th>
+                <th>Suitable For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Shared Hosting</strong></td>
+                <td>$2 - $10/month</td>
+                <td>Beginners, personal websites</td>
+              </tr>
+              <tr>
+                <td><strong>VPS Hosting</strong></td>
+                <td>$10 - $80/month</td>
+                <td>Growing businesses, medium websites</td>
+              </tr>
+              <tr>
+                <td><strong>Dedicated Hosting</strong></td>
+                <td>$80 - $500+/month</td>
+                <td>Enterprises, high-traffic websites</td>
+              </tr>
+              <tr>
+                <td><strong>Cloud Hosting</strong></td>
+                <td>$10 - $300+/month</td>
+                <td>Scalable applications, global sites</td>
+              </tr>
+              <tr>
+                <td><strong>Managed WP Hosting</strong></td>
+                <td>$20 - $100/month</td>
+                <td>WordPress sites, blogs, e-commerce</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            <em>Tip:</em> Choose a plan that balances affordability with future scalability.
+          </p>
+        </section>
 
-        <h3>Performance Optimizations</h3>
-        <ul>
-          <li>Caching recent lookups to avoid redundant queries.</li>
-          <li>Prefetching to resolve queries in advance.</li>
-          <li>Load Balancing to distribute traffic across multiple servers.</li>
-          <li>Anycast Routing to direct queries to the nearest server, reducing latency.</li>
-          <li>Negative Caching to store information about failed lookups.</li>
-        </ul>
+        <!-- Section 8: Security Considerations for Hosting Providers -->
+        <section class="preface-section fade-in" id="hosting-security">
+          <h4>Security Considerations for Hosting Providers</h4>
+          <ul>
+            <li>
+              <strong>Data Backups &amp; Disaster Recovery:</strong> Ensure that daily, weekly, or on-demand backups are available, with redundant storage.
+            </li>
+            <li>
+              <strong>Server Security &amp; Isolation:</strong> Look for containerized or isolated hosting environments and verify that account security (e.g., 2FA) is offered.
+            </li>
+            <li>
+              <strong>Compliance &amp; Privacy:</strong> Check for GDPR, HIPAA, or PCI-DSS compliance if you handle sensitive data, and review data center locations.
+            </li>
+          </ul>
+        </section>
 
-        <h3>Real-World Example: Google Public DNS (8.8.8.8)</h3>
-        <ul>
-          <li>Fast performance with a global network of servers.</li>
-          <li>Enhanced security via DNSSEC validation.</li>
-          <li>Privacy improvements with minimal logging and support for encrypted DNS (DoH, DoT).</li>
-        </ul>
-      </section>
+        <!-- Section 9: Migration & Hosting Transfers -->
+        <section class="preface-section fade-in" id="migration-transfers">
+          <h4>Migration &amp; Hosting Transfers</h4>
+          <p>
+            Moving to a new hosting provider typically involves:
+          </p>
+          <ol>
+            <li>Backing up your website files and databases.</li>
+            <li>Setting up the new hosting environment.</li>
+            <li>Uploading files and importing databases.</li>
+            <li>Updating DNS settings to point to the new host.</li>
+            <li>Testing the website functionality before finalizing the switch.</li>
+          </ol>
+          <p>
+            Many hosting providers offer free migration services, which can simplify the transition.
+          </p>
+        </section>
 
-      <!-- Iterative Resolvers Section -->
-      <section id="iterative-resolvers">
-        <h2 class="section-title">Iterative Resolvers</h2>
+        <!-- Section 10: Conclusion -->
+        <section class="preface-section fade-in" id="conclusion">
+          <h4>Conclusion</h4>
+          <p>
+            Choosing the right hosting provider is critical for website speed, security, and scalability. By considering performance, uptime, security features, support, and pricing, you can make an informed decision that ensures a stable and high-performing web presence.
+          </p>
+        </section>
 
-        <h3>How Does an Iterative Resolver Work?</h3>
-        <ol>
-          <li>
-            <strong>Client Query:</strong>
-            <ul>
-              <li>The client (e.g., a browser) sends a DNS query to the iterative resolver.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Root DNS Server:</strong>
-            <ul>
-              <li>The client directly queries a root DNS server, which responds with a referral to a Top-Level Domain (TLD) server.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the TLD DNS Server:</strong>
-            <ul>
-              <li>The client then queries the referred TLD server, which provides a referral to the authoritative server.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Authoritative DNS Server:</strong>
-            <ul>
-              <li>The client queries the authoritative server, which returns the final IP address.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Establish Connection:</strong>
-            <ul>
-              <li>The client uses the obtained IP address to connect directly to the website.</li>
-            </ul>
-          </li>
-        </ol>
-
-        <h3>Example of Iterative Query Resolution</h3>
-        <ul>
-          <li>User enters <code>example.com</code> in a browser.</li>
-          <li>The client’s local resolver contacts a root server, receiving a referral to a TLD server.</li>
-          <li>The client then queries the TLD server, and finally the authoritative server, which returns <code>93.184.216.34</code>.</li>
-          <li>The browser connects to the website using the provided IP address.</li>
-        </ul>
-
-        <h3>Security Risks &amp; Protections</h3>
-        <ul>
-          <li>
-            <strong>DNS Spoofing &amp; Cache Poisoning:</strong> Attackers may inject false records.
-            <br /><em>Protection:</em> Use DNSSEC to validate responses.
-          </li>
-          <li>
-            <strong>DDoS Attacks on Root &amp; TLD Servers:</strong> High query volumes can overwhelm servers.
-            <br /><em>Protection:</em> Rate limiting and Anycast routing help mitigate these attacks.
-          </li>
-          <li>
-            <strong>Interception &amp; Surveillance:</strong> Unencrypted DNS queries can be intercepted.
-            <br /><em>Protection:</em> Encrypted DNS protocols like DoH and DoT offer improved security.
-          </li>
-        </ul>
-
-        <h3>Performance Optimizations</h3>
-        <ul>
-          <li>Anycast Routing to reduce latency by directing queries to the nearest available server.</li>
-          <li>Load Balancing to evenly distribute query traffic.</li>
-          <li>Distributed Root Servers that lower response times globally.</li>
-          <li>Efficient query processing at TLD and root servers.</li>
-        </ul>
-
-        <h3>Real-World Example: Root DNS Servers</h3>
-        <p>
-          When a recursive resolver queries a root DNS server for <code>example.com</code>, the root server responds with a referral rather than a final IP address. For example:
-        </p>
-        <pre>
-dig example.com @198.41.0.4
-
-Response:
-example.com. 172800 IN NS a.iana-servers.net.
-        </pre>
-      </section>
-
-      <!-- Comparison Table -->
-      <section id="comparison">
-        <h3 class="section-title">Comparison: Recursive vs. Iterative Resolvers</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Recursive Resolver</th>
-              <th>Iterative Resolver</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Handles Full Query Process?</td>
-              <td>Yes, it contacts multiple servers</td>
-              <td>No, it directs the client to contact servers</td>
-            </tr>
-            <tr>
-              <td>Used by Clients?</td>
-              <td>Yes (Browsers, OS)</td>
-              <td>No</td>
-            </tr>
-            <tr>
-              <td>Caches DNS Responses?</td>
-              <td>Yes</td>
-              <td>No</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- TL;DR Summary -->
-      <section id="summary">
-        <h3 class="section-title">TL;DR</h2>
-        <p>
-          The main difference between recursive and iterative resolvers is that recursive resolvers handle the entire DNS query process on behalf of the client, while iterative resolvers provide referrals at each step, leaving the client to make the subsequent queries.
-        </p>
-      
-      </section>
-    </div>
+        <!-- Section 11: Next Steps -->
+        <section class="preface-section fade-in" id="next-steps">
+          <h4>Next Steps</h4>
+          <ul>
+            <li>Identify your hosting needs (e.g., shared, VPS, cloud, managed WordPress).</li>
+            <li>Compare hosting providers based on key features and pricing.</li>
+            <li>Prioritize security, performance, and uptime guarantees.</li>
+            <li>Test a hosting provider’s customer support before committing.</li>
+            <li>Plan for future scalability and migration options.</li>
+          </ul>
+        </section>
+      </div>
+      <!-- Next Chapter Navigation -->
+      <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+        <a href="../SubChapters/nslookup.html" class="chapter-btn">
+          Next Chapter <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </main>
+
+    <!-- Right Sidebar: Table of Contents -->
+    <aside class="sidebar-toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#what-is-web-hosting">What is Web Hosting?</a></li>
+        <li><a href="#hosting-components">Key Hosting Components</a></li>
+        <li><a href="#types-of-hosting">Types of Web Hosting</a></li>
+        <li><a href="#comparing-hosting">Comparing Hosting Providers</a></li>
+        <li><a href="#key-features">Key Features to Consider</a></li>
+        <li><a href="#pricing-budgeting">Hosting Pricing & Budgeting</a></li>
+        <li><a href="#hosting-security">Security Considerations</a></li>
+        <li><a href="#migration-transfers">Migration & Hosting Transfers</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#next-steps">Next Steps</a></li>
+      </ul>
+    </aside>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <!-- JavaScript -->
+  <script defer src="../../../script.js"></script>
 </body>
 </html>

@@ -1,35 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNS</title>
-  <!-- Make sure the path below is correct relative to your HTML file -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Setup: Deploying, Securing, and Optimizing a Web Server</title>
+  <!-- Google Fonts for Montserrat and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="../SubChapters/SubChapter.css">
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
-        <ul>
-          <li><a href="../../../index.html">Home</a></li>
-          <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-          <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-          <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-          <li><a href="../../DNS/DNS.html">DNS</a></li>
-          <li><a href="../../References/References.html">References</a></li>
-          <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
-        </ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
       </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Server Setup: Deploying, Securing, and Optimizing a Web Server</h1>
+      <p class="chapter-subtext">
+        Learn how to deploy a production-ready web server with the right configuration for performance, security, and scalability.
+      </p>
+      <p class="reading-time">Estimated reading time: calculating...</p>
+    </div>
+    <div class="hero-graphic">
+      <div class="animated-bg"></div>
+    </div>
+  </section>
+
+  <!-- THREE-COLUMN LAYOUT -->
+  <div class="three-column-container">
+    <!-- Left Sidebar: Subchapters -->
+    <aside class="sidebar-subchapters">
+      <h2>Subchapters</h2>
       <ul>
         <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="../SubChapters/Caching.html">Caching</a></li>
@@ -42,12 +95,12 @@
         <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
         <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
         <li><a href="../SubChapters/nslookup.html">nslookup</a></li>
-        <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
+        <li><a href="../SubChapters/ServerSetup.html" class="active">Server Setup</a></li>
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
         <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
         <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
@@ -56,254 +109,344 @@
       </ul>
     </aside>
 
-    <main class="mainbody">
-      
+    <!-- Main Content -->
+    <main class="chapter-content">
       <div class="subchapterBody">
-      <section id="introduction">
-        <h2 class="section-title">DNS Resolvers</h2>
-        <p>
-          DNS resolvers are servers on the internet that translate domain names into IP addresses. Their purpose is to let people use the internet using readable names instead of long strings of numbers. There are two main types:
-          <strong>Recursive Resolvers</strong> and <strong>Iterative Resolvers</strong>.
-        </p>
-      </section>
+        <!-- Section 1: Introduction -->
+        <section class="preface-section fade-in" id="introduction">
+          <h4>Introduction</h4>
+          <p>
+            Setting up a web server is a fundamental step in hosting websites, applications, or APIs. Proper server configuration ensures performance, security, and scalability. This chapter covers server types, installation steps, security configurations, performance optimizations, monitoring, automation, load testing, backups, and best practices for deploying a production-ready web server.
+          </p>
+        </section>
 
-      <section id="recursive-resolvers">
-        
-        <h2 class="section-title">Recursive Resolvers</h2>
+        <!-- Section 2: Understanding Server Types -->
+        <section class="preface-section fade-in" id="server-types">
+          <h4>Understanding Server Types</h4>
+          <ol>
+            <li>
+              <strong>Dedicated Servers:</strong> Physical machines exclusively used for hosting. Best for high-traffic websites and enterprises; offers full control and dedicated resources but can be expensive and requires technical expertise.
+            </li>
+            <li>
+              <strong>Virtual Private Servers (VPS):</strong> Virtualized servers with dedicated resources. Suitable for growing websites and small businesses; affordable and scalable, though some server management knowledge is needed.
+            </li>
+            <li>
+              <strong>Cloud Servers:</strong> Virtual servers hosted on cloud infrastructure (e.g., AWS, Azure, GCP) that balance load and ensure high availability. Highly scalable and flexible, but costs can vary.
+            </li>
+            <li>
+              <strong>Shared Hosting:</strong> Multiple websites share the same server resources. Ideal for small websites and personal projects; however, performance may be affected by other sites on the server.
+            </li>
+            <li>
+              <strong>Containerized Servers:</strong> Use containerization (Docker, Kubernetes) to run applications in isolated environments. Fast deployment and efficient resource usage, though container orchestration knowledge is required.
+            </li>
+          </ol>
+        </section>
 
-        <h3>What is a Recursive Resolver?</h3>
-        <p>
-          A recursive resolver (also called a DNS resolver) is a server that receives DNS queries from clients (such as web browsers) and recursively queries other DNS servers until it finds the correct answer.
-        </p>
-      
-      
-        <h3>Key Characteristics</h3>
-        <ul>
-          <li>Performs all the work to resolve a domain name.</li>
-          <li>Caches responses to improve performance.</li>
-          <li>Communicates with multiple types of DNS servers (root, TLD, authoritative).</li>
-          <li>Can be provided by ISPs, cloud services (Google, Cloudflare), or private networks.</li>
-        </ul>
+        <!-- Section 3: Choosing an Operating System -->
+        <section class="preface-section fade-in" id="operating-system">
+          <h4>Choosing an Operating System for Your Server</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>OS</th>
+                <th>Best For</th>
+                <th>Pros</th>
+                <th>Cons</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ubuntu Server</strong></td>
+                <td>General-purpose hosting, beginners</td>
+                <td>Stable, large community, frequent updates</td>
+                <td>May require CLI knowledge</td>
+              </tr>
+              <tr>
+                <td><strong>Debian</strong></td>
+                <td>Secure and stable environments</td>
+                <td>Lightweight, highly customizable</td>
+                <td>Slower updates</td>
+              </tr>
+              <tr>
+                <td><strong>CentOS / Rocky Linux</strong></td>
+                <td>Enterprise hosting</td>
+                <td>Security-focused, widely used in production</td>
+                <td>CentOS 8 reached end-of-life; consider alternatives</td>
+              </tr>
+              <tr>
+                <td><strong>Windows Server</strong></td>
+                <td>Microsoft-based applications</td>
+                <td>GUI-based, Active Directory support</td>
+                <td>Expensive, higher resource usage</td>
+              </tr>
+              <tr>
+                <td><strong>Alpine Linux</strong></td>
+                <td>Containerized servers</td>
+                <td>Minimalist, small footprint</td>
+                <td>Not beginner-friendly</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-        <h3>How Does It Work?</h3>
-        <ol>
-          <li>
-            <strong>Check Local Cache:</strong>
-            <ul>
-              <li>The resolver first checks if it already knows the answer (from a previous lookup or local host files).</li>
-              <li>If found in cache, it returns the result immediately; otherwise, it proceeds to ask external servers.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Root DNS Server:</strong>
-            <ul>
-              <li>If the answer is not cached, the resolver contacts a root DNS server, which does not know the IP for the domain but directs it to a Top-Level Domain (TLD) server (e.g., for .com).</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the TLD DNS Server:</strong>
-            <ul>
-              <li>The TLD server doesn’t store the full record but tells the resolver which authoritative DNS server holds the information.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Authoritative DNS Server:</strong>
-            <ul>
-              <li>The authoritative server, which belongs to the website owner or hosting provider, provides the exact IP address.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Return the Answer:</strong>
-            <ul>
-              <li>The resolver sends the IP address back to the requesting client.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Cache the Result:</strong>
-            <ul>
-              <li>The result is stored for a certain Time-To-Live (TTL) to answer future queries quickly.</li>
-            </ul>
-          </li>
-        </ol>
+        <!-- Section 4: Setting Up a Web Server -->
+        <section class="preface-section fade-in" id="setup-web-server">
+          <h4>Setting Up a Web Server</h4>
+          <p>
+            Installing a web server involves choosing the right software and installing required packages:
+          </p>
+          <h3>Apache (Linux-based Web Server)</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+sudo apt update && sudo apt install apache2 -y  # Debian/Ubuntu
+sudo yum install httpd -y                      # CentOS/RHEL
+            </pre>
+          </div>
+          <h3>Nginx (Alternative to Apache)</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+sudo apt update && sudo apt install nginx -y
+            </pre>
+          </div>
+          <h3>Windows IIS (Internet Information Services)</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServerRole
+            </pre>
+          </div>
+        </section>
 
-        <h3>Example Process</h3>
-        <p>For example, when a user enters <code>example.com</code> in a browser:</p>
-        <ul>
-          <li>The resolver (e.g., Google’s 8.8.8.8) is contacted.</li>
-          <li>If no cached record exists, it queries a root server, then a .com TLD server, and finally the authoritative server which returns an IP (e.g., <code>93.184.216.34</code>).</li>
-          <li>The IP is sent back to the browser, allowing the website to load.</li>
-        </ul>
+        <!-- Section 5: Security Hardening for Web Servers -->
+        <section class="preface-section fade-in" id="security-hardening">
+          <h4>Security Hardening for Web Servers</h4>
+          <ul>
+            <li>
+              <strong>Disable Root Login:</strong> Edit <code>/etc/ssh/sshd_config</code> and set <code>PermitRootLogin no</code>, then restart SSHD.
+            </li>
+            <li>
+              <strong>Enable Automatic Security Updates:</strong> Install and configure <code>unattended-upgrades</code>.
+            </li>
+            <li>
+              <strong>Enable Firewall &amp; Fail2Ban:</strong> Install and configure Fail2Ban to protect against brute-force attacks.
+            </li>
+          </ul>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+sudo nano /etc/ssh/sshd_config
+# Set: PermitRootLogin no
+sudo systemctl restart sshd
+            </pre>
+          </div>
+        </section>
 
-        <h3>Where Do Recursive Resolvers Exist?</h3>
-        <ul>
-          <li>Internet Service Providers (ISPs) such as Comcast, AT&T, or Vodafone.</li>
-          <li>Public DNS Providers:
-            <ul>
-              <li>Google Public DNS (8.8.8.8, 8.8.4.4)</li>
-              <li>Cloudflare DNS (1.1.1.1)</li>
-              <li>OpenDNS (208.67.222.222)</li>
-            </ul>
-          </li>
-          <li>Private Networks (organizations running their own DNS infrastructure).</li>
-          <li>Self-hosted resolvers using software like Unbound, BIND, or Pi-hole.</li>
-        </ul>
+        <!-- Section 6: Performance Optimization -->
+        <section class="preface-section fade-in" id="performance-optimization">
+          <h4>Performance Optimization</h4>
+          <ul>
+            <li>
+              <strong>Enable Gzip Compression (Apache):</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+sudo a2enmod deflate
+sudo systemctl restart apache2
+                </pre>
+              </div>
+            </li>
+            <li>
+              <strong>Optimize PHP Configuration:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+sudo nano /etc/php/8.0/apache2/php.ini
+# Adjust settings:
+memory_limit = 512M
+upload_max_filesize = 50M
+post_max_size = 50M
+max_execution_time = 60
+sudo systemctl restart apache2
+                </pre>
+              </div>
+            </li>
+          </ul>
+        </section>
 
-        <h3>Security Risks &amp; Protections</h3>
-        <ul>
-          <li>
-            <strong>DNS Cache Poisoning:</strong> Attackers may inject false DNS records into a resolver’s cache. 
-            <br /><em>Protection:</em> Use DNSSEC (DNS Security Extensions) to validate responses.
-          </li>
-          <li>
-            <strong>DDoS Attacks (Amplification &amp; Reflection):</strong> Spoofed DNS queries can cause a resolver to flood a target with traffic.
-            <br /><em>Protection:</em> Implement rate limiting and proper query filtering.
-          </li>
-          <li>
-            <strong>Data Privacy Concerns:</strong> Logging by ISPs can compromise privacy.
-            <br /><em>Protection:</em> Use privacy-focused resolvers (e.g., Cloudflare 1.1.1.1, Quad9) or encrypted DNS protocols such as DNS over HTTPS (DoH) or DNS over TLS (DoT).
-          </li>
-        </ul>
+        <!-- Section 7: Monitoring & Automating Server Management -->
+        <section class="preface-section fade-in" id="monitoring-automation">
+          <h4>Monitoring and Automating Server Management</h4>
+          <ul>
+            <li>
+              <strong>Install Prometheus:</strong> Monitor server performance.
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+sudo apt install prometheus -y
+                </pre>
+              </div>
+            </li>
+            <li>
+              <strong>Automate Deployment with Ansible:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+- hosts: webservers
+  become: yes
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: latest
+    - name: Start Apache Service
+      systemd:
+        name: apache2
+        state: started
+        enabled: yes
+                </pre>
+              </div>
+              Run with:
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+ansible-playbook -i inventory.ini setup.yml
+                </pre>
+              </div>
+            </li>
+          </ul>
+        </section>
 
-        <h3>Performance Optimizations</h3>
-        <ul>
-          <li>Caching recent lookups to avoid redundant queries.</li>
-          <li>Prefetching to resolve queries in advance.</li>
-          <li>Load Balancing to distribute traffic across multiple servers.</li>
-          <li>Anycast Routing to direct queries to the nearest server, reducing latency.</li>
-          <li>Negative Caching to store information about failed lookups.</li>
-        </ul>
+        <!-- Section 8: Backup and Disaster Recovery -->
+        <section class="preface-section fade-in" id="backup-disaster">
+          <h4>Backup and Disaster Recovery</h4>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+crontab -e
+0 2 * * * tar -czvf /backup/webserver_$(date +\%F).tar.gz /var/www/html
+            </pre>
+          </div>
+        </section>
 
-        <h3>Real-World Example: Google Public DNS (8.8.8.8)</h3>
-        <ul>
-          <li>Fast performance with a global network of servers.</li>
-          <li>Enhanced security via DNSSEC validation.</li>
-          <li>Privacy improvements with minimal logging and support for encrypted DNS (DoH, DoT).</li>
-        </ul>
-      </section>
+        <!-- Section 9: Load Testing Before Going Live -->
+        <section class="preface-section fade-in" id="load-testing">
+          <h4>Load Testing Before Going Live</h4>
+          <ul>
+            <li>
+              <strong>Apache Benchmarking:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+ab -n 1000 -c 100 http://example.com/
+                </pre>
+              </div>
+            </li>
+            <li>
+              <strong>Using Siege:</strong>
+              <div class="code-block">
+                <button class="copy-btn">Copy</button>
+                <pre class="code-snippet">
+siege -c 50 -t 1m http://example.com
+                </pre>
+              </div>
+            </li>
+          </ul>
+        </section>
 
-      <!-- Iterative Resolvers Section -->
-      <section id="iterative-resolvers">
-        <h2 class="section-title">Iterative Resolvers</h2>
+        <!-- Section 10: Setting Up a CDN -->
+        <section class="preface-section fade-in" id="cdn-setup">
+          <h4>Setting Up a CDN (Content Delivery Network)</h4>
+          <p>
+            For enhanced speed and reliability, consider enabling a CDN. For example, sign up for Cloudflare, point your domain’s nameservers to Cloudflare, and enable caching and security settings.
+          </p>
+        </section>
 
-        <h3>How Does an Iterative Resolver Work?</h3>
-        <ol>
-          <li>
-            <strong>Client Query:</strong>
-            <ul>
-              <li>The client (e.g., a browser) sends a DNS query to the iterative resolver.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Root DNS Server:</strong>
-            <ul>
-              <li>The client directly queries a root DNS server, which responds with a referral to a Top-Level Domain (TLD) server.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the TLD DNS Server:</strong>
-            <ul>
-              <li>The client then queries the referred TLD server, which provides a referral to the authoritative server.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Authoritative DNS Server:</strong>
-            <ul>
-              <li>The client queries the authoritative server, which returns the final IP address.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Establish Connection:</strong>
-            <ul>
-              <li>The client uses the obtained IP address to connect directly to the website.</li>
-            </ul>
-          </li>
-        </ol>
+        <!-- Section 11: Final Security Checklist -->
+        <section class="preface-section fade-in" id="security-checklist">
+          <h4>Final Security Checklist Before Going Live</h4>
+          <ul>
+            <li>✅ Ensure SSH root login is disabled.</li>
+            <li>✅ Firewall (e.g., UFW) is active and blocking unnecessary ports.</li>
+            <li>✅ Fail2Ban is running to prevent brute-force attacks.</li>
+            <li>✅ SSL/TLS certificates are installed and set to renew automatically.</li>
+            <li>✅ Automatic updates are enabled.</li>
+            <li>✅ Daily backups are scheduled.</li>
+            <li>✅ Server logs are monitored for unusual activity.</li>
+          </ul>
+        </section>
 
-        <h3>Example of Iterative Query Resolution</h3>
-        <ul>
-          <li>User enters <code>example.com</code> in a browser.</li>
-          <li>The client’s local resolver contacts a root server, receiving a referral to a TLD server.</li>
-          <li>The client then queries the TLD server, and finally the authoritative server, which returns <code>93.184.216.34</code>.</li>
-          <li>The browser connects to the website using the provided IP address.</li>
-        </ul>
+        <!-- Section 12: Conclusion -->
+        <section class="preface-section fade-in" id="conclusion">
+          <h4>Conclusion</h4>
+          <p>
+            Deploying a production-ready web server requires careful planning and execution—from choosing the right hardware or cloud solution and operating system to securing, optimizing, and monitoring your server. By following these best practices, you can ensure a fast, secure, and scalable web hosting environment.
+          </p>
+        </section>
 
-        <h3>Security Risks &amp; Protections</h3>
-        <ul>
-          <li>
-            <strong>DNS Spoofing &amp; Cache Poisoning:</strong> Attackers may inject false records.
-            <br /><em>Protection:</em> Use DNSSEC to validate responses.
-          </li>
-          <li>
-            <strong>DDoS Attacks on Root &amp; TLD Servers:</strong> High query volumes can overwhelm servers.
-            <br /><em>Protection:</em> Rate limiting and Anycast routing help mitigate these attacks.
-          </li>
-          <li>
-            <strong>Interception &amp; Surveillance:</strong> Unencrypted DNS queries can be intercepted.
-            <br /><em>Protection:</em> Encrypted DNS protocols like DoH and DoT offer improved security.
-          </li>
-        </ul>
-
-        <h3>Performance Optimizations</h3>
-        <ul>
-          <li>Anycast Routing to reduce latency by directing queries to the nearest available server.</li>
-          <li>Load Balancing to evenly distribute query traffic.</li>
-          <li>Distributed Root Servers that lower response times globally.</li>
-          <li>Efficient query processing at TLD and root servers.</li>
-        </ul>
-
-        <h3>Real-World Example: Root DNS Servers</h3>
-        <p>
-          When a recursive resolver queries a root DNS server for <code>example.com</code>, the root server responds with a referral rather than a final IP address. For example:
-        </p>
-        <pre>
-dig example.com @198.41.0.4
-
-Response:
-example.com. 172800 IN NS a.iana-servers.net.
-        </pre>
-      </section>
-
-      <!-- Comparison Table -->
-      <section id="comparison">
-        <h3 class="section-title">Comparison: Recursive vs. Iterative Resolvers</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Recursive Resolver</th>
-              <th>Iterative Resolver</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Handles Full Query Process?</td>
-              <td>Yes, it contacts multiple servers</td>
-              <td>No, it directs the client to contact servers</td>
-            </tr>
-            <tr>
-              <td>Used by Clients?</td>
-              <td>Yes (Browsers, OS)</td>
-              <td>No</td>
-            </tr>
-            <tr>
-              <td>Caches DNS Responses?</td>
-              <td>Yes</td>
-              <td>No</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- TL;DR Summary -->
-      <section id="summary">
-        <h3 class="section-title">TL;DR</h2>
-        <p>
-          The main difference between recursive and iterative resolvers is that recursive resolvers handle the entire DNS query process on behalf of the client, while iterative resolvers provide referrals at each step, leaving the client to make the subsequent queries.
-        </p>
-      
-      </section>
-    </div>
+        <!-- Section 13: Next Steps -->
+        <section class="preface-section fade-in" id="next-steps">
+          <h4>Next Steps</h4>
+          <ul>
+            <li>Install your chosen web server software (Apache, Nginx, or IIS).</li>
+            <li>Harden security by disabling root login and enabling automatic updates.</li>
+            <li>Configure performance optimizations such as Gzip compression and PHP tuning.</li>
+            <li>Set up monitoring and automation tools like Prometheus and Ansible.</li>
+            <li>Schedule regular backups and perform load testing before going live.</li>
+          </ul>
+        </section>
+      </div>
+      <!-- Next Chapter Navigation -->
+      <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+        <a href="../SubChapters/DNSSEC.html" class="chapter-btn">
+          Next Chapter <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </main>
+
+    <!-- Right Sidebar: Table of Contents -->
+    <aside class="sidebar-toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#server-types">Understanding Server Types</a></li>
+        <li><a href="#operating-system">Choosing an Operating System</a></li>
+        <li><a href="#setup-web-server">Setting Up a Web Server</a></li>
+        <li><a href="#security-hardening">Security Hardening</a></li>
+        <li><a href="#performance-optimization">Performance Optimization</a></li>
+        <li><a href="#monitoring-automation">Monitoring &amp; Automation</a></li>
+        <li><a href="#backup-disaster">Backup &amp; Disaster Recovery</a></li>
+        <li><a href="#load-testing">Load Testing</a></li>
+        <li><a href="#cdn-setup">Setting Up a CDN</a></li>
+        <li><a href="#security-checklist">Final Security Checklist</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#next-steps">Next Steps</a></li>
+      </ul>
+    </aside>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <!-- JavaScript -->
+  <script defer src="../../../script.js"></script>
 </body>
 </html>

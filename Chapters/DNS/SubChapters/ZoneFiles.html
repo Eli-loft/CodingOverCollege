@@ -1,33 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DNS Zone Files</title>
-  <!-- Link to the same CSS file you’ve provided -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zone Files - The Backbone of DNS Resolution</title>
+  <!-- Google Fonts for Montserrat and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="../SubChapters/SubChapter.css">
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
         <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../../DNS/DNS.html">DNS</a></li>
-        <li><a href="../../References/References.html">References</a></li>
-        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
       </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="fade-in">Zone Files: The Backbone of DNS Resolution</h1>
+      <p class="chapter-subtext fade-in">
+        A DNS zone file is a plain text file that maps domain names to IP addresses, storing the essential DNS records for a domain. It provides the authoritative data needed for translating human‑readable domain names into numeric IP addresses.
+      </p>
+    </div>
+    <div class="hero-graphic">
+      <!-- Optionally add some animated background or graphic -->
+      <div class="animated-bg"></div>
+    </div>
+  </section>
+
+  <!-- THREE-COLUMN LAYOUT -->
+  <div class="three-column-container">
+    <!-- Left Sidebar: Subchapters -->
+    <aside class="sidebar-subchapters">
+      <h2>Subchapters</h2>
       <ul>
         <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="../SubChapters/Caching.html">Caching</a></li>
@@ -43,9 +96,9 @@
         <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
         <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
         <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
@@ -53,209 +106,219 @@
         <li><a href="../SubChapters/CheckingDNSPropagation.html">Checking DNS Propagation</a></li>
       </ul>
     </aside>
-    <main class="mainbody">
+
+    <!-- Main Content -->
+    <main class="chapter-content">
       <div class="subchapterBody">
-
-        <!-- Introduction Section -->
-        <h2 class="section-title">Zone Files</h2>
-        <section id="introduction">
-          
+        <!-- Why Are Zone Files Important? -->
+        <section class="preface-section fade-in" id="why-zone-files-important">
+          <h4 class="section-title">Why Are Zone Files Important?</h4>
           <p>
-            A <strong>Zone File</strong> is a simple text file that contains DNS records for a specific domain (or “zone”). It tells DNS servers how to handle requests for that domain, mapping hostnames to IP addresses, and specifying how DNS queries should be routed.
+            Zone files form the foundation of DNS resolution, enabling the smooth operation of the internet. They establish the relationship between domain names and IP addresses, allowing administrators to configure vital DNS settings—such as A records, MX records, and CNAMEs—that ensure reliable domain resolution.
           </p>
         </section>
 
-        <!-- What Is a Zone File? -->
-        <section id="what-is-zonefile">
-          <h3>What is a Zone File?</h3>
+        <!-- Key Concepts & Terminology -->
+        <section class="preface-section fade-in" id="key-concepts">
+          <h4 class="section-title">Key Concepts &amp; Terminology</h4>
+          <h3>Authoritative vs. Non‑Authoritative</h3>
           <p>
-            In DNS, the term "zone" refers to any portion of the DNS namespace for which administrative responsibility has been delegated. A Zone File is the actual file where all DNS records related to that zone are stored. These records include, but are not limited to, A records, MX records, CNAMEs, and NS records.
+            Authoritative DNS servers store the official DNS records for a domain and host the master copy of zone data for accurate resolution. In contrast, recursive resolvers cache and query DNS records without being the official source.
+          </p>
+          <h3>Zones and Domains</h3>
+          <p>
+            A DNS zone is a portion of the DNS namespace managed by a specific authority. While a domain (e.g., <code>example.com</code>) is a hierarchical component of DNS, a zone can encompass multiple subdomains. Delegation through subzones (like <code>sub.example.com</code>) allows separate management of parts of the domain.
+          </p>
+          <h3>Forward vs. Reverse Zones</h3>
+          <p>
+            Forward lookup zones map domain names to IP addresses, whereas reverse lookup zones map IP addresses back to domain names. Reverse lookups—typically using in-addr.arpa (for IPv4) or ip6.arpa (for IPv6)—are essential for logging and security verifications.
           </p>
         </section>
 
-        <!-- Key Characteristics -->
-        <section id="key-characteristics">
-          <h3>Key Characteristics</h3>
+        <!-- Anatomy of a Zone File -->
+        <section class="preface-section fade-in" id="anatomy-of-zone-file">
+          <h4 class="section-title">Anatomy of a Zone File</h4>
+          <h3>Start of Authority (SOA) Record</h3>
+          <p>
+            The SOA record marks the beginning of a zone file and defines key parameters such as the primary nameserver, the administrative contact (formatted as an email address), the serial number for versioning changes, and timing values for refresh, retry, and expiration.
+          </p>
+          <h3>Nameserver (NS) Records</h3>
+          <p>
+            NS records designate the DNS servers responsible for the zone. The primary NS holds the original zone data, while secondary NS servers maintain copies for redundancy.
+          </p>
+          <h3>Resource Records (RRs)</h3>
+          <p>
+            Common resource records include:
+          </p>
           <ul>
-            <li>
-              <strong>Text-Based:</strong> Zone files are typically plain text files that can be edited with any text editor.
-            </li>
-            <li>
-              <strong>Hosted on Authoritative DNS Servers:</strong> The servers that hold the zone file data are considered “authoritative” for that domain/zone.
-            </li>
-            <li>
-              <strong>Defines Resource Records (RRs):</strong> Each record type (A, AAAA, CNAME, MX, NS, SOA, etc.) is specified in a structured format.
-            </li>
-            <li>
-              <strong>Controlled by Domain Owners / DNS Operators:</strong> Typically the domain owner (or their DNS hosting provider) manages zone files.
-            </li>
+            <li><strong>A/AAAA records:</strong> Map domain names to IPv4 and IPv6 addresses.</li>
+            <li><strong>CNAME records:</strong> Create aliases by pointing one domain to another.</li>
+            <li><strong>MX records:</strong> Define mail server priorities for email routing.</li>
+            <li><strong>TXT records:</strong> Hold arbitrary text data (e.g., SPF records for email security).</li>
+            <li><strong>PTR records:</strong> Facilitate reverse DNS lookups.</li>
+            <li><strong>SRV records:</strong> Specify service locations for applications such as SIP or XMPP.</li>
           </ul>
         </section>
 
-        <!-- How It Works -->
-        <section id="how-zonefiles-work">
-          <h3>How a Zone File Works</h3>
-          <ol>
-            <li>
-              <strong>SOA (Start of Authority):</strong>
-              <ul>
-                <li>The zone file starts with an SOA record, defining the primary name server for the domain, the responsible party’s email, and various timers (refresh, retry, expiry).</li>
-              </ul>
-            </li>
-            <li>
-              <strong>NS Records:</strong>
-              <ul>
-                <li>These specify which name servers are authoritative for the zone. When queries arrive, these are the servers that respond with the domain’s DNS info.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Resource Records:</strong>
-              <ul>
-                <li>For each subdomain or hostname (e.g., <code>www.example.com</code>), the zone file lists the relevant record types: A or AAAA (IP addresses), CNAME (aliases), MX (mail exchange), etc.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>TTL (Time-To-Live):</strong>
-              <ul>
-                <li>Each record typically has a TTL value, indicating how long other DNS servers or resolvers should cache it.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Changes &amp; Propagation:</strong>
-              <ul>
-                <li>When a zone file is updated, it may take time (based on TTL and refresh intervals) for changes to propagate across the internet.</li>
-              </ul>
-            </li>
-          </ol>
-        </section>
-
-        <!-- Example of a Zone File -->
-        <section id="example-zonefile">
-          <h3>Example Zone File</h3>
-          <p>Below is a simplified example of a <code>db.example.com</code> zone file:</p>
-          <pre>
-; db.example.com - Example zone file
-; Start of Authority (SOA)
-example.com.    IN  SOA ns1.example.com. admin.example.com. (
-                    2025010101 ; Serial
-                    7200       ; Refresh
-                    3600       ; Retry
-                    1209600    ; Expire
-                    3600       ; Negative caching TTL
+        <!-- Zone File Syntax & Structure -->
+        <section class="preface-section fade-in" id="zone-file-syntax">
+          <h4 class="section-title">Zone File Syntax &amp; Structure</h4>
+          <h3>Basic File Format</h3>
+          <pre class="code-snippet">
+$TTL 3600
+@   IN  SOA  ns1.example.com. admin.example.com. (
+       2025010101 ; Serial
+       7200       ; Refresh
+       1800       ; Retry
+       1209600    ; Expire
+       3600       ; Minimum TTL
 )
-
-; Name Server records
-example.com.    IN  NS    ns1.example.com.
-example.com.    IN  NS    ns2.example.com.
-
-; A Records for name servers
-ns1.example.com. IN A  192.0.2.1
-ns2.example.com. IN A  192.0.2.2
-
-; A record for main website
-example.com.     IN A  192.0.2.50
-
-; CNAME record for www
-www.example.com. IN CNAME example.com.
-
-; MX record for email server
-example.com.     IN MX 10 mail.example.com.
-mail.example.com. IN A  192.0.2.60
+@   IN  NS   ns1.example.com.
+@   IN  NS   ns2.example.com.
           </pre>
-        </section>
-
-        <!-- Where Do Zone Files Exist? -->
-        <section id="where-zonefiles-exist">
-          <h3>Where Do Zone Files Exist?</h3>
-          <ul>
-            <li>
-              <strong>Authoritative DNS Hosting Providers:</strong> Services like Cloudflare, Route53, GoDaddy DNS, etc., store and manage zone files for your domain.
-            </li>
-            <li>
-              <strong>Self-Hosted DNS Servers:</strong> Running BIND, NSD, or other DNS software on your own infrastructure, you keep the zone files locally.
-            </li>
-            <li>
-              <strong>Registrar-Controlled DNS:</strong> Some domain registrars bundle “basic DNS” with domain purchases, hosting a simple zone file by default.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Common Record Types -->
-        <section id="record-types">
-          <h3>Common Record Types Inside a Zone File</h3>
-          <ul>
-            <li>
-              <strong>A / AAAA:</strong> Maps a hostname to an IPv4 (A) or IPv6 (AAAA) address.
-            </li>
-            <li>
-              <strong>CNAME:</strong> Canonical name record—creates an alias from one name to another.
-            </li>
-            <li>
-              <strong>MX:</strong> Mail exchange record—specifies the mail server(s) for the domain.
-            </li>
-            <li>
-              <strong>NS:</strong> Name server record—indicates which DNS servers are authoritative for the zone.
-            </li>
-            <li>
-              <strong>SOA:</strong> Start of Authority—provides essential domain information, including the primary name server, contact email, and zone serial number.
-            </li>
-            <li>
-              <strong>TXT:</strong> Text record—stores arbitrary text strings; often used for SPF, DKIM, or other verification records.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Security Risks & Protections -->
-        <section id="security">
-          <h3>Security Risks &amp; Protections</h3>
-          <ul>
-            <li>
-              <strong>Zone Transfers (AXFR) Exposure:</strong>
-              <br />If unrestricted, attackers can request a full zone transfer and download all DNS records.
-              <br /><em>Protection:</em> Restrict zone transfers to authorized IP addresses or use TSIG keys for authentication.
-            </li>
-            <li>
-              <strong>DNS Spoofing &amp; Manipulation:</strong>
-              <br />Attackers may try to inject false data into your DNS zone or misconfigure it.
-              <br /><em>Protection:</em> Use DNSSEC to sign your zone data, ensuring authenticity.
-            </li>
-            <li>
-              <strong>Incorrect TTL / Configuration Errors:</strong>
-              <br />Simple mistakes in zone files can cause service interruptions or stale records to persist.
-              <br /><em>Protection:</em> Validate zone files with syntax checkers (e.g., <code>named-checkzone</code> for BIND) and maintain version control.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Managing Zone Files -->
-        <section id="managing-zonefiles">
-          <h3>Managing Zone Files</h3>
-          <ol>
-            <li>
-              <strong>Update Serial Number:</strong> Each time you make changes, increment the serial in the SOA record.
-            </li>
-            <li>
-              <strong>Apply Changes:</strong> Save the file, and reload or restart your DNS service (e.g., <code>service named reload</code> in BIND).
-            </li>
-            <li>
-              <strong>Check Propagation:</strong> Use DNS query tools (<code>dig</code>, <code>nslookup</code>) to confirm updates are visible externally.
-            </li>
-            <li>
-              <strong>Monitor Logs &amp; Errors:</strong> Watch DNS server logs for any load issues or syntax errors.
-            </li>
-          </ol>
-        </section>
-
-        <!-- Summary -->
-        <section id="summary">
-          <h3>TL;DR</h3>
           <p>
-            Zone files are the backbone of DNS configuration for a domain. They’re plain text, define all DNS records for a zone, and must be properly formatted and secured to ensure reliable and safe DNS operation.
+            The <code>$TTL</code> directive sets the default Time To Live for cached records. Each record follows a structured format, and comments (introduced with a semicolon <code>;</code>) are used for clarity and maintainability.
           </p>
         </section>
 
+        <!-- Creating a Basic Zone File -->
+        <section class="preface-section fade-in" id="creating-basic-zone-file">
+          <h4 class="section-title">Creating a Basic Zone File</h4>
+          <h3>Step‑by‑Step Walkthrough</h3>
+          <ul>
+            <li><strong>Prerequisites:</strong> A registered domain name, DNS server software (e.g., BIND, Windows DNS Server), and a text editor or DNS management interface.</li>
+            <li><strong>Initialize the File:</strong> Define the <code>$TTL</code> and SOA record.</li>
+            <li><strong>Add NS Records:</strong> List the authoritative DNS servers.</li>
+            <li><strong>Add A/AAAA Records:</strong> Map the domain to its corresponding IP addresses.</li>
+            <li><strong>Add MX Records:</strong> Set up mail server routing.</li>
+            <li><strong>Save and Validate:</strong> Use tools such as <code>named-checkzone</code> to verify the syntax and ensure error‑free configuration.</li>
+          </ul>
+          <p>
+            Once configured, verify the zone file using commands like <code>dig</code> or <code>nslookup</code> to ensure proper DNS resolution, and troubleshoot any issues such as typos or missing SOA records.
+          </p>
+        </section>
+
+        <!-- Reverse Zone Files -->
+        <section class="preface-section fade-in" id="reverse-zone-files">
+          <h4 class="section-title">Reverse Zone Files (PTR Records)</h4>
+          <p>
+            Reverse zone files map IP addresses back to domain names, which is crucial for logging, spam filtering, and security verification. A typical reverse zone file might look like:
+          </p>
+          <pre class="code-snippet">
+$TTL 3600
+@   IN  SOA  ns1.example.com. admin.example.com. (
+       2025010101
+       7200
+       1800
+       1209600
+       3600
+)
+@   IN  NS   ns1.example.com.
+10  IN  PTR  mail.example.com.
+11  IN  PTR  web.example.com.
+          </pre>
+          <p>
+            This setup uses the in‑addr.arpa notation for IPv4. Verify PTR records with <code>dig -x</code> or <code>nslookup</code> commands.
+          </p>
+        </section>
+
+        <!-- Zone Transfers & Secondary Servers -->
+        <section class="preface-section fade-in" id="zone-transfers">
+          <h4 class="section-title">Zone Transfers &amp; Secondary Servers</h4>
+          <h3>Zone Transfer Basics</h3>
+          <p>
+            There are two main types of zone transfers:
+          </p>
+          <ul>
+            <li><strong>AXFR:</strong> A full zone transfer.</li>
+            <li><strong>IXFR:</strong> An incremental zone transfer, which only sends the changes.</li>
+          </ul>
+          <h3>Securing Zone Transfers</h3>
+          <p>
+            To protect your DNS data, restrict zone transfers to trusted IP addresses and employ TSIG keys for authenticated transfers.
+          </p>
+        </section>
+
+        <!-- Common Tools & Best Practices -->
+        <section class="preface-section fade-in" id="tools-best-practices">
+          <h4 class="section-title">Common Tools &amp; Best Practices</h4>
+          <ul>
+            <li>
+              <strong>Tools:</strong> Use <code>named-checkzone</code> for syntax validation, and employ <code>dig</code> or <code>nslookup</code> for querying DNS records. Online resources like intoDNS and DNSChecker are also helpful.
+            </li>
+            <li>
+              <strong>Best Practices:</strong> Maintain consistent naming conventions, update serial numbers to ensure proper synchronization, set appropriate TTL values, and periodically audit DNS records to remove stale or unused entries.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Practical Lab -->
+        <section class="preface-section fade-in" id="practical-lab">
+          <h4 class="section-title">Practical Lab: Building &amp; Testing a Zone File</h4>
+          <ol>
+            <li>Create a forward zone file for <code>example.com</code>.</li>
+            <li>Create a reverse zone file for a subnet (e.g., <code>192.168.1.x</code>).</li>
+            <li>Configure your DNS server (using BIND or Windows DNS) and perform lookups with <code>dig</code> or <code>nslookup</code>.</li>
+            <li>Simulate an update by modifying records, updating the serial number, and reloading the zone.</li>
+          </ol>
+          <p>
+            Common troubleshooting tips include checking for syntax errors, verifying TTL values, and reviewing server logs for issues.
+          </p>
+        </section>
+
+        <!-- Summary & Next Steps -->
+        <section class="preface-section fade-in" id="summary-next-steps">
+          <h4 class="section-title">Summary &amp; Next Steps</h4>
+          <p>
+            <strong>Key Takeaways:</strong> Zone files are integral to DNS, ensuring that domain names are resolved correctly by defining essential records like SOA, NS, A, MX, and CNAME. Proper configuration is critical for domain reliability and security.
+          </p>
+          <p>
+            Next steps include exploring advanced topics such as dynamic DNS, DNSSEC for enhanced security, and automated zone management systems.
+          </p>
+        </section>
+      </div>
+      <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+        <a href="../SubChapters/IPAddress.html" class="chapter-btn">Next Chapter &rarr;</a>
       </div>
     </main>
+
+    <!-- Right Sidebar: Table of Contents -->
+    <aside class="sidebar-toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#why-zone-files-important">Why Are Zone Files Important?</a></li>
+        <li><a href="#key-concepts">Key Concepts &amp; Terminology</a></li>
+        <li><a href="#anatomy-of-zone-file">Anatomy of a Zone File</a></li>
+        <li><a href="#zone-file-syntax">Zone File Syntax &amp; Structure</a></li>
+        <li><a href="#creating-basic-zone-file">Creating a Basic Zone File</a></li>
+        <li><a href="#reverse-zone-files">Reverse Zone Files</a></li>
+        <li><a href="#zone-transfers">Zone Transfers &amp; Secondary Servers</a></li>
+        <li><a href="#tools-best-practices">Common Tools &amp; Best Practices</a></li>
+        <li><a href="#practical-lab">Practical Lab</a></li>
+        <li><a href="#summary-next-steps">Summary &amp; Next Steps</a></li>
+      </ul>
+    </aside>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+    <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">↑</button>
+  <!-- JavaScript -->
+  <script defer src="../../../script.js"></script>
 </body>
 </html>

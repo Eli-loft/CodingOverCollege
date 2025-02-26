@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Public DNS</title>
-  <!-- Make sure the path below is correct relative to your HTML file -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public DNS: Enhancing Internet Accessibility &amp; Security</title>
+  <!-- Google Fonts for Montserrat and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="../SubChapters/SubChapter.css">
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
         <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../../DNS/DNS.html">DNS</a></li>
-        <li><a href="../../References/References.html">References</a></li>
-        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
       </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Public DNS: Enhancing Internet Accessibility &amp; Security</h1>
+      <p class="chapter-subtext">
+        Discover how public DNS providers offer faster, more secure, and privacy-enhanced alternatives to ISP DNS, improving your overall internet experience.
+      </p>
+      <p class="reading-time">Estimated reading time: calculating...</p>
+    </div>
+    <div class="hero-graphic">
+      <div class="animated-bg"></div>
+    </div>
+  </section>
+
+  <!-- THREE-COLUMN LAYOUT -->
+  <div class="three-column-container">
+    <!-- Left Sidebar: Subchapters -->
+    <aside class="sidebar-subchapters">
+      <h2>Subchapters</h2>
       <ul>
         <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="../SubChapters/Caching.html">Caching</a></li>
@@ -35,7 +90,7 @@
         <li><a href="../SubChapters/IPAddress.html">IP Addresses</a></li>
         <li><a href="../SubChapters/Proticals.html">Proticals</a></li>
         <li><a href="../SubChapters/Ports.html">Ports</a></li>
-        <li><a href="../SubChapters/PublicDNS.html">Public DNS</a></li>
+        <li><a href="../SubChapters/PublicDNS.html" class="active">Public DNS</a></li>
         <li><a href="../SubChapters/PrivateDNS.html">Private DNS</a></li>
         <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
         <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
@@ -43,9 +98,9 @@
         <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
         <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
         <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
@@ -54,353 +109,295 @@
       </ul>
     </aside>
 
-    <main class="mainbody">
+    <!-- Main Content -->
+    <main class="chapter-content">
       <div class="subchapterBody">
-        
-        <!-- Introduction Section -->
-        <section id="introduction">
-          <h2 class="section-title">Public DNS</h2>
+        <!-- 1. Introduction -->
+        <section class="preface-section fade-in" id="publicdns-introduction">
+          <h4>Introduction</h4>
           <p>
-            Public DNS refers to DNS resolvers that are open for anyone to use, typically provided by large organizations or ISPs. Instead of relying on your ISP’s default DNS service, you can point your device or router to a public resolver (e.g., Google, Cloudflare, Quad9). Public DNS can offer advantages like faster name resolution, enhanced privacy, and robust security features. In this chapter, we’ll explore what public DNS is, why it’s useful, which providers dominate the space, and how to configure and secure it.
+            The <strong>Domain Name System (DNS)</strong> acts as the phonebook of the internet, translating human-readable domain names into IP addresses. While most users rely on their Internet Service Provider’s (ISP) DNS servers, <strong>public DNS providers</strong> offer alternative, often faster and more secure, resolution services.
+          </p>
+          <p>
+            This chapter explores the role, benefits, security features, performance considerations, and real-world applications of public DNS.
           </p>
         </section>
 
-        <!-- What Is Public DNS? -->
-        <section id="definition">
-          <h2 class="section-title">What Is Public DNS?</h2>
+        <!-- 2. What is Public DNS? -->
+        <section class="preface-section fade-in" id="what-is-publicdns">
+          <h4>What is Public DNS?</h4>
           <p>
-            A public DNS resolver is any DNS server that resolves domain names for clients on the open internet, without restricting access to a specific organization or network. Typically, these services:
+            Public DNS refers to globally accessible DNS resolvers that allow any internet user to resolve domain names. These services are often provided by tech companies, non-profits, and security organizations to enhance reliability, security, and speed.
           </p>
-          <ul>
-            <li><strong>Handle Recursive Queries:</strong> They find the IP address associated with a requested domain, doing the entire lookup process on behalf of the client.</li>
-            <li><strong>Require No Authentication:</strong> Most are free to use; just point your DNS settings to their IPs (e.g., <code>8.8.8.8</code>).</li>
-            <li><strong>Provide Additional Features:</strong> Some offer malware filtering, parental controls, or encrypted DNS (DoT/DoH).</li>
-          </ul>
-        </section>
-
-        <!-- Key Characteristics -->
-        <section id="key-characteristics">
-          <h2 class="section-title">Key Characteristics</h2>
-          <ul>
-            <li>
-              <strong>Global Infrastructure:</strong> Large providers have multiple data centers (often using anycast routing) to ensure quick responses from a server geographically close to you.
-            </li>
-            <li>
-              <strong>High Availability &amp; Redundancy:</strong> Public DNS networks are built to handle huge query volumes and have failover mechanisms in case of outages.
-            </li>
-            <li>
-              <strong>Free or Freemium Tiers:</strong> Most public DNS services are free for basic usage; advanced features (like enterprise filtering) may come at a cost.
-            </li>
-            <li>
-              <strong>Privacy &amp; Logging Policies:</strong> Providers differ in how much they log and how long they keep DNS query data.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Why Use Public DNS? -->
-        <section id="why-public-dns">
-          <h2 class="section-title">Why Use Public DNS?</h2>
-          <ol>
-            <li>
-              <strong>Performance:</strong>
-              <ul>
-                <li>Some public DNS resolvers are heavily optimized, leading to faster domain lookups than default ISP DNS.</li>
-                <li>Large anycast networks ensure low latency worldwide.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Reliability:</strong>
-              <ul>
-                <li>If your ISP’s DNS goes down, a robust public DNS can keep you online.</li>
-                <li>Global providers have multiple points of presence, minimizing downtime.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Security &amp; Filtering:</strong>
-              <ul>
-                <li>Some providers block known malicious domains to reduce malware/phishing risks.</li>
-                <li>Support for DNSSEC can help validate DNS responses and prevent cache poisoning.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Privacy:</strong>
-              <ul>
-                <li>Privacy-focused resolvers (e.g., Cloudflare 1.1.1.1, Quad9) often log less data than an ISP might.</li>
-                <li>Encrypted DNS (DoH/DoT) hides your queries from local network sniffing.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Bypassing ISP Restrictions:</strong>
-              <ul>
-                <li>If your ISP censors certain sites via DNS, switching to a public resolver might circumvent that block.</li>
-              </ul>
-            </li>
-          </ol>
-        </section>
-
-        <!-- Major Public DNS Providers -->
-        <section id="major-providers">
-          <h2 class="section-title">Major Public DNS Providers</h2>
-
-          <h3>Google Public DNS (8.8.8.8, 8.8.4.4)</h3>
-          <ul>
-            <li>
-              <strong>Performance:</strong> Google uses a vast global infrastructure for quick responses.
-            </li>
-            <li>
-              <strong>Security Features:</strong> Supports DNSSEC validation and DoT/DoH.
-            </li>
-            <li>
-              <strong>Privacy Concerns:</strong> Google logs query data for performance and analytics; retention policies may vary.
-            </li>
-          </ul>
-
-          <h3>Cloudflare DNS (1.1.1.1, 1.0.0.1)</h3>
-          <ul>
-            <li>
-              <strong>Privacy Focus:</strong> Promises to erase query logs within 24 hours, with external audits confirming minimal data retention.
-            </li>
-            <li>
-              <strong>Encryption:</strong> One of the early adopters of DNS over HTTPS (DoH) and DNS over TLS (DoT).
-            </li>
-            <li>
-              <strong>Performance:</strong> Often ranks among the fastest resolvers due to a robust CDN-like network.
-            </li>
-          </ul>
-
-          <h3>Quad9 (9.9.9.9)</h3>
-          <ul>
-            <li>
-              <strong>Security Emphasis:</strong> Blocks known malicious domains using threat intelligence feeds.
-            </li>
-            <li>
-              <strong>Nonprofit Model:</strong> Operated by the Global Cyber Alliance, focusing on a safer internet.
-            </li>
-            <li>
-              <strong>Privacy:</strong> Claims to collect minimal data and not share personal info.
-            </li>
-          </ul>
-
-          <h3>OpenDNS (208.67.222.222, 208.67.220.220)</h3>
-          <ul>
-            <li>
-              <strong>Customizable Filtering:</strong> Parental controls and content filtering available in both free and paid tiers.
-            </li>
-            <li>
-              <strong>Reliability:</strong> Long-established, with a significant network presence.
-            </li>
-            <li>
-              <strong>Cisco Umbrella Integration:</strong> Advanced threat intelligence and enterprise security features for paid users.
-            </li>
-          </ul>
-        </section>
-
-        <!-- How It Works -->
-        <section id="how-it-works">
-          <h2 class="section-title">How Public DNS Works</h2>
-          <ol>
-            <li>
-              <strong>Client Configuration:</strong>
-              <ul>
-                <li>You change your device or router’s DNS settings to point at the public DNS IP (e.g., <code>1.1.1.1</code> for Cloudflare).</li>
-                <li>All DNS queries from that device or network are then sent to the public resolver.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Recursive Resolution:</strong>
-              <ul>
-                <li>These public resolvers act just like any other recursive DNS server—querying root servers, TLD servers, and authoritative servers on your behalf.</li>
-                <li>They cache answers for the specified TTL, speeding up future lookups.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Value-Add Services:</strong>
-              <ul>
-                <li>In addition to resolving queries, many public DNS providers implement DNSSEC validation, block malicious domains, or provide analytics.</li>
-              </ul>
-            </li>
-          </ol>
-        </section>
-
-        <!-- Setup & Configuration -->
-        <section id="setup">
-          <h2 class="section-title">Setup & Configuration</h2>
-          <p>
-            Configuring a public DNS is straightforward:
-          </p>
-          <ol>
-            <li>
-              <strong>Device-Level Configuration:</strong> On Windows, Linux, or macOS, change the DNS servers in network settings to your preferred public DNS IPs.
-            </li>
-            <li>
-              <strong>Router Configuration:</strong> Set the WAN or LAN DNS server to the public DNS addresses so all devices on the network use them.
-            </li>
-            <li>
-              <strong>Backup DNS:</strong> Always include a secondary DNS IP in case the primary becomes unreachable.
-            </li>
-            <li>
-              <strong>Encrypted DNS:</strong> For DoH/DoT, you often need a compatible client (e.g., a DoT-enabled router firmware or a browser DoH setting) to use the secure endpoints.
-            </li>
-          </ol>
-          <pre>
-# Example: Linux (Debian/Ubuntu) /etc/resolv.conf
-nameserver 1.1.1.1
-nameserver 1.0.0.1
-search home.local
-          </pre>
-        </section>
-
-        <!-- Security & Privacy -->
-        <section id="security-privacy">
-          <h2 class="section-title">Security & Privacy Considerations</h2>
-          <ul>
-            <li>
-              <strong>DNS Logging:</strong>
-              <ul>
-                <li>Some providers log queries indefinitely for analytics or “service improvement.” Check their privacy policies.</li>
-                <li>If privacy is paramount, pick a resolver with minimal logging (e.g., Cloudflare, Quad9).</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Threat Blocking:</strong>
-              <ul>
-                <li>Providers like Quad9 or OpenDNS can block known malicious domains, adding a security layer.</li>
-                <li>False positives can occasionally block legitimate sites, so check logs if issues arise.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>DNSSEC Validation:</strong>
-              <ul>
-                <li>Verifies DNS responses using cryptographic signatures, preventing cache poisoning.</li>
-                <li>Most reputable public DNS resolvers enable DNSSEC by default.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Encryption:</strong>
-              <ul>
-                <li>Use DNS over HTTPS or DNS over TLS to prevent on-path eavesdropping or tampering.</li>
-                <li>Requires additional client or OS/browser configuration. 
-                </li>
-              </ul>
-            </li>
-            <li>
-              <strong>Regional Caching:</strong>
-              <ul>
-                <li>Some public DNS resolvers might direct you to a less optimal CDN server if they have limited localization data. 
-                  <br/><em>Workaround:</em> EDNS Client Subnet (ECS) can pass partial IP info to the authoritative server, but it raises privacy concerns.
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-
-        <!-- Performance Optimizations -->
-        <section id="performance">
-          <h2 class="section-title">Performance Optimizations</h2>
-          <ul>
-            <li>
-              <strong>Anycast Routing:</strong> Providers route you to the nearest DNS endpoint, reducing latency.
-            </li>
-            <li>
-              <strong>EDNS0:</strong> Allows larger UDP packets to reduce the need for TCP fallback on bigger responses.
-            </li>
-            <li>
-              <strong>Caching Strategies:</strong> Popular domains (e.g., Google, Facebook) are almost always cached, making responses nearly instant.
-            </li>
-            <li>
-              <strong>Load Balancing:</strong> Distributes DNS requests across multiple servers to avoid slowdowns or timeouts.
-            </li>
-          </ul>
-        </section>
-
-        <!-- Real-World Example: Switching to Cloudflare (1.1.1.1) -->
-        <section id="example-switch">
-          <h2 class="section-title">Example: Switching to Cloudflare DNS (1.1.1.1)</h2>
-          <ol>
-            <li>
-              <strong>Check Your Current DNS:</strong> 
-              <ul><li>Use <code>nslookup</code> or <code>dig</code> to see which DNS server is in use.</li></ul>
-            </li>
-            <li>
-              <strong>Update Network Settings:</strong>
-              <ul><li>Set primary DNS to <code>1.1.1.1</code>, secondary to <code>1.0.0.1</code>.</li></ul>
-            </li>
-            <li>
-              <strong>Verify:</strong>
-              <ul>
-                <li>Use <code>dig example.com @1.1.1.1</code> to confirm you can resolve domains using Cloudflare’s resolver.</li>
-                <li>Check “DNS leak tests” if on a VPN or privacy-conscious environment.</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Optionally Enable DoT/DoH:</strong>
-              <ul>
-                <li>Enable DNS over TLS on your router if supported, or in your OS/browser settings (e.g., DoH in Firefox or Chrome).</li>
-              </ul>
-            </li>
-          </ol>
-        </section>
-
-        <!-- Comparison Table: Popular Public DNS -->
-        <section id="comparison">
-          <h2 class="section-title">Comparison: Popular Public DNS Providers</h2>
-          <table>
+          <h3>Key Differences: Public DNS vs. ISP DNS</h3>
+          <table class="comparison-table">
             <thead>
               <tr>
-                <th>Provider</th>
-                <th>IP Addresses</th>
-                <th>Key Features</th>
-                <th>Logging Policy</th>
+                <th>Feature</th>
+                <th>Public DNS</th>
+                <th>ISP DNS</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Google Public DNS</td>
-                <td>8.8.8.8, 8.8.4.4</td>
-                <td>DNSSEC, DoT/DoH, Large Global Network</td>
-                <td>Some data retained for analysis</td>
+                <td><strong>Speed</strong></td>
+                <td>Often faster due to global infrastructure and caching</td>
+                <td>May be slower due to congestion or poor optimization</td>
               </tr>
               <tr>
-                <td>Cloudflare DNS</td>
-                <td>1.1.1.1, 1.0.0.1</td>
-                <td>Minimal Logging, High Performance, DoT/DoH</td>
-                <td>Deletes logs within 24 hours</td>
+                <td><strong>Security</strong></td>
+                <td>Enhanced features like DNSSEC, DoH, and filtering</td>
+                <td>Often lacks built‑in protection against attacks</td>
               </tr>
               <tr>
-                <td>Quad9</td>
-                <td>9.9.9.9</td>
-                <td>Threat Blocking, Nonprofit, DNSSEC</td>
-                <td>Minimal PII Logging</td>
+                <td><strong>Privacy</strong></td>
+                <td>Some providers offer no‑logging policies</td>
+                <td>ISPs may track and log queries</td>
               </tr>
               <tr>
-                <td>OpenDNS</td>
-                <td>208.67.222.222, 208.67.220.220</td>
-                <td>Filtering/Parental Controls, DNSSEC</td>
-                <td>Depends on service tier; free tier logs standard analytics</td>
+                <td><strong>Customization</strong></td>
+                <td>Allows users to choose specific DNS providers</td>
+                <td>Default option, little control</td>
+              </tr>
+              <tr>
+                <td><strong>Censorship Avoidance</strong></td>
+                <td>Unfiltered or lightly filtered options available</td>
+                <td>May block content due to local regulations</td>
               </tr>
             </tbody>
           </table>
         </section>
 
-        <!-- TL;DR Summary -->
-        <section id="summary">
-          <h2 class="section-title">TL;DR</h2>
-          <p>
-            Public DNS providers offer globally accessible resolvers that can improve performance, reliability, and security versus default ISP DNS. Major players like Google, Cloudflare, Quad9, and OpenDNS each provide unique advantages—some focus on speed, others on privacy or threat blocking. 
-          </p>
+        <!-- 3. Benefits of Using Public DNS -->
+        <section class="preface-section fade-in" id="benefits">
+          <h4>Benefits of Using Public DNS</h4>
+          <h3>Improved Speed &amp; Performance</h3>
           <ul>
-            <li><strong>Why Use Public DNS?</strong> Faster lookups, robust infrastructure, optional malware filtering, and reduced ISP-based censorship.</li>
-            <li><strong>Key Trade-Off:</strong> Some providers may log queries; if privacy is a concern, choose minimal-logging services and consider encrypted DNS (DoT/DoH).</li>
-            <li><strong>Set It Up:</strong> Manually configure your system or router’s DNS servers, or enable DoT/DoH in supported devices and browsers.</li>
-            <li><strong>Check Performance:</strong> Tools like <em>namebench</em> or <em>DNS Performance benchmarks</em> can help you compare speeds.</li>
+            <li>Faster query resolution using anycast routing.</li>
+            <li>Caching mechanisms reduce repeated queries.</li>
+            <li>Lower latency compared to some ISP‑provided DNS servers.</li>
           </ul>
-          <p>
-            Ultimately, switching to a public DNS is a simple, often beneficial change—especially for users who need reliability, advanced security features, or privacy protections beyond what typical ISP DNS can provide.
-          </p>
+          <h3>Better Security Protections</h3>
+          <ul>
+            <li>Implementation of DNSSEC to prevent spoofing.</li>
+            <li>Malware and phishing protection through domain filtering.</li>
+            <li>Encryption via DoH and DoT to prevent man‑in‑the‑middle attacks.</li>
+          </ul>
+          <h3>Privacy Enhancements</h3>
+          <ul>
+            <li>No‑logging policies ensure user anonymity.</li>
+            <li>Encrypted DNS queries prevent ISP tracking.</li>
+          </ul>
+          <h3>Unrestricted Access &amp; Bypassing Censorship</h3>
+          <ul>
+            <li>Helps bypass government or ISP‑imposed restrictions.</li>
+            <li>Useful in regions with heavy internet censorship.</li>
+          </ul>
         </section>
 
+        <!-- 4. Popular Public DNS Providers -->
+        <section class="preface-section fade-in" id="providers">
+          <h4>Popular Public DNS Providers</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Provider</th>
+                <th>Primary IP</th>
+                <th>Secondary IP</th>
+                <th>Features</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Google Public DNS</strong></td>
+                <td>8.8.8.8</td>
+                <td>8.8.4.4</td>
+                <td>Fast, reliable, supports DNSSEC</td>
+              </tr>
+              <tr>
+                <td><strong>Cloudflare DNS</strong></td>
+                <td>1.1.1.1</td>
+                <td>1.0.0.1</td>
+                <td>Privacy‑focused, DoH/DoT support</td>
+              </tr>
+              <tr>
+                <td><strong>Quad9</strong></td>
+                <td>9.9.9.9</td>
+                <td>149.112.112.112</td>
+                <td>Security‑oriented, malware filtering</td>
+              </tr>
+              <tr>
+                <td><strong>OpenDNS</strong></td>
+                <td>208.67.222.222</td>
+                <td>208.67.220.220</td>
+                <td>Parental controls, security filtering</td>
+              </tr>
+              <tr>
+                <td><strong>IBM Quad9 Secure</strong></td>
+                <td>9.9.9.9</td>
+                <td>9.9.9.10</td>
+                <td>Focused on security and privacy</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- 5. Setting Up Public DNS on Your Device -->
+        <section class="preface-section fade-in" id="setup">
+          <h4>Setting Up Public DNS on Your Device</h4>
+          <h3>Windows Configuration</h3>
+          <ol>
+            <li>Open <strong>Control Panel</strong> → <strong>Network and Internet</strong> → <strong>Network and Sharing Center</strong>.</li>
+            <li>Click <strong>Change adapter settings</strong>.</li>
+            <li>Right‑click your active connection and select <strong>Properties</strong>.</li>
+            <li>Select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong> and click <strong>Properties</strong>.</li>
+            <li>Choose <strong>Use the following DNS server addresses</strong> and enter your preferred Public DNS (e.g., 8.8.8.8 and 8.8.4.4).</li>
+            <li>Click <strong>OK</strong> and restart your internet connection.</li>
+          </ol>
+          <h3>Linux Configuration</h3>
+          <p>Edit the <code>resolv.conf</code> file:</p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+sudo nano /etc/resolv.conf
+# Add the following lines:
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+            </pre>
+          </div>
+          <h3>Router‑Level Configuration</h3>
+          <ol>
+            <li>Log into your router’s admin panel (e.g., 192.168.1.1).</li>
+            <li>Locate the DNS settings under network or WAN settings.</li>
+            <li>Enter the Public DNS addresses of your choice.</li>
+            <li>Save and reboot the router.</li>
+          </ol>
+        </section>
+
+        <!-- 6. Security Considerations -->
+        <section class="preface-section fade-in" id="security-considerations">
+          <h4>Security Considerations</h4>
+          <h3>DNS Hijacking</h3>
+          <p>
+            Some ISPs redirect users to their own DNS servers even when public DNS is set. <em>Solution:</em> Use DNS encryption (DoH/DoT) or a VPN.
+          </p>
+          <h3>Man‑in‑the‑Middle Attacks</h3>
+          <p>
+            Without encryption, DNS queries can be intercepted. <em>Solution:</em> Choose providers that offer DoH or DoT.
+          </p>
+          <h3>Performance Issues</h3>
+          <p>
+            Public DNS servers may be slower in certain regions. <em>Solution:</em> Test multiple providers to find the fastest option for your location.
+          </p>
+          <h3>Logging &amp; Privacy Risks</h3>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Provider</th>
+                <th>Logging Policy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google DNS</td>
+                <td>Stores logs for security purposes</td>
+              </tr>
+              <tr>
+                <td>Cloudflare DNS</td>
+                <td>No‑logging policy</td>
+              </tr>
+              <tr>
+                <td>Quad9</td>
+                <td>Minimal logging, security‑focused</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- 7. Testing Your Public DNS Setup -->
+        <section class="preface-section fade-in" id="testing">
+          <h4>Testing Your Public DNS Setup</h4>
+          <p>
+            To verify whether your system is using the new DNS servers, you can run:
+          </p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+nslookup example.com
+            </pre>
+          </div>
+          <p>Or use:</p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+dig example.com @8.8.8.8
+            </pre>
+          </div>
+          <p>For Windows, try:</p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+Get-DnsClientServerAddress
+            </pre>
+          </div>
+        </section>
+
+        <!-- 8. Conclusion -->
+        <section class="preface-section fade-in" id="conclusion">
+          <h4>Conclusion</h4>
+          <p>
+            Public DNS services offer a faster, more secure, and privacy‑enhanced alternative to default ISP DNS servers. By choosing a reliable provider and enabling encrypted DNS, you can greatly improve your browsing experience.
+          </p>
+          <h3>Next Steps</h3>
+          <ul>
+            <li>Experiment with different public DNS providers to determine the best performance for your region.</li>
+            <li>Enable DoH/DoT for encrypted DNS queries.</li>
+            <li>Use tools like nslookup or dig to monitor DNS performance.</li>
+            <li>Explore private DNS services and VPN‑based DNS solutions for enhanced privacy.</li>
+          </ul>
+        </section>
+      </div>
+      <!-- Next Chapter Navigation -->
+      <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+        <a href="../SubChapters/PrivateDNS.html" class="chapter-btn">
+          Next Chapter <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </main>
-  </div>
+
+    <!-- Right Sidebar: Table of Contents -->
+    <aside class="sidebar-toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#publicdns-introduction">Introduction</a></li>
+        <li><a href="#what-is-publicdns">What is Public DNS?</a></li>
+        <li><a href="#benefits">Benefits of Using Public DNS</a></li>
+        <li><a href="#providers">Popular Public DNS Providers</a></li>
+        <li><a href="#setup">Setting Up Public DNS on Your Device</a></li>
+        <li><a href="#security-considerations">Security Considerations</a></li>
+        <li><a href="#testing">Testing Your Public DNS Setup</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button (added from inline text) -->
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <!-- JavaScript -->
+  <script defer src="../../../script.js"></script>
 </body>
 </html>

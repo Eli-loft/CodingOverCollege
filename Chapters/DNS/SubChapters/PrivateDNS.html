@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Private DNS</title>
-  <!-- Link to your shared CSS file (adjust path if needed) -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private DNS: Secure &amp; Controlled Name Resolution</title>
+  <!-- Google Fonts for Montserrat and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="../SubChapters/SubChapter.css">
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
         <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../../DNS/DNS.html">DNS</a></li>
-        <li><a href="../../References/References.html">References</a></li>
-        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
       </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Private DNS: Secure &amp; Controlled Name Resolution</h1>
+      <p class="chapter-subtext">
+        Private DNS offers a secure, controlled, and internalized approach to name resolution—essential for organizations, data centers, and home labs.
+      </p>
+      <p class="reading-time">Estimated reading time: calculating...</p>
+    </div>
+    <div class="hero-graphic">
+      <div class="animated-bg"></div>
+    </div>
+  </section>
+
+  <!-- THREE-COLUMN LAYOUT -->
+  <div class="three-column-container">
+    <!-- Left Sidebar: Subchapters -->
+    <aside class="sidebar-subchapters">
+      <h2>Subchapters</h2>
       <ul>
         <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="../SubChapters/Caching.html">Caching</a></li>
@@ -36,16 +91,16 @@
         <li><a href="../SubChapters/Proticals.html">Proticals</a></li>
         <li><a href="../SubChapters/Ports.html">Ports</a></li>
         <li><a href="../SubChapters/PublicDNS.html">Public DNS</a></li>
-        <li><a href="../SubChapters/PrivateDNS.html">Private DNS</a></li>
+        <li><a href="../SubChapters/PrivateDNS.html" class="active">Private DNS</a></li>
         <li><a href="../SubChapters/DomainRegistration.html">Domain Registration</a></li>
         <li><a href="../SubChapters/HostingProvider.html">Hosting Providers</a></li>
         <li><a href="../SubChapters/nslookup.html">nslookup</a></li>
         <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
         <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
         <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
@@ -54,134 +109,138 @@
       </ul>
     </aside>
 
-    <main class="mainbody">
+    <!-- Main Content -->
+    <main class="chapter-content">
       <div class="subchapterBody">
-        
-        <!-- Introduction Section -->
-        <section id="introduction">
-          <h2 class="section-title">Private DNS</h2>
+        <!-- 1. Introduction -->
+        <section class="preface-section fade-in" id="introduction">
+          <h4>Introduction</h4>
           <p>
-            Unlike public DNS services (which anyone can use on the open internet), <strong>Private DNS</strong> is maintained and accessible within a specific organization or closed network. Private DNS servers are essential for internal name resolution, security, and control—especially in corporate environments, education institutions, and home labs. This chapter delves into the concept of private DNS, its key benefits, implementation strategies, and common challenges.
+            The Domain Name System (DNS) is the backbone of the internet, translating domain names into IP addresses. While Public DNS services provide open access, <strong>Private DNS</strong> is maintained within a specific organization or closed network. It is essential for internal name resolution, security, and control.
+          </p>
+          <p>
+            This chapter delves into the concept of Private DNS, covering its definition, key characteristics, reasons to use it, common use cases, deployment scenarios, implementation strategies, security and best practices, integration with public DNS, Active Directory considerations, performance, and real‑world examples.
           </p>
         </section>
 
-        <!-- Definition of Private DNS -->
-        <section id="what-is-private-dns">
-          <h2 class="section-title">What Is Private DNS?</h2>
+        <!-- 2. What is Private DNS? -->
+        <section class="preface-section fade-in" id="what-is-private-dns">
+          <h4>What is Private DNS?</h4>
+          <h3>Definition</h3>
           <p>
-            Private DNS servers are resolvers or authoritative servers restricted to a particular network scope—such as a company’s LAN, a data center environment, or a virtual private cloud (VPC). These servers often contain records that map <em>internal</em> domain names to private IP addresses, thus providing a name resolution layer inaccessible from the public internet.
+            Private DNS refers to an internal DNS resolution system used within enterprise networks, VPNs, cloud environments, and internal server infrastructures. Unlike Public DNS—which resolves queries for the entire internet—Private DNS is restricted to a specific network or organization.
           </p>
           <ul>
-            <li>
-              <strong>Local-Only Records:</strong> Hostnames like <code>server1.company.local</code> or <code>prod-db.internal</code> are resolved internally but have no meaning outside the private network.
-            </li>
-            <li>
-              <strong>Layer of Security:</strong> Keeping critical infrastructure names private helps reduce external attack vectors.
-            </li>
-            <li>
-              <strong>Customized Zones:</strong> Organizations can manage their own DNS zones (e.g., <code>company.local</code> or <code>corp.example.com</code>).
-            </li>
+            <li><strong>Local-Only Records:</strong> Internal hostnames (e.g., <code>server1.company.local</code>) are resolved only within the private network.</li>
+            <li><strong>Layer of Security:</strong> Keeping critical infrastructure names private reduces external attack vectors.</li>
+            <li><strong>Customized Zones:</strong> Organizations can manage their own DNS zones (e.g., <code>company.local</code> or <code>corp.example.com</code>).</li>
           </ul>
         </section>
 
-        <!-- Key Characteristics -->
-        <section id="key-characteristics">
-          <h2 class="section-title">Key Characteristics</h2>
+        <!-- 3. Key Characteristics -->
+        <section class="preface-section fade-in" id="key-characteristics">
+          <h4>Key Characteristics</h4>
           <ul>
-            <li>
-              <strong>Restricted Access:</strong> Private DNS servers often require internal IP addresses or VPN access for queries, preventing external use.
-            </li>
-            <li>
-              <strong>Authoritative for Internal Domains:</strong> They hold zone files for private namespaces that aren’t part of the global DNS hierarchy.
-            </li>
-            <li>
-              <strong>Integration with Directory Services:</strong> In many enterprises, private DNS integrates with Active Directory or LDAP for dynamic updates when new hosts join.
-            </li>
-            <li>
-              <strong>Custom Resolvers:</strong> Some organizations run a recursive resolver internally that forwards unknown queries to public DNS if not found locally.
-            </li>
+            <li><strong>Restricted Access:</strong> Private DNS servers require internal IP addresses or VPN access, keeping queries within the organization.</li>
+            <li><strong>Authoritative for Internal Domains:</strong> They maintain zone files for private namespaces that aren’t part of the global DNS hierarchy.</li>
+            <li><strong>Integration with Directory Services:</strong> Often linked with Active Directory or LDAP for dynamic updates.</li>
+            <li><strong>Custom Resolvers:</strong> Some setups include a recursive resolver that forwards external queries if not resolved internally.</li>
           </ul>
         </section>
 
-        <!-- Why Use Private DNS? -->
-        <section id="why-private-dns">
-          <h2 class="section-title">Why Use Private DNS?</h2>
+        <!-- 4. Why Use Private DNS? -->
+        <section class="preface-section fade-in" id="why-private-dns">
+          <h4>Why Use Private DNS?</h4>
           <ol>
             <li>
-              <strong>Security & Isolation:</strong>
+              <strong>Security &amp; Isolation:</strong>
               <ul>
-                <li>Prevent external users from discovering internal hostnames and network structure.</li>
-                <li>Limit DNS queries to authorized employees, reducing attack surface.</li>
+                <li>Prevents external users from discovering internal hostnames and network structure.</li>
+                <li>Limits DNS queries to authorized employees, reducing the attack surface.</li>
               </ul>
             </li>
             <li>
-              <strong>Convenience & Consistency:</strong>
+              <strong>Convenience &amp; Consistency:</strong>
               <ul>
-                <li>Employees can use human-readable hostnames (<code>hr-intranet.corp</code>) instead of private IPs.</li>
-                <li>Central management avoids manual /etc/hosts modifications on each machine.</li>
+                <li>Allows the use of human‑readable hostnames instead of IP addresses.</li>
+                <li>Central management eliminates the need for manual updates on every device.</li>
               </ul>
             </li>
             <li>
-              <strong>Control & Customization:</strong>
+              <strong>Control &amp; Customization:</strong>
               <ul>
-                <li>Organizations can create arbitrary subdomains for different departments or services.</li>
-                <li>Policy-based routing, load balancing, or service discovery can hinge on custom DNS records.</li>
+                <li>Enables creation of custom subdomains for departments or services.</li>
+                <li>Supports policy‑based routing, load balancing, and service discovery.</li>
               </ul>
             </li>
             <li>
               <strong>Local Service Discovery:</strong>
               <ul>
-                <li>DNS-SD (Service Discovery) or integration with directories to find network printers, servers, or microservices.</li>
+                <li>Facilitates finding network printers, servers, or microservices through DNS‑SD.</li>
               </ul>
             </li>
           </ol>
         </section>
 
-        <!-- Common Private DNS Use Cases -->
-        <section id="use-cases">
-          <h2 class="section-title">Common Private DNS Use Cases</h2>
+        <!-- 5. Benefits of Private DNS -->
+        <section class="preface-section fade-in" id="benefits">
+          <h4>Benefits of Private DNS</h4>
+          <ol>
+            <li><strong>Enhanced Security:</strong> Eliminates exposure to public DNS vulnerabilities and reduces data interception risks.</li>
+            <li><strong>Faster Internal Resolution:</strong> Quickly resolves internal domains, reducing latency.</li>
+            <li><strong>Data Privacy &amp; Compliance:</strong> Prevents external logging, aiding in regulatory compliance.</li>
+            <li><strong>Custom Domain Management:</strong> Grants full control over internal DNS zones.</li>
+            <li><strong>Improved Network Reliability:</strong> Ensures consistent name resolution even during external outages.</li>
+            <li><strong>Offline &amp; Local Accessibility:</strong> Supports intranet users, VPNs, and local cloud applications.</li>
+          </ol>
+        </section>
+
+        <!-- 6. Common Private DNS Use Cases -->
+        <section class="preface-section fade-in" id="use-cases">
+          <h4>Common Private DNS Use Cases</h4>
           <ul>
-            <li>
-              <strong>Corporate Networks:</strong> Large companies often maintain internal DNS zones (<code>.corp</code>, <code>.internal</code>) for servers, intranets, and applications not exposed to the internet.
-            </li>
-            <li>
-              <strong>Data Centers & Cloud VPCs:</strong> Cloud providers like AWS, Azure, GCP provide “private DNS” features for instances within a VPC or region.
-            </li>
-            <li>
-              <strong>Home Labs:</strong> Enthusiasts or IT professionals might run their own DNS server (e.g., Pi-hole, BIND) for ad-blocking, local caching, and custom hostnames on a home LAN.
-            </li>
-            <li>
-              <strong>Hybrid Environments:</strong> Tunnels or VPNs connect remote offices to a main data center. Private DNS ensures consistent naming across distributed networks.
-            </li>
+            <li><strong>Corporate Networks:</strong> Managing internal DNS zones (e.g., <code>.corp</code> or <code>.internal</code>) for servers and applications.</li>
+            <li><strong>Data Centers &amp; Cloud VPCs:</strong> Utilizing private DNS features provided by AWS, Azure, or GCP.</li>
+            <li><strong>Home Labs:</strong> Running local DNS servers for ad‑blocking, caching, and custom hostnames.</li>
+            <li><strong>Hybrid Environments:</strong> Connecting remote offices via VPNs while maintaining consistent internal naming.</li>
           </ul>
         </section>
 
-        <!-- Setup and Architecture -->
-        <section id="setup-architecture">
-          <h2 class="section-title">Setup & Architecture</h2>
+        <!-- 7. Private DNS Deployment Scenarios -->
+        <section class="preface-section fade-in" id="deployment-scenarios">
+          <h4>Private DNS Deployment Scenarios</h4>
+          <ol>
+            <li><strong>Enterprise Networks:</strong> Manage internal applications, authentication, and communications.</li>
+            <li><strong>Virtual Private Networks (VPNs):</strong> Ensure secure resolution within encrypted tunnels.</li>
+            <li><strong>Cloud &amp; Hybrid Environments:</strong> Use internal DNS zones for service discovery and load balancing.</li>
+            <li><strong>Home Networks &amp; IoT:</strong> Secure local devices and prevent reliance on external DNS.</li>
+          </ol>
+        </section>
+
+        <!-- 8. Setup &amp; Architecture -->
+        <section class="preface-section fade-in" id="setup-architecture">
+          <h4>Setup &amp; Architecture</h4>
           <p>
-            Private DNS can take multiple forms, depending on your organization’s size and requirements:
+            Private DNS can be implemented in several ways based on your organization's requirements:
           </p>
           <ol>
             <li>
               <strong>Authoritative DNS:</strong>
               <ul>
-                <li>You define internal zones (e.g., <code>company.local</code>) with resource records for each server or service.</li>
-                <li>Clients in the same network query this authoritative server directly or via a forwarding resolver.</li>
+                <li>Define internal zones (e.g., <code>company.local</code>) with resource records for each service.</li>
+                <li>Clients query the authoritative server directly or through a forwarding resolver.</li>
               </ul>
             </li>
             <li>
               <strong>Recursive Resolver with Forwarding:</strong>
               <ul>
-                <li>A local DNS resolver first checks if the query belongs to an internal zone; if yes, it answers from internal records.</li>
-                <li>Otherwise, it “forwards” or “resolves” the query on the internet’s public DNS hierarchy.</li>
+                <li>Resolves queries for internal zones and forwards external queries to public DNS.</li>
               </ul>
             </li>
             <li>
-              <strong>Split-Horizon DNS (Split-Brain DNS):</strong>
+              <strong>Split‑Horizon DNS:</strong>
               <ul>
-                <li>One DNS server provides different answers depending on the client’s source network (internal vs. external).</li>
-                <li>Internally, it resolves private IP addresses; externally, it may resolve public IP addresses or limited records.</li>
+                <li>Provides different answers based on whether the query is from inside or outside the network.</li>
               </ul>
             </li>
           </ol>
@@ -196,99 +255,149 @@ zone "company.local" {
           </pre>
         </section>
 
-        <!-- Security & Best Practices -->
-        <section id="security">
-          <h2 class="section-title">Security & Best Practices</h2>
+        <!-- 9. Private DNS Implementation -->
+        <section class="preface-section fade-in" id="implementation">
+          <h4>Private DNS Implementation</h4>
+          <h3>Self-Hosted DNS Server</h3>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Software</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>BIND</strong></td>
+                <td>Widely used, highly configurable, and scalable.</td>
+              </tr>
+              <tr>
+                <td><strong>Unbound</strong></td>
+                <td>Lightweight, high‑performance recursive resolver with caching.</td>
+              </tr>
+              <tr>
+                <td><strong>dnsmasq</strong></td>
+                <td>Ideal for small networks with integrated DHCP and DNS caching.</td>
+              </tr>
+              <tr>
+                <td><strong>CoreDNS</strong></td>
+                <td>Cloud‑native solution for microservices and Kubernetes.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Cloud‑Based Private DNS</h3>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Cloud Provider</th>
+                <th>Private DNS Service</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>AWS</strong></td>
+                <td>Route 53 Private Hosted Zones</td>
+              </tr>
+              <tr>
+                <td><strong>Azure</strong></td>
+                <td>Azure Private DNS Zones</td>
+              </tr>
+              <tr>
+                <td><strong>Google Cloud</strong></td>
+                <td>Cloud DNS Private Zones</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4>Configuration Example (BIND on Linux)</h4>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+sudo apt update && sudo apt install bind9 -y
+
+# Edit the configuration to add an internal zone
+sudo nano /etc/bind/named.conf.local
+
+# Add:
+zone "internal.company.local" {
+    type master;
+    file "/etc/bind/db.internal.company.local";
+};
+
+# Create the zone file
+sudo nano /etc/bind/db.internal.company.local
+
+$TTL 86400
+@   IN  SOA ns1.internal.company.local. admin.company.local. (
+    2024022401 ; Serial
+    3600       ; Refresh
+    1800       ; Retry
+    604800     ; Expire
+    86400      ; Minimum TTL
+)
+@   IN  NS  ns1.internal.company.local.
+ns1 IN  A   192.168.1.1
+
+# Restart BIND
+sudo systemctl restart bind9
+            </pre>
+          </div>
+        </section>
+
+        <!-- 10. Security &amp; Best Practices -->
+        <section class="preface-section fade-in" id="security-best-practices">
+          <h4>Security &amp; Best Practices</h4>
           <ul>
-            <li>
-              <strong>Access Control:</strong> Limit who can query or transfer your internal zones. Restrict zone transfers (AXFR/IXFR) to authorized secondary servers.
-            </li>
-            <li>
-              <strong>DNSSEC (Optional for Internal Zones):</strong> While not always deployed internally, DNSSEC can ensure data integrity within your private zone if you choose to use it.
-            </li>
-            <li>
-              <strong>TSIG Keys:</strong> Use Transaction Signatures for secure updates or zone transfers between DNS servers.
-            </li>
-            <li>
-              <strong>Firewall Rules:</strong> Only open DNS (UDP/TCP 53) to internal networks or specific IP ranges; block external traffic to your private DNS servers.
-            </li>
-            <li>
-              <strong>Auditing & Logging:</strong> Keep logs of DNS queries to track unusual activity, such as malware calling home via internal lookups.
-            </li>
-            <li>
-              <strong>Regular Maintenance:</strong> Update zone files, remove stale records, and keep software (like BIND, PowerDNS, or Windows DNS) patched.
-            </li>
+            <li><strong>Access Control:</strong> Restrict who can query or transfer your internal zones.</li>
+            <li><strong>DNSSEC (Optional):</strong> Deploy DNSSEC internally to ensure data integrity.</li>
+            <li><strong>TSIG Keys:</strong> Use for secure updates or zone transfers between DNS servers.</li>
+            <li><strong>Firewall Rules:</strong> Only allow DNS (UDP/TCP 53) on internal networks; block external traffic.</li>
+            <li><strong>Auditing &amp; Logging:</strong> Keep detailed logs to monitor unusual DNS activity.</li>
+            <li><strong>Regular Maintenance:</strong> Update zone files and patch your DNS software regularly.</li>
           </ul>
         </section>
 
-        <!-- Integrating Private DNS with Public DNS -->
-        <section id="integration">
-          <h2 class="section-title">Integrating Private DNS with Public DNS</h2>
-          <p>
-            Often, organizations need to combine private DNS for internal resources with public DNS for external domains. Strategies include:
-          </p>
+        <!-- 11. Integrating Private DNS with Public DNS -->
+        <section class="preface-section fade-in" id="integration-public">
+          <h4>Integrating Private DNS with Public DNS</h4>
           <ul>
-            <li>
-              <strong>Forwarding:</strong> Private resolvers forward external queries to public DNS (e.g., Cloudflare 1.1.1.1) if the record is not found locally.
-            </li>
-            <li>
-              <strong>Conditional Forwarders:</strong> If you have multiple internal zones in separate networks, create conditional forwarders (e.g., “if query is <code>dev.local</code>, forward to 10.10.10.10”).
-            </li>
-            <li>
-              <strong>Split-Horizon DNS:</strong> Provide different answers to the same domain name depending on whether the client is inside or outside the network. This is popular for hosting a website publicly while also having an internal version on a private IP.
-            </li>
+            <li><strong>Forwarding:</strong> Private resolvers can forward external queries to public DNS (e.g., Cloudflare 1.1.1.1) if no internal record exists.</li>
+            <li><strong>Conditional Forwarders:</strong> Configure rules to forward specific domain queries to designated public DNS servers.</li>
+            <li><strong>Split-Horizon DNS:</strong> Provide different responses based on whether the query originates from inside or outside the network.</li>
           </ul>
         </section>
 
-        <!-- Private DNS + Active Directory -->
-        <section id="active-directory">
-          <h2 class="section-title">Active Directory (AD) & Private DNS</h2>
-          <p>
-            In Windows-based networks, DNS is closely tied to <strong>Active Directory</strong>. AD relies on DNS for domain controller discovery, Kerberos authentication, and more. Here’s how it typically works:
-          </p>
+        <!-- 12. Active Directory &amp; Private DNS -->
+        <section class="preface-section fade-in" id="active-directory">
+          <h4>Active Directory (AD) &amp; Private DNS</h4>
           <ol>
-            <li>
-              <strong>DNS-Integrated Zones:</strong> When you promote a server to a domain controller, it creates a DNS zone (e.g., <code>ad.company.local</code>) that automatically updates as machines join the domain.
-            </li>
-            <li>
-              <strong>Service Records (SRV):</strong> Windows Domain Controllers register SRV records (e.g., <code>_ldap._tcp.ad.company.local</code>) so clients can find directory services.
-            </li>
-            <li>
-              <strong>Dynamic Updates:</strong> Windows clients send dynamic DNS (DDNS) updates to register or refresh their hostname-to-IP mappings.
-            </li>
+            <li><strong>DNS-Integrated Zones:</strong> Promoting a server to a domain controller creates a DNS zone (e.g., <code>ad.company.local</code>) that updates dynamically.</li>
+            <li><strong>Service Records (SRV):</strong> Domain controllers register SRV records (e.g., <code>_ldap._tcp.ad.company.local</code>) for directory service discovery.</li>
+            <li><strong>Dynamic Updates:</strong> Windows clients send DDNS updates to maintain accurate hostname-to-IP mappings.</li>
           </ol>
           <p>
-            Proper DNS configuration is crucial for a healthy AD environment. Misconfigured private DNS often leads to login failures, group policy errors, or domain controller lookup issues.
+            Proper DNS configuration is vital for AD functionality. Misconfigurations can lead to login failures or group policy errors.
           </p>
         </section>
 
-        <!-- Performance Considerations -->
-        <section id="performance">
-          <h2 class="section-title">Performance Considerations</h2>
+        <!-- 13. Performance Considerations -->
+        <section class="preface-section fade-in" id="performance">
+          <h4>Performance Considerations</h4>
           <ul>
-            <li>
-              <strong>Local Caching:</strong> Private resolvers cache frequently accessed records to speed up subsequent lookups.
-            </li>
-            <li>
-              <strong>Load Balancing & Redundancy:</strong> Running multiple DNS servers prevents a single point of failure. Consider using round-robin or anycast for large enterprise networks.
-            </li>
-            <li>
-              <strong>Forwarding vs. Full Recursion:</strong> Determine whether your private DNS server should do full recursion for external domains or just forward to a public resolver.
-            </li>
-            <li>
-              <strong>Low TTL for Dynamic Environments:</strong> If internal IPs change often (e.g., in containerized or VM-based deployments), set appropriate TTLs to avoid stale records.
-            </li>
+            <li><strong>Local Caching:</strong> Caches frequently accessed records to speed up subsequent lookups.</li>
+            <li><strong>Load Balancing &amp; Redundancy:</strong> Using multiple DNS servers prevents single points of failure.</li>
+            <li><strong>Forwarding vs. Full Recursion:</strong> Decide whether the server should resolve external queries or forward them.</li>
+            <li><strong>Low TTL for Dynamic Environments:</strong> Adjust TTL values to avoid stale records when internal IPs change frequently.</li>
           </ul>
         </section>
 
-        <!-- Real-World Example: BIND as a Private DNS -->
-        <section id="example-bind">
-          <h2 class="section-title">Example: Configuring BIND for Private DNS</h2>
+        <!-- 14. Real-World Example: Configuring BIND -->
+        <section class="preface-section fade-in" id="example-bind">
+          <h4>Example: Configuring BIND for Private DNS</h4>
           <ol>
             <li>
               <strong>Install BIND:</strong>
               <ul>
-                <li>On a Linux server (e.g., Ubuntu), run <code>sudo apt-get install bind9</code>.</li>
+                <li>On a Linux server, run <code>sudo apt-get install bind9</code>.</li>
               </ul>
             </li>
             <li>
@@ -299,15 +408,15 @@ zone "company.local" {
               </ul>
             </li>
             <li>
-              <strong>Restrict Queries & Transfers:</strong>
+              <strong>Restrict Queries &amp; Transfers:</strong>
               <ul>
-                <li>Use <code>allow-query</code> and <code>allow-transfer</code> directives to limit access to your LAN subnets or specific IP addresses.</li>
+                <li>Use <code>allow-query</code> and <code>allow-transfer</code> directives to limit access to your LAN or specific IP ranges.</li>
               </ul>
             </li>
             <li>
               <strong>Configure Forwarders (Optional):</strong>
               <ul>
-                <li>Point external lookups to a public DNS (e.g., 1.1.1.1). In <code>/etc/bind/named.conf.options</code>:
+                <li>In <code>/etc/bind/named.conf.options</code>, set forwarders to public DNS servers:
 <pre>
 forwarders {
   1.1.1.1;
@@ -318,19 +427,19 @@ forwarders {
               </ul>
             </li>
             <li>
-              <strong>Restart & Test:</strong>
+              <strong>Restart &amp; Test:</strong>
               <ul>
-                <li><code>sudo systemctl restart bind9</code></li>
-                <li>Verify internal queries (<code>dig server1.mydomain.internal @192.168.1.10</code>) and external lookups if forwarding is configured.</li>
+                <li>Run <code>sudo systemctl restart bind9</code>.</li>
+                <li>Verify internal queries (e.g., <code>dig server1.mydomain.internal @192.168.1.10</code>).</li>
               </ul>
             </li>
           </ol>
         </section>
 
-        <!-- Comparison Table: Private vs. Public DNS -->
-        <section id="comparison">
-          <h2 class="section-title">Comparison: Private DNS vs. Public DNS</h2>
-          <table>
+        <!-- 15. Comparison: Private DNS vs. Public DNS -->
+        <section class="preface-section fade-in" id="comparison">
+          <h4>Comparison: Private DNS vs. Public DNS</h4>
+          <table class="comparison-table">
             <thead>
               <tr>
                 <th>Feature</th>
@@ -346,52 +455,99 @@ forwarders {
               </tr>
               <tr>
                 <td>Usage Scope</td>
-                <td>Internal domains, private IP mapping</td>
-                <td>Any public domain on the global DNS</td>
+                <td>Internal domains and private IP mapping</td>
+                <td>Global domain resolution</td>
               </tr>
               <tr>
                 <td>Management</td>
-                <td>Controlled by organization (e.g., BIND, Windows DNS)</td>
-                <td>Managed by large resolvers (Google, Cloudflare, etc.)</td>
+                <td>Controlled by the organization (e.g., using BIND or Windows DNS)</td>
+                <td>Managed by large providers (e.g., Google, Cloudflare)</td>
               </tr>
               <tr>
                 <td>Security</td>
-                <td>Custom access rules, hidden from external networks</td>
-                <td>Various logging policies, exposed to global traffic</td>
+                <td>Custom access rules, restricted visibility</td>
+                <td>Exposed to global traffic with various logging policies</td>
               </tr>
               <tr>
                 <td>Advantages</td>
-                <td>Privacy, full control, local name resolution</td>
-                <td>Globally reachable, large infrastructure</td>
+                <td>Enhanced privacy, full control, and fast internal resolution</td>
+                <td>Robust global infrastructure and accessibility</td>
               </tr>
               <tr>
                 <td>Drawbacks</td>
-                <td>Needs internal administration, hardware, or VMs</td>
-                <td>Less control over logs, potential data mining</td>
+                <td>Requires internal administration and resources</td>
+                <td>Less control over logging and potential data mining</td>
               </tr>
             </tbody>
           </table>
         </section>
 
-        <!-- TL;DR Summary -->
-        <section id="summary">
-          <h2 class="section-title">TL;DR</h2>
+        <!-- 16. TL;DR Summary -->
+        <section class="preface-section fade-in" id="summary-tldr">
+          <h4>TL;DR</h4>
           <p>
-            A <strong>Private DNS</strong> server focuses on resolving internal domains and IP addresses within a closed or restricted environment. It protects internal infrastructure details, ensures consistent name resolution for employees or devices, and can optionally forward external queries to public DNS providers. Key points include:
+            A <strong>Private DNS</strong> server is designed to resolve internal domains within a closed environment, safeguarding internal infrastructure and ensuring consistent name resolution. It may forward external queries to public DNS while offering full control, enhanced security, and improved performance.
           </p>
           <ul>
-            <li><strong>Custom Internal Domains:</strong> Hostnames that have no presence on the global internet.</li>
-            <li><strong>Security:</strong> Restrict zone transfers, use TSIG for updates, and firewall off access to internal DNS servers.</li>
-            <li><strong>Integration:</strong> Active Directory, local resolvers, or split-horizon setups allow internal and external DNS to coexist seamlessly.</li>
-            <li><strong>Management:</strong> Tools like BIND, Windows DNS, or PowerDNS let you define private zones, forwarders, and policies.</li>
+            <li><strong>Custom Internal Domains:</strong> Hostnames that exist only within the organization.</li>
+            <li><strong>Security:</strong> Restricted access, TSIG, and firewall rules protect the DNS infrastructure.</li>
+            <li><strong>Integration:</strong> Supports Active Directory and local resolvers for seamless internal operations.</li>
+            <li><strong>Management:</strong> Tools like BIND or Windows DNS provide full control over DNS policies.</li>
           </ul>
-          <p>
-            Private DNS is a foundational component of enterprise, lab, and hybrid cloud environments. Properly implemented, it brings convenience, security, and centralized management to internal name resolution.
-          </p>
         </section>
 
       </div>
+      <!-- Next Chapter Navigation -->
+      <div class="next-chapter" style="text-align: right; margin-top: 2rem;">
+        <a href="../SubChapters/DomainRegistration.html" class="chapter-btn">
+          Next Chapter <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </main>
+
+    <!-- Right Sidebar: Table of Contents -->
+    <aside class="sidebar-toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#what-is-private-dns">What is Private DNS?</a></li>
+        <li><a href="#key-characteristics">Key Characteristics</a></li>
+        <li><a href="#why-private-dns">Why Use Private DNS?</a></li>
+        <li><a href="#benefits">Benefits of Private DNS</a></li>
+        <li><a href="#use-cases">Common Private DNS Use Cases</a></li>
+        <li><a href="#deployment-scenarios">Deployment Scenarios</a></li>
+        <li><a href="#setup-architecture">Setup &amp; Architecture</a></li>
+        <li><a href="#implementation">Private DNS Implementation</a></li>
+        <li><a href="#security-best-practices">Security &amp; Best Practices</a></li>
+        <li><a href="#integration-public">Integrating Private DNS with Public DNS</a></li>
+        <li><a href="#active-directory">Active Directory &amp; Private DNS</a></li>
+        <li><a href="#performance">Performance Considerations</a></li>
+        <li><a href="#example-bind">Example: Configuring BIND</a></li>
+        <li><a href="#comparison">Comparison: Private DNS vs. Public DNS</a></li>
+        <li><a href="#summary-tldr">TL;DR</a></li>
+      </ul>
+    </aside>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2025 Coding Over College</p>
+    <ul class="footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul>
+    <p>
+      Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+      <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+      <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+    </p>
   </div>
+</footer>
+
+<!-- Back to Top Button (added from inline text) -->
+<button id="backToTop" class="back-to-top">↑</button>
+
+<!-- JavaScript -->
+<script defer src="../../../script.js"></script>
 </body>
 </html>
