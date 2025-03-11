@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNS</title>
-  <!-- Make sure the path below is correct relative to your HTML file -->
-  <link rel="stylesheet" href="../../../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireshark: Comprehensive Guide to Network Traffic Analysis</title>
+  <!-- Google Fonts for Montserrat and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="../SubChapters/SubChapter.css">
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters</button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="donate.html">Community</a></li>
         <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../../DNS/DNS.html">DNS</a></li>
-        <li><a href="../../References/References.html">References</a></li>
-        <li><a href="../../Keywords/Keywords.html">Google Keywords Library</a></li>
       </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="user-profile">
+      <a href="#" class="btn-login">Donate</a>
+    </div>
   </header>
 
-  <div class="container">
-    <!-- Sidebar specific to DNS Topics -->
-    <aside class="chapter-sidebar">
-      <h3>DNS Topics</h3>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Wireshark: Comprehensive Guide to Network Traffic Analysis</h1>
+      <p class="chapter-subtext">
+        Discover Wireshark's powerful features, installation steps, capturing techniques, filtering methods, protocol analysis, and troubleshooting strategies to master network packet analysis.
+      </p>
+      <p class="reading-time">Estimated reading time: calculating...</p>
+      <div class="hero-graphic">
+        <div class="animated-bg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTAINER: Left Sidebar, Main Content, TOC Sidebar -->
+  <div class="three-column-container">
+    <!-- Left Sidebar: Subchapters -->
+    <aside class="sidebar-subchapters">
+      <h2>Subchapters</h2>
       <ul>
         <li><a href="../SubChapters/Resolvers.html">Resolvers</a></li>
         <li><a href="../SubChapters/Caching.html">Caching</a></li>
@@ -43,265 +98,360 @@
         <li><a href="../SubChapters/ServerSetup.html">Server Setup</a></li>
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
-        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing attacks</a></li>
+        <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
         <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
-        <li><a href="../SubChapters/DoT.html">Dns over TLS</a></li>
+        <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
-        <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
+        <li><a href="../SubChapters/Advancenslookup.html">Advanced nslookup</a></li>
         <li><a href="../SubChapters/Wireshark.html">Wireshark</a></li>
         <li><a href="../SubChapters/ResolvingDomainFailures.html">Resolving Domain Failures</a></li>
         <li><a href="../SubChapters/CheckingDNSPropagation.html">Checking DNS Propagation</a></li>
       </ul>
     </aside>
 
-    <main class="mainbody">
-      
+    <!-- Main Content -->
+    <main class="chapter-content">
       <div class="subchapterBody">
-      <section id="introduction">
-        <h2 class="section-title">DNS Resolvers</h2>
-        <p>
-          DNS resolvers are servers on the internet that translate domain names into IP addresses. Their purpose is to let people use the internet using readable names instead of long strings of numbers. There are two main types:
-          <strong>Recursive Resolvers</strong> and <strong>Iterative Resolvers</strong>.
-        </p>
-      </section>
+        <!-- Section 1: Introduction -->
+        <section class="preface-section fade-in" id="ws-introduction">
+          <h4>Introduction</h4>
+          <p>
+            Wireshark is a powerful, open-source network protocol analyzer used for capturing and inspecting network packets in real-time. It is a critical tool for network administrators, security analysts, and forensic investigators, enabling them to troubleshoot network issues, detect security threats, and analyze traffic flows in depth.
+          </p>
+          <p>
+            This chapter covers Wireshark's features, installation, capturing techniques, filtering methods, protocol analysis, troubleshooting techniques, automation, security implications, and best practices to ensure a thorough understanding of network packet analysis.
+          </p>
+        </section>
 
-      <section id="recursive-resolvers">
-        
-        <h2 class="section-title">Recursive Resolvers</h2>
+        <!-- Section 2: Installing Wireshark -->
+        <section class="preface-section fade-in" id="ws-installation">
+          <h4>Installing Wireshark</h4>
+          <h3>Windows</h3>
+          <ol>
+            <li>Download Wireshark from <a href="https://www.wireshark.org/" target="_blank">Wireshark.org</a>.</li>
+            <li>Run the installer and select <strong>Npcap</strong> during installation (required for packet capturing).</li>
+            <li>Allow Wireshark to install WinPcap/Npcap for live traffic analysis.</li>
+          </ol>
+          <h3>Linux (Debian-based)</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+sudo apt update
+sudo apt install wireshark -y
+            </pre>
+          </div>
+          <p>Grant non-root users permission to capture packets:</p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+sudo usermod -aG wireshark $USER
+            </pre>
+          </div>
+          <p>Restart your system or log out and back in to apply changes.</p>
+          <h3>macOS</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+brew install wireshark
+            </pre>
+          </div>
+          <p>Ensure <strong>Npcap</strong> is installed for proper packet capturing.</p>
+        </section>
 
-        <h3>What is a Recursive Resolver?</h3>
-        <p>
-          A recursive resolver (also called a DNS resolver) is a server that receives DNS queries from clients (such as web browsers) and recursively queries other DNS servers until it finds the correct answer.
-        </p>
-      
-      
-        <h3>Key Characteristics</h3>
-        <ul>
-          <li>Performs all the work to resolve a domain name.</li>
-          <li>Caches responses to improve performance.</li>
-          <li>Communicates with multiple types of DNS servers (root, TLD, authoritative).</li>
-          <li>Can be provided by ISPs, cloud services (Google, Cloudflare), or private networks.</li>
-        </ul>
+        <!-- Section 3: Understanding Wireshark’s Interface -->
+        <section class="preface-section fade-in" id="ws-interface">
+          <h4>Understanding Wireshark’s Interface</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Section</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Menu Bar</td>
+                <td>Provides access to file operations, view settings, capture options, and analysis tools.</td>
+              </tr>
+              <tr>
+                <td>Toolbar</td>
+                <td>Contains shortcuts for starting/stopping captures, saving files, and applying filters.</td>
+              </tr>
+              <tr>
+                <td>Packet List Pane</td>
+                <td>Displays captured packets in sequential order.</td>
+              </tr>
+              <tr>
+                <td>Packet Details Pane</td>
+                <td>Shows protocol breakdowns for the selected packet.</td>
+              </tr>
+              <tr>
+                <td>Packet Bytes Pane</td>
+                <td>Displays raw hexadecimal and ASCII data.</td>
+              </tr>
+              <tr>
+                <td>Status Bar</td>
+                <td>Provides capture statistics and real-time updates.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-        <h3>How Does It Work?</h3>
-        <ol>
-          <li>
-            <strong>Check Local Cache:</strong>
-            <ul>
-              <li>The resolver first checks if it already knows the answer (from a previous lookup or local host files).</li>
-              <li>If found in cache, it returns the result immediately; otherwise, it proceeds to ask external servers.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Root DNS Server:</strong>
-            <ul>
-              <li>If the answer is not cached, the resolver contacts a root DNS server, which does not know the IP for the domain but directs it to a Top-Level Domain (TLD) server (e.g., for .com).</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the TLD DNS Server:</strong>
-            <ul>
-              <li>The TLD server doesn’t store the full record but tells the resolver which authoritative DNS server holds the information.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Authoritative DNS Server:</strong>
-            <ul>
-              <li>The authoritative server, which belongs to the website owner or hosting provider, provides the exact IP address.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Return the Answer:</strong>
-            <ul>
-              <li>The resolver sends the IP address back to the requesting client.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Cache the Result:</strong>
-            <ul>
-              <li>The result is stored for a certain Time-To-Live (TTL) to answer future queries quickly.</li>
-            </ul>
-          </li>
-        </ol>
+        <!-- Section 4: Capturing Network Traffic -->
+        <section class="preface-section fade-in" id="ws-capturing">
+          <h4>Capturing Network Traffic</h4>
+          <h3>Starting a Packet Capture</h3>
+          <ol>
+            <li>Open Wireshark.</li>
+            <li>Select the network interface to monitor.</li>
+            <li>Click <strong>Start Capture</strong>.</li>
+            <li>Observe packets in real-time.</li>
+            <li>Click <strong>Stop</strong> when enough data has been collected.</li>
+          </ol>
+          <h3>Saving Captures</h3>
+          <p>Save captured data for later analysis:</p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+File > Save As > Choose .pcapng format
+            </pre>
+          </div>
+          <p>Load a saved capture:</p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+File > Open > Select .pcapng file
+            </pre>
+          </div>
+        </section>
 
-        <h3>Example Process</h3>
-        <p>For example, when a user enters <code>example.com</code> in a browser:</p>
-        <ul>
-          <li>The resolver (e.g., Google’s 8.8.8.8) is contacted.</li>
-          <li>If no cached record exists, it queries a root server, then a .com TLD server, and finally the authoritative server which returns an IP (e.g., <code>93.184.216.34</code>).</li>
-          <li>The IP is sent back to the browser, allowing the website to load.</li>
-        </ul>
+        <!-- Section 5: Filtering Packets for Analysis -->
+        <section class="preface-section fade-in" id="ws-filtering">
+          <h4>Filtering Packets for Analysis</h4>
+          <h3>Capture Filters (Before Capturing)</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+host 192.168.1.1      # Capture only traffic from/to this IP
+port 80               # Capture only HTTP traffic
+net 192.168.1.0/24    # Capture only traffic within a subnet
+            </pre>
+          </div>
+          <h3>Display Filters (After Capturing)</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+ip.src == 192.168.1.1   # Show only packets from this source
+ip.dst == 8.8.8.8       # Show only packets going to this destination
+http.request            # Show only HTTP requests
+udp.port == 53          # Show only DNS queries
+            </pre>
+          </div>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Common Display Filters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>tcp.port == 443</td>
+                <td>Filter HTTPS traffic</td>
+              </tr>
+              <tr>
+                <td>dns</td>
+                <td>Display only DNS packets</td>
+              </tr>
+              <tr>
+                <td>icmp</td>
+                <td>Show ICMP (ping) traffic</td>
+              </tr>
+              <tr>
+                <td>eth.addr == 00:11:22:33:44:55</td>
+                <td>Filter by MAC address</td>
+              </tr>
+              <tr>
+                <td>frame contains "password"</td>
+                <td>Search for specific keywords in packets</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-        <h3>Where Do Recursive Resolvers Exist?</h3>
-        <ul>
-          <li>Internet Service Providers (ISPs) such as Comcast, AT&T, or Vodafone.</li>
-          <li>Public DNS Providers:
-            <ul>
-              <li>Google Public DNS (8.8.8.8, 8.8.4.4)</li>
-              <li>Cloudflare DNS (1.1.1.1)</li>
-              <li>OpenDNS (208.67.222.222)</li>
-            </ul>
-          </li>
-          <li>Private Networks (organizations running their own DNS infrastructure).</li>
-          <li>Self-hosted resolvers using software like Unbound, BIND, or Pi-hole.</li>
-        </ul>
+        <!-- Section 6: Analyzing Protocols with Wireshark -->
+        <section class="preface-section fade-in" id="ws-protocols">
+          <h4>Analyzing Protocols with Wireshark</h4>
+          <h3>HTTP/HTTPS Analysis</h3>
+          <ul>
+            <li>Identify GET, POST, and response codes.</li>
+            <li>Track cookies, authentication tokens, and API calls.</li>
+            <li>Filter web traffic using: <code>http.request</code></li>
+          </ul>
+          <h3>DNS Analysis</h3>
+          <ul>
+            <li>Detect DNS queries and responses.</li>
+            <li>Identify malicious DNS exfiltration.</li>
+            <li>Filter DNS traffic using: <code>dns && ip.addr == 8.8.8.8</code></li>
+          </ul>
+          <h3>TCP Handshake Analysis</h3>
+          <ul>
+            <li>Identify SYN, SYN-ACK, and ACK packets.</li>
+            <li>Troubleshoot failed connections.</li>
+            <li>Filter TCP handshake using: <code>tcp.flags.syn == 1 && tcp.flags.ack == 0</code></li>
+          </ul>
+          <h3>ICMP (Ping) Traffic Analysis</h3>
+          <ul>
+            <li>Detect ping requests and responses.</li>
+            <li>Identify unreachable hosts.</li>
+            <li>Filter ICMP traffic using: <code>icmp</code></li>
+          </ul>
+        </section>
 
-        <h3>Security Risks &amp; Protections</h3>
-        <ul>
-          <li>
-            <strong>DNS Cache Poisoning:</strong> Attackers may inject false DNS records into a resolver’s cache. 
-            <br /><em>Protection:</em> Use DNSSEC (DNS Security Extensions) to validate responses.
-          </li>
-          <li>
-            <strong>DDoS Attacks (Amplification &amp; Reflection):</strong> Spoofed DNS queries can cause a resolver to flood a target with traffic.
-            <br /><em>Protection:</em> Implement rate limiting and proper query filtering.
-          </li>
-          <li>
-            <strong>Data Privacy Concerns:</strong> Logging by ISPs can compromise privacy.
-            <br /><em>Protection:</em> Use privacy-focused resolvers (e.g., Cloudflare 1.1.1.1, Quad9) or encrypted DNS protocols such as DNS over HTTPS (DoH) or DNS over TLS (DoT).
-          </li>
-        </ul>
+        <!-- Section 7: Troubleshooting Network Issues -->
+        <section class="preface-section fade-in" id="ws-troubleshooting">
+          <h4>Troubleshooting Network Issues</h4>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Issue</th>
+                <th>Possible Cause</th>
+                <th>Wireshark Filter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Slow Network Performance</td>
+                <td>High latency or packet loss</td>
+                <td><code>tcp.analysis.flags</code></td>
+              </tr>
+              <tr>
+                <td>DNS Resolution Failures</td>
+                <td>Misconfigured DNS server</td>
+                <td><code>dns && ip.addr == DNS_SERVER</code></td>
+              </tr>
+              <tr>
+                <td>Dropped Packets</td>
+                <td>Firewall or congestion</td>
+                <td><code>tcp.flags.reset == 1</code></td>
+              </tr>
+              <tr>
+                <td>Unauthorized Access</td>
+                <td>Malicious or unknown IPs</td>
+                <td><code>ip.src != TRUSTED_IP</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Detecting Malicious Traffic</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+dns.qry.name contains "malware.com"
+            </pre>
+          </div>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+tcp.len > 1000 && ip.dst != TRUSTED_NETWORK
+            </pre>
+          </div>
+        </section>
 
-        <h3>Performance Optimizations</h3>
-        <ul>
-          <li>Caching recent lookups to avoid redundant queries.</li>
-          <li>Prefetching to resolve queries in advance.</li>
-          <li>Load Balancing to distribute traffic across multiple servers.</li>
-          <li>Anycast Routing to direct queries to the nearest server, reducing latency.</li>
-          <li>Negative Caching to store information about failed lookups.</li>
-        </ul>
+        <!-- Section 8: Automating Wireshark with Tshark -->
+        <section class="preface-section fade-in" id="ws-tshark">
+          <h4>Automating Wireshark with Tshark</h4>
+          <h3>1. Capturing Traffic from CLI</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+tshark -i eth0 -w capture.pcapng
+            </pre>
+          </div>
+          <h3>2. Applying Filters in Tshark</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+tshark -i eth0 -Y "http.request" -w http_traffic.pcapng
+            </pre>
+          </div>
+          <h3>3. Extracting Specific Fields</h3>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre class="code-snippet">
+tshark -r capture.pcapng -T fields -e ip.src -e ip.dst
+            </pre>
+          </div>
+        </section>
 
-        <h3>Real-World Example: Google Public DNS (8.8.8.8)</h3>
-        <ul>
-          <li>Fast performance with a global network of servers.</li>
-          <li>Enhanced security via DNSSEC validation.</li>
-          <li>Privacy improvements with minimal logging and support for encrypted DNS (DoH, DoT).</li>
-        </ul>
-      </section>
+        <!-- Section 9: Best Practices for Using Wireshark -->
+        <section class="preface-section fade-in" id="ws-best-practices">
+          <h4>Best Practices for Using Wireshark</h4>
+          <ul>
+            <li>Limit packet captures by using capture filters to reduce unnecessary data.</li>
+            <li>Use display filters efficiently to narrow down results.</li>
+            <li>Analyze traffic patterns and look for unusual spikes.</li>
+            <li>Save and document captures for future analysis.</li>
+            <li>Ensure compliance with organizational policies for network monitoring.</li>
+          </ul>
+        </section>
 
-      <!-- Iterative Resolvers Section -->
-      <section id="iterative-resolvers">
-        <h2 class="section-title">Iterative Resolvers</h2>
-
-        <h3>How Does an Iterative Resolver Work?</h3>
-        <ol>
-          <li>
-            <strong>Client Query:</strong>
-            <ul>
-              <li>The client (e.g., a browser) sends a DNS query to the iterative resolver.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Root DNS Server:</strong>
-            <ul>
-              <li>The client directly queries a root DNS server, which responds with a referral to a Top-Level Domain (TLD) server.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the TLD DNS Server:</strong>
-            <ul>
-              <li>The client then queries the referred TLD server, which provides a referral to the authoritative server.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Query the Authoritative DNS Server:</strong>
-            <ul>
-              <li>The client queries the authoritative server, which returns the final IP address.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Establish Connection:</strong>
-            <ul>
-              <li>The client uses the obtained IP address to connect directly to the website.</li>
-            </ul>
-          </li>
-        </ol>
-
-        <h3>Example of Iterative Query Resolution</h3>
-        <ul>
-          <li>User enters <code>example.com</code> in a browser.</li>
-          <li>The client’s local resolver contacts a root server, receiving a referral to a TLD server.</li>
-          <li>The client then queries the TLD server, and finally the authoritative server, which returns <code>93.184.216.34</code>.</li>
-          <li>The browser connects to the website using the provided IP address.</li>
-        </ul>
-
-        <h3>Security Risks &amp; Protections</h3>
-        <ul>
-          <li>
-            <strong>DNS Spoofing &amp; Cache Poisoning:</strong> Attackers may inject false records.
-            <br /><em>Protection:</em> Use DNSSEC to validate responses.
-          </li>
-          <li>
-            <strong>DDoS Attacks on Root &amp; TLD Servers:</strong> High query volumes can overwhelm servers.
-            <br /><em>Protection:</em> Rate limiting and Anycast routing help mitigate these attacks.
-          </li>
-          <li>
-            <strong>Interception &amp; Surveillance:</strong> Unencrypted DNS queries can be intercepted.
-            <br /><em>Protection:</em> Encrypted DNS protocols like DoH and DoT offer improved security.
-          </li>
-        </ul>
-
-        <h3>Performance Optimizations</h3>
-        <ul>
-          <li>Anycast Routing to reduce latency by directing queries to the nearest available server.</li>
-          <li>Load Balancing to evenly distribute query traffic.</li>
-          <li>Distributed Root Servers that lower response times globally.</li>
-          <li>Efficient query processing at TLD and root servers.</li>
-        </ul>
-
-        <h3>Real-World Example: Root DNS Servers</h3>
-        <p>
-          When a recursive resolver queries a root DNS server for <code>example.com</code>, the root server responds with a referral rather than a final IP address. For example:
-        </p>
-        <pre>
-dig example.com @198.41.0.4
-
-Response:
-example.com. 172800 IN NS a.iana-servers.net.
-        </pre>
-      </section>
-
-      <!-- Comparison Table -->
-      <section id="comparison">
-        <h3 class="section-title">Comparison: Recursive vs. Iterative Resolvers</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Recursive Resolver</th>
-              <th>Iterative Resolver</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Handles Full Query Process?</td>
-              <td>Yes, it contacts multiple servers</td>
-              <td>No, it directs the client to contact servers</td>
-            </tr>
-            <tr>
-              <td>Used by Clients?</td>
-              <td>Yes (Browsers, OS)</td>
-              <td>No</td>
-            </tr>
-            <tr>
-              <td>Caches DNS Responses?</td>
-              <td>Yes</td>
-              <td>No</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- TL;DR Summary -->
-      <section id="summary">
-        <h3 class="section-title">TL;DR</h2>
-        <p>
-          The main difference between recursive and iterative resolvers is that recursive resolvers handle the entire DNS query process on behalf of the client, while iterative resolvers provide referrals at each step, leaving the client to make the subsequent queries.
-        </p>
-      
-      </section>
-    </div>
+        <!-- Section 10: Conclusion -->
+        <section class="preface-section fade-in" id="ws-conclusion">
+          <h4>Conclusion</h4>
+          <p>
+            Wireshark is a powerful tool for analyzing, troubleshooting, and securing network traffic. By understanding packet structures, filtering techniques, protocol behaviors, and automation, users can gain deep insights into network performance and security threats.
+          </p>
+          <p>
+            <strong>Next Steps:</strong> Practice using Wireshark filters to refine your searches, set up automated packet captures with Tshark, analyze real-world attack scenarios, and combine Wireshark with other security tools for enhanced network defense.
+          </p>
+        </section>
+      </div>
+      <div class="next-chapter">
+        <a href="../SubChapters/Advanced_nslookup.html" class="chapter-btn">
+          Next Chapter <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </main>
+
+    <!-- Right Sidebar: Table of Contents -->
+    <aside class="sidebar-toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#ws-introduction">Introduction</a></li>
+        <li><a href="#ws-installation">Installing Wireshark</a></li>
+        <li><a href="#ws-interface">Wireshark’s Interface</a></li>
+        <li><a href="#ws-capturing">Capturing Traffic</a></li>
+        <li><a href="#ws-filtering">Filtering Packets</a></li>
+        <li><a href="#ws-protocols">Analyzing Protocols</a></li>
+        <li><a href="#ws-troubleshooting">Troubleshooting Issues</a></li>
+        <li><a href="#ws-tshark">Automating with Tshark</a></li>
+        <li><a href="#ws-best-practices">Best Practices</a></li>
+        <li><a href="#ws-conclusion">Conclusion</a></li>
+      </ul>
+    </aside>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Coding Over College</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p>
+        Inspired by <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtoposed" target="_blank">Juxtoposed</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <!-- JavaScript -->
+  <script defer src="../../../script.js"></script>
 </body>
 </html>
