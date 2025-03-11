@@ -640,90 +640,88 @@
 /* ==========================================================================
    14. THREE-COLUMN LAYOUT FOR LARGER SCREENS
    ========================================================================== */
-/* Container for three columns with side padding ensuring asides remain 2rem from screen edge */
-.three-column-container {
-  display: flex;
-  align-items: flex-start;
-  overflow: visible;
-  width: 100%;
-  gap: 2rem;
-  padding: 0 2rem;
-}
 
-.three-column-container .chapter-content {
-  flex: 1;
-  min-width: 500;
-}
-.sidebar-subchapters,
-.sidebar-toc {
-  flex: 0 1 300px;  /* Start with 300px but allow shrinking */
-  min-width: 150px; /* They won’t shrink below 150px */
-}
+   .three-column-container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
   
-
-  .sidebar-subchapters {
-    flex: 0 1 300px; 
+  /* Main Content: Grows to fill remaining space */
+  .three-column-container .chapter-content {
+    flex: 1;
+    min-width: 500px;
+  }
+  
+  /* Shared Sidebar Styles */
+  .sidebar-subchapters,
+  .sidebar-toc {
+    flex: 0 1 300px;         /* Max ~300px but can shrink if needed */
+    min-width: 150px;        /* Won’t shrink below 150px */
     position: sticky;
     top: 100px; 
     max-height: calc(100vh - 4rem - 100px); 
     margin-top: 2rem;
     margin-bottom: 2rem;
     overflow-y: auto;
-    background: rgba(255, 255, 255, 0.05);
+  
+    /* Subtle gradient background for a slight dimensional effect */
+    background: linear-gradient(135deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.08)
+    );
+  
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    padding: 1rem;
-    direction: rtl; 
-    text-align: left;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  
+    /* Typography adjustments for better readability */
+    font-size: 0.95rem;       /* Slightly smaller text in sidebars */
+    line-height: 1.5;         /* Good vertical spacing */
+    letter-spacing: 0.01rem;  /* Subtle letter spacing */
+    word-break: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto; 
+    -moz-hyphens: auto;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
   
   
-  
-
-.sidebar-toc {
-  flex: 0 1 300px;
-  position: sticky;
-  top: 100px; 
-  max-height: calc(100vh - 4rem - 100px); 
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  overflow-y: auto;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 1rem;
-}
-
+  /* Hover “lift” effect for the entire sidebar box */
+  .sidebar-subchapters:hover,
+  .sidebar-toc:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
   
   /* Hide scrollbar for aesthetics, but keep functionality */
-.sidebar-subchapters::-webkit-scrollbar,
-.sidebar-toc::-webkit-scrollbar {
+  .sidebar-subchapters::-webkit-scrollbar,
+  .sidebar-toc::-webkit-scrollbar {
     width: 8px;
-}
-
-.sidebar-subchapters::-webkit-scrollbar-track,
-.sidebar-toc::-webkit-scrollbar-track {
+  }
+  .sidebar-subchapters::-webkit-scrollbar-track,
+  .sidebar-toc::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-subchapters::-webkit-scrollbar-thumb,
-.sidebar-toc::-webkit-scrollbar-thumb {
+  }
+  .sidebar-subchapters::-webkit-scrollbar-thumb,
+  .sidebar-toc::-webkit-scrollbar-thumb {
     background: var(--color-accent);
     border-radius: 4px;
-}
-
-  /* Main Content: Grows to fill remaining space */
-  .three-column-container .chapter-content {
-    flex: 1;
   }
   
   /* Sidebar Headings */
   .sidebar-subchapters h2,
   .sidebar-toc h2 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.25rem;       /* Slightly smaller than before for sidebars */
     color: var(--color-heading);
     margin-bottom: 1rem;
+    /* Subtle left border accent */
+    border-left: 4px solid var(--color-accent);
+    padding-left: 0.75rem;   
   }
   
   /* Sidebar Lists */
@@ -734,9 +732,10 @@
     margin: 0;
   }
   
+  /* Space out each list item a bit more */
   .sidebar-subchapters li,
   .sidebar-toc li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
   
   /* Sidebar Links */
@@ -746,11 +745,12 @@
     text-decoration: none;
     font-weight: 600;
     display: block;
-    padding: 0.5rem;
+    padding: 0.4rem 0.5rem;
     border-radius: 4px;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
   }
   
+  /* Hover highlight & slight shift to the right */
   .sidebar-subchapters a:hover,
   .sidebar-toc a:hover {
     background-color: var(--color-accent);
@@ -762,7 +762,7 @@
   .sidebar-toc a.active {
     background-color: var(--color-secondary);
     color: #000;
-    font-weight: bold;
+    font-weight: 700;
   }
   
   /* Responsive adjustments for three-column layout */
@@ -776,6 +776,7 @@
       display: none;
     }
   }
+  
   /* =======================
    15. HERO SECTION
 ======================= */
