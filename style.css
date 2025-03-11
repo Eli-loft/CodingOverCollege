@@ -966,107 +966,228 @@ img {
 }
 
 /* =======================
+   "SecondChance" style duplication
+======================= */
+body.google-library {
+  background: linear-gradient(150deg, #2a2a2a, #1e1e1e 75%);
+  color: #f7f7f7;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body.google-library .chapter-content {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+body.google-library .chapter-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  color: #3ce3ce; 
+  margin-bottom: 1.5rem;
+}
+
+body.google-library .chapter-content p {
+  font-size: 1rem; 
+  line-height: 1.6; 
+  max-width: 700px;
+  margin: 0 auto 2rem auto; 
+  color: #f7f7f7;
+}
+
+/* =======================
+   Blurred content
+======================= */
+.blur {
+  filter: blur(8px);
+  transition: filter 0.5s ease;
+  /* Removed any fixed height to prevent text shrinkage */
+  height: auto;
+}
+
+.chapter-content.blur h1 {
+  font-size: 3rem; /* Larger heading when blurred */
+}
+
+.chapter-content.blur p {
+  font-size: 1rem; /* Explicitly defined font-size instead of 'rem;' */
+  line-height: 1.6;
+}
+
+/* =======================
    NEW CONTENT BLUR EFFECT STYLES
-======================== */
+======================= */
 .chapter-content {
-      position: relative;
-      padding: 2rem;
-    }
-    /* Hazard ribbons container: above the blurred content (default z-index) but below the button */
-    .hazard-ribbons {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 8;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
-    }
-    /* Each hazard ribbon styled to look like a thin diagonal ribbon */
-    .hazard-ribbon {
-      position: absolute;
-      width: 150%;
-      height: 40px;
-      background-image: repeating-linear-gradient(
-        -55deg,
-        #000,
-        #000 20px,
-        #ffb101 20px,
-        #ffb101 40px
-      );
-      opacity: 0.8;
-    }
-    /* Example positions for multiple ribbons */
-    .hazard-ribbon:nth-child(1) {
-      top: 20%;
-      left: -10%;
-      transform: rotate(10deg);
-    }
-    .hazard-ribbon:nth-child(2) {
-      top: 40%;
-      left: -10%;
-      transform: rotate(-10deg);
-    }
-    .hazard-ribbon:nth-child(3) {
-      top: 80%;
-      left: -5%;
-      transform: rotate(5deg)
-    }
-    /* Blurred content styling */
-    .blur {
-      filter: blur(8px);
-      transition: filter 0.5s ease;
-      height: 85vh;
-    }
-    /* Center the unlock button on top (z-index:10) */
-    #unlockContent {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-    }
-   
-    
-    
-    /* Keep the button centered on top of the blurred content */
-    #downloadResume {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-    }
+  position: relative;
+  padding: 2rem;
+}
+
+/* Hazard ribbons container: above the blurred content (default z-index) but below the button */
+.hazard-ribbons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Each hazard ribbon styled to look like a thin diagonal ribbon */
+.hazard-ribbon {
+  position: absolute;
+  width: 150%;
+  height: 40px;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    #000,
+    #000 20px,
+    #ffb101 20px,
+    #ffb101 40px
+  );
+  opacity: 0.8;
+}
+
+/* Example positions for multiple ribbons */
+.hazard-ribbon:nth-child(1) {
+  top: 20%;
+  left: -10%;
+  transform: rotate(10deg);
+}
+.hazard-ribbon:nth-child(2) {
+  top: 40%;
+  left: -10%;
+  transform: rotate(-10deg);
+}
+.hazard-ribbon:nth-child(3) {
+  top: 80%;
+  left: -5%;
+  transform: rotate(5deg);
+}
+.hazard-ribbon:nth-child(4) {
+  top: 50%;
+  left: -25%;
+  transform: rotate(30deg);
+}
+.hazard-ribbon:nth-child(5) {
+  top: 60%;
+  left: -10%;
+  transform: rotate(-5deg);
+}
+
+/* Center the "Unlock Content" button on top (z-index:10) */
+#unlockContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* Keep the #downloadResume button centered on top of blurred content */
+#downloadResume {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* Exit Modal Styles */
+.exit-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.exit-modal .modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+  text-align: center;
+}
+.exit-modal .modal-content button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Term class fix */
+.term {
+  text-align: left;
+  padding-left: 0%;
+  text-indent: 0 !important;
+}
 
     /* ================================
    SECOND CHANCE PAGE SPECIFIC STYLES
    (Scoped under body.second-chance)
 ================================ */
-.second-chance .chapter-content {
-  height: 85vh; /* Chapter content occupies 85% of viewport height */
-  text-align: center;
-  padding: 1rem;
+/* 
+  SecondChance.css 
+  Page-specific overrides & styles for the "second-chance" body
+*/
+
+/* Give the page a unique background or color scheme */
+body.second-chance {
+  background: linear-gradient(150deg, #2a2a2a, #1e1e1e 75%);
+  color: #f7f7f7;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make sure the header text stands out against darker bg */
+body.second-chance .header {
+  background-color: #393939; /* Slightly darker header */
+}
+
+/* Adjust the main content area to be bigger and centered */
+body.second-chance .chapter-content {
+  min-height: calc(100vh - 140px); 
+  /* 100vh minus approx. header+footer height, adjust as needed */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 0; /* Remove any top margin */
+  text-align: center;
+  padding: 2rem;
 }
 
-.second-chance .chapter-content h1 {
-  color: var(--color-accent);
-  font-family: var(--font-heading);
+/* Style the main heading */
+body.second-chance .chapter-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  color: #3ce3ce; /* aqua accent from style.css */
+  margin-bottom: 1.5rem;
 }
 
-.second-chance .chapter-content p {
-  max-width: 700px;
-  margin: 1rem auto;
+/* Style the text paragraphs */
+body.second-chance .chapter-content p {
+  font-size: 1rem;
   line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 2rem auto; 
+  color: #f7f7f7;
 }
 
-.second-chance .try-again-btn {
-  background-color: var(--color-accent);
+/* Style the main button */
+body.second-chance .try-again-btn {
+  background-color: #3ce3ce; /* aqua accent */
   color: #000;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -1074,50 +1195,63 @@ img {
   border-radius: 4px;
   cursor: pointer;
   text-transform: uppercase;
-  margin: 2rem auto;
-  position: relative;
- 
-  
-  z-index: 10;
+  transition: background 0.3s, transform 0.2s;
 }
-    
+body.second-chance .try-again-btn:hover {
+  background-color: #b082f7; /* secondary purple accent from style.css */
+  transform: translateY(-2px);
+}
+
+/* Modal styling (optional) */
+body.second-chance .exit-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+body.second-chance .exit-modal .modal-content {
+  background: #2a2a2a;
+  padding: 2rem;
+  border-radius: 6px;
+  text-align: center;
+  color: #f7f7f7;
+}
+body.second-chance .exit-modal .modal-content button {
+  background: #3ce3ce;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+/* Footer adjustments */
+body.second-chance .footer {
+  background-color: #393939;
+}
+body.second-chance .footer-content p,
+body.second-chance .footer-content a {
+  color: #cccccc; 
+  font-size: 0.9rem;
+}
+
+/* 
+  (Optional) Tweak your header nav links to match or 
+  rely on your existing style.css. 
+*/
+
  /* ================================
    SECOND CHANCE PAGE SPECIFIC STYLES
    (Scoped under body.second-chance)
 ================================ */
-.second-chance .chapter-content {
-  height: 85vh; /* Chapter content occupies 85% of viewport height */
-  text-align: center;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0; /* Remove any top margin */
-}
-
-.second-chance .chapter-content h1 {
-  color: var(--color-accent);
-  font-family: var(--font-heading);
-}
-
-.second-chance .chapter-content p {
-  max-width: 700px;
-  margin: 1rem auto;
-  line-height: 1.6;
-}
-
-.second-chance .cta-btn {
-  background-color: var(--color-accent);
-  color: #000;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-  margin: 2rem auto;
-}
 
 /* Exit Modal Styles */
 .exit-modal {

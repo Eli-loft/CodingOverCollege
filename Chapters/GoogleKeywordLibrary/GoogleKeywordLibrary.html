@@ -3,51 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <title>Chapter Page - Content Blur Effect</title>
-  <!-- Google Fonts: Montserrat (headings), Inter (body) -->
+  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap"
     rel="stylesheet"
   />
-  <!-- Styles -->
+  <!-- Your main stylesheet -->
   <link rel="stylesheet" href="../../style.css" />
-  <!-- Additional styles for centering the button -->
-  <style>
-    .chapter-content {
-      position: relative;
-    }
-    #unlockContent {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-    }
-  </style>
-  <!-- JavaScript -->
-  <script defer src="../../script.js"></script>
-  <!-- Inline JavaScript to trigger resume download -->
+  <!-- Script to handle mobile menu and unlock button -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // When the button is clicked, create a hidden link that downloads the resume.
-      document.getElementById('unlockContent').addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent any default behavior
-        // Create a temporary anchor element.
-        const downloadLink = document.createElement('a');
-        // Set the path to your resume file. Adjust the path if needed.
-        downloadLink.href = 'resume.pdf';
-        // Set the download attribute with the filename.
-        downloadLink.download = 'resume.pdf';
-        // Append the link to the document (required for Firefox)
-        document.body.appendChild(downloadLink);
-        // Programmatically trigger the click event on the link.
-        downloadLink.click();
-        // Remove the link after triggering the download.
-        document.body.removeChild(downloadLink);
-      });
+      // MOBILE MENU TOGGLE
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      if (mobileMenuBtn && mobileNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+        });
+      }
+
+      // UNLOCK CONTENT BUTTON
+      const unlockBtn = document.getElementById('unlockContent');
+      if (unlockBtn) {
+        unlockBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Trigger the resume download by creating a temporary anchor element
+          const downloadLink = document.createElement('a');
+          downloadLink.href = 'resume.pdf';
+          downloadLink.download = 'resume.pdf';
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+          // Wait a short period (500ms) then navigate to the Second Chance page
+          setTimeout(function() {
+            window.location.href = "../GoogleKeywordLibrary/SecondChance.html";
+          }, 500);
+        });
+      }
     });
   </script>
 </head>
-<body>
+<body class="google-library">
   <!-- =======================
        STICKY NAVIGATION BAR
   ======================= -->
@@ -82,7 +78,7 @@
     <nav class="mobile-nav-links" id="mobileNav">
       <ul>
         <li class="dropdown">
-          <button class="dropbtn mobile-dropbtn">Chapters </button>
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
           <div class="dropdown-content mobile-dropdown-content">
             <a href="../GoogleKeywordLibrary/SecondChance.html">Home</a>
             <a href="../GoogleKeywordLibrary/SecondChance.html">Data Structures</a>
@@ -91,7 +87,7 @@
             <a href="../GoogleKeywordLibrary/SecondChance.html">DNS</a>
             <a href="../GoogleKeywordLibrary/SecondChance.html">References</a>
             <a href="../GoogleKeywordLibrary/SecondChance.html">Google Keywords Library</a>
-           </div>
+          </div>
         </li>
         <li><a href="../GoogleKeywordLibrary/SecondChance.html">Resources</a></li>
         <li><a href="../GoogleKeywordLibrary/SecondChance.html">Community</a></li>
@@ -104,37 +100,41 @@
     </div>
   </header>
 
- <!-- =======================
+  <!-- =======================
        MAIN CHAPTER CONTENT
   ======================= -->
-  <div class="chapter-content">
-    <div class="chapter-content">
-      <!-- The "locked" text that remains blurred -->
-      <p id="mainContent" class="blur">
-        <h1>You’ve Caught Me.</h1>
-        <p>
-          So, the secret’s out—I was pushing pretty hard to get that resume in your hands.
-          But let’s face it: sometimes a well-placed <em>encouragement</em> is all it takes to spark something good.
-          <br><br>
-          Since you’re here, consider this your <strong>second chance</strong>. I’m not blocking anything anymore.
-          No blurred text, no hidden content, no tricks—just a moment for you to decide.
-          <br><br>
-          If you <em>do</em> want to see what else I bring to the table, click below.
-          After all, second chances don’t always come around, and I’d hate for you to miss out.
-        </p>
-        <!-- Big Button to Download Resume -->
-        <button class="try-again-btn">Download My Resume</button>
+  <div class="chapter-content" >
+    <!-- Initially blurred content -->
+    <div id="mainContent" class="blur">
+      <h1>You’ve Caught Me.</h1>
+      <p>
+        So, the secret’s out—I was pushing pretty hard to get that resume in your hands.
+        But let’s face it: sometimes a well-placed <em>encouragement</em> is all it takes
+        to spark something good.
       </p>
-    <!-- Hazard ribbons overlay (unchanged) -->
+      <p>
+        Since you’re here, consider this your <strong>second chance</strong>.
+        No blurred text, no hidden content, no tricks—just a moment for you to decide.
+      </p>
+      <p>
+        If you <em>do</em> want to see what else I bring to the table, click below.
+        After all, second chances don’t always come around, and I’d hate for you to miss out.
+      </p>
+      <button class="try-again-btn">Download My Resume</button>
+    </div>
+
+    <!-- Hazard ribbons overlay -->
     <div class="hazard-ribbons">
       <div class="hazard-ribbon"></div>
       <div class="hazard-ribbon"></div>
       <div class="hazard-ribbon"></div>
+      <div class="hazard-ribbon"></div>
+      <div class="hazard-ribbon"></div>
     </div>
-    <!-- Button that triggers the resume download only -->
-    <button id="downloadResume" id="downloadResumejs"class="cta-btn">Unlock Content</button>
-  </div>
 
+    <!-- The button that downloads the resume and navigates to the Second Chance page -->
+    <button id="unlockContent" class="cta-btn">Unlock Content</button>
+  </div>
 
   <!-- =======================
        FOOTER
@@ -148,9 +148,9 @@
         <li><a href="../GoogleKeywordLibrary/SecondChance.html">Privacy Policy</a></li>
       </ul>
       <p>
-        Inspired by 
-        <a href="../GoogleKeywordLibrary/SecondChance.html" target="_blank">W3Schools</a>, 
-        <a href="../GoogleKeywordLibrary/SecondChance.html" target="_blank">Fireship</a> &amp; 
+        Inspired by
+        <a href="../GoogleKeywordLibrary/SecondChance.html" target="_blank">W3Schools</a>,
+        <a href="../GoogleKeywordLibrary/SecondChance.html" target="_blank">Fireship</a> &amp;
         <a href="../GoogleKeywordLibrary/SecondChance.html" target="_blank">Juxtoposed</a>.
       </p>
     </div>

@@ -110,23 +110,28 @@ document.addEventListener("DOMContentLoaded", function() {
    CONTENT BLUR EFFECT FUNCTION
 ======================== */
 function initContentBlurEffect() {
-  const content = document.getElementById('mainContent');
   const unlockBtn = document.getElementById('unlockContent');
-  if (unlockBtn && content) {
-    unlockBtn.addEventListener('click', function() {
-      // Remove blur from the content
-      content.classList.remove('blur');
-      // Fade out the caution tape overlay
-      const tape = document.querySelector('.caution-tape');
-      if (tape) {
-        tape.style.opacity = '0';
-      }
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Trigger the resume download
+      const downloadLink = document.createElement('a');
+      downloadLink.href = 'resume.pdf';
+      downloadLink.download = 'resume.pdf';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      
+      // Delay navigation slightly (e.g., 500ms) to allow download to start
+      setTimeout(function(){
+         window.location.href = "Chapters\GoogleKeywordLibrary\SecondChance.html";
+      }, 500);
     });
   }
 }
 
 document.addEventListener("DOMContentLoaded", initContentBlurEffect);
-
 
 // Mobile Menu Toggle
 document.getElementById('mobileMenuBtn').addEventListener('click', () => {
