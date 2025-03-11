@@ -411,21 +411,30 @@
   /* ==========================================================================
      7. COMPARISON TABLE
      ========================================================================== */
-  .comparison-table {
-    width: 95%;
-    margin: 1rem auto;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.6);
-  }
+     .comparison-table {
+      display: block;             /* Allows horizontal scrolling */
+      width: 100%;                /* Make the table fill its parent */
+      max-width: 100%;            /* Prevent it from exceeding its parent */
+      margin: 1rem auto;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 8px;
+      overflow-x: auto;           /* Horizontal scrollbar appears if needed */
+      overflow-y: hidden;         /* Hide vertical scrollbar unless desired */
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+    
+    
   
   .comparison-table thead {
     background: linear-gradient(135deg, #444, #393939);
+    overflow-x: auto;           /* Horizontal scrollbar appears if needed */
+    overflow-y: hidden;    
   }
   
   .comparison-table thead th {
+    overflow-x: auto;           /* Horizontal scrollbar appears if needed */
+    overflow-y: hidden;    
     padding: 0.75rem 1rem;
     border-right: 1px solid #444;
     border-bottom: 1px solid #444;
@@ -438,6 +447,7 @@
   
   .comparison-table thead th:last-child {
     border-right: none;
+    
   }
   
   .comparison-table tbody tr {
