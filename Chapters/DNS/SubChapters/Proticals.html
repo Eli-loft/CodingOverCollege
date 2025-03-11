@@ -69,7 +69,7 @@
     <div class="hero-content">
       <h1>DNS Protocols: Comprehensive Overview</h1>
       <p class="chapter-subtext">
-        Delve into the protocols that power DNS—from UDP and TCP to modern encrypted methods like DoT, DoH, and DoQ.
+        Delve into the protocols that power DNS—from UDP and TCP to modern encrypted methods like DoT, DOH, and DoQ.
       </p>
       <p class="reading-time">Estimated reading time: calculating...</p>
       <div class="hero-graphic">
@@ -99,7 +99,7 @@
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
         <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
-        <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
+        <li><a href="../SubChapters/DOH.html">DNS over HTTPS</a></li>
         <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
@@ -210,7 +210,7 @@ example.com.  86400 IN NS  ns2.example.com.
             <li><strong>Privacy &amp; Security:</strong> Prevents snooping or injection, though may be blocked by strict firewalls.</li>
             <li><strong>Adoption:</strong> Increasingly used by ISPs and public DNS providers like Cloudflare and Quad9.</li>
           </ul>
-          <h3>DNS over HTTPS (DoH)</h3>
+          <h3>DNS over HTTPS (DOH)</h3>
           <ul>
             <li><strong>Transport:</strong> Encapsulates DNS queries within HTTPS (port 443), blending them with regular web traffic.</li>
             <li><strong>Privacy &amp; Censorship Resistance:</strong> Makes it harder for ISPs or governments to filter DNS requests.</li>
@@ -243,7 +243,7 @@ example.com.  86400 IN NS  ns2.example.com.
             Unencrypted DNS traffic is vulnerable to interception and injection of fake responses.
           </p>
           <ul>
-            <li><strong>Mitigation:</strong> Employing encrypted DNS (DoT/DoH) and DNSSEC helps ensure data integrity.</li>
+            <li><strong>Mitigation:</strong> Employing encrypted DNS (DoT/DOH) and DNSSEC helps ensure data integrity.</li>
           </ul>
           <h3>Zone Transfer Leakage</h3>
           <p>
@@ -274,7 +274,7 @@ example.com.  86400 IN NS  ns2.example.com.
                 <th>Feature</th>
                 <th>UDP (53)</th>
                 <th>TCP (53)</th>
-                <th>DoT (853) / DoH (443)</th>
+                <th>DoT (853) / DOH (443)</th>
               </tr>
             </thead>
             <tbody>
@@ -316,7 +316,7 @@ example.com.  86400 IN NS  ns2.example.com.
         <section class="chapter-content preface-section fade-in" id="summary">
           <h4>TL;DR Summary</h4>
           <p>
-            DNS typically uses <strong>UDP</strong> for fast, lightweight queries and <strong>TCP</strong> for reliable transfers when needed (such as zone transfers or large responses). With growing privacy concerns, encrypted DNS protocols like <strong>DoT</strong>, <strong>DoH</strong>, and emerging <strong>DoQ</strong> add an extra layer of security. Each protocol brings its own tradeoffs in speed, reliability, and security.
+            DNS typically uses <strong>UDP</strong> for fast, lightweight queries and <strong>TCP</strong> for reliable transfers when needed (such as zone transfers or large responses). With growing privacy concerns, encrypted DNS protocols like <strong>DoT</strong>, <strong>DOH</strong>, and emerging <strong>DoQ</strong> add an extra layer of security. Each protocol brings its own tradeoffs in speed, reliability, and security.
           </p>
           <ul>
             <li><strong>UDP:</strong> Minimal overhead but lacks reliability.</li>

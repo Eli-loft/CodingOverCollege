@@ -99,7 +99,7 @@
         <li><a href="../SubChapters/DNSSEC.html">DNSSEC</a></li>
         <li><a href="../SubChapters/CachePoisoning.html">Cache Poisoning</a></li>
         <li><a href="../SubChapters/SpoofingAttacks.html">Spoofing Attacks</a></li>
-        <li><a href="../SubChapters/DoH.html">DNS over HTTPS</a></li>
+        <li><a href="../SubChapters/DOH.html">DNS over HTTPS</a></li>
         <li><a href="../SubChapters/DoT.html">DNS over TLS</a></li>
         <li><a href="../SubChapters/DigforTroubleshooting.html">Dig for Troubleshooting</a></li>
         <li><a href="../SubChapters/Advancenslookup.html">Advance nslookup</a></li>
@@ -146,7 +146,7 @@
               </tr>
               <tr>
                 <td><strong>Security</strong></td>
-                <td>Enhanced features like DNSSEC, DoH, and filtering</td>
+                <td>Enhanced features like DNSSEC, DOH, and filtering</td>
                 <td>Often lacks built‑in protection against attacks</td>
               </tr>
               <tr>
@@ -181,7 +181,7 @@
           <ul>
             <li>Implementation of DNSSEC to prevent spoofing.</li>
             <li>Malware and phishing protection through domain filtering.</li>
-            <li>Encryption via DoH and DoT to prevent man‑in‑the‑middle attacks.</li>
+            <li>Encryption via DOH and DoT to prevent man‑in‑the‑middle attacks.</li>
           </ul>
           <h3>Privacy Enhancements</h3>
           <ul>
@@ -218,7 +218,7 @@
                 <td><strong>Cloudflare DNS</strong></td>
                 <td>1.1.1.1</td>
                 <td>1.0.0.1</td>
-                <td>Privacy‑focused, DoH/DoT support</td>
+                <td>Privacy‑focused, DOH/DoT support</td>
               </tr>
               <tr>
                 <td><strong>Quad9</strong></td>
@@ -279,11 +279,11 @@ nameserver 8.8.4.4
           <h4>Security Considerations</h4>
           <h3>DNS Hijacking</h3>
           <p>
-            Some ISPs redirect users to their own DNS servers even when public DNS is set. <em>Solution:</em> Use DNS encryption (DoH/DoT) or a VPN.
+            Some ISPs redirect users to their own DNS servers even when public DNS is set. <em>Solution:</em> Use DNS encryption (DOH/DoT) or a VPN.
           </p>
           <h3>Man‑in‑the‑Middle Attacks</h3>
           <p>
-            Without encryption, DNS queries can be intercepted. <em>Solution:</em> Choose providers that offer DoH or DoT.
+            Without encryption, DNS queries can be intercepted. <em>Solution:</em> Choose providers that offer DOH or DoT.
           </p>
           <h3>Performance Issues</h3>
           <p>
@@ -351,7 +351,7 @@ Get-DnsClientServerAddress
           <h3>Next Steps</h3>
           <ul>
             <li>Experiment with different public DNS providers to determine the best performance for your region.</li>
-            <li>Enable DoH/DoT for encrypted DNS queries.</li>
+            <li>Enable DOH/DoT for encrypted DNS queries.</li>
             <li>Use tools like nslookup or dig to monitor DNS performance.</li>
             <li>Explore private DNS services and VPN‑based DNS solutions for enhanced privacy.</li>
           </ul>
