@@ -10,6 +10,9 @@
   />
   <!-- Main (global) Stylesheet -->
   <link rel="stylesheet" href="../../style.css" />
+    <!-- JavaScript -->
+    <script defer src="../../script.js"></script>
+  </head>
 
 </head>
 <body class="second-chance">
@@ -18,35 +21,64 @@
   ======================= -->
   <header class="header">
     <div class="logo">CODING OVER COLLEGE</div>
-    <!-- Desktop Navigation (all links loop back) -->
+
+    <!-- Desktop Navigation -->
     <nav class="nav-links">
       <ul>
-        <li><a href="SecondChance.html">Home</a></li>
-        <li><a href="SecondChance.html">Data Structures</a></li>
-        <li><a href="SecondChance.html">Community</a></li>
-        <li><a href="SecondChance.html">Contact</a></li>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters </button>
+          <div class="dropdown-content">
+            <!-- Point these links correctly based on your folder structure -->
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+            <a href="../GoogleKeywordLibrary/GoogleKeywordLibrary.html">Google Keyword Library</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
       </ul>
     </nav>
+
     <!-- Mobile Menu Button -->
     <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <!-- Simple hamburger icon -->
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-    <!-- Mobile Nav (also loops back) -->
+
+    <!-- Mobile Navigation (Hidden by default) -->
     <nav class="mobile-nav-links" id="mobileNav">
       <ul>
-        <li><a href="SecondChance.html">Home</a></li>
-        <li><a href="SecondChance.html">Data Structures</a></li>
-        <li><a href="SecondChance.html">Community</a></li>
-        <li><a href="SecondChance.html">Contact</a></li>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../DNS/DNS.html">DNS</a>
+            <a href="../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+            <a href="../GoogleKeywordLibrary/GoogleKeywordLibrary.html">Google Keyword Library</a>
+          </div>
+        </li>
+        <li><a href="../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../index.html">Home</a></li>
       </ul>
     </nav>
+
     <!-- User Profile / Auth -->
     <div class="user-profile">
-      <a href="SecondChance.html" class="btn-login">Donate</a>
+      <a href="donate.html" class="btn-login">Donate</a>
     </div>
   </header>
+
 
   <!-- =======================
        MAIN CONTENT AREA
@@ -80,26 +112,23 @@
   <!-- =======================
        FOOTER
   ======================= -->
+  
   <footer class="footer">
     <div class="footer-content">
       <p>© 2025 Coding Over College</p>
       <ul class="footer-links">
-        <li><a href="SecondChance.html">Privacy Policy</a></li>
-        <li><a href="SecondChance.html">Terms of Service</a></li>
-        <li><a href="SecondChance.html">Support</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
       </ul>
       <p>
-        Inspired by 
-        <a href="SecondChance.html" target="_blank">W3Schools</a>, 
-        <a href="SecondChance.html" target="_blank">Fireship</a> &amp; 
-        <a href="SecondChance.html" target="_blank">Juxtoposed</a>.
+        Inspired by
+        <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>,
+        <a href="https://www.youtube.com/c/fireship" target="_blank">Fireship</a> &
+        <a href="https://www.youtube.com/c/juxtopposed" target="_blank">Juxtopposed</a>.
       </p>
     </div>
   </footer>
 
-  <!-- =======================
-       MAIN SCRIPTS
-  ======================= -->
-  <script src="../../script.js"></script>
 </body>
 </html>

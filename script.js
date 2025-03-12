@@ -133,10 +133,29 @@ function initContentBlurEffect() {
 
 document.addEventListener("DOMContentLoaded", initContentBlurEffect);
 
-// Mobile Menu Toggle
-document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-  const mobileNav = document.getElementById('mobileNav');
-  mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.getElementById("mobileMenuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+  const dropdownBtn = document.querySelector(".mobile-dropbtn");
+  const dropdownContent = document.querySelector(".mobile-dropdown-content");
+
+  // Toggle mobile navigation
+  menuBtn.addEventListener("click", () => {
+    const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+    menuBtn.setAttribute("aria-expanded", !expanded);
+    mobileNav.classList.toggle("active");
+  });
+
+  // Toggle dropdown
+  dropdownBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevents event bubbling
+    dropdownContent.classList.toggle("show");
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", () => {
+    dropdownContent.classList.remove("show");
+  });
 });
 
 // Back to Top Button
