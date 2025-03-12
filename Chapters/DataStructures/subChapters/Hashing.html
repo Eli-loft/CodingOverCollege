@@ -8,19 +8,66 @@
   <link rel="stylesheet" href="../../../style.css" />
 </head>
 <body>
-  <header>
-    <h1>Coding Over College</h1>
-    <!-- Top-level navigation -->
-    <nav class="top-nav">
+    <!-- =======================
+       STICKY NAVIGATION BAR
+  ======================= -->
+  <header class="header">
+    <div class="logo">CODING OVER COLLEGE</div>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-links">
       <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Chapters </button>
+          <div class="dropdown-content">
+            <a href="../../DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+            <a href="../../GoogleKeywordLibrary/GoogleKeywordLibrary.html">Google Keyword Library</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
         <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../DataStructures/DataStructures.html">Data Structures</a></li>
-        <li><a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a></li>
-        <li><a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a></li>
-        <li><a href="../../DNS/DNS.html">DNS</a></li>
-        <li><a href="../../References/References.html">References</a></li>
       </ul>
     </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+      <!-- Simple hamburger icon -->
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Mobile Navigation (Hidden by default) -->
+    <nav class="mobile-nav-links" id="mobileNav">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn mobile-dropbtn">Chapters</button>
+          <div class="dropdown-content mobile-dropdown-content">
+            <a href="../../DataStructures/DataStructures.html">Data Structures</a>
+            <a href="../../NamedAlgorithms/NamedAlgorithms.html">Named Algorithms</a>
+            <a href="../../PythonLibraries/PythonLibraries.html">Python Libraries</a>
+            <a href="../../DNS/DNS.html">DNS</a>
+            <a href="../../ConcurrencyAndThreads/ConcurrencyAndThreads.html">Concurrency &amp; Threads</a>
+            <a href="../../AlgorithmicComplexity/AlgorithmicComplexity.html">Algorithmic Complexity</a>
+            <a href="../../GoogleKeywordLibrary/GoogleKeywordLibrary.html">Google Keyword Library</a>
+          </div>
+        </li>
+        <li><a href="../../References/References.html">Resources</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+      </ul>
+    </nav>
+
+    <!-- User Profile / Auth -->
+    <div class="user-profile">
+      <a href="donate.html" class="btn-login">Donate</a>
+    </div>
   </header>
 
   <div class = "container">
